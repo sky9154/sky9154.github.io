@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
   <head>
-    <title>oF|Project</title>
+    <title>oF|Home</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Icon -->
     <link rel="icon" type="image/x-icon" href="https://kiriqua.com/img/logo/logo.png" />
     <link rel="shortcut icon" href="https://kiriqua.com/img/logo/logo.png" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css">
     <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <link rel="stylesheet" href="https://kiriqua.com/css/typeface.css">
+    <link rel="stylesheet" href="https://kiriqua.com/css/typeface.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
    </head>
 <body>
   <div class="sidebar close">
@@ -18,21 +23,21 @@
     </div>
     <ul class="nav-links">
       <li>
-        <a href="https://kiriqua.com/">
+        <a href="#home" id="home">
           <i class='bx bx-home'></i>
-          <span class="link_name">Home</span>
+          <span class="link_name" id='left'>Home</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#點三小啦">Home</a></li>
+          <li><a class="link_name" href="#home">Home</a></li>
         </ul>
       </li>
       <li>
-        <a href="#" onclick="document.title ='oF|About';">
+        <a href="#about" onclick="about();">
           <i class='bx bxs-user-account'></i>
-          <span class="link_name">About</span>
+          <span class="link_name" id='left'>About</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">About</a></li>
+          <li><a class="link_name" href="#about">About</a></li>
         </ul>
       </li>
       <li>
@@ -118,28 +123,16 @@
   </div>
   <section class="home-section">
     <div class="home-content">
-      <i class='bx bx-menu' ></i>
-      <span class="text">Project</span>
+      <i class='bx bx-menu'></i>
+      <span class="text" id='title'>Home</span>
+    </div>
+    <div class="container" id='home-web'>
+      <div class="center-align">
+        <p class='top'>456</p>
+      </div>
     </div>
   </section>
 
-  <script>
-
-  let arrow = document.querySelectorAll(".arrow");
-  for (var i = 0; i < arrow.length; i++) {
-    arrow[i].addEventListener("click", (e)=>{
-   let arrowParent = e.target.parentElement.parentElement;
-   arrowParent.classList.toggle("showMenu");
-    });
-  }
-
-  let sidebar = document.querySelector(".sidebar");
-  let sidebarBtn = document.querySelector(".bx-menu");
-  console.log(sidebarBtn);
-  sidebarBtn.addEventListener("click", ()=>{
-    sidebar.classList.toggle("close");
-  });
-  </script>
-
+  <script type="text/javascript" src="script/func.js"></script>
 </body>
 </html>
