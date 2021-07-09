@@ -17,7 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
    </head>
 <body onload="none();">
-  <div class="sidebar close">
+  <div class="sidebar close hide-on-small-only">
     <div class="logo-details">
       <i class='bx bx-game'></i>
       <span class="logo_name">CodingLab</span>
@@ -111,7 +111,7 @@
       <li>
     <div class="profile-details">
       <div class="profile-content">
-        <img src="image/cool.webp" alt="profile">
+        <img src="image/0709.jpg" alt="profile">
       </div>
       <div class="name-job">
         <div class="profile_name">oF</div>
@@ -124,15 +124,34 @@
   </div>
   <section class="home-section">
     <div class="container">
-      <div class="home-content">
-        <i class='bx bx-home logo' id='logo'></i>
+      <div class="home-content valign-wrapper brand-logo" data-target="side-nav">
+        <a href="#" data-target="side-nav">
+          <i class='bx bx-home logo' id='logo'></i>
+        </a>
         <span class="text" id='title'>Home</span>
       </div>
-      
+      <ul class="sidenav grey lighten-1" id="side-nav">
+        <li id="side-nav-logo"><img src="./img/logo.png" alt="Mike's logo"></li>
+        <li><a class="sidenav-close grey-text text-darken-3 waves-effect" href="#home">Home</a></li>
+        <li><a class="sidenav-close grey-text text-darken-3 waves-effect" href="#about">About</a></li>
+        <li><a class="sidenav-close grey-text text-darken-3 waves-effect" href="#skill">Skills</a></li>
+        <li><a class="sidenav-close grey-text text-darken-3 waves-effect" href="#project">Project</a></li>
+        <li><a class="sidenav-close grey-text text-darken-3 waves-effect" href="#more-info">More Info</a></li>
+        <li><a class="sidenav-close grey-text text-darken-3 waves-effect" href="#contact">Contact</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Learn More About Me</a></li>
+        <div id="side-nav-icons-container">
+          <h5><a href="https://medium.com/麥克的半路出家筆記" class="grey-text text-darken-3" target="_blank"><i class="fab fa-medium-m"></i></a></h5>
+          <h5><a href="https://github.com/smallpaes" class="grey-text text-darken-3" target="_blank"><i class="fab fa-github"></i></a></h5>
+          <h5><a href="https://www.linkedin.com/in/mike-huang-mikank/" class="grey-text text-darken-3" target="_blank"><i class="fab fa-linkedin"></i></a></h5>
+        </div>
+      </ul>
+
+      <!--內容-->
       <div class="center-align"  id='history-web'>
         <div class="row">
           <img src="image/ai2.png" alt="" class="col s12 m8 fade-in">
-          <br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br><br><br>
           <div class="col m4 left-align hide-on-small-only leftamine">
             <p class='experience'>App Inventor 2</p>
             <p class="remarks">Sep. 2019-Aug. 2020</p>
@@ -140,7 +159,7 @@
         </div>
         <div class="row">
           <div class="col m4 left-align hide-on-small-only rightamine">
-            <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br>
             <p class='experience'>C Language</p>
             <p class="remarks">Sep. 2020-Present</p>
           </div>

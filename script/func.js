@@ -12,6 +12,16 @@ console.log(sidebarBtn);
 sidebarBtn.addEventListener("click", ()=>{
   sidebar.classList.toggle("close");
 });
+
+$(document).ready(function(){
+  $('.sidenav').sidenav({
+    // 側邊導覽列從右邊展開
+    edge: 'right',
+    // 側邊導覽列打開時，頁面仍可滑動
+    preventScrolling: false
+  })
+})
+
 //隱藏內容
 function none(){
   document.getElementById('history-web').style.display='none';
