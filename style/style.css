@@ -22,9 +22,24 @@ html {overflow-y: scroll;}
   box-sizing: border-box;
   font-family: 'Righteous','Noto Sans HK';
 }
-body{
+/*隱藏滾動條*/
+html {
+  overflow: -moz-hidden-unscrollable;
+  height: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  height: 100%;
+  width: calc(100vw + 18px);
+  overflow: auto;
   background: #E4E9F7;
 }
+
 .sidebar{
   position: fixed;
   top: 0;
@@ -206,7 +221,6 @@ body{
   object-fit: cover;
   border-radius: 16px;
   margin: 0 14px 0 12px;
-  background: #1d1b31;
   transition: all 0.5s ease;
 }
 .sidebar.close .profile-details img{

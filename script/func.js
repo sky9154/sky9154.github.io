@@ -57,3 +57,8 @@ document.getElementById('history').onclick=function(){
   c('bx-history');
   document.getElementById('history-web').style.display='block';
 }
+
+function redirectPage() { 
+  let width=screen.width;
+  if(width>600){document.getElementById('side-nav').style.display='none';}
+  } 
