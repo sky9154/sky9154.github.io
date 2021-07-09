@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  background: #E4E9F7;
+}
 .sidebar{
   position: fixed;
   top: 0;
@@ -236,13 +239,21 @@
   font-weight: 600;
 }
 
-.container .center-align .top{
+.container .center-align .leftamine{
   position: relative;
-  animation: leftamine 2s 1;
+  animation: leftamine 1s 1;
 }
 @keyframes leftamine{
   from{left : -20px;opacity: 0;}
   to{left : 0; opacity:1;}
+}
+.container .center-align .rightamine{
+  position: relative;
+  animation: rightamine 1s 1;
+}
+@keyframes rightamine{
+  from{right : -20px;opacity: 0;}
+  to{right : 0; opacity:1;}
 }
 
 .experience{
@@ -256,4 +267,13 @@
   background-color: #E4E9F7;
   font-size: 20px;
   font-style: italic;
+}
+
+.fade-in{
+  position: relative;
+  animation: fade-in 2s 1 forwards;
+}
+@keyframes fade-in{
+  from{opacity: 0;}
+  to{opacity: 1;}
 }
