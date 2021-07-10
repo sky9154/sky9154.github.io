@@ -58,6 +58,14 @@ document.getElementById('history').onclick=function(){
   document.getElementById('history-web').style.display='block';
 }
 
+document.getElementById('history2').onclick=function(){
+  none();
+  document.title ='oF|History';
+  title.innerText='History';
+  c('bx-history');
+  document.getElementById('history-web').style.display='block';
+}
+
 function redirectPage() { 
   let width=screen.width;
   if(width>600){document.getElementById('side-nav').style.display='none';}
