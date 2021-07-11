@@ -259,7 +259,7 @@ body {
 .home-section .home-content .logo,
 .home-section .home-content .text{
   color: #11101d;
-  font-size: 40px;
+  font-size: 35px;
 }
 .home-section .home-content .logo{
   margin: 0 15px;
@@ -309,35 +309,4 @@ body {
 @keyframes fade-in{
   from{opacity: 0;}
   to{opacity: 1;}
-}
-/* 側邊導航欄 */
-ul.sidenav {
-  width: 200px;
-}
-ul.sidenav li:last-of-type,
-ul.sidenav li:last-of-type a {
-  max-height: 20px;
-  line-height: 20px;
-}
-ul.sidenav .divider {
-  margin: 15px 20px 28px 25px;
-  background-color: #686666;
-}
-ul.sidenav .subheader {
-  font-size: 12px;
-}
-#side-nav-logo {
-  height: 7%;
-}
-#side-nav-logo img {
-  height: 100%;
-  padding: 5px 20px;
-}
-#side-nav-icons-container {
-  display: flex;
-  padding: 0 32px;
-}
-
-#side-nav-icons-container h5 {
-  padding-right: 0.9rem;
 }

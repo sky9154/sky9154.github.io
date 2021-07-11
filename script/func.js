@@ -13,15 +13,6 @@ sidebarBtn.addEventListener("click", ()=>{
   sidebar.classList.toggle("close");
 });
 
-$(document).ready(function(){
-  $('.sidenav').sidenav({
-    // 側邊導覽列從右邊展開
-    edge: 'right',
-    // 側邊導覽列打開時，頁面仍可滑動
-    preventScrolling: false
-  })
-})
-
 //隱藏內容
 function none(){
   document.getElementById('history-web').style.display='none';
@@ -65,8 +56,3 @@ document.getElementById('history2').onclick=function(){
   c('bx-history');
   document.getElementById('history-web').style.display='block';
 }
-
-function redirectPage() { 
-  let width=screen.width;
-  if(width>600){document.getElementById('side-nav').style.display='none';}
-  } 
