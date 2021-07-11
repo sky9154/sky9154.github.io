@@ -1,0 +1,40 @@
+.container .center-align .leftamine{
+    position: relative;
+    animation: leftamine 1s 1;
+    margin-top: 17%;
+  }
+  @keyframes leftamine{
+    from{left : -20px;opacity: 0;}
+    to{left : 0; opacity:1;}
+  }
+  .container .center-align .rightamine{
+    position: relative;
+    animation: rightamine 1s 1;
+    margin-top: 17%;
+  }
+  @keyframes rightamine{
+    from{right : -20px;opacity: 0;}
+    to{right : 0; opacity:1;}
+  }
+  
+  .experience{
+    color: #ffffff;
+    font-size: 35px;
+    background-color: #4fc3f7;
+  }
+  
+  .remarks{
+    color: #4fc3f7;
+    background-color: #E4E9F7;
+    font-size: 20px;
+    font-style: italic;
+  }
+  
+  .fade-in{
+    position: relative;
+    animation: fade-in 2s 1 forwards;
+  }
+  @keyframes fade-in{
+    from{opacity: 0;}
+    to{opacity: 1;}
+  }
