@@ -30,11 +30,6 @@
     font-style: italic;
 }
 
-.fade-in1{
-    position: relative;
-    animation: fade-in 2s 1 forwards;
-}
-
 .fade-in{
     position: relative;
     animation: fade-in 3s 1 forwards;

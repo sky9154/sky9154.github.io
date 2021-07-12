@@ -234,6 +234,7 @@ body {
   font-size: 20px;
   font-weight: 500;
   white-space: nowrap;
+  cursor: default;
 }
 .sidebar.close .profile-details i,
 .sidebar.close .profile-details .profile_name,
@@ -242,6 +243,7 @@ body {
 }
 .sidebar .profile-details .job{
   font-size: 14px;
+  cursor: default;
 }
 .home-section{
   position: relative;
@@ -257,15 +259,16 @@ body {
 }
 .home-section .home-content{
   height: 60px;
+  animation: fade-in 2s 1;
 }
 .home-section .home-content .logo,
 .home-section .home-content .text{
   color: #11101d;
   font-size: 35px;
+  cursor: default;
 }
 .home-section .home-content .logo{
   margin: 0 15px;
-  cursor: pointer;
 }
 .home-section .home-content .text{
   font-size: 31px;
