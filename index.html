@@ -8,14 +8,16 @@
     <link rel="shortcut icon" href="https://kiriqua.com/img/logo/logo.png" type="image/x-icon" />
     <!-- CSS Link -->
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/home.css">
     <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' >
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
-<body>
+<body onload="home();">
 <div class="sidebar close">
     <!-- Navbar -->
     <div class="logo-details">
@@ -35,64 +37,65 @@
         </li>
         <!-- About -->
         <li>
-        <a href="#about" id="about">
+        <a href="./about" id="about">
             <i class='bx bxs-user-account'></i>
             <span class="link_name">About</span>
         </a>
         <ul class="sub-menu blank">
-            <li><a class="link_name" href="#about">About</a></li>
+            <li><a class="link_name" href="./about">About</a></li>
         </ul>
         </li>
         <!-- Skill -->
         <li>
-        <a href="./Skill">
+        <a href="./skills">
             <i class='bx bxs-chip'></i>
-            <span class="link_name">Skill</span>
+            <span class="link_name">Skills</span>
         </a>
         <ul class="sub-menu blank">
-            <li><a class="link_name" href="./Skill">Skill</a></li>
+            <li><a class="link_name" href="./Skill">Skills</a></li>
         </ul>
         </li>
-        <!-- Project -->
+        <!-- Projects -->
         <li>
         <div class="iocn-link">
             <a href="#">
                 <i class='bx bx-collection' ></i>
-                <span class="link_name">Project</span>
+                <span class="link_name">Projects</span>
             </a>
             <i class='bx bxs-chevron-down arrow' ></i>
         </div>
         <ul class="sub-menu">
-            <li><a class="link_name" href="#">Project</a></li>
+            <li><a class="link_name" href="#">Projects</a></li>
             <li><a href="#">HTML & CSS</a></li>
             <li><a href="#">JavaScript</a></li>
             <li><a href="#">PHP & MySQL</a></li>
             <li><a href="#">Python</a></li>
         </ul>
         </li>
-        <!-- Post -->
+        <!-- Plugins -->
         <li>
         <div class="iocn-link">
-            <a href="#">
+            <a href="./plugins">
                 <i class='bx bx-book-alt' ></i>
-                <span class="link_name">Posts</span>
+                <span class="link_name">Plugins</span>
             </a>
             <i class='bx bxs-chevron-down arrow' ></i>
         </div>
         <ul class="sub-menu">
-            <li><a class="link_name" href="#">Posts</a></li>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Python Tools</a></li>
+            <li><a class="link_name" href="./plugins">Plugins</a></li>
+            <li><a href="#">Web Plugins</a></li>
+            <li><a href="#">Python Modules</a></li>
+            <li><a href="#">VS Code Extension</a></li>
         </ul>
         </li>
         <!-- Explore -->
         <li>
-        <a href="#">
+        <a href="explore">
             <i class='bx bx-compass' ></i>
             <span class="link_name">Explore</span>
         </a>
         <ul class="sub-menu blank">
-            <li><a class="link_name" href="#">Explore</a></li>
+            <li><a class="link_name" href="explore">Explore</a></li>
         </ul>
         </li>
         <!-- Profile -->
@@ -117,32 +120,19 @@
             <span class="text" id='title'>Home</span>
         </div>
         <!-- 內容 -->
-        <header id="home" class="navbar-fixed">
-            <!-- 輪播圖片 -->
-            <div class="slider">
-                <ul class="slides">
-                <li>
-                    <!-- PixivID: 84269486 -->
-                    <img src="image/h_02.png">
-                    <div class="caption center-align grey-text text-lighten-4">
-                        <h3>Welcome to me</h3>
-                    </div>
-                </li>
-                <li>
-                    <!-- PixivID: 62922314 -->
-                    <img src="image/h_01.png">
-                    <div class="caption left-align grey-text text-lighten-5">
-
-                    </div>
-                </li>
-
-                </ul>
-            </div>
-        </header>
+        <div class="home center-align">
+            <span class="text-wrapper">
+                <span class="letters">Welcome to my web</span>
+            </span>
+        </div>
+        <div class="row" id="home-card">
+            <!-- Home Card -->
+        </div>
         <!-- 底端 -->
-        <br>
     </div>
 </section>
+<!-- JavaScript LINK -->
 <script type="text/javascript" src="script/func.js"></script>
+<script type="text/javascript" src="script/home.js"></script>
 </body>
 </html>
