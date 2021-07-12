@@ -58,6 +58,7 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
+  animation: fade-in 1s 1;
 }
 .sidebar .logo-details i{
   font-size: 35px;
@@ -86,6 +87,7 @@ body {
 }
 .sidebar.close .nav-links{
   overflow: visible;
+  animation: fade-in 1s 1;
 }
 .sidebar .nav-links::-webkit-scrollbar{
   display: none;
@@ -104,7 +106,7 @@ body {
   justify-content: space-between;
 }
 .sidebar.close .nav-links li .iocn-link{
-  display: block
+  display: block;
 }
 .sidebar .nav-links li i{
   height: 50px;
@@ -268,4 +270,9 @@ body {
 .home-section .home-content .text{
   font-size: 31px;
   font-weight: 600;
+}
+
+@keyframes fade-in{
+    from{opacity: 0;}
+    to{opacity: 1;}
 }

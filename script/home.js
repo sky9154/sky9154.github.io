@@ -16,49 +16,51 @@ anime.timeline({loop: false})
     easing: "easeOutExpo",
     delay: 1000
 });
+
+//Home Card
 function home(){
     const homecard = [
         {
             title: "About Me",
             image: "image/home.png",
-            link: "../about",
+            link: "./about",
             introduction: "關於我"
         },
         {
             title: "Skills",
             image: "image/skills.png",
-            link: "../skills",
+            link: "./skills",
             introduction: "我學過的程式語言"
         },
         {
             title: "Projects",
             image: "image/projects.png",
-            link: "../projects",
+            link: "./projects",
             introduction: "練習用的垃圾"
         },
         {
             title: "Plugins",
             image: "image/plugins.png",
-            link: "../plugins",
+            link: "./plugins",
             introduction: "實用的插件及模組"
         },
         {
             title: "Explore",
             image: "image/explore.png",
-            link: "../explore",
+            link: "./explore",
             introduction: "好用的網站"
         },
         {
             title: "Contact",
             image: "image/contact.png",
-            link: "../contact",
+            link: "./contact",
             introduction: "更多連結"
         }
     ];
     const hcard = document.getElementById('home-card');
     homecard.forEach((post) => {
     hcard.innerHTML += `
-    <div class="col s12 m4">
+    <div class="col s12 m4 fade-in3s">
         <div class="card">
             <a href="${post.link}">
                 <div class="card-image">

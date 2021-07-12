@@ -20,3 +20,19 @@
     display: inline-block;
     line-height: 1em;
 }
+
+
+/*淡入*/
+.fade-in2s{
+    position: relative;
+    animation: fade-in 2s 1 forwards;
+}
+
+.fade-in3s{
+    position: relative;
+    animation: fade-in 3s 1 forwards;
+}
+@keyframes fade-in{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
