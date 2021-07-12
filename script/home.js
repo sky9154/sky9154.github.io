@@ -22,37 +22,37 @@ function home(){
     const homecard = [
         {
             title: "About Me",
-            image: "image/home.png",
+            image: "images/home.png",
             link: "./about",
             introduction: "關於我"
         },
         {
             title: "Skills",
-            image: "image/skills.png",
+            image: "images/skills.png",
             link: "./skills",
             introduction: "我學過的程式語言"
         },
         {
             title: "Projects",
-            image: "image/projects.png",
+            image: "images/projects.png",
             link: "./projects",
             introduction: "練習用的垃圾"
         },
         {
             title: "Plugins",
-            image: "image/plugins.png",
+            image: "images/plugins.png",
             link: "./plugins",
             introduction: "實用的插件及模組"
         },
         {
             title: "Explore",
-            image: "image/explore.png",
+            image: "images/explore.png",
             link: "./explore",
             introduction: "好用的網站"
         },
         {
             title: "Contact",
-            image: "image/contact.png",
+            image: "images/contact.png",
             link: "./contact",
             introduction: "更多連結"
         }
