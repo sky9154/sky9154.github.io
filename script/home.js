@@ -60,7 +60,7 @@ function home(){
     const hcard = document.getElementById('home-card');
     homecard.forEach((post) => {
     hcard.innerHTML += `
-    <div class="col s12 m4 fade-in3s">
+    <div class="col s12 m4 fade-in3s animate__headShake animate__fast">
         <div class="card">
             <a href="${post.link}">
                 <div class="card-image">
