@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <title>oF|About</title>
+    <title>oF|Projects|Html</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Logo -->
     <link rel="icon" type="image/x-icon" href="https://kiriqua.com/img/logo/logo.png" />
     <link rel="shortcut icon" href="https://kiriqua.com/img/logo/logo.png" type="image/x-icon" />
     <!-- CSS Link -->
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="../../style/style.css">
+    <link rel="stylesheet" href="html.css">
     <!-- ICON -->
     <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' >
     <!-- Compiled and minified CSS -->
@@ -19,7 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
-<body>
+<body onload="home();">
 <div class="sidebar close">
     <!-- Navbar -->
     <div class="logo-details">
@@ -39,51 +39,51 @@
         </li>
         <!-- About -->
         <li>
-        <a href="" id="about">
+        <a href="../../about" id="about">
             <i class='bx bxs-user-account'></i>
             <span class="link_name">About</span>
         </a>
         <ul class="sub-menu blank">
-            <li><a class="link_name" href="">About</a></li>
+            <li><a class="link_name" href="../../about">About</a></li>
         </ul>
         </li>
-        <!-- Skills -->
+        <!-- Skill -->
         <li>
-        <a href="../skills">
+        <a href="../../skills">
             <i class='bx bxs-chip'></i>
             <span class="link_name">Skills</span>
         </a>
         <ul class="sub-menu blank">
-            <li><a class="link_name" href="../skills">Skills</a></li>
+            <li><a class="link_name" href="../../skills">Skills</a></li>
         </ul>
         </li>
         <!-- Projects -->
         <li>
-            <div class="iocn-link">
-                <a href="../projects">
-                    <i class='bx bx-collection' ></i>
-                    <span class="link_name">Projects</span>
-                </a>
-                <i class='bx bxs-chevron-down arrow' ></i>
-            </div>
-            <ul class="sub-menu">
-                <li><a class="link_name" href="../projects">Projects</a></li>
-                <li><a href="../projects/html">HTML & CSS & JS</a></li>
-                <li><a href="../projects/python">Python</a></li>
-                <li><a href="../projects/php">PHP & MySQL</a></li>
-            </ul>
+        <div class="iocn-link">
+            <a href="../../projects">
+                <i class='bx bx-collection' ></i>
+                <span class="link_name">Projects</span>
+            </a>
+            <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+            <li><a class="link_name" href="../../projects">Projects</a></li>
+            <li><a href="">HTML & CSS & JS</a></li>
+            <li><a href="../python">Python</a></li>
+            <li><a href="../php">PHP & MySQL</a></li>
+        </ul>
         </li>
         <!-- Plugins -->
         <li>
         <div class="iocn-link">
-            <a href="../plugins">
+            <a href="../../plugins">
                 <i class='bx bx-plug' ></i>
                 <span class="link_name">Plugins</span>
             </a>
             <i class='bx bxs-chevron-down arrow' ></i>
         </div>
         <ul class="sub-menu">
-            <li><a class="link_name" href="./plugins">Plugins</a></li>
+            <li><a class="link_name" href="../plugins">Plugins</a></li>
             <li><a href="#">Web Plugins</a></li>
             <li><a href="#">Python Modules</a></li>
             <li><a href="#">VS Code Extension</a></li>
@@ -103,13 +103,13 @@
         <li>
         <div class="profile-details">
             <div class="profile-content">
-                <img src="../images/cool.png">
+                <img src="../../images/cool.png">
             </div>
             <div class="name-job">
                 <div class="profile_name">oF</div>
                 <div class="job">吃素異類反抗軍</div>
             </div>
-            <a href="../contact">
+            <a href="../../contact">
                 <i class='bx bx-log-out'></i>
             </a>
         </div>
@@ -119,43 +119,21 @@
 <section class="home-section">
     <div class="container">
         <div class="home-content valign-wrapper brand-logo">
-            <p href="#" class='sidenav-trigger'>
-                <i class='bx bxs-user-account logo'></i>
-            </p>
-            <span class="text">About</span>
+            <p href="#" class='sidenav-trigger'><i class='bx bx-collection logo' ></i></p>
+            <span class="text">Projects</span>
         </div>
-        <!--內容-->
-        <div class="slider">
-            <ul class="slides">
-                <li>
-                    <img src="images/about_01.png"> <!-- Pixiv ID: 89158618 -->
-                    <div class="caption left-align">
-                        <h3 class="lime-text text-accent-2">Hi!</h3>
-                        <h5 class="light teal-text text-darken-1">I'm oF. This is my web.</h5>
-                        <h5>Is cool right?</h5>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <br>
-            <div class="row">
-                <div class="col m3 s12 center-align">
-                    <img src="images/photo.png" class="about-img animate__tada">
-                </div>
-                <div class=" left-align col m8 s12 about-text animate__shakeY animate__faster">
-                    <p>我的名字叫 oF <br>
-                    生於 2002 年，居住於桃園市中壢區，未婚。<br>
-                    從 14 歲開始學習程式設計。每天都練習 6 個小時以上。<br>
-                    我不抽煙，也不喝酒。晚上 11 點睡，每天要睡足 8 個小時。<br>
-                    睡前，我一定喝一杯溫牛奶，然後做 20 分鐘的柔軟操，上了床，馬上熟睡。<br>
-                    一覺到天亮，決不把疲勞和壓力留到第二天。醫生都說我很正常。</p>
-            </div></div>
-    <!-- 底端 -->
+        <!-- 內容 -->
+        <h3 class="title center-align" id="html">
+            <span class="text-wrapper">
+                <span class="letters">HTML & CSS & JS</span>
+                <span class="line"></span>
+            </span>
+        </h3>
+        <!-- 底端 -->
     </div>
-    
 </section>
 <!-- JavaScript LINK -->
-<script type="text/javascript" src="../script/func.js"></script>
-<script type="text/javascript" src="about.js"></script>
+<script type="text/javascript" src="../../script/func.js"></script>
+<script type="text/javascript" src="html.js"></script>
 </body>
 </html>
