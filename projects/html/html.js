@@ -38,26 +38,35 @@ function html(){
             github:"https://github.com/sky0966548546/Aua"
         },
         {
-            title: "Ayunda Risu語音包",
+            title: "Ayunda Risu 語音包",
             image: "images/risu.png",
             link: "./Risu",
-            introduction: "do~do~do~<br>滿滿的Risu"
+            introduction: "do~do~do~<br>滿滿的Risu",
+            github: "https://github.com/sky0966548546/AyundaRisuSound"
         },
         {
             title: "詩音時鐘",
             image: "images/clock.png",
             link: "./Clock",
-            introduction: "時間就是金錢<br>這個時鐘可以提醒你時間的重要性"
+            introduction: "時間就是金錢<br>這個時鐘可以提醒你時間的重要性",
+            github: ""
+        },
+        {
+            title: "猜數字遊戲",
+            image: "images/number.png",
+            link: "./Number",
+            introduction: "一款真正的猜數字遊戲<br>讓你想起童年的回憶",
+            github: ""
         },
     ];
     const hcard = document.getElementById('html-card');
     htmlcard.forEach((post) => {
     hcard.innerHTML += `
-        <div class="col s12 m6">
+        <div class="col s12 m6 animate__animated animate__jackInTheBox">
             <div class="card">
                 <div class="card-image">
                     <img src="${post.image}">
-                    <span class="card-title teal-text text-accent-3">${post.title}</span>
+                    <span class="card-title teal-text text-accent-3" style="font-weight:bold;">${post.title}</span>
                 </div>
                 <div class="card-content">
                     <p>${post.introduction}</p>

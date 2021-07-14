@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <title>猜數字遊戲</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Logo -->
+    <link rel="icon" type="image/x-icon" href="https://kiriqua.com/img/logo/logo.png" />
+    <link rel="shortcut icon" href="https://kiriqua.com/img/logo/logo.png" type="image/x-icon" />
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="https://kiriqua.com/css/typeface.css">
+    <!-- ICON -->
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' >
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+    <script src="number.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="center-align animate__animated animate__backInDown"><i class='bx bxl-tux'></i>猜數字遊戲</h2>
+        <div>
+            <h3 id="a1">0</h3>
+        </div>
+        <h4>答案：<span id="a2"></span></h4>
+        <hr>
+        <div class="row" style="margin-top: 5%;">
+            <div class="col s12 m6 center-align animate__animated animate__backInLeft">
+                <div class="row">
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt7"><b>7</b></button>
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt8"><b>6</b></button>
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt9"><b>9</b></button>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt4"><b>4</b></button>
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt5"><b>5</b></button>
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt6"><b>6</b></button>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt1"><b>1</b></button>
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt2"><b>2</b></button>
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt3"><b>3</b></button>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" style='opacity: 0; cursor: default;'><b>0</b></button>
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt0"><b>0</b></button>
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" style='opacity: 0; cursor: default;'><b>0</b></button>
+                </div>
+            </div>
+            <br>
+            <div class="col s12 m6 center-align animate__animated animate__backInRight">
+                <div class="row">
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="btbk"><b>退後</b></button>
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="btc"><b>清除</b></button>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bto"><b>確定</b></button>
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="btop"><b>答案</b></button>
+                </div>
+                <div class="row">
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="btrp"><b>重來</b></button>
+                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="btrp"><b>首頁</b></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
