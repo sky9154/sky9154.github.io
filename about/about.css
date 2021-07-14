@@ -3,8 +3,6 @@
     animation: fade-in 3s 1 forwards;
 }
 .about-text{
-    margin-top: 5%;
-    border:3px #59d3fb dashed;
     font-size: medium;
     animation: fade-in 3s 1 forwards;
 }

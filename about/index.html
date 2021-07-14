@@ -19,7 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
-<body>
+<body onload="html();">
 <div class="sidebar close">
     <!-- Navbar -->
     <div class="logo-details">
@@ -70,7 +70,7 @@
                 <li><a class="link_name" href="../projects">Projects</a></li>
                 <li><a href="../projects/html">HTML & CSS & JS</a></li>
                 <li><a href="../projects/python">Python</a></li>
-                <li><a href="../projects/php">PHP & MySQL</a></li>
+                <li><a href="../projects/php">PHP</a></li>
             </ul>
         </li>
         <!-- Plugins -->
@@ -138,18 +138,24 @@
             </ul>
         </div>
         <br>
-            <div class="row">
-                <div class="col m3 s12 center-align">
-                    <img src="images/photo.png" class="about-img animate__tada">
-                </div>
-                <div class=" left-align col m8 s12 about-text animate__shakeY animate__faster">
-                    <p>我的名字叫 oF <br>
+        <div class="row">
+            <div class="col m3 s12 center-align">
+                <img src="images/photo.png" class="about-img animate__tada">
+            </div>
+            <div class="col m8 s12">
+                <div class="about-text card-panel blue lighten-1 animate__shakeY">
+                    <p class="white-text about-text">我的名字叫 oF <br>
                     生於 2002 年，居住於桃園市中壢區，未婚。<br>
                     從 14 歲開始學習程式設計。每天都練習 6 個小時以上。<br>
                     我不抽煙，也不喝酒。晚上 11 點睡，每天要睡足 8 個小時。<br>
                     睡前，我一定喝一杯溫牛奶，然後做 20 分鐘的柔軟操，上了床，馬上熟睡。<br>
                     一覺到天亮，決不把疲勞和壓力留到第二天。醫生都說我很正常。</p>
-            </div></div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="html-card">
+            <!-- Home Card -->
+        </div>
     <!-- 底端 -->
     </div>
     

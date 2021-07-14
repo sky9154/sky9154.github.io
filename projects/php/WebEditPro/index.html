@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='zh-TW'>
+
+<head>
+    <title>網頁編輯器</title>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+    <link rel="icon" type="image/x-icon" href="https://kiriqua.com/img/logo/logo.png" />
+    <link rel="shortcut icon" href="https://kiriqua.com/img/logo/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' href='https://kiriqua.com/css/error.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kiriqua.com/js/reset.js"></script>
+    <script src="func.js"></script>
+</head>
+
+<body onload="reset(),set();">
+    <div id='true'>
+    <div class="left">
+    <button class="tab" onclick="openPage('html');" id="tab1"><h3>html</h3></button>
+    <button class="tab" onclick="openPage('css');" id="tab2"><h3>CSS</h3></button>
+    <button class="tab" id="reset"><h3>重置</h3></button>
+    <form action="./kirito.php" method="post" class="input" target="_blank">
+    <button class="tab" type="submit" id="output">
+        <h3>輸出</h3>
+    </button>
+    <textarea id="html" name="html"></textarea>
+    <textarea id="css" name="css"></textarea>
+    </div>
+    </form>
+    </div>
+    <div class="box" id="error" style="display: none;">
+        <h2>此網頁功能為編輯工具<br>
+        為了你的操作體驗<br>
+        請使用電腦來進行操作</h2>
+        <div class="cssload-thecube">
+            <div class="cssload-cube cssload-c1"></div>
+            <div class="cssload-cube cssload-c2"></div>
+            <div class="cssload-cube cssload-c4"></div>
+            <div class="cssload-cube cssload-c3"></div>
+        </div>
+    </div>
+</body>
+
+</html>

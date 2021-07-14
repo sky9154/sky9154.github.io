@@ -26,3 +26,48 @@ delay: (el, i) => 150 + 25 * i
     easing: "easeOutExpo",
     delay: 1000
 });
+
+//  Html Card
+function html(){
+    const htmlcard = [
+        {
+            title: "夸黑測試平台",
+            image: "images/aua.png",
+            link: "./Aua",
+            introduction: "你是夸寶嗎?<br>不是的話，就是夸黑囉！",
+            github:"https://github.com/sky0966548546/Aua"
+        },
+        {
+            title: "Ayunda Risu語音包",
+            image: "images/risu.png",
+            link: "./Risu",
+            introduction: "do~do~do~<br>滿滿的Risu"
+        },
+        {
+            title: "詩音時鐘",
+            image: "images/clock.png",
+            link: "./Clock",
+            introduction: "時間就是金錢<br>這個時鐘可以提醒你時間的重要性"
+        },
+    ];
+    const hcard = document.getElementById('html-card');
+    htmlcard.forEach((post) => {
+    hcard.innerHTML += `
+        <div class="col s12 m6">
+            <div class="card">
+                <div class="card-image">
+                    <img src="${post.image}">
+                    <span class="card-title teal-text text-accent-3">${post.title}</span>
+                </div>
+                <div class="card-content">
+                    <p>${post.introduction}</p>
+                </div>
+                <div class="card-action">
+                    <a href="${post.link}">go to webpage</a>
+                    <a href="${post.github}" class="purple-text text-accent-1">github</a>
+                </div>
+            </div>
+        </div>
+    `;
+    });
+};
