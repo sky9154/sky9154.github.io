@@ -56,7 +56,7 @@ function html(){
             image: "images/number.png",
             link: "./Number",
             introduction: "一款真正的猜數字遊戲<br>讓你想起童年的回憶",
-            github: ""
+            github: "https://github.com/sky0966548546/GuessNumber"
         },
     ];
     const hcard = document.getElementById('html-card');
