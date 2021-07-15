@@ -137,8 +137,8 @@ if($name=='html'){
 <html lang="zh-TW">
 <head>
 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
-<link rel='icon' type='image/x-icon' href='https://kiriqua.com/img/logo/logo.png' />
-<link rel='shortcut icon' href='https://kiriqua.com/img/logo/logo.png' type='image/x-icon' />
+<link rel='icon' type='image/x-icon' href='https://kiriqua.com/images/logo.png' />
+<link rel='shortcut icon' href='https://kiriqua.com/images/logo.png' type='image/x-icon' />
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <link rel="stylesheet" href="style.css">
