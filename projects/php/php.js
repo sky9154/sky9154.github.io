@@ -34,11 +34,11 @@ function php(){
             title: "網頁編輯器",
             image: "images/WebEdit.png",
             link: "./WebEdit",
-            introduction: "選擇現有的元件加以編輯<br>可立即查看結果後儲存程式碼",
+            introduction: "選擇現有的元件加以編輯後<br>立即查看結果並保存程式碼",
             github:"https://github.com/sky0966548546/Aua"
         },
         {
-            title: "網頁編輯器Pro",
+            title: "網頁編輯器 Pro",
             image: "images/WebEditPro.png",
             link: "./WebEditPro",
             introduction: "在網頁上撰寫HTML及CSS<br>並且可及時查看結果",
@@ -52,7 +52,7 @@ function php(){
             <div class="card">
                 <div class="card-image">
                     <img src="${post.image}">
-                    <span class="card-title teal-text text-accent-3" style="font-weight:bold;">${post.title}</span>
+                    <span class="card-title light-blue-text text-accent-4" style="font-weight:bold;">${post.title}</span>
                 </div>
                 <div class="card-content">
                     <p>${post.introduction}</p>

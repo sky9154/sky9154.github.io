@@ -10,6 +10,7 @@
     <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' >
     <!-- CSS LINK -->
     <link rel='stylesheet' href="https://kiriqua.com/style/typeface.css">
+    <link rel="stylesheet" href="css.css">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -20,7 +21,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
 <body onload="html();" class="blue lighten-5">
-    <div class="container">
+    <div class="container animate__animated animate__backInLeft">
         <div class="row">
             <form action="./kirito.php" method="POST" target="_blank">
                 <div id='input'>
@@ -113,10 +114,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="center-align col s12">
+                <div class="left-align col s12">
                     <input type="text" name="css" id="gogo" style="display: none;"/>
-                    <input type='submit' value='送出' id='start'/>
-                    <input type='reset' value='重置' title='哈哈！後悔了吧！' />
+                    <input type='submit' value='送出' id='start' class="btn"/>
+                    <input type='reset' value='重置' title='哈哈！後悔了吧！' class="btn"/>
                 </div>
             </form>
         </div>
@@ -124,7 +125,7 @@
             <div class="col s6">
                 <p>程式碼</p>
                 <hr>
-                <p id="copy"></p>
+                <p id="copy" style="cursor: default;"></p>
             </div>
         </div>
     </div>

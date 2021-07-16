@@ -10,9 +10,11 @@
     <title>畫面預覽</title>
 </head>
 <body>
-<?php
-    $css="";$css=$_POST["css"];
-    echo "<div style=\"".$css."\">TEXTtext<br>測試測試</div>"
-?>
+<div>
+    <?php
+        $css="";$css=$_POST["css"];
+        echo "<div class='center-align' style=\"".$css."\">TEXTtext<br>測試測試</div>"
+    ?>
+</div>
 </body>
 </html>

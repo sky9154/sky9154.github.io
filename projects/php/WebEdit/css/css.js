@@ -15,7 +15,7 @@ var tab="&nbsp;&nbsp;&nbsp;&nbsp;";
 $(document).ready(function(){
     $('.fixed-action-btn').floatingActionButton();
     $("#start").click(function(){
-        if($('#Class').val()==""){alert("請輸入選擇器名稱");}
+        if($('#Class').val()==""){M.toast({html: "請輸入選擇器名稱!"})}
         else if($('#Class').val()!=""){Class=$('#Class').val()+"{<br>";}
         // 文字css
         if($('#Height').val()!=""){
@@ -83,3 +83,10 @@ document.getElementById('html').onclick=function(){
 document.getElementById('css').onclick=function(){
     window.location.reload(); 
 };
+
+document.getElementById('copy').onclick=function(){
+    M.toast({html: "已複製程式碼"});
+    var str = document.getElementById("copy");
+    window.getSelection().selectAllChildren(str);
+    document.execCommand('Copy')
+}
