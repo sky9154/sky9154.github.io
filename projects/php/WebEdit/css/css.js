@@ -9,7 +9,7 @@ var Bd="",BdStyle="",BdWidth="",BdRadius="",BdColor="";
 var Bds="",BdStyles="",BdWidths="",BdRadiuss="",BdColors="";
 // 背景css變數
 var BgColor="",BgImage="";
-var BgColors="",BgImage="";
+var BgColors="",BgImages="";
 
 var tab="&nbsp;&nbsp;&nbsp;&nbsp;";
 $(document).ready(function(){
@@ -19,12 +19,12 @@ $(document).ready(function(){
         else if($('#Class').val()!=""){Class=$('#Class').val()+"{<br>";}
         // 文字css
         if($('#Height').val()!=""){
-            Height=tab+"hight: "+$('#Height').val()+$('#Hunit').val()+";<br>";
-            Heights=" hight: "+$('#Height').val()+$('#Hunit').val()+";";
+            Height=tab+"height: "+$('#Height').val()+$('#Hunit').val()+";<br>";
+            Heights=" height: "+$('#Height').val()+$('#Hunit').val()+";";
         };
         if($('#Width').val()!=""){
-            Width=tab+"hidth: "+$('#Width').val()+$('#Wunit').val()+";<br>";
-            Widths=" hidth: "+$('#Width').val()+$('#Wunit').val()+";";
+            Width=tab+"width: "+$('#Width').val()+$('#Wunit').val()+";<br>";
+            Widths=" width: "+$('#Width').val()+$('#Wunit').val()+";";
         };
         if($('#FontSize').val()!=""){
             FontSize=tab+"font-size: "+$('#FontSize').val()+$('#Funit').val()+";<br>";
@@ -67,13 +67,13 @@ $(document).ready(function(){
             BgColors=" background-color: "+$('#BgColor').val()+";";
         };
         if($('#BgImage').val()!=""){
-            BgImage=tab+"background-color: url(&quot;"+$('#BgImage').val()+"&quot;);<br>";
-            BgImages=" background-color: url('"+$('#BgImage').val()+"');";
+            BgImage=tab+"background-image: url(&quot;"+$('#BgImage').val()+"&quot;);<br>";
+            BgImages=" background-image: url('"+$('#BgImage').val()+"');";
         };
         copy=Class+Height+Width+BgColor+BgImage+Bd+BdStyle+BdWidth+BdRadius+BdColor+FontSize+FontFamily+Color+"}";
         if($('#Class').val()!=""){$("#copy").html(copy);}
-        code=Heights+Widths+BgColors+BgImages+Bds+BdStyles+BdWidths+BdRadiuss+BdColors+FontSizes+FontFamilys+Colors;
-        $.post( "./kirito.php", { name: "John"});
+        code=Heights+Widths+BgImages+BgColors+Bds+BdStyles+BdWidths+BdRadiuss+BdColors+FontSizes+FontFamilys+Colors;
+        $("#gogo").val(code);
     });
 });
 

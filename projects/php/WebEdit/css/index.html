@@ -10,7 +10,6 @@
     <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' >
     <!-- CSS LINK -->
     <link rel='stylesheet' href="https://kiriqua.com/style/typeface.css">
-    <!-- <link rel="stylesheet" href="css.css"> -->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -23,7 +22,7 @@
 <body onload="html();" class="blue lighten-5">
     <div class="container">
         <div class="row">
-            <form action="./kirito.php" method="post">
+            <form action="./kirito.php" method="POST" target="_blank">
                 <div id='input'>
                     <div class="col s12 m6">
                         <div class="input-field">
@@ -115,7 +114,8 @@
                     </div>
                 </div>
                 <div class="center-align col s12">
-                    <a href="kirito.php" target="_blank"><input type='button' value='送出' id='start'/></a>
+                    <input type="text" name="css" id="gogo" style="display: none;"/>
+                    <input type='submit' value='送出' id='start'/>
                     <input type='reset' value='重置' title='哈哈！後悔了吧！' />
                 </div>
             </form>
