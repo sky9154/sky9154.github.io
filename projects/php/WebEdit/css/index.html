@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <title>網頁編輯器|CSS</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Logo -->
+    <link rel="icon" type="image/x-icon" href="https://kiriqua.com/images/logo.png" />
+    <link rel="shortcut icon" href="https://kiriqua.com/images/logo.png" type="image/x-icon" />
+    <!-- ICON -->
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' >
+    <!-- CSS LINK -->
+    <link rel='stylesheet' href="https://kiriqua.com/style/typeface.css">
+    <!-- <link rel="stylesheet" href="css.css"> -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</head>
+<body onload="html();" class="blue lighten-5">
+    <div class="container">
+        <div class="row">
+            <form action="./kirito.php" method="post">
+                <div id='input'>
+                    <div class="col s12 m6">
+                        <div class="input-field">
+                            <input type="text" class="validate" id="Class">
+                            <label class="active" for="Class">選擇器名稱 ( <span class="red-text">轉為class需加上 . </span>)</label>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <input type="text" class="validate" id="Height">
+                                <label class="active" for="Height">容器高度 Height</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <input type="text" class="validate" id="Hunit">
+                                <label class="active" for="Hunit">單位</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <input type="text" class="validate" id="Width">
+                                <label class="active" for="Width">容器寬度 Width</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <input type="text" class="validate" id="Wunit">
+                                <label class="active" for="Wunit">單位</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <input type="text" class="validate" id="FontSize">
+                                <label class="active" for="FontSize">字體大小 Font-Size</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <input type="text" class="validate" id="Funit">
+                                <label class="active" for="Funit">單位</label>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" class="validate" id="FontFamily">
+                            <label class="active" for="FontFamily">字型 Font-Family</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" class="validate" id="Color">
+                            <label class="active" for="Color">字體顏色代碼 Color</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m6" style="margin-top: 16px;">
+                        <label>邊框樣式 Border-Style</label>
+                        <select class="browser-default" id='BdStyle'>
+                            <option value='none'>無邊框</option>
+                            <option value='solid'>普通</option>
+                            <option value='dotted'>點點</option>
+                            <option value='dashed'>虛線</option>
+                            <option value='double'>空心</option>
+                            <option value='outset'>立體</option>
+                            <option value='span'>凹陷</option>
+                        </select>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <input type="text" class="validate" id="BdWidth">
+                                <label class="active" for="BdWidth">邊框粗細 Border-Width</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <input type="text" class="validate" id="BWunit">
+                                <label class="active" for="BWunit">單位</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s7">
+                                <input type="text" class="validate" id="BdRadius">
+                                <label class="active" for="BdRadius">邊框圓角 Border-Radius</label>
+                            </div>
+                            <div class="input-field col s5">
+                                <input type="text" class="validate" id="BRunit">
+                                <label class="active" for="BRunit">單位</label>
+                            </div>
+                        </div>
+                        <div class="input-field" style="margin-top: 35px;">
+                            <input type="text" class="validate" id="BdColor">
+                            <label class="active" for="BdColor">邊框顏色代碼 Border-Color</label>
+                        </div>
+                        <div class="input-field" style="margin-top: 35px;">
+                            <input type="text" class="validate" id="BgColor">
+                            <label class="active" for="BgColor">背景顏色代碼 Background-Color</label>
+                        </div>
+                        <div class="input-field" style="margin-top: 16px;">
+                            <input type="text" class="validate" id="BgImage">
+                            <label class="active" for="BgImage">背景圖片連結 Background-Image</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-align col s12">
+                    <a href="kirito.php" target="_blank"><input type='button' value='送出' id='start'/></a>
+                    <input type='reset' value='重置' title='哈哈！後悔了吧！' />
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col s6">
+                <p>程式碼</p>
+                <hr>
+                <p id="copy"></p>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-action-btn animate__animated animate__bounceIn">
+        <a class="btn-floating btn-large red">
+            <i class='bx bx-slider'></i>
+        </a>
+        <ul>
+          <li id="html"><a class="btn-floating orange darken-1"><i class='bx bxl-html5' ></i></a></li>
+          <li id="css"><a class="btn-floating blue darken-1"><i class='bx bxl-css3' ></i></a></li>
+        </ul>
+    </div>
+<script type="text/javascript" src="css.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <title>網頁編輯器|HTML</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Logo -->
+    <link rel="icon" type="image/x-icon" href="https://kiriqua.com/images/logo.png" />
+    <link rel="shortcut icon" href="https://kiriqua.com/images/logo.png" type="image/x-icon" />
+    <!-- ICON -->
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' >
+    <!-- CSS LINK -->
+    <link rel='stylesheet' href="https://kiriqua.com/style/typeface.css">
+    <link rel="stylesheet" href="html.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</head>
+<body onload="html();" class="blue lighten-5">
+    <div class="container animate__animated animate__fadeIn">
+        <div class="row">
+            <div class="col s12 m6 html">
+                <form name='form' id='form'>
+                    <label>選擇元件</label>
+                    <select class="browser-default" id='tag'>
+                        <option value='h1'>大標題</option>
+                        <option value='h2'>中標題</option>
+                        <option value='h3'>小標題</option>
+                        <option value='p'>段落</option>
+                        <option value='div'>區塊容器</option>
+                        <option value='span'>行內容器</option>
+                        <option value='a'>連結</option>
+                    </select>
+                    <div id='input'>
+                        <div class="input-field">
+                            <input type="text" class="validate" id='text'>
+                            <label class="active" for="text">標籤內容</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" class="validate" id='id'>
+                            <label class="active" for="id">指定ID</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" class="validate" id='color'>
+                            <label class="active" for="color">字體顏色代碼</label>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input type="text" class="validate" id='size'>
+                                <label class="active" for="size">字體大小</label>
+                            </div>
+                            <div class="input-field col s6">
+                              <input id="unit" type="text" class="validate">
+                              <label for="unit">單位</label>
+                            </div>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" class="validate" id='title'>
+                            <label class="active" for="title">元件備註</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="url" class="validate" id='url'>
+                            <label class="active" for="url">網址 (適用於 <span style="color: #ef5350">連結</span> 元件)</label>
+                        </div>
+                    </div>
+                    <input type='button' value='送出' id='start'/>
+                    <input type='reset' value='重置' title='哈哈！後悔了吧！' />
+                </form>
+                <p>程式碼</p>
+                <hr>
+                <p id='copy' style="cursor: default;"></p>
+            </div>
+            <div class="col s12 m6">
+                <p>效果展示</p>
+                <hr>
+                <p id='show'></p>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-action-btn animate__animated animate__bounceIn animate__delay-1s">
+        <a class="btn-floating btn-large red">
+            <i class='bx bx-slider'></i>
+        </a>
+        <ul>
+          <li id="html"><a class="btn-floating orange darken-1"><i class='bx bxl-html5' ></i></a></li>
+          <li id="css"><a class="btn-floating blue darken-1"><i class='bx bxl-css3' ></i></a></li>
+        </ul>
+    </div>
+<script type="text/javascript" src="html.js"></script>
+</body>
+</html>

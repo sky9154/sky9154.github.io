@@ -31,18 +31,18 @@ delay: (el, i) => 150 + 25 * i
 function php(){
     const htmlcard = [
         {
-            title: "夸黑測試平台",
-            image: "images/aua.png",
-            link: "./Aua",
-            introduction: "你是夸寶嗎?<br>不是的話，就是夸黑囉！",
+            title: "網頁編輯器",
+            image: "images/WebEdit.png",
+            link: "./WebEdit",
+            introduction: "選擇現有的元件加以編輯<br>可立即查看結果後儲存程式碼",
             github:"https://github.com/sky0966548546/Aua"
         },
         {
-            title: "Ayunda Risu 語音包",
-            image: "images/risu.png",
-            link: "./Risu",
-            introduction: "do~do~do~<br>滿滿的Risu",
-            github: "https://github.com/sky0966548546/AyundaRisuSound"
+            title: "網頁編輯器Pro",
+            image: "images/WebEditPro.png",
+            link: "./WebEditPro",
+            introduction: "在網頁上撰寫HTML及CSS<br>並且可及時查看結果",
+            github: "https://github.com/sky0966548546/WebEditPro"
         },
     ];
     const hcard = document.getElementById('php-card');

@@ -13,7 +13,7 @@ $(document).ready(function(){
     });
 	$("#output").click(function(){
 		$.post("./kirito.php",{
-        html:$("#html").val(),
-        css:$("#css").val()});
+        html:"645645",
+        css:"645645"});
 	});
 });
