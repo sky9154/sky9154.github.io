@@ -41,13 +41,13 @@ function home(){
         {
             title: "Plugins",
             image: "images/plugins.png",
-            link: "./plugins",
+            link: "#error",
             introduction: "實用的插件及模組"
         },
         {
             title: "Explore",
             image: "images/explore.png",
-            link: "./explore",
+            link: "#explore",
             introduction: "好用的網站"
         },
         {
