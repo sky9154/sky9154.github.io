@@ -39,10 +39,10 @@ function home(){
             introduction: "練習用的垃圾"
         },
         {
-            title: "Plugins",
-            image: "images/plugins.png",
-            link: "#error",
-            introduction: "實用的插件及模組"
+            title: "Tools",
+            image: "images/tools.png",
+            link: "./tools",
+            introduction: "實用的工具及模組"
         },
         {
             title: "Explore",
