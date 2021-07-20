@@ -27,3 +27,7 @@
 #discord{
     cursor: pointer; 
 }
+#id{
+    position: absolute;
+    top: -1000px;
+}
