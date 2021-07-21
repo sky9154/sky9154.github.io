@@ -41,7 +41,7 @@ function html(){
             title: "Ayunda Risu 語音包",
             image: "images/risu.png",
             link: "./Risu",
-            introduction: "do~do~do~<br>滿滿的Risu",
+            introduction: "do~do~do~<br>滿滿的 Risu",
             github: "https://github.com/sky0966548546/AyundaRisuSound"
         },
         {

@@ -3,6 +3,7 @@ function card(){
         {
             title: "Animate.css",
             link: "https://animate.style/",
+            example:"./Animate.css",
             introduction: "是一個隨時隨地都可以使用的動畫效果，主要是在強調內容、淡出淡入以及滑動。"
         },
         {
@@ -37,6 +38,7 @@ function card(){
                     </div>
                     <div class="card-action">
                         <a href="${post.link}" target="_blank">link</a>
+                        <a href="${post.example}" target="_blank" class="blue-text">example</a>
                     </div>
                 </div>
             </div>

@@ -41,7 +41,7 @@ function php(){
             title: "網頁編輯器 Pro",
             image: "images/WebEditPro.png",
             link: "./WebEditPro",
-            introduction: "在網頁上撰寫HTML及CSS<br>並且可及時查看結果",
+            introduction: "在網頁上撰寫 HTML 及 CSS <br>並且可及時查看結果",
             github: "https://github.com/sky0966548546/WebEditPro"
         },
     ];

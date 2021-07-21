@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <title>Animate.css</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Logo -->
+    <link rel="icon" type="image/x-icon" href="https://kiriqua.com/images/logo.png" />
+    <link rel="shortcut icon" href="https://kiriqua.com/images/logo.png" type="image/x-icon" />
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="https://kiriqua.com/style/typeface.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="center-align animate__animated animate__backInDown">Animate.css</h2>
+        <div class="row">
+            <img src="images/index.png" class="col s12 animate__animated animate__backInLeft">
+            <p class="col s12">Animate.css 是一個純 CSS 的動畫特效庫，支援非常多種動畫效果，在他們的官網當中，
+                只要點選右方的動態名稱就可以即時觀看特效。</p>
+            <!-- 如何安裝 -->
+            <div class="col s12 animate__animated animate__fadeIn">
+                <h5><b>官網連結 ： <a href="https://animate.style/">LINK<span class="black-text">START</span></a></b></h5>
+                <h5><b>如何安裝</b></h5>
+                <p>有三種安裝方式，使用 CDN 、 NPM 以及 YARN：</p>
+                <h5><b>CDN - 將點擊以下程式碼後貼上到 head 當中</b></h5>
+                <div class="code card-panel black" id="copy">
+                    <span>&lt;link</span>
+                    <span class="tag">rel</span> =<span class="ed"> "stylesheet"</span>
+                    <span class="tag">href</span> =<span class="ed"> "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"</span><span>/&gt;</span>
+                </div>
+                <h5><b>NPM - 使用 NPM 安裝</b></h5>
+                <div class="code card-panel black"><span> npm install</span> animate.css <span>--save</span></div>
+                <h5><b>NPM - 使用 YARN 安裝</b></h5>
+                <div class="code card-panel black"><span> yarn add</span> animate.css</div>
+            </div>
+            <!-- 如何使用 -->
+            <div class="col s12 animate__animated animate__fadeIn">
+                <h5><b>如何使用</b></h5>
+                <p>安裝 Animate.css 之後，只要在需要加動畫的標籤或元素上，將<span class="pink lighten-5 red-text text-accent-2"> animate__animated </span>
+                    ( 這個前綴一定要加！ ) 以及所需要用到的動畫校果添加到 class 。</p>
+                <div class="code card-panel black">
+                    <span>&lt;h1</span>
+                    <span class="tag">class</span> = <span class="ed">"animate__animated<span class="id"> animate__tada</span>"</span><span>&gt;</span>Starburst Stream<span>&lt;/h1&gt;</span>
+                </div>
+            </div>
+            <!-- 使用 @keyframes -->
+            <div class="col s12 animate__animated animate__fadeIn">
+                <h5><b>使用 @keyframes</b></h5>
+                <p>使用 @keyframes 的方式，從 CSS 為元素添加動畫<span class="pink lighten-5 red-text text-accent-2"> keyframe </span>和設定持續時間。</p>
+                <div class="code card-panel black">
+                    <span class="id">.kirito</span> {<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="ed">width</span>: 87px;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="ed">height</span>: 63px;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="ed">white-space</span>: nowrap;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="ed">animation</span>: bounce;
+                        <span class="teal-text text-accent-2">/* 動畫 @keyframe 的名稱 */</span><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span class="ed">animation-duration</span>: 2s;
+                        <span class="teal-text text-accent-2">/* 設定持續時間 */</span><br>}
+                    </span>
+                </div>
+            </div>
+            <!-- 自定義 CSS 屬性 -->
+            <div class="col s12 animate__animated animate__fadeIn">
+                <h5><b>自定義 CSS 屬性</b></h5>
+                <p>使用<span class="pink lighten-5 red-text text-accent-2"> CSS Variables </span>的方式來定義動畫的持續時間和延遲時間，
+                    使得 Animate.css 更為靈活，並且更多可客製化的屬性。
+                    如需要更改動畫時間，只需要額外將新的數值添加到你所需的動畫名稱上，或是更改全部的動畫時間：
+                </p>
+                <div class="code card-panel black">
+                    <span class="teal-text text-accent-2">/* 更改 特定 的動畫持續時間 */</span><br>
+                    <span class="id">.animate__animated .animate__tada</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="ed">--animate-duration</span>: .5s;<br>}<br><br>
+                    <span class="teal-text text-accent-2">/* 更改 全部 的動畫持續時間、延遲時間 */</span><br>
+                    <span class="id">:root</span> {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="ed">--animate-duration</span>: .5s<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="ed">--animate-delay</span>: .9s;<br>}
+                </div>
+            </div>
+            <!-- 實用的元素 -->
+            <div class="col s12 animate__animated animate__fadeIn">
+                <h5><b>實用的元素</b></h5>
+                <p>Animate.css 還提供了許多實用的元素</p>
+                <!-- 延遲執行動畫 -->
+                <h5><b>延遲執行動畫</b></h5>
+                <p>可以直接在元素上添加<span class="pink lighten-5 red-text text-accent-2"> deleys </span>：</p>
+                <div class="code card-panel black">
+                    <span>&lt;div</span><span class="tag"> class </span>=
+                    <span class="ed">"animate__animated animate__tada<span class="id"> animate__delay-2s</span>"</span><span>&gt;</span>Starburst Stream<span>&lt;/div&gt;</span>
+                </div>
+                <table class="col s12 m5 striped centered">
+                    <thead>
+                        <tr>
+                            <th>指定元素名稱</th>
+                            <th>默認延遲時間</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>animate__delay-2s</td>
+                            <td>2s</td>
+                        </tr>
+                        <tr>
+                            <td>animate__delay-3s</td>
+                            <td>3s</td>
+                        </tr>
+                        <tr>
+                            <td>animate__delay-4s</td>
+                            <td>4s</td>
+                        </tr>
+                        <tr>
+                            <td>animate__delay-5s</td>
+                            <td>5s</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col s12 animate__animated animate__fadeIn">
+                <!-- 動畫速度 -->
+                <h5><b>動畫速度</b></h5>
+                <p>可以直接在元素上添加特定元素來控制動畫速度快慢：</p>
+                <div class="code card-panel black">
+                    <span>&lt;div</span><span class="tag"> class </span>=
+                    <span class="ed">"animate__animated animate__tada<span class="id"> animate__faster</span>"</span><span>&gt;</span>Starburst Stream<span>&lt;/div&gt;</span>
+                </div>
+                <table class="col s12 m5 striped centered">
+                    <thead>
+                        <tr>
+                            <th>指定元素名稱</th>
+                            <th>默認動畫速度</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>animate__slow</td>
+                            <td>2s</td>
+                        </tr>
+                        <tr>
+                            <td>animate__slow</td>
+                            <td>3s</td>
+                        </tr>
+                        <tr>
+                            <td>animate__fast</td>
+                            <td>800ms</td>
+                        </tr>
+                        <tr>
+                            <td>animate__faster</td>
+                            <td>500ms</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col s12 animate__animated animate__fadeIn">
+                <!-- 迭代次數 -->
+                <h5><b>迭代次數</b></h5>
+                <p>可以直接在元素上添加特定元素來控制動畫的迭代次數：</p>
+                <div class="code card-panel black">
+                    <span>&lt;div</span><span class="tag"> class </span>=
+                    <span class="ed">"animate__animated animate__tada<span class="id"> animate__repeat-2</span>"</span><span>&gt;</span>Starburst Stream<span>&lt;/div&gt;</span>
+                </div>
+                <table class="col s12 m5 striped centered">
+                    <thead>
+                        <tr>
+                            <th>指定元素名稱</th>
+                            <th>默認迭代次數</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>animate__repeat-1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>animate__repeat-2</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>animate__repeat-3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>animate__infinite</td>
+                            <td>infinite</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="func.js"></script>
+</body>
+</html>

@@ -33,25 +33,25 @@ function python(){
         {
             title: "Discord 機器人",
             image: "images/discordbot.png",
-            introduction: "集各種功能為一身<br>可查詢漫畫、顯示當前熱門話題、播放歌曲......等等",
+            introduction: "集各種功能為一身，其實只是個集合型的工具箱<br>可查詢漫畫、顯示當前熱門話題、播放歌曲......等等",
             github:"https://github.com/sky0966548546/DiscordBot"
         },
         {
             title: "Bad Apple Hololive ver",
             image: "images/badapple.png",
-            introduction: "將Bad Apple Hololive ver逐幀轉為點字<br>並在cmd內播放出來",
+            introduction: "CMD 不僅可以當命令列介面<br>甚至可以播放動畫！！！",
             github: "https://github.com/sky0966548546/BadApple_Hololive_ver"
         },
         {
             title: "QRcode 產生器",
             image: "images/QRcode.png",
-            introduction: "可將網址轉換成QRcode<br>並且與gif檔合併成可動的QRcode",
+            introduction: "可將網址轉換成 QRcode 並且將 gif 檔作為背景，<br>產生一個獨一無二且會動的 QRcode",
             github: "https://github.com/sky0966548546/GIFtoQRcode"
         },
         {
             title: "簡易網頁產生器",
             image: "images/SimpleHTML.png",
-            introduction: "可快速新增一個專屬自己的網頁<br>只需輸入一些基本內容即可",
+            introduction: "少少幾步驟<br>擁有一個專屬簡易的網頁",
             github: "https://github.com/sky0966548546/SimpleHTML"
         },
     ];
