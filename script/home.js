@@ -47,7 +47,7 @@ function home(){
         {
             title: "Explore",
             image: "images/explore.png",
-            link: "#explore",
+            link: "./explore",
             introduction: "好用的網站"
         },
         {
