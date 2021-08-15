@@ -2,7 +2,7 @@
     color: rgb(0, 0, 0);
     position: relative;
     font-weight: 600;
-    font-size: 4em;
+    font-size: 40px;
     cursor: default;
     overflow: hidden;
 } 
@@ -19,20 +19,4 @@
     transform-origin: 50% 100%;
     display: inline-block;
     line-height: 1em;
-}
-
-
-/*淡入*/
-.fade-in2s{
-    position: relative;
-    animation: fade-in 2s 1 forwards;
-}
-
-.fade-in3s{
-    position: relative;
-    animation: fade-in 3s 1 forwards;
-}
-@keyframes fade-in{
-    from{opacity: 0;}
-    to{opacity: 1;}
 }

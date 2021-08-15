@@ -1,24 +1,5 @@
-//文字效果
-var textWrapper = document.querySelector('.home .letters');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-anime.timeline({loop: false})
-.add({
-    targets: '.home .letter',
-    scale: [0, 1],
-    duration: 1500,
-    elasticity: 600,
-    delay: (el, i) => 45 * (i+1)
-}).add({
-    targets: '.home',
-    opacity: 1,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-});
-
-//Home Card
-function home(){
+// Home Card
+(() => {
     const homecard = [
         {
             title: "About Me",
@@ -60,8 +41,8 @@ function home(){
     const hcard = document.getElementById('home-card');
     homecard.forEach((post) => {
     hcard.innerHTML += `
-    <div class="col s12 m4 fade-in3s animate__headShake animate__fast">
-        <div class="card">
+    <div class="col s12 m4">
+        <div class="card animate__animated animate__bounceIn">
             <a href="${post.link}">
                 <div class="card-image">
                     <img src="${post.image}">
@@ -75,4 +56,4 @@ function home(){
     </div>
     `;
     });
-};
+})();
