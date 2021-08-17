@@ -1,17 +1,13 @@
-@media screen and (min-width: 1400px) {
-    body {overflow:hidden;}
-    .navbar-fixed {display: none;}
-}
-
 /* 標題特效 */
 .home {
     margin-top: 25px;
     position: relative;
     font-weight: 600;
-    font-size: 40px;
+    font-size: 35px;
     cursor: default;
     overflow: hidden;
 } 
+
 .home .text-wrapper {
     position: relative;
     display: inline-block;
@@ -23,15 +19,4 @@
     transform-origin: 50% 100%;
     display: inline-block;
     line-height: 1em;
-}
-
-@media screen and (max-width: 1400px) {
-    .backdrop-blur {
-        backdrop-filter: blur(5px);
-        background-color: rgba(174, 239, 255, 0.7);
-    }
-    .navbar-fixed{display: black;}
-}
-#slide-out {
-    width: 200px;
 }
