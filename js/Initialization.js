@@ -38,4 +38,6 @@ $(document).ready(function () {
         draggable: true,
         preventScrolling: false
     });
+    // Init Collapsible
+    $('.collapsible').collapsible();
 });
