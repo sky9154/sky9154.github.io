@@ -3,37 +3,37 @@
     const homecard = [
         {
             title: "About Me",
-            image: "images/home.png",
+            image: "images/home/home.webp",
             link: "./about",
             introduction: "關於我"
         },
         {
             title: "Skills",
-            image: "images/skills.png",
+            image: "images/home/skills.webp",
             link: "./skills",
             introduction: "我學過的程式語言"
         },
         {
             title: "Projects",
-            image: "images/projects.png",
+            image: "images/home/projects.webp",
             link: "./projects",
             introduction: "練習用的垃圾"
         },
         {
             title: "Tools",
-            image: "images/tools.png",
+            image: "images/home/tools.webp",
             link: "./tools",
             introduction: "實用的工具及模組"
         },
         {
             title: "Explore",
-            image: "images/explore.png",
+            image: "images/home/explore.webp",
             link: "./explore",
             introduction: "好用的網站"
         },
         {
             title: "Contact",
-            image: "images/contact.png",
+            image: "images/home/contact.webp",
             link: "./contact",
             introduction: "更多連結"
         }
