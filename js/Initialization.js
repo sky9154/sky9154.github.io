@@ -1,7 +1,7 @@
 // 側邊導航欄
 let arrow = document.querySelectorAll(".arrow");
-let sidebar = document.querySelector(".sidebar");
-let sidebarBtn = document.querySelector(".bx-game");
+let sidebar = document.querySelector(".sidebars");
+let sidebarBtn = document.querySelector(".fa-wheelchair-alt");
 
 for (var i = 0; i < arrow.length; i ++) {
     arrow[i].addEventListener("click", kirito => {
