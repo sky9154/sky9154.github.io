@@ -1,5 +1,11 @@
-.home{
-    color: rgb(0, 0, 0);
+@media screen and (min-width: 1400px) {
+    body {overflow:hidden;}
+    .navbar-fixed {display: none;}
+}
+
+/* 標題特效 */
+.home {
+    margin-top: 25px;
     position: relative;
     font-weight: 600;
     font-size: 40px;
@@ -9,9 +15,7 @@
 .home .text-wrapper {
     position: relative;
     display: inline-block;
-    padding-top: 0.2em;
-    padding-right: 0.05em;
-    padding-bottom: 0.1em;
+    padding: 0.2em, 0.05em, 0.1em;
     overflow: hidden;
 }
   
@@ -19,4 +23,15 @@
     transform-origin: 50% 100%;
     display: inline-block;
     line-height: 1em;
+}
+
+@media screen and (max-width: 1400px) {
+    .backdrop-blur {
+        backdrop-filter: blur(5px);
+        background-color: rgba(174, 239, 255, 0.7);
+    }
+    .navbar-fixed{display: black;}
+}
+#slide-out {
+    width: 200px;
 }

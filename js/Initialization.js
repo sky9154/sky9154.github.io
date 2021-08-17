@@ -10,24 +10,32 @@ for (var i = 0; i < arrow.length; i ++) {
     });
 }
 
-// sidebarBtn.addEventListener("click", () => sidebar.classList.toggle("close"));
+sidebarBtn.addEventListener("click", () => sidebar.classList.toggle("close"));
 
-// // 文字效果
-// let textWrapper = document.querySelector(".home .letters");
-// textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+// 文字效果
+let textWrapper = document.querySelector(".home .letters");
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-// anime.timeline({loop: false})
-// .add({
-//     targets: ".home .letter",
-//     scale: [0, 1],
-//     duration: 1500,
-//     elasticity: 600,
-//     delay: (el, i) => 45 * (i+1)
-// })
-// .add({
-//     targets: ".home",
-//     opacity: 1,
-//     duration: 1000,
-//     easing: "easeOutExpo",
-//     delay: 1000
-// });
+anime.timeline({loop: false})
+.add({
+    targets: ".home .letter",
+    scale: [0, 1],
+    duration: 1500,
+    elasticity: 600,
+    delay: (el, i) => 45 * (i+1)
+})
+.add({
+    targets: ".home",
+    opacity: 1,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+});
+$(document).ready(function () {
+    // Init Sidenav
+    $('.sidenav').sidenav({
+        edge: 'right',
+        draggable: true,
+        preventScrolling: false
+    });
+});
