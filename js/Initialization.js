@@ -12,6 +12,7 @@ for (var i = 0; i < arrow.length; i ++) {
 sidebarBtn.addEventListener("click", () => {
     sidebar.classList.toggle("close");
     document.body.classList.toggle("over");
+    document.scrollingElement.scrollTop = 0;
 });
 
 // 文字效果
