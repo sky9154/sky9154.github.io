@@ -94,6 +94,7 @@ body::-webkit-scrollbar {
         font-weight: 600;
         transition: 0.3s ease;
         transition-delay: 0.1s;
+        cursor: default;
     }
     .sidebars.close .logo-details .logo_name {
         transition-delay: 0s;
@@ -153,6 +154,7 @@ body::-webkit-scrollbar {
         font-weight: 400;
         color: #fff;
         transition: all 0.4s ease;
+        cursor: default;
     }
     .sidebars.close .nav-links li a .link_name {
         opacity: 0;
@@ -198,6 +200,7 @@ body::-webkit-scrollbar {
     }
     .sidebars .nav-links li .sub-menu .link_name {
         display: none;
+        cursor: default;
     }
     .sidebars.close .nav-links li .sub-menu .link_name{
         font-size: 23px;
@@ -274,4 +277,9 @@ body::-webkit-scrollbar {
         left: 75px;
         width: calc(100% - 75px);
     }
+}
+
+/* 鼠標樣式 */
+.pointer {
+    cursor: pointer;
 }
