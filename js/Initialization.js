@@ -9,8 +9,10 @@ for (var i = 0; i < arrow.length; i ++) {
         arrowParent.classList.toggle("showMenu");
     });
 }
-
-sidebarBtn.addEventListener("click", () => sidebar.classList.toggle("close"));
+sidebarBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("close");
+    document.body.classList.toggle("over");
+});
 
 // 文字效果
 let textWrapper = document.querySelector(".home .letters");
@@ -31,6 +33,7 @@ anime.timeline({loop: false})
     easing: "easeOutExpo",
     delay: 1000
 });
+
 $(document).ready(function () {
     // Init Sidenav
     $('.sidenav').sidenav({
