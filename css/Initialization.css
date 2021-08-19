@@ -10,7 +10,7 @@ html {
 body::-webkit-scrollbar {display: none}
 
 /* 在移動裝置顯示 Right Sidebar，而桌面電腦則使用 left sidebar */
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1200px) {
     .sidebars {
         display: none;
     }
@@ -49,7 +49,7 @@ body::-webkit-scrollbar {display: none}
 }
 
 /* Left Sidebar */
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1200px) {
     body {
         height: 100%;
         width: calc(100vw + 18px);
@@ -136,7 +136,7 @@ body::-webkit-scrollbar {display: none}
         font-weight: 400;
         color: #fff;
         transition: all 0.4s ease;
-        cursor: default;
+        cursor: pointer;
     }
     .sidebars.close .nav-links li a .link_name {
         opacity: 0;

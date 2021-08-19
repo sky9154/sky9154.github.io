@@ -17,8 +17,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Font Family -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&family=Noto+Sans+TC&display=swap" >
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
 <body>
 <div class="sidebars">
@@ -30,17 +28,17 @@
     <ul class="nav-links">
         <!-- Home -->
         <li>
-            <a href="">
+            <a href="./index.html">
                 <i class="bx bx-home"></i>
                 <span class="link_name">Home</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="">Home</a></li>
+                <li><a class="link_name" href="./index.html">Home</a></li>
             </ul>
         </li>
         <!-- About -->
         <li>
-            <a href="./about.html" id="about">
+            <a href="./about.html">
                 <i class="bx bxs-user-account"></i>
                 <span class="link_name">About</span>
             </a>
@@ -63,12 +61,12 @@
         <div class="iocn-link">
             <a>
                 <i class="bx bx-collection"></i>
-                <span class="link_name">Projects</span>
+                <span class="link_name default" id="show">Projects</span>
             </a>
             <i class="bx bxs-chevron-down arrow"></i>
         </div>
         <ul class="sub-menu">
-            <li><a class="link_name">Projects</a></li>
+            <li><a class="link_name default">Projects</a></li>
             <li><a href="./projects/html.html">HTML & CSS & JS</a></li>
             <li><a href="projects/python.html">Python</a></li>
             <li><a href="projects/php.html">PHP</a></li>
@@ -105,7 +103,7 @@
     <header id="home" class="navbar-fixed">
         <nav class="backdrop-blur">
             <div class="container">
-                <a href="" class="sidenav-trigger brand-logo left teal-text text-accent-3">
+                <a href="" class="sidenav-trigger brand-logo left teal-text text-accent-3 show-on-medium-and-up">
                     <span><i class="fa fa-wheelchair-alt" aria-hidden="true"></i>SuperKirito</span>
                 </a>
                 <a href="" class="right sidenav-trigger show-on-medium-and-up" data-target="slide-out">
@@ -145,8 +143,11 @@
                 </li>
             </ul>
         </div>
-        <div class="row">
-            <div class="col m8 s12">
+        <div class="row center-align">
+            <div class="col xl3 m4 s12 fullscreen">
+                <img src="images/about/photo.webp" id="cool-face">
+            </div>
+            <div class="col m8 s12 left-align">
                 <div class="about-text">
                     <p>我的名字叫 oF <br>
                     生於 2002 年，居住於桃園市中壢區，未婚<br>
@@ -154,9 +155,6 @@
                     擅長左手熱狗右手雞排的雙刀流劍法<br>
                     憑著屬性克制捶爆低能吃素仔的雙刀劍士</p>
                 </div>
-            </div>
-            <div class="col m3 s12">
-                <img src="images/about/photo.webp" id="cool-face">
             </div>
         </div>
         <!-- 底端 -->
