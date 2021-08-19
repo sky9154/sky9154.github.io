@@ -1,15 +1,13 @@
-body,button, input, select, textarea {
-    font-family: "Righteous", "Noto Sans TC", sans-serif;
-}
+/* 字體 */
+body,button, input, select, textarea {font-family: "Righteous", "Noto Sans TC", sans-serif}
+
 /* 隱藏滾動條 */
 html {
     overflow: -moz-hidden-unscrollable;
     height: 100%;
     background: #E4E9F7;
 }
-body::-webkit-scrollbar {
-    display: none;
-}
+body::-webkit-scrollbar {display: none}
 
 /* 在移動裝置顯示 Right Sidebar，而桌面電腦則使用 left sidebar */
 @media screen and (max-width: 1400px) {
@@ -40,9 +38,7 @@ body::-webkit-scrollbar {
     color: #000;
 }
 #slide-out li a,
-.collapsible-header {
-    font-size: 23px;
-}
+.collapsible-header {font-size: 23px}
 #slide-out {width: 200px}
 
 #slide-out li .collapsible-body {background-color: #e6e6e6}
@@ -71,9 +67,7 @@ body::-webkit-scrollbar {
         z-index: 100;
         transition: all 0.5s ease;
     }
-    .sidebars.close {
-        width: 78px;
-    }
+    .sidebars.close {width: 78px}
     .sidebars .logo-details {
         height: 60px;
         width: 100%;
@@ -106,28 +100,20 @@ body::-webkit-scrollbar {
         padding: 30px 0 150px 0;
         overflow: auto;
     }
-    .sidebars.close .nav-links {
-        overflow: visible;
-    }
-    .sidebars .nav-links::-webkit-scrollbar {
-        display: none;
-    }
+    .sidebars.close .nav-links {overflow: visible}
+    .sidebars .nav-links::-webkit-scrollbar {display: none}
     .sidebars .nav-links li {
         position: relative;
         list-style: none;
         transition: all 0.4s ease;
     }
-    .sidebars .nav-links li:hover {
-        background: #1d1b31;
-    }
+    .sidebars .nav-links li:hover {background: #1d1b31}
     .sidebars .nav-links li .iocn-link {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    .sidebars.close .nav-links li .iocn-link {
-        display: block;
-    }
+    .sidebars.close .nav-links li .iocn-link {display: block}
     .sidebars .nav-links li i {
         height: 50px;
         min-width: 78px;
@@ -138,12 +124,8 @@ body::-webkit-scrollbar {
         cursor: pointer;
         transition: all 0.3s ease;
     }
-    .sidebars .nav-links li.showMenu i.arrow {
-        transform: rotate(-180deg);
-    }
-    .sidebars.close .nav-links i.arrow {
-        display: none;
-    }
+    .sidebars .nav-links li.showMenu i.arrow {transform: rotate(-180deg)}
+    .sidebars.close .nav-links i.arrow {display: none}
     .sidebars .nav-links li a{
         display: flex;
         align-items: center;
@@ -166,9 +148,7 @@ body::-webkit-scrollbar {
         background: #1d1b31;
         display: none;
     }
-    .sidebars .nav-links li.showMenu .sub-menu {
-        display: block;
-    }
+    .sidebars .nav-links li.showMenu .sub-menu {display: block}
     .sidebars .nav-links li .sub-menu a {
         color: #fff;
         font-size: 20px;
@@ -177,9 +157,7 @@ body::-webkit-scrollbar {
         opacity: 0.6;
         transition: all 0.3s ease;
     }
-    .sidebars .nav-links li .sub-menu a:hover {
-        opacity: 1;
-    }
+    .sidebars .nav-links li .sub-menu a:hover {opacity: 1}
     .sidebars.close .nav-links li .sub-menu {
         position: absolute;
         left: 100%;
@@ -280,6 +258,4 @@ body::-webkit-scrollbar {
 }
 
 /* 鼠標樣式 */
-.pointer {
-    cursor: pointer;
-}
+.pointer {cursor: pointer}

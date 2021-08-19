@@ -4,22 +4,22 @@
         {
             title: "About Me",
             image: "images/home/home.webp",
-            link: "./about",
+            link: "./about.html",
         },
         {
             title: "Skills",
             image: "images/home/skills.webp",
-            link: "./skills",
+            link: "./skills.html",
         },
         {
             title: "Projects",
             image: "images/home/projects.webp",
-            link: "./projects",
+            link: "./projects.html",
         },
         {
             title: "More Links",
             image: "images/home/contact.webp",
-            link: "./contact",
+            link: "./contact.html",
         }
     ];
     const hcard = document.getElementById('home-card');
@@ -38,3 +38,23 @@
     `;
     });
 })();
+
+// 文字效果
+let textWrapper = document.querySelector(".home .letters");
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: false})
+.add({
+    targets: ".home .letter",
+    scale: [0, 1],
+    duration: 1500,
+    elasticity: 600,
+    delay: (el, i) => 45 * (i+1)
+})
+.add({
+    targets: ".home",
+    opacity: 1,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+});
