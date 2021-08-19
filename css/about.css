@@ -1,0 +1,10 @@
+#cool-face {
+    border: 3px solid #fff;
+    height: 250px;
+}
+.about-text{font-size: 20px}
+@media screen and (min-width: 700px) {
+    .about-text{
+        margin-top: 50px;
+    }
+}
