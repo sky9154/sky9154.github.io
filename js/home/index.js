@@ -3,23 +3,23 @@
     const homecard = [
         {
             title: "About Me",
-            image: "images/home/home.webp",
+            image: "./images/home/home.webp",
             link: "./about.html",
         },
         {
             title: "Skills",
-            image: "images/home/skills.webp",
+            image: "./images/home/skills.webp",
             link: "./skills.html",
         },
         {
             title: "Projects",
-            image: "images/home/projects.webp",
+            image: "./images/home/projects.webp",
             link: "./projects.html",
         },
         {
             title: "More Links",
-            image: "images/home/contact.webp",
-            link: "./contact.html",
+            image: "./images/home/links.webp",
+            link: "./links.html",
         }
     ];
     const hcard = document.getElementById('home-card');
