@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <title>oF|Skills</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Logo -->
+    <link rel="icon" type="image/x-icon" href="https://kiriqua.com/images/logo.png"/>
+    <link rel="shortcut icon" href="https://kiriqua.com/images/logo.png" type="image/x-icon"/>
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="./css/Initialization.css">
+    <link rel="stylesheet" href="./css/skills.css">
+    <!-- ICON LINK -->
+    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="./css/src/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Font Family -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Noto+Sans+TC&display=swap">
+</head>
+<body>
+<div class="sidebars">
+    <!-- Navbar -->
+    <div class="logo-details">
+        <i class="fa fa-wheelchair-alt pointer" aria-hidden="true"></i>
+        <span class="logo_name">SuperKirito</span>
+    </div>
+    <ul class="nav-links">
+        <!-- Home -->
+        <li>
+            <a href="./index.html">
+                <i class="bx bx-home"></i>
+                <span class="link_name">Home</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="./index.html">Home</a></li>
+            </ul>
+        </li>
+        <!-- About -->
+        <li>
+            <a href="./about.html">
+                <i class="bx bxs-user-account"></i>
+                <span class="link_name">About</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="./about.html">About</a></li>
+            </ul>
+        </li>
+        <!-- Skill -->
+        <li>
+            <a href="./skills.html">
+                <i class="bx bxs-chip"></i>
+                <span class="link_name">Skills</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="./skills.html">Skills</a></li>
+            </ul>
+        </li>
+        <!-- Projects -->
+        <li>
+        <div class="iocn-link">
+            <a>
+                <i class="bx bx-collection"></i>
+                <span class="link_name default" id="show">Projects</span>
+            </a>
+            <i class="bx bxs-chevron-down arrow"></i>
+        </div>
+        <ul class="sub-menu">
+            <li><a class="link_name default">Projects</a></li>
+            <li><a href="./projects/html.html">HTML & CSS & JS</a></li>
+            <li><a href="./projects/python.html">Python</a></li>
+            <li><a href="./projects/php.html">PHP</a></li>
+        </ul>
+        </li>
+        <!-- Link -->
+        <li>
+            <a href="./links.html">
+                <i class='bx bx-link'></i>
+                <span class="link_name">Link</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="./links.html">Link</a></li>
+            </ul>
+            </li>
+        <li>
+        <div class="profile-details">
+            <div class="profile-content">
+                <img src="./images/cool.webp">
+            </div>
+            <div class="name-job">
+                <div class="profile_name">oF</div>
+                <div class="job">吃素異類反抗軍</div>
+            </div>
+            <a href="https://www.google.com/">
+                <i class='bx bx-log-out'></i>
+            </a>
+        </div>
+        </li>
+    </ul>
+</div>
+
+<section class="home-section">
+    <header id="home" class="navbar-fixed">
+        <nav class="backdrop-blur">
+            <div class="container">
+                <a href="" class="sidenav-trigger brand-logo left teal-text text-accent-3 show-on-medium-and-up">
+                    <span><i class="fa fa-wheelchair-alt" aria-hidden="true"></i>SuperKirito</span>
+                </a>
+                <a href="" class="right sidenav-trigger show-on-medium-and-up" data-target="slide-out">
+                    <span><i class='bx bx-menu'></i></span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <ul id="slide-out" class="sidenav collapsible white">
+        <li class="center-align side-logo"><i class="fa fa-wheelchair-alt"></i>&nbsp;SuperKirito</li>
+        <li><a class="collapsible-header sidenav-close" href="./index.html">Home</a></li>
+        <li><a class="collapsible-header sidenav-close" href="./about.html">About Me</a></li>
+        <li><a class="collapsible-header sidenav-close" href="./skills.html">Skills</a></li>
+        <li>
+            <a class="collapsible-header">Projects</a>
+            <div class="collapsible-body">
+                <a href="projects/html">&nbsp;&emsp;HTML & CSS & JS&nbsp;<i class="fa fa-html5" aria-hidden="true"></i></a><br>
+                <a href="projects/python">&nbsp;&emsp;Python&nbsp;<i class="fa fa-code-fork" aria-hidden="true"></i></a><br>
+                <a href="projects/php">&nbsp;&emsp;PHP&nbsp;<i class="fa fa-bug" aria-hidden="true"></i></a><br>
+            </div>
+        </li>
+        <li><a class="collapsible-header sidenav-close" href="./links.html">Links</a></li>
+        <li><div class="divider"></div></li>
+    </ul>
+    <div class="container">
+        <!-- 內容 -->
+        <div class="timeline" id="skills-card">
+            <!-- Skills Card -->
+        </div>
+        <!-- 底端 -->
+    </div>
+</section>
+
+<!-- Frame LINK -->
+<script src="./js/src/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="./js/src/materialize.min.js"></script>
+<!-- JavaScript LINK -->
+<script type="text/javascript" src="./js/Initialization.js"></script>
+<script type="text/javascript" src="./js/skills/index.js"></script>
+</body>
+</html>
