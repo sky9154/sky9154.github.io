@@ -4,7 +4,7 @@
         {
             title: "About Me",
             image: "./images/home/home.webp",
-            link: "./about.html",
+            link: "./layout/about.html",
         },
         {
             title: "Skills",
@@ -19,7 +19,7 @@
         {
             title: "More Links",
             image: "./images/home/links.webp",
-            link: "./links.html",
+            link: "./layout/links.html",
         }
     ];
     const hcard = document.getElementById('home-card');

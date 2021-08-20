@@ -3,7 +3,7 @@
     const skillscard = [
         {
             title: "App Inventor 2",
-            image: "./images/skills/ai2.webp",
+            image: "../images/skills/ai2.webp",
             time: "Sep. 2019 - Aug. 2020",
             introduce: "你媽死了",
             icon: "bxl-android",
@@ -11,33 +11,33 @@
         },
         {
             title: "C Language",
-            image: "./images/skills/c.webp",
+            image: "../images/skills/c.webp",
             time: "Sep. 2020 - Jul. 2021",
-            introduce: "你媽死了",
+            introduce: "垃圾東西",
             icon: "bxs-copyright",
             color: "blue"
         },
         {
             title: "HTML & CSS & JavaScript",
-            image: "./images/skills/html.webp",
+            image: "../images/skills/html.webp",
             time: "Sep. 2020 - Present.",
-            introduce: "你媽死了",
+            introduce: "JS 跟 JK 足以一決高下",
             icon: "bxl-html5",
             color: "orange"
         },
         {
             title: "Python",
-            image: "./images/skills/python.webp",
+            image: "../images/skills/python.webp",
             time: "Nov. 2020 - Present.",
-            introduce: "你媽死了",
+            introduce: "私私私私私",
             icon: "bxl-python",
             color: "black"
         },
         {
             title: "PHP & SQL",
-            image: "./images/skills/php.webp",
+            image: "../images/skills/php.webp",
             time: "Mar. 2021 - Present.",
-            introduce: "你媽死了",
+            introduce: "靠蝦皮資料分析一日致富",
             icon: "bxl-php",
             color: "indigo accent-1"
         },
@@ -54,7 +54,7 @@
                     <span class="card-title activator grey-text text-darken-4">
                         ${post.title}<i class="bx bx-dots-vertical-rounded right"></i>
                     </span>
-                    <p><i>${post.time}</i></p>
+                    <p class="grey-text"><i>${post.time}</i></p>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">
