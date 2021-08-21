@@ -1,64 +1,62 @@
-$(document).ready(function(){
-    $("#start").click(function(){
+$(document).ready(() => {
+    $("#start").click(() => {
         start();
-        $("#yes").click(function(){yes();});
-        $("#no").click(function(){no();});
+        $("#yes").click(() => yes());
+        $("#no").click(() => no());
     });
+    $("#end").click(() => window.location.reload());
 });
 
-
-//有看Vtuber
-function yes(){
+// 有看Vtuber
+yes = () => {
     $("#Q").html("Q2.你是夸寶嗎？");
-        $("#yes").click(function(){
+        $("#yes").click(() => {
             $("#Q").html("Q3.你能當阿夸專屬的煙灰缸嗎？");
-                $("#yes").click(function(){
+                $("#yes").click(() => {
                     $("#Q").html("Q4.你出事也會Q走嗎？"); 
-                        $("#yes").click(function(){
+                        $("#yes").click(() => {
                             $("#Q").html("Q5.你是阿夸的中國人男友嗎？");
-                                $("#yes").click(function(){uninterpreted();});
-                                $("#no").click(function(){QED();});
+                                $("#yes").click(() => uninterpreted());
+                                $("#no").click(() => QED());
                         });
-                        $("#no").click(function(){QED();});
+                        $("#no").click(() => QED());
                 });
-                $("#no").click(function(){QED();});
+                $("#no").click(() => QED());
         });
-        $("#no").click(function(){QED();});
+        $("#no").click(() => QED());
 }
 
-
-//沒有看Vtuber
-function no(){
+// 沒有看Vtuber
+no = () => {
     $("#Q").html("Q2.你有玩APEX嗎？");
-        $("#yes").click(function(){
+        $("#yes").click(() => {
             $("#Q").html("Q3.你出事會Q走嗎？");
-                $("#yes").click(function(){
+                $("#yes").click(() => {
                     $("#Q").html("Q4.你會抽菸嗎？");
-                        $("#yes").click(function(){QED();});
-                        $("#no").click(function(){
+                        $("#yes").click(() => QED());
+                        $("#no").click(() => {
                             $("#Q").html("Q5.你喜歡中國小粉紅嗎？");
                                 $("#yes").show();
                                 $("#no").show();
-                                $("#yes").click(function(){china();});
-                                $("#no").click(function(){QED();}); 
+                                $("#yes").click(() => china());
+                                $("#no").click(() => QED()); 
                         });
                 });
-                $("#no").click(function(){QED();});
+                $("#no").click(() => QED());
         });
-        $("#no").click(function(){
+        $("#no").click(() => {
             $("#Q").html("Q3.你會排擠朋友嗎？");
-                $("#yes").click(function(){
+                $("#yes").click(() => {
                     $("#Q").html("Q4.你是社恐嗎？");
-                        $("#yes").click(function(){pathetic();});
-                        $("#no").click(function(){QED();});
+                        $("#yes").click(() => pathetic());
+                        $("#no").click(() => QED());
                 });
-                $("#no").click(function(){QED();});
+                $("#no").click(() => QED());
         });
 }
 
-
-//測驗開始
-function start(){
+// 測驗開始
+start = () => {
     $("#title1").hide();
     $("#title2").hide();
     $("#start").hide();
@@ -68,34 +66,35 @@ function start(){
     $("#Q").html("Q1.你有看Vtuber嗎？");
 }
 
-
-//夸黑確定
-function QED(){
+// 夸黑確定
+QED = () => {
     $("#Q").html("<br>Q.E.D.<br>你是夸黑");
     $("#yes").hide();
     $("#no").hide();
+    $("#end").show();
 }
 
-
-//沒救的腦殘粉
-function uninterpreted(){
+// 沒救的腦殘粉
+uninterpreted = () => {
     $("#Q").html("<br>Q.E.D.<br>腦殘粉跟夸黑沒兩樣");
     $("#yes").hide();
     $("#no").hide();
+    $("#end").show();
 }
 
-
-//沒救的腦殘
-function china(){
+// 沒救的腦殘
+china = () => {
     $("#Q").html("<br>Q.E.D.<br>耖你媽，滾回你的祖國啦！");
     $("#yes").hide();
     $("#no").hide();
+    $("#end").show();
 }
 
 
-//低能社恐
-function pathetic(){
+// 低能社恐
+pathetic = () => {
     $("#Q").html("<br>Q.E.D.<br>社恐還敢排擠朋友，低能是不是？<br>你是不是還要說我有憂鬱症？");
     $("#yes").hide();
     $("#no").hide();
+    $("#end").show();
 }

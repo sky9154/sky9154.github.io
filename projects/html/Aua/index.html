@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html lang='zh-TW'>
-
+<html lang="zh-TW">
 <head>
     <title>夸黑測試平台</title>
-    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-    <link rel="icon" type="image/x-icon" href="https://kiriqua.com/images/logo.png" />
-    <link rel="shortcut icon" href="https://kiriqua.com/images/logo.png" type="image/x-icon" />
-    <link rel='stylesheet' href='https://kiriqua.com/style/typeface.css'/>
-    <link type="text/css" href="css/index.css" rel="stylesheet">
-    <link type="text/css" href="css/main.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="script/index.js"></script>
-    <script src="script/question.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="icon" type="image/x-icon" href="https://kiriqua.com/images/logo.png"/>
+    <link rel="shortcut icon" href="https://kiriqua.com/images/logo.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Righteous&display=swap">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="../../../css/src/materialize.min.css">
 </head>
-
-<body onload="play();">
-    <div class='container kirito col-8'>
-        <div class="text-center title">
-            <h1 id='title1'>歡迎來到夸黑測試平台</h1>
-            <h2 id='title2'>此測驗將會測出你是夸黑還是夸寶</h2>
-            <h1 style="display: none;" id='Q'></h1><br><br><br>
-            <button class="start" id='start'><h3>測驗開始</h3></button>
-            <button class="big-button" style="display: none;" id='yes'>YES</button>&emsp;
-            <button class="big-button" style="display: none;" id='no'>NO</button>
+<body>
+    <div class="container room valign-wrapper">
+        <div class="row center-align">
+            <div class="kirito col m12 ">
+                <h2 id="title1">歡迎來到夸黑測試平台</h2>
+                <h5 id="title2">此測驗將會測出你是夸黑還是夸寶</h5>
+                <h3 id="Q">
+                <h3><button class="gogo" id="start">測驗開始</button></h3>
+                <h3><button class="gogo" id="end">重新開始</button></h3>
+                <div>
+                    <button class="big-button" id="yes">YES</button>
+                    <button class="big-button" id="no">NO</button>
+                </div>
+            </div>
         </div>
     </div>
+<script type="text/javascript" src="../../../js/src/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="./js/question.js"></script>
 </body>
 </html>
