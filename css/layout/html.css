@@ -1,0 +1,25 @@
+/* 標題特效 */
+.title {
+    margin-top: 25px;
+    position: relative;
+    font-weight: 600;
+    font-size: 35px;
+    cursor: default;
+    overflow: hidden;
+} 
+
+.title .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 0.2em, 0.05em, 0.1em;
+    overflow: hidden;
+}
+  
+.title .letter {
+    transform-origin: 50% 100%;
+    display: inline-block;
+    line-height: 1em;
+}
+/* Card Title Font Size */
+.card .card-content .name,
+.card .card-reveal .name {font-size: 20px}
