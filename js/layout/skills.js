@@ -3,7 +3,7 @@
     const skillscard = [
         {
             title: "App Inventor 2",
-            image: "../images/skills/ai2.webp",
+            image: "../images/layout/skills/ai2.webp",
             time: "Sep. 2019 - Aug. 2020",
             introduce: "你媽死了",
             icon: "bxl-android",
@@ -11,7 +11,7 @@
         },
         {
             title: "C Language",
-            image: "../images/skills/c.webp",
+            image: "../images/layout/skills/c.webp",
             time: "Sep. 2020 - Jul. 2021",
             introduce: "垃圾東西",
             icon: "bxs-copyright",
@@ -19,7 +19,7 @@
         },
         {
             title: "HTML & CSS & JavaScript",
-            image: "../images/skills/html.webp",
+            image: "../images/layout/skills/html.webp",
             time: "Sep. 2020 - Present.",
             introduce: "JS 跟 JK 足以一決高下",
             icon: "bxl-html5",
@@ -27,7 +27,7 @@
         },
         {
             title: "Python",
-            image: "../images/skills/python.webp",
+            image: "../images/layout/skills/python.webp",
             time: "Nov. 2020 - Present.",
             introduce: "私私私私私",
             icon: "bxl-python",
@@ -35,7 +35,7 @@
         },
         {
             title: "PHP & SQL",
-            image: "../images/skills/php.webp",
+            image: "../images/layout/skills/php.webp",
             time: "Mar. 2021 - Present.",
             introduce: "靠蝦皮資料分析一日致富",
             icon: "bxl-php",
@@ -54,13 +54,13 @@
                     <span class="card-title activator grey-text text-darken-4">
                         ${post.title}<i class="bx bx-dots-vertical-rounded right"></i>
                     </span>
-                    <p class="grey-text"><i>${post.time}</i></p>
+                    <p class="grey-text default"><i>${post.time}</i></p>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">
                         ${post.title}<i class="bx bx-x bx-md right"></i>
                     </span>
-                    <p>${post.introduce}</p>
+                    <p class="default">${post.introduce}</p>
                 </div>
             </div>
             <div class="timeline-badge ${post.color} white-text"><i class="bx ${post.icon} bx-md"></i></div>
