@@ -259,3 +259,4 @@ body::-webkit-scrollbar {display: none}
 
 /* 鼠標樣式 */
 .pointer {cursor: pointer}
+.default {cursor: default}
