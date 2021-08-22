@@ -4,21 +4,16 @@
     <title>猜數字遊戲</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Logo -->
-    <link rel="icon" type="image/x-icon" href="https://kiriqua.com/images/logo.png" />
-    <link rel="shortcut icon" href="https://kiriqua.com/images/logo.png" type="image/x-icon" />
+    <link rel="icon" type="image/x-icon" href="https://kiriqua.com/images/logo.png"/>
+    <link rel="shortcut icon" href="https://kiriqua.com/images/logo.png" type="image/x-icon"/>
     <!-- CSS Link -->
-    <link rel="stylesheet" href="https://kiriqua.com/style/typeface.css">
+    <link rel="stylesheet" href="../../../i18n/Righteous_400&Noto_Sans_TC_400.css">
+    <link rel="stylesheet" href="./css/index.css">
     <!-- ICON -->
-    <link rel="stylesheet" href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' >
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
-    <script src="number.js"></script>
 </head>
 <body>
     <div class="container">
@@ -31,42 +26,46 @@
         <div class="row" style="margin-top: 5%;">
             <div class="col s12 m6 center-align animate__animated animate__backInLeft">
                 <div class="row">
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt7"><b>7</b></button>
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt8"><b>8</b></button>
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt9"><b>9</b></button>
+                    <button class="btn-large waves-effect waves-light" id="bt7"><b>7</b></button>
+                    <button class="btn-large waves-effect waves-light" id="bt8"><b>8</b></button>
+                    <button class="btn-large waves-effect waves-light" id="bt9"><b>9</b></button>
                 </div>
                 <div class="row">
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt4"><b>4</b></button>
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt5"><b>5</b></button>
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt6"><b>6</b></button>
+                    <button class="btn-large waves-effect waves-light" id="bt4"><b>4</b></button>
+                    <button class="btn-large waves-effect waves-light" id="bt5"><b>5</b></button>
+                    <button class="btn-large waves-effect waves-light" id="bt6"><b>6</b></button>
                 </div>
                 <div class="row">
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt1"><b>1</b></button>
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt2"><b>2</b></button>
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt3"><b>3</b></button>
+                    <button class="btn-large waves-effect waves-light" id="bt1"><b>1</b></button>
+                    <button class="btn-large waves-effect waves-light" id="bt2"><b>2</b></button>
+                    <button class="btn-large waves-effect waves-light" id="bt3"><b>3</b></button>
                 </div>
                 <div class="row">
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" style='opacity: 0; cursor: default;'><b>0</b></button>
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bt0"><b>0</b></button>
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" style='opacity: 0; cursor: default;'><b>0</b></button>
+                    <button class="btn-large waves-effect waves-light zero"><b>0</b></button>
+                    <button class="btn-large waves-effect waves-light" id="bt0"><b>0</b></button>
+                    <button class="btn-large waves-effect waves-light zero"><b>0</b></button>
                 </div>
             </div>
             <br>
             <div class="col s12 m6 center-align animate__animated animate__backInRight">
                 <div class="row">
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="btbk"><b>退後</b></button>
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="btc"><b>清除</b></button>
+                    <button class="btn-large waves-effect waves-light" id="btbk"><b>退後</b></button>
+                    <button class="btn-large waves-effect waves-light" id="btc"><b>清除</b></button>
                 </div>
                 <div class="row">
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="bto"><b>確定</b></button>
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="btop"><b>答案</b></button>
+                    <button class="btn-large waves-effect waves-light" id="bto"><b>確定</b></button>
+                    <button class="btn-large waves-effect waves-light" id="btop"><b>答案</b></button>
                 </div>
                 <div class="row">
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="btrp"><b>重來</b></button>
-                    <button type="button" class="btn-large black-text blue-grey lighten-5" id="btrp"><b>首頁</b></button>
+                    <button class="btn-large waves-effect waves-light" id="btrp"><b>重來</b></button>
+                    <button class="btn-large waves-effect waves-light" id="bthm"><b>首頁</b></button>
                 </div>
             </div>
         </div>
     </div>
+<!-- Compiled and minified JavaScript -->
+<script type="text/javascript" src="../../../js/src/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../js/src/materialize.min.js"></script>
+<script type="text/javascript" src="./js/number.js"></script>
 </body>
 </html>
