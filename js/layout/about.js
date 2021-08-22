@@ -1,5 +1,2 @@
-/* 輪播圖片 */
-$(document).ready(function(){
-    // Init Slider
-    $('.slider').slider({indicators: false});
-});
+// 輪播圖片 Init slider
+$(document).ready(() => $('.slider').slider({indicators: false}));

@@ -17,15 +17,15 @@ close = () => {
     document.scrollingElement.scrollTop = 0;
 }
 
-/* 點擊事件 */
+// 點擊事件
 sidebarBtn.addEventListener("click", () => close());
 show.addEventListener("click", () => document.querySelector(".arrow").click());
 
-/* 右側導航欄 */
-$(document).ready(function () {
+// 右側導航欄
+$(document).ready(() => {
     // Init Sidenav
     $('.sidenav').sidenav({
-        edge: 'right',
+        edge: "ight",
         draggable: true,
         preventScrolling: false
     });
