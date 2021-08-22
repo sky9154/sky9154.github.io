@@ -25,7 +25,7 @@ show.addEventListener("click", () => document.querySelector(".arrow").click());
 $(document).ready(() => {
     // Init Sidenav
     $('.sidenav').sidenav({
-        edge: "ight",
+        edge: "right",
         draggable: true,
         preventScrolling: false
     });

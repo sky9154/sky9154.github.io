@@ -3,28 +3,28 @@
     const htmlcard = [
         {
             title: "夸黑測試平台",
-            image: "../images/layout/html/aua.png",
+            image: "../assets/images/layout/html/aua.webp",
             link: "../projects/html/Aua",
             introduce: "你是夸寶嗎?<br>不是的話，就是夸黑囉！",
             github:"https://github.com/sky0966548546/Aua"
         },
         {
             title: "Ayunda Risu 語音包",
-            image: "../images/layout/html/risu.png",
+            image: "../assets/images/layout/html/risu.webp",
             link: "../projects/html/Risu",
             introduce: "do~do~do~<br>滿滿的 Risu",
             github: "https://github.com/sky0966548546/AyundaRisuSound"
         },
         {
             title: "詩音時鐘",
-            image: "../images/layout/html/clock.png",
+            image: "../assets/images/layout/html/clock.webp",
             link: "../projects/html/Clock",
             introduce: "時間就是金錢<br>這個時鐘可以提醒你時間的重要性",
             github: ""
         },
         {
             title: "猜數字遊戲",
-            image: "../images/layout/html/number.png",
+            image: "../assets/images/layout/html/number.webp",
             link: "../projects/html/Number",
             introduce: "一款真正的猜數字遊戲<br>讓你想起童年的回憶",
             github: "https://github.com/sky0966548546/GuessNumber"

@@ -3,22 +3,22 @@
     const homecard = [
         {
             title: "About Me",
-            image: "./images/home/home.webp",
+            image: "./assets/images/home/home.webp",
             link: "./layout/about.html",
         },
         {
             title: "Skills",
-            image: "./images/home/skills.webp",
+            image: "./assets/images/home/skills.webp",
             link: "./skills.html",
         },
         {
             title: "Projects",
-            image: "./images/home/projects.webp",
+            image: "./assets/images/home/projects.webp",
             link: "./projects.html",
         },
         {
             title: "More Links",
-            image: "./images/home/links.webp",
+            image: "./assets/images/home/links.webp",
             link: "./layout/links.html",
         }
     ];
