@@ -13,7 +13,7 @@ yes = () => {
         $("#yes").click(() => {
             $("#Q").html("Q3.你能當阿夸專屬的煙灰缸嗎？");
                 $("#yes").click(() => {
-                    $("#Q").html("Q4.你出事也會Q走嗎？"); 
+                    $("#Q").html("Q4.你出事也會 Q 走嗎？"); 
                         $("#yes").click(() => {
                             $("#Q").html("Q5.你是阿夸的中國人男友嗎？");
                                 $("#yes").click(() => uninterpreted());
@@ -28,9 +28,9 @@ yes = () => {
 
 // 沒有看Vtuber
 no = () => {
-    $("#Q").html("Q2.你有玩APEX嗎？");
+    $("#Q").html("Q2.你有玩 APEX 嗎？");
         $("#yes").click(() => {
-            $("#Q").html("Q3.你出事會Q走嗎？");
+            $("#Q").html("Q3.你出事會 Q 走嗎？");
                 $("#yes").click(() => {
                     $("#Q").html("Q4.你會抽菸嗎？");
                         $("#yes").click(() => QED());
@@ -63,7 +63,7 @@ start = () => {
     $("#yes").show();
     $("#no").show();
     $("#Q").show();
-    $("#Q").html("Q1.你有看Vtuber嗎？");
+    $("#Q").html("Q1.你有看 Vtuber 嗎？");
 }
 
 // 夸黑確定
