@@ -1,10 +1,12 @@
 /* 字體 */
-body,button, input, select, textarea {font-family: "Righteous", "Noto Sans TC", sans-serif;}
+body, button, input, select, textarea {font-family: "Righteous", "Noto Sans TC", sans-serif}
 
 /* 背景 */
-html, body , .room {height: 100%}
+html, body , .room {
+    height: 100%;
+}
 body {
-    background-image: url('../images/bg-img.png');
+    background-image: url("../images/bg-img.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
 }
@@ -16,12 +18,13 @@ body {
 #yes {right: 10px}
 
 /* 透灰區域 */
-.kirito{
+.kirito {
     background-color: rgba(0, 0, 0,.4 );
     border-radius: 10px;
     color: white;
-    height: 300px;
+    height: 320px;
 }
+#cool {width: 700px}
 
 /* 開始結束鈕 */
 .gogo, .gogo::after {
