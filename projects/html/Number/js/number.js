@@ -48,7 +48,7 @@ $(document).ready(() => {
 
 // 輸入答案
 input = q => {
-    $("#a1").css("color",'black');
+    $("#a1").css("color","black");
     a = 10 * a + q;
     $("#a1").text(a);
 }
@@ -56,6 +56,6 @@ input = q => {
 // 其他功能
 other = as => {
     a = as;
-    $("#a1").css("color",'black');
+    $("#a1").css("color","black");
     $("#a1").text(a);
 }
