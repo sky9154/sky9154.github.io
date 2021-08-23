@@ -42,7 +42,7 @@
             color: "indigo accent-1"
         },
     ];
-    const scard = document.getElementById('skills-card');
+    const scard = document.getElementById("skills-card");
     skillscard.forEach((post) => {
     scard.innerHTML += `
         <div class="timeline-event">

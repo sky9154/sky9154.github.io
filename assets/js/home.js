@@ -22,7 +22,7 @@
             link: "./layout/links.html",
         }
     ];
-    const hcard = document.getElementById('home-card');
+    const hcard = document.getElementById("home-card");
     homecard.forEach((post) => {
     hcard.innerHTML += `
     <div class="col s12 m6">
@@ -41,7 +41,7 @@
 
 // 文字效果
 let textWrapper = document.querySelector(".home .letters");
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, '<span class="letter">$&</span>');
 
 anime.timeline({loop: false})
 .add({

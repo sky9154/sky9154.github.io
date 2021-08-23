@@ -24,11 +24,11 @@ show.addEventListener("click", () => document.querySelector(".arrow").click());
 // 右側導航欄
 $(document).ready(() => {
     // Init Sidenav
-    $('.sidenav').sidenav({
+    $(".sidenav").sidenav({
         edge: "right",
         draggable: true,
         preventScrolling: false
     });
     // Init Collapsible
-    $('.collapsible').collapsible();
+    $(".collapsible").collapsible();
 });
