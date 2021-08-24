@@ -3,7 +3,7 @@
     const skillscard = [
         {
             title: "App Inventor 2",
-            image: "../assets/images/layout/skills/ai2.webp",
+            image: "ai2.webp",
             time: "Sep. 2019 - Aug. 2020",
             introduce: "你媽死了",
             icon: "bxl-android",
@@ -11,7 +11,7 @@
         },
         {
             title: "C Language",
-            image: "../assets/images/layout/skills/c.webp",
+            image: "c.webp",
             time: "Sep. 2020 - Jul. 2021",
             introduce: "垃圾東西",
             icon: "bxs-copyright",
@@ -19,7 +19,7 @@
         },
         {
             title: "HTML & CSS & JavaScript",
-            image: "../assets/images/layout/skills/html.webp",
+            image: "html.webp",
             time: "Sep. 2020 - Present.",
             introduce: "JS 跟 JK 足以一決高下",
             icon: "bxl-html5",
@@ -27,7 +27,7 @@
         },
         {
             title: "Python",
-            image: "../assets/images/layout/skills/python.webp",
+            image: "python.webp",
             time: "Nov. 2020 - Present.",
             introduce: "私私私私私",
             icon: "bxl-python",
@@ -35,7 +35,7 @@
         },
         {
             title: "PHP & SQL",
-            image: "../assets/images/layout/skills/php.webp",
+            image: "php.webp",
             time: "Mar. 2021 - Present.",
             introduce: "靠蝦皮資料分析一日致富",
             icon: "bxl-php",
@@ -48,7 +48,7 @@
         <div class="timeline-event">
             <div class="card timeline-content">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="${post.image}">
+                    <img class="activator" src="../assets/images/layout/skills/${post.image}">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">

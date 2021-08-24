@@ -3,22 +3,22 @@
     const homecard = [
         {
             title: "About Me",
-            image: "./assets/images/home/home.webp",
+            image: "home.webp",
             link: "./layout/about.html",
         },
         {
             title: "Skills",
-            image: "./assets/images/home/skills.webp",
+            image: "skills.webp",
             link: "./skills.html",
         },
         {
             title: "Projects",
-            image: "./assets/images/home/projects.webp",
+            image: "projects.webp",
             link: "./projects.html",
         },
         {
             title: "More Links",
-            image: "./assets/images/home/links.webp",
+            image: "links.webp",
             link: "./layout/links.html",
         }
     ];
@@ -29,7 +29,7 @@
         <div class="card animate__animated animate__bounceIn">
             <a href="${post.link}">
                 <div class="card-image">
-                    <img src="${post.image}">
+                    <img src="./assets/images/home/${post.image}">
                     <span class="card-title teal-text text-accent-3">${post.title}</span>
                 </div>
             </a>

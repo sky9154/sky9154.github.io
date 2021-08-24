@@ -3,31 +3,31 @@
     const htmlcard = [
         {
             title: "夸黑測試平台",
-            image: "../assets/images/layout/html/aua.webp",
-            link: "../projects/html/Aua",
+            image: "aua.webp",
+            link: "Aua",
             introduce: "你是夸寶嗎?<br>不是的話，就是夸黑囉！",
-            github:"https://github.com/sky0966548546/Aua"
+            github:"Aua"
         },
         {
             title: "Ayunda Risu 語音包",
-            image: "../assets/images/layout/html/risu.webp",
-            link: "../projects/html/Risu",
+            image: "risu.webp",
+            link: "Risu",
             introduce: "do~do~do~<br>滿滿的 Risu",
-            github: "https://github.com/sky0966548546/AyundaRisuSound"
+            github: "AyundaRisuSound"
         },
         {
             title: "詩音時鐘",
-            image: "../assets/images/layout/html/clock.webp",
-            link: "../projects/html/Clock",
+            image: "clock.webp",
+            link: "Clock",
             introduce: "時間就是金錢<br>這個時鐘可以提醒你時間的重要性",
             github: ""
         },
         {
             title: "猜數字遊戲",
-            image: "../assets/images/layout/html/number.webp",
-            link: "../projects/html/Number",
+            image: "number.webp",
+            link: "Number",
             introduce: "一款真正的猜數字遊戲<br>讓你想起童年的回憶",
-            github: "https://github.com/sky0966548546/GuessNumber"
+            github: "GuessNumber"
         },
     ];
     const hcard = document.getElementById("html-card");
@@ -36,7 +36,7 @@
         <div class="col s12 m6 xl4 animate__animated animate__jackInTheBox">
             <div class="card">
                 <div class="card-image">
-                    <img src="${post.image}">
+                    <img src="../assets/images/layout/html/${post.image}">
                 </div>
                 <div class="card-content">
                     <span class="card-title activator name grey-text text-darken-4">
@@ -49,8 +49,8 @@
                     </span>
                     <p class="default">${post.introduce}</p>
                     <div class="card-action center-align">
-                        <a href="${post.link}">webpage</a>
-                        <a href="${post.github}" class="purple-text text-accent-1">github</a>
+                        <a href="../projects/html/${post.link}">webpage</a>
+                        <a href="https://github.com/sky0966548546/${post.github}" class="purple-text text-accent-1">github</a>
                     </div>
                 </div>
             </div>
