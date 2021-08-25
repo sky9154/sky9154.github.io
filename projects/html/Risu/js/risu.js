@@ -1,22 +1,120 @@
-var text = [
-    "AMEZING","arigato","bOi","bye","dododo",
-    "ezpz","GASP","ha","heee nani","heeewoo",
-    "hewwrrrooo","hheeee","hooo","humu humu","mehehehe",
-    "ngaaaa(1)","ngaaaa(2)","pimpipipim","prrt prrt prrtt","shaaaaa",
-    "UYYEEEYYY","weeee","whistle","woop woop woop","yahooowww",
-    "you got mail"
-];
 (() => {
-    let btn = document.getElementById("btn");
-    let flag = 0;
-    for(let loop = 0; loop < text.length; loop ++) {
-        if(flag%5==0){btn.innerHTML+="<br><br>"};
-        btn.innerHTML+='<button onclick="play(this);" style="cursor: pointer;" id="'+text[loop]+">"+text[loop]+"</button>&nbsp;"
-        flag+=1;
-    }
+    const audio = [
+        {
+            name: "heeewwwooo !!!",
+            audio: "Risu_01",
+        },
+        {
+            name: "hewwwrrrooo !!!",
+            audio: "Risu_02",
+        },
+        {
+            name: "*GAAASSSPPP*",
+            audio: "Risu_03",
+        },
+        {
+            name: "hheee ?",
+            audio: "Risu_04",
+        },
+        {
+            name: "woop woop !!!",
+            audio: "Risu_05",
+        },
+        {
+            name: "weee !!!",
+            audio: "Risu_06",
+        },
+        {
+            name: "mehehehe",
+            audio: "Risu_07",
+        },
+        {
+            name: "ngaaa (2)",
+            audio: "Risu_08",
+        },
+        {
+            name: "ngaaa (1)",
+            audio: "Risu_09",
+        },
+        {
+            name: "heee nani ???",
+            audio: "Risu_10",
+        },
+        {
+            name: "pimpipipim ~",
+            audio: "Risu_11",
+        },
+        {
+            name: "UYYEEEYYY !!!",
+            audio: "Risu_12",
+        },
+        {
+            name: "prrt prrt prrtt",
+            audio: "Risu_13",
+        },
+        {
+            name: "~ whistle ~",
+            audio: "Risu_14",
+        },
+        {
+            name: "humu humu",
+            audio: "Risu_15",
+        },
+        {
+            name: "yahooowww ~ !!!",
+            audio: "Risu_16",
+        },
+        {
+            name: "shaaa !!!",
+            audio: "Risu_17",
+        },
+        {
+            name: "dododo",
+            audio: "Risu_18",
+        },
+        {
+            name: "you got mail !!",
+            audio: "Risu_19",
+        },
+        {
+            name: "bOi !!!",
+            audio: "Risu_20",
+        },
+        {
+            name: "hooo ?!",
+            audio: "Risu_21",
+        },
+        {
+            name: "bye ~",
+            audio: "Risu_22",
+        },
+        {
+            name: "ezpz",
+            audio: "Risu_23",
+        },
+        {
+            name: "ha ?",
+            audio: "Risu_24",
+        },
+        {
+            name: "arigatooo ~ !!!",
+            audio: "Risu_25",
+        },
+        {
+            name: "AMEEEZZIINGGG !!!",
+            audio: "Risu_26",
+        }
+    ];
+
+    const btn = document.getElementById("btn");
+    audio.forEach(post => {
+    btn.innerHTML += `
+    <button onclick="play(this);" class="btn" id="${post.audio}">${post.name}</button>&nbsp;
+    `;
+    });
 })();
 
-function play(id){
-    var audio= new Audio("./audio/"+id.id+".mp3");
+play = mp3 => {
+    var audio = new Audio("./audio/" + mp3.id + ".mp3");
     audio.play();
 }
