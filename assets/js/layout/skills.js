@@ -43,7 +43,7 @@
         },
     ];
     const scard = document.getElementById("skills-card");
-    skillscard.forEach((post) => {
+    skillscard.forEach(post => {
     scard.innerHTML += `
         <div class="timeline-event">
             <div class="card timeline-content">

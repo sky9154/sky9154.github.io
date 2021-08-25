@@ -23,7 +23,7 @@
         }
     ];
     const hcard = document.getElementById("home-card");
-    homecard.forEach((post) => {
+    homecard.forEach(post => {
     hcard.innerHTML += `
     <div class="col s12 m6">
         <div class="card animate__animated animate__bounceIn">

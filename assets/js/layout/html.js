@@ -31,7 +31,7 @@
         },
     ];
     const hcard = document.getElementById("html-card");
-    htmlcard.forEach((post) => {
+    htmlcard.forEach(post => {
     hcard.innerHTML += `
         <div class="col s12 m6 xl4 animate__animated animate__jackInTheBox">
             <div class="card">
