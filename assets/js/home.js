@@ -3,7 +3,7 @@
     const homecard = [
         {
             title: "About Me",
-            image: "home.webp",
+            image: "about.webp",
             link: "./layout/about.html",
         },
         {
