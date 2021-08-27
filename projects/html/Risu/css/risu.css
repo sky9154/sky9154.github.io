@@ -1,2 +1,27 @@
 /* 字體 */
-body, button, input, select, textarea {font-family: "Righteous", "Noto Sans TC", sans-serif}
+body, button, input, select, textarea, .kirito .btn {font-family: "Righteous", "Noto Sans TC", sans-serif}
+
+/* 固定高度 */
+html, body, .title {height: 100%}
+
+/* 背景圖*/
+body {
+    background-image: url("../images/bg-img.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* 按鈕框 */
+.kirito {
+    background-color: rgba(236, 236, 236, 0.8);
+    border-radius: 5px;
+}
+
+/* 按鈕 */
+.kirito .btn, .kirito .btn:hover, .kirito .btn:focus {background-color: #f69b84}
+.kirito .btn {
+    margin: 5px;
+    border-radius: 10px;
+}
