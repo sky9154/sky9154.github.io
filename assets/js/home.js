@@ -18,8 +18,8 @@
         },
         {
             title: "More Links",
-            image: "links.webp",
-            link: "./layout/links.html",
+            image: "contact.webp",
+            link: "./layout/contact.html",
         }
     ];
     const hcard = document.getElementById("home-card");

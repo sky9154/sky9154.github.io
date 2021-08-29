@@ -16,10 +16,10 @@
             github: "AyundaRisuSound"
         },
         {
-            title: "詩音時鐘",
+            title: "漫畫搜尋工具",
             image: "clock.webp",
             link: "Clock",
-            introduce: "時間就是金錢<br>這個時鐘可以提醒你時間的重要性",
+            introduce: "透過輸入或鼠標選取的文字來搜尋N網上的漫畫<br>並且含有各種實用的快捷鍵!!!",
             github: ""
         },
         {
