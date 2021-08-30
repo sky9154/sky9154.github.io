@@ -18,14 +18,14 @@
         {
             title: "漫畫搜尋工具",
             image: "clock.webp",
-            link: "Clock",
+            link: "FindComic",
             introduce: "透過輸入或鼠標選取的文字來搜尋N網上的漫畫<br>並且含有各種實用的快捷鍵!!!",
-            github: ""
+            github: "FindComic"
         },
         {
             title: "猜數字遊戲",
             image: "number.webp",
-            link: "Number",
+            link: "GuessNumber",
             introduce: "一款真正的猜數字遊戲<br>讓你想起童年的回憶",
             github: "GuessNumber"
         },
