@@ -4,22 +4,22 @@
         {
             title: "About Me",
             image: "about.webp",
-            link: "./layout/about.html",
+            link: "about.html"
         },
         {
             title: "Skills",
             image: "skills.webp",
-            link: "./skills.html",
+            link: "skills.html"
         },
         {
             title: "Projects",
             image: "projects.webp",
-            link: "./projects.html",
+            link: "html.html"
         },
         {
-            title: "More Links",
+            title: "Contact Me",
             image: "contact.webp",
-            link: "./layout/contact.html",
+            link: "contact.html"
         }
     ];
     const hcard = document.getElementById("home-card");
@@ -27,7 +27,7 @@
     hcard.innerHTML += `
     <div class="col s12 m6">
         <div class="card animate__animated animate__bounceIn">
-            <a href="${post.link}">
+            <a href="./layout/${post.link}">
                 <div class="card-image">
                     <img src="./assets/images/home/${post.image}">
                     <span class="card-title teal-text text-accent-3">${post.title}</span>
