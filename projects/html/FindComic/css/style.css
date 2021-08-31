@@ -1,0 +1,33 @@
+body, html {
+	background-color: #EDEDED !important;
+}
+/* Title */
+.title {
+	text-align: center;
+	padding-top: 13%;
+	padding-bottom: 13%;
+	margin-bottom: 50px;
+}
+
+.title h1 {
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+
+/* Intro */
+.intro hr {
+	width: 40px;
+	margin-bottom: 45px;
+}
+
+.intro h5, .intro h6 {text-align: center}
+.intro h5, .intro .collapsible-header {font-weight: bold}
+
+.intro h5 {
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.intro h6 {margin-bottom: 45px}
+.intro .row{margin-bottom: 60px}
