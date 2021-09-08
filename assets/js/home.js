@@ -12,14 +12,14 @@
             link: "skills.html"
         },
         {
-            title: "Projects",
-            image: "projects.webp",
-            link: "html.html"
-        },
-        {
             title: "Contact Me",
             image: "contact.webp",
             link: "contact.html"
+        },
+        {
+            title: "Projects",
+            image: "projects.webp",
+            link: "html.html"
         }
     ];
     const hcard = document.getElementById("home-card");

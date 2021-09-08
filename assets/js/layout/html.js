@@ -17,7 +17,7 @@
         },
         {
             title: "漫畫搜尋工具",
-            image: "clock.webp",
+            image: "findcomic.webp",
             link: "FindComic",
             introduce: "透過輸入或鼠標選取的文字來搜尋N網上的漫畫<br>並且含有各種實用的快捷鍵!!!",
             github: "FindComic"
