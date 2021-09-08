@@ -1,0 +1,1 @@
+$(".icon").plate({inverse: true});
