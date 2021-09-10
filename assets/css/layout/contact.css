@@ -1,4 +1,10 @@
-#link a{color: #fff}
+.home-section {
+    height: 100%;
+    overflow:scroll;
+    overflow-y: hidden;
+}
+
+#link a {color: #fff}
 
 /* Icon background color */
 #FaceBook {background: #4267B2}
@@ -13,3 +19,8 @@
 #Bahamut {background: #00a5b5}
 #Github {background: #211F1F}
 #Discord {background: #5663F7}
+
+#id {
+    position: absolute;
+    top: -1000px;
+}

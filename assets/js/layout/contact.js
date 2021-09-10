@@ -1,41 +1,48 @@
 // Button
 (() => {
+    document.querySelector(".valign-wrapper").style.height = "100%";
     const Button = [
         {
             name: "FaceBook",
             icon: "ai-facebook-fill",
-            link: "www.facebook.com/weii.0504/"
+            link: "https://www.facebook.com/weii.0504/",
+            target: "_blank"
         },
         {
             name: "Instagram",
             icon: "ai-instagram-fill",
-            link: "www.instagram.com/weii_0504/"
+            link: "https://www.instagram.com/weii_0504/",
+            target: "_blank"
         },
         {
             name: "Twitter",
             icon: "ai-twitter-fill",
-            link: "www.twitter.com/Magus_0504"
+            link: "https://www.twitter.com/Magus_0504",
+            target: "_blank"
         },
         {
             name: "Bahamut",
             icon: "ai-game-controller",
-            link: "home.gamer.com.tw/homeindex.php?owner=evan9154"
+            link: "https://home.gamer.com.tw/homeindex.php?owner=evan9154",
+            target: "_blank"
         },
         {
             name: "Github",
             icon: "ai-github-fill",
-            link: "github.com/sky0966548546"
+            link: "https://github.com/sky0966548546",
+            target: "_blank"
         },
         {
             name: "Discord",
             icon: "ai-discord-fill",
-            link: "github.com/sky0966548546"
+            link: "#Copy",
+            target: "_self"
         },
     ];
     const link = document.getElementById("link");
     Button.forEach(post => {
     link.innerHTML += `
-    <a href="https://${post.link}" target="_blank">
+    <a href="${post.link}" target="${post.target}" class="animate__animated animate__fadeIn">
         <div class="col s6 m4 icon">
             <div class="card-panel center-align" id="${post.name}">
                 <span><i class="${post.icon}"></i> ${post.name}</span>
@@ -44,6 +51,14 @@
     </a>
     `;
     });
+
+    // 複製 ID
+    copy = () => {
+        M.toast({html: "已複製 DISCORD TAG"});
+        navigator.clipboard.writeText(document.getElementById("id").ariaValueText);
+    }
+
+    document.getElementById("Discord").addEventListener("click", copy)
 })();
 
 // plate initialization
