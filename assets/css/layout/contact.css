@@ -1,7 +1,6 @@
 .home-section {
     height: 100%;
-    overflow:scroll;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 #link a {color: #fff}
@@ -19,8 +18,5 @@
 #Bahamut {background: #00a5b5}
 #Github {background: #211F1F}
 #Discord {background: #5663F7}
+
 #Discords {cursor: pointer}
-#id {
-    position: absolute;
-    top: -1000px;
-}

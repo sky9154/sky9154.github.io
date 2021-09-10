@@ -45,19 +45,17 @@
     </a>
     `;
     });
-
-    // 複製 ID
-    copy = () => {
-        M.toast({html: "已複製 DISCORD TAG"});
-        navigator.clipboard.writeText(document.getElementById("id").ariaValueText);
-    }
     
     // 移除 href 以及 target
     const Discords = document.getElementById("Discords");
     Discords.removeAttribute("href");
     Discords.removeAttribute("target");
 
-    document.getElementById("Discord").addEventListener("click", copy);
+    // 點擊後複製 DISCORD TAG
+    document.getElementById("Discord").addEventListener("click", () =>{
+        M.toast({html: "已複製 DISCORD TAG"});
+        navigator.clipboard.writeText("oF#9998");
+    });
 })();
 
 // plate initialization
