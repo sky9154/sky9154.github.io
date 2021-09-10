@@ -5,44 +5,38 @@
         {
             name: "FaceBook",
             icon: "ai-facebook-fill",
-            link: "https://www.facebook.com/weii.0504/",
-            target: "_blank"
+            link: "www.facebook.com/weii.0504/",
         },
         {
             name: "Instagram",
             icon: "ai-instagram-fill",
-            link: "https://www.instagram.com/weii_0504/",
-            target: "_blank"
+            link: "www.instagram.com/weii_0504/",
         },
         {
             name: "Twitter",
             icon: "ai-twitter-fill",
-            link: "https://www.twitter.com/Magus_0504",
-            target: "_blank"
+            link: "www.twitter.com/Magus_0504",
         },
         {
             name: "Bahamut",
             icon: "ai-game-controller",
-            link: "https://home.gamer.com.tw/homeindex.php?owner=evan9154",
-            target: "_blank"
+            link: "home.gamer.com.tw/homeindex.php?owner=evan9154",
         },
         {
             name: "Github",
             icon: "ai-github-fill",
-            link: "https://github.com/sky0966548546",
-            target: "_blank"
+            link: "github.com/sky0966548546",
         },
         {
             name: "Discord",
             icon: "ai-discord-fill",
-            link: "#Copy",
-            target: "_self"
+            link: "Discord ID",
         },
     ];
     const link = document.getElementById("link");
     Button.forEach(post => {
     link.innerHTML += `
-    <a href="${post.link}" target="${post.target}" class="animate__animated animate__fadeIn">
+    <a href="https://${post.link}" target="_blank" class="animate__animated animate__fadeIn" id="${post.name}s">
         <div class="col s6 m4 icon">
             <div class="card-panel center-align" id="${post.name}">
                 <span><i class="${post.icon}"></i> ${post.name}</span>
@@ -57,8 +51,13 @@
         M.toast({html: "已複製 DISCORD TAG"});
         navigator.clipboard.writeText(document.getElementById("id").ariaValueText);
     }
+    
+    // 移除 href 以及 target
+    const Discords = document.getElementById("Discords");
+    Discords.removeAttribute("href");
+    Discords.removeAttribute("target");
 
-    document.getElementById("Discord").addEventListener("click", copy)
+    document.getElementById("Discord").addEventListener("click", copy);
 })();
 
 // plate initialization
