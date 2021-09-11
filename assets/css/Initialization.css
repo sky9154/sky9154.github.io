@@ -53,10 +53,9 @@ body::-webkit-scrollbar {display: none}
     body {
         height: 100%;
         width: calc(100vw + 18px);
-        overflow: hidden;
     }
     .navbar-fixed {display: none}
-    .over {overflow: auto}
+    .over {overflow: hidden}
     .sidebars {
         position: fixed;
         top: 0;
@@ -174,7 +173,7 @@ body::-webkit-scrollbar {display: none}
         top: 0;
         opacity: 1;
         pointer-events: auto;
-        transition: all 0.4s ease;
+        transition: all 0.5s ease;
     }
     .sidebars .nav-links li .sub-menu .link_name {
         display: none;

@@ -18,8 +18,8 @@ close = () => {
 }
 
 // 點擊事件
-sidebarBtn.addEventListener("click", () => close());
-show.addEventListener("click", () => document.querySelector(".arrow").click());
+sidebarBtn.addEventListener("click", close);
+show.addEventListener("click", () => close);
 
 // 右側導航欄
 $(document).ready(() => {
@@ -32,3 +32,5 @@ $(document).ready(() => {
     // Init Collapsible
     $(".collapsible").collapsible();
 });
+
+setTimeout(() => document.getElementById("open_close").click(), 500);
