@@ -1,17 +1,11 @@
 // 左側導航欄
-let arrow = document.querySelectorAll(".arrow");
+let arrow = document.querySelector(".arrow");
 let sidebar = document.querySelector(".sidebars");
 let sidebarBtn = document.querySelector(".fa-wheelchair-alt");
-let show = document.getElementById("show");
+let showMenu = document.getElementById("showMenu");
+setTimeout(() => document.getElementById("open_close").click(), 500);
 
-for (var i = 0; i < arrow.length; i ++) {
-    arrow[i].addEventListener("click", kirito => {
-        let arrowParent = kirito.target.parentElement.parentElement;
-        arrowParent.classList.toggle("showMenu");
-    });
-}
-
-close = () => {
+let close = () => {
     sidebar.classList.toggle("close");
     document.body.classList.toggle("over");
     document.scrollingElement.scrollTop = 0;
@@ -19,8 +13,8 @@ close = () => {
 
 // 點擊事件
 sidebarBtn.addEventListener("click", close);
-show.addEventListener("click", () => close);
-
+arrow.addEventListener("click", kirito => kirito.target.parentElement.parentElement.classList.toggle("showMenu"));
+showMenu.addEventListener("click", ()=>arrow.click())
 // 右側導航欄
 $(document).ready(() => {
     // Init Sidenav
@@ -32,5 +26,3 @@ $(document).ready(() => {
     // Init Collapsible
     $(".collapsible").collapsible();
 });
-
-setTimeout(() => document.getElementById("open_close").click(), 500);

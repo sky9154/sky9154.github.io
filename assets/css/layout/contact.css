@@ -1,7 +1,9 @@
-.home-section {
+body {
     height: 100%;
     overflow: hidden;
 }
+
+.home-section {height: 100%}
 
 #link a {color: #fff}
 
