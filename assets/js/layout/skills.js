@@ -1,5 +1,6 @@
 // Skills Card
 (() => {
+    document.body.style.overflow = "auto";
     const skillscard = [
         {
             title: "App Inventor 2",
