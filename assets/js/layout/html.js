@@ -31,10 +31,10 @@
         },
         {
             title: "第三方登入系統",
-            image: "firebase.webp",
-            link: "GuessNumber",
+            image: "sociallogin.webp",
+            link: "SocialLogin",
             introduce: "普通的 Gmail 登入系統<br>利用 Firebase 來儲存登入的資料",
-            github: "GuessNumber"
+            github: "SocialLogin"
         },
     ];
     const hcard = document.getElementById("html-card");
@@ -57,7 +57,7 @@
                     <p class="default">${post.introduce}</p>
                     <div class="card-action center-align">
                         <a href="../projects/html/${post.link}">webpage</a>
-                        <a href="https://github.com/sky0966548546/${post.github}" class="purple-text text-accent-1">github</a>
+                        <a href="https://github.com/sky0966548546/${post.github}" class="purple-text text-accent-1" target="_blank">github</a>
                     </div>
                 </div>
             </div>
