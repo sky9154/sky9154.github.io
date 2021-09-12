@@ -5,7 +5,7 @@
             title: "夸黑測試平台",
             image: "aua.webp",
             link: "Aua",
-            introduce: "你是夸寶嗎?<br>不是的話，就是夸黑囉！",
+            introduce: "你是夸寶嗎？<br>不是的話，就是夸黑囉！",
             github:"Aua"
         },
         {
@@ -29,6 +29,13 @@
             introduce: "一款真正的猜數字遊戲<br>讓你想起童年的回憶",
             github: "GuessNumber"
         },
+        {
+            title: "第三方登入系統",
+            image: "firebase.webp",
+            link: "GuessNumber",
+            introduce: "普通的 Gmail 登入系統<br>利用 Firebase 來儲存登入的資料",
+            github: "GuessNumber"
+        },
     ];
     const hcard = document.getElementById("html-card");
     htmlcard.forEach(post => {
@@ -40,12 +47,12 @@
                 </div>
                 <div class="card-content">
                     <span class="card-title activator name grey-text text-darken-4">
-                        ${post.title}<i class="bx bx-dots-vertical-rounded right"></i>
+                        ${post.title}<i class="ai-more-vertical-fill right"></i>
                     </span>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title name grey-text text-darken-4">
-                        ${post.title}<i class="bx bx-x bx-md right"></i>
+                        ${post.title}<i class="ai-cross right"></i>
                     </span>
                     <p class="default">${post.introduce}</p>
                     <div class="card-action center-align">

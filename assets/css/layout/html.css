@@ -23,3 +23,5 @@
 /* Card Title Font Size */
 .card .card-content .name,
 .card .card-reveal .name {font-size: 20px}
+
+.default {height: 70px;}
