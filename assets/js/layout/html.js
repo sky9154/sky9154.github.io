@@ -47,7 +47,7 @@
                 </div>
                 <div class="card-content">
                     <span class="card-title activator name grey-text text-darken-4">
-                        ${post.title}<i class="ai-more-vertical-fill right"></i>
+                        <span class="card-name">${post.title}</span><i class="ai-more-vertical-fill right"></i>
                     </span>
                 </div>
                 <div class="card-reveal">
