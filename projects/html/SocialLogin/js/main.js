@@ -1,7 +1,5 @@
 let providerGoogle = new firebase.auth.GoogleAuthProvider();
 let signIn = document.getElementById("signIn");
-let signOut = document.getElementById("signOut");
-let deleteUser = document.getElementById("deleteUser");
 let login = document.getElementById("login");
 let finish = document.getElementById("finish");
 
@@ -26,10 +24,11 @@ let SignIn = () => {
                     <p>Email 是否已驗證：${emailVerified}</p>
                 </div>
                 <div class="card-action">
-                    <button class="btn waves-effect indigo" onclick="SignOut();">登出</button>
-                    <button class="btn waves-effect red" onclick="DeleteUser();">刪除帳號</button>
+                    <button class="btn waves-effect indigo" id="signOut">登出</button>
+                    <button class="btn waves-effect red" id="deleteUser">刪除帳號</button>
                 </div>
             </div>`
+            add();
     }).catch(e => console.log(JSON.stringify(e)))  // Print Error
 }
 
@@ -50,9 +49,17 @@ let DeleteUser = () => {
     }).catch(e => console.log(JSON.stringify(e)))   // Print Error
 } 
 
+function add() {
+    let signOut = document.getElementById("signOut");
+    let deleteUser = document.getElementById("deleteUser");
+    signOut.addEventListener("click", SignOut)
+    deleteUser.addEventListener("click", DeleteUser)
+}
 // 點擊事件
 signIn.addEventListener("click", SignIn)
+
 const provider = new firebase.auth.GoogleAuthProvider();
+
 firebase.auth().signInWithPopup(provider).then(result => {
     let credential = result.credential;
     let token = credential.accessToken;
