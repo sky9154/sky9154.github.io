@@ -49,7 +49,7 @@ let DeleteUser = () => {
     }).catch(e => console.log(JSON.stringify(e)))   // Print Error
 } 
 
-function add() {
+let add = () => {
     let signOut = document.getElementById("signOut");
     let deleteUser = document.getElementById("deleteUser");
     signOut.addEventListener("click", SignOut)
