@@ -1,5 +1,6 @@
 //  Html Card
 (() => {
+    document.body.style.overflow="auto";    // 讓頁面保持可滾動狀態
     const htmlcard = [
         {
             title: "夸黑測試平台",
@@ -19,7 +20,7 @@
             title: "漫畫搜尋工具",
             image: "findcomic.webp",
             link: "FindComic",
-            introduce: "透過輸入或鼠標選取的文字來搜尋N網上的漫畫<br>並且含有各種實用的快捷鍵!!!",
+            introduce: "藉由輸入或鼠標選取的文字來搜尋N網上的漫畫<br>並且含有各種實用的快捷鍵!!!",
             github: "FindComic"
         },
         {
@@ -47,18 +48,14 @@
                 </div>
                 <div class="card-content">
                     <span class="card-title activator name grey-text text-darken-4">
-                        <span class="card-name">${post.title}</span><i class="ai-more-vertical-fill right"></i>
+                        <p class="card-name">
+                            ${post.title}
+                            <a href="https://github.com/sky0966548546/${post.github}" class="purple-text text-accent-1" target="_blank"><i class="ai-github-fill right"></i></a>
+                            <a href="../projects/html/${post.link}" target="_blank"><i class="ai-globe right"></i></a>
+                        </p>
+                        <p class="default">${post.introduce}</p>
                     </span>
                 </div>
-                <div class="card-reveal">
-                    <span class="card-title name grey-text text-darken-4">
-                        ${post.title}<i class="ai-cross right"></i>
-                    </span>
-                    <p class="default">${post.introduce}</p>
-                    <div class="card-action center-align">
-                        <a href="../projects/html/${post.link}">webpage</a>
-                        <a href="https://github.com/sky0966548546/${post.github}" class="purple-text text-accent-1" target="_blank">github</a>
-                    </div>
                 </div>
             </div>
         </div>
