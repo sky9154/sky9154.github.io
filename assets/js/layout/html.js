@@ -10,7 +10,7 @@
             github:"Aua"
         },
         {
-            title: "Ayunda Risu 語音包",
+            title: "Risu 語音包",
             image: "risu.webp",
             link: "Risu",
             introduce: "do~do~do~<br>滿滿的 Risu",
