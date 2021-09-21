@@ -25,18 +25,25 @@
         },
         {
             title: "猜數字遊戲",
-            image: "number.webp",
+            image: "GuessNumber.webp",
             link: "GuessNumber",
             introduce: "一款真正的猜數字遊戲<br>讓你想起童年的回憶",
             github: "GuessNumber"
         },
         {
             title: "第三方登入系統",
-            image: "sociallogin.webp",
+            image: "SocialLogin.webp",
             link: "SocialLogin",
             introduce: "普通的 Gmail 登入系統<br>利用 Firebase 來儲存登入的資料",
             github: "SocialLogin"
         },
+        {
+            title: "待辦清單",
+            image: "TodoList.webp",
+            link: "TodoList",
+            introduce: "待辦清單",
+            github: "TodoList"
+        }
     ];
     const hcard = document.getElementById("html-card");
     htmlcard.forEach(post => {
