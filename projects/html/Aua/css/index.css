@@ -5,8 +5,10 @@ body, button, input, select, textarea {font-family: "Righteous", "Noto Sans TC",
 html, body, .room {height: 100%}
 body {
     background-image: url("../images/bg-img.webp");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 /* 按鈕 */
