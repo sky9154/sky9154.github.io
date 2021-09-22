@@ -18,7 +18,7 @@
         },
         {
             title: "漫畫搜尋工具",
-            image: "findcomic.webp",
+            image: "FindComic.webp",
             link: "FindComic",
             introduce: "藉由輸入或鼠標選取的文字來搜尋N網上的漫畫<br>並且含有各種實用的快捷鍵!!!",
             github: "FindComic"
@@ -48,21 +48,16 @@
     const hcard = document.getElementById("html-card");
     htmlcard.forEach(post => {
     hcard.innerHTML += `
-        <div class="col s12 m6 xl4 animate__animated animate__jackInTheBox">
-            <div class="card">
-                <div class="card-image">
-                    <img src="../assets/images/layout/html/${post.image}">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator name grey-text text-darken-4">
-                        <p class="card-name">
-                            ${post.title}
-                            <a href="https://github.com/sky0966548546/${post.github}" class="purple-text text-accent-1" target="_blank"><i class="ai-github-fill right"></i></a>
-                            <a href="../projects/html/${post.link}" target="_blank"><i class="ai-globe right"></i></a>
-                        </p>
-                        <p class="default">${post.introduce}</p>
-                    </span>
-                </div>
+        <div class="card-panel col s12">
+            <img src="../assets/images/layout/html/${post.image}" class="col s12 m6">
+            <div class="col s12 m6">
+                <div class="introduce">
+                    <p class="card-title">
+                        ${post.title}
+                        <a href="https://github.com/sky0966548546/${post.github}" class="purple-text text-accent-1" target="_blank"><i class="ai-github-fill right"></i></a>
+                        <a href="../projects/html/${post.link}" target="_blank"><i class="ai-globe right"></i></a>
+                    </p>
+                    <p>${post.introduce}</p>
                 </div>
             </div>
         </div>
