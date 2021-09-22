@@ -57,7 +57,7 @@ function DeleteUser() {
         window.alert("刪除成功，將重新整理一次頁面！");
         window.location.reload();   // 重新整理頁面
     }).catch(e => console.log(JSON.stringify(e)));   // Print Error
-} ;
+};
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
