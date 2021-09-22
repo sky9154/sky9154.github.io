@@ -4,7 +4,9 @@ let login = document.getElementById("login");
 let finish = document.getElementById("finish");
 
 // SignIn
-let SignIn = () => {
+signIn.addEventListener("click", SignIn);
+
+function SignIn() {
     firebase.auth().signInWithPopup(providerGoogle).then(e => { 
         e.credential.accessToken; 
         const n = e.user;   // 全部的資料，為 Json 檔
@@ -27,36 +29,35 @@ let SignIn = () => {
                     <button class="btn waves-effect indigo" id="signOut">登出</button>
                     <button class="btn waves-effect red" id="deleteUser">刪除帳號</button>
                 </div>
-            </div>`
-            add();
-    }).catch(e => console.log(JSON.stringify(e)))  // Print Error
+            </div>`;
+        add();
+    }).catch(e => console.log(JSON.stringify(e)));  // Print Error
+};
+
+// Add Element
+function add() {
+    let signOut = document.getElementById("signOut");
+    let deleteUser = document.getElementById("deleteUser");
+    signOut.addEventListener("click", SignOut);
+    deleteUser.addEventListener("click", DeleteUser);
 }
 
 // SignOut
-let SignOut = () => { 
+function SignOut() { 
     firebase.auth().signOut().then(() => { 
         window.alert("登出成功，將重新整理一次頁面！"), 
         window.location.reload();   // 重新整理頁面
-    }).catch(e => console.log(JSON.stringify(e)))   // Print Error
-}
+    }).catch(e => console.log(JSON.stringify(e)));   // Print Error
+};
 
 // DeleteUser
-let DeleteUser = () => { 
+function DeleteUser() { 
     let e = firebase.auth().currentUser; 
     e.delete().then(() => { 
         window.alert("刪除成功，將重新整理一次頁面！");
         window.location.reload();   // 重新整理頁面
-    }).catch(e => console.log(JSON.stringify(e)))   // Print Error
-} 
-
-let add = () => {
-    let signOut = document.getElementById("signOut");
-    let deleteUser = document.getElementById("deleteUser");
-    signOut.addEventListener("click", SignOut)
-    deleteUser.addEventListener("click", DeleteUser)
-}
-// 點擊事件
-signIn.addEventListener("click", SignIn)
+    }).catch(e => console.log(JSON.stringify(e)));   // Print Error
+} ;
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -69,4 +70,4 @@ firebase.auth().signInWithPopup(provider).then(result => {
     let errorMessage = error.message;
     let email = error.email;
     let credential = error.credential;
-}); // Error Data
+});    // Error Data
