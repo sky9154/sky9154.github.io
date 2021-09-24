@@ -6,16 +6,21 @@
             title: "App Inventor 2",
             image: "ai2.webp",
             time: "Sep. 2019 - Aug. 2020",
-            introduce: "你媽死了",
+            introduce: "學習 Android 裝置程式設計，不需學習較為艱澀的 Java 語法，\
+            只要使用各種拼圖來組合程式，即可完成 Android 裝置的應用程式。<br>\
+            類似於這種視覺化的程式設計在台灣的小學已經越來越常見了，雖然學習起來並沒有什麼難度，\
+            但對於剛開始學習程式語言的人來說，學習這種程式語言能夠訓練良好的邏輯思考能力。",
             icon: "bxl-android",
             color: "green"
         },
         {
             title: "C Language",
             image: "c.webp",
-            time: "Sep. 2020 - Jul. 2021",
-            introduce: "垃圾東西",
-            icon: "bxs-copyright",
+            time: "Sep. 2020 - Present.",
+            introduce: "C 語言是我第一次完全是用寫的語言，當然它也是我到目前為止使用最久的程式語言，\
+            但是我並不會把它作為我主要使用的語言，具體一點就是，遇到要解決的問題，除非限定只能用 C 語言，\
+            不然我完全不考慮使用它，並沒有什麼特別的原因，只不過是其他語言我看的更順眼而已。",
+            icon: "bx bxl-c-plus-plus",
             color: "blue"
         },
         {
@@ -37,7 +42,7 @@
         {
             title: "PHP & SQL",
             image: "php.webp",
-            time: "Mar. 2021 - Present.",
+            time: "Mar. 2021 - Jun. 2021",
             introduce: "靠蝦皮資料分析一日致富",
             icon: "bxl-php",
             color: "indigo accent-1"
