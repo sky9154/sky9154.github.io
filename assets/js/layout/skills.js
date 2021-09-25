@@ -27,7 +27,11 @@
             title: "HTML & CSS & JavaScript",
             image: "html.webp",
             time: "Sep. 2020 - Present.",
-            introduce: "JS 跟 JK 足以一決高下",
+            introduce: "目前主要使用的語言，擁有 HTML 及 CSS 作為前端的 UI 介面，大大的增加撰寫程式的樂趣，\
+            除了網頁以外，甚至可以開發應用程式、瀏覽器的附加元件、手機 APP......等等的用途。<br>\
+            用途雖然廣泛，但是使我繼續學習下去的動力還是，可利用 HTML 及 CSS 作為前端的 UI 介面，刻出一個不錯的畫面後，\
+            並且賦予它們功能，看著那些設計出來的介面，使我就算花費10幾小時，都不會曾感到煩悶，\
+            曾有這麼一個偉人說：「JS 能增進快樂，並且減少痛苦。」我想我可能與那位偉人心境是一樣的吧。",
             icon: "bxl-html5",
             color: "orange"
         },
@@ -62,11 +66,11 @@
                     </span>
                     <p class="grey-text default"><i>${post.time}</i></p>
                 </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">
+                <div class="card-reveal scrollbar" id="style-2">
+                    <span class="card-title grey-text text-darken-4" style="font-size:20px;">
                         ${post.title}<i class="bx bx-x bx-md right"></i>
                     </span>
-                    <p class="default">${post.introduce}</p>
+                    <p class="default force-overflow">${post.introduce}</p>
                 </div>
             </div>
             <div class="timeline-badge ${post.color} white-text"><i class="bx ${post.icon} bx-md"></i></div>
