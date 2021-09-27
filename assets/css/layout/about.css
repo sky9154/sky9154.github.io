@@ -1,7 +1,8 @@
 #cool-face {
     border: 3px solid #fff;
+    border-radius: 5px;
     height: 250px;
 }
+@media screen and (min-width: 705px) { #cool-face {float:left}}
 .about-text{font-size: 20px}
 .about-text p span{font-size: 30px}
-@media screen and (min-width: 700px) { .about-text {margin-top: 50px}}
