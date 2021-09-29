@@ -39,7 +39,7 @@
             title: "Python",
             image: "python.webp",
             time: "Nov. 2020 - Present.",
-            introduce: "私私私私私",
+            introduce: "沒料",
             icon: "bxl-python",
             color: "black"
         },
@@ -47,10 +47,10 @@
             title: "PHP & SQL",
             image: "php.webp",
             time: "Mar. 2021 - Jun. 2021",
-            introduce: "靠蝦皮資料分析一日致富",
+            introduce: "沒料",
             icon: "bxl-php",
             color: "indigo accent-1"
-        },
+        }
     ];
     const scard = document.getElementById("skills-card");
     skillscard.forEach(post => {
