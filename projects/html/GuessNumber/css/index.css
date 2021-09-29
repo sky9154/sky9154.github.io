@@ -1,5 +1,13 @@
 /* 字體 */
 body, button, input, select, textarea {font-family: "Righteous", "Noto Sans TC", sans-serif}
+body {
+    overflow-x: hidden;
+    background-image:url("../images/bg-img.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
 .haha {margin-top: 5%}
 
 .row .btn-large {
@@ -10,4 +18,7 @@ body, button, input, select, textarea {font-family: "Righteous", "Noto Sans TC",
 .zero {
     opacity: 0; 
     cursor: default;
+}
+.btn-large:active {
+    background-color: #fff;
 }

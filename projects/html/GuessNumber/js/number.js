@@ -1,5 +1,5 @@
-let a = 0;
-let b = Math.floor(Math.random() * 101);
+let output = 0;
+let ans = Math.floor(Math.random() * 101);
 $(document).ready(() => {
     // 輸入答案
     $("#bt1").click(() => input(1));
@@ -13,49 +13,54 @@ $(document).ready(() => {
     $("#bt9").click(() => input(9));
     $("#bt0").click(() => input(0));
     $("#btc").click(() => other(0));
-    $("#btbk").click(() => other(parseInt(a/10)));
+    $("#btbk").click(() => other(parseInt(output/10)));
     
     //判斷答案
     $("#bto").click(() => {
-        if (a > b) {
+        if (output > ans) {
             $("#a1").text("太大");
-            $("#a1").css("color", "red");
+            $("#a1").css("color", "#FF4D4D");
         }
-        else if (a < b) {
+        else if (output < ans) {
             $("#a1").text("太小");
             $("#a1").css("color", "green");
         }
-        else if (a = b) {
+        else if (output = ans) {
             $("#a1").text("嘟嘟好");
             $("#a1").css("color", "blue");
         }
-        a=0;
+        output = 0;
     });
     
     // 顯示答案
     $("#btop").click(() => {
-        $("#a2").text(b);
+        $("#a2").text(ans);
         $("#a2").css("color", "red");
     });
 
     // 重新開始
     $("#btrp").click(() => {
-        b=Math.floor(Math.random() * 101);
+        ans = Math.floor(Math.random() * 101);
         other(0);
         $("#a2").text("");
+    });
+
+    // 回首頁
+    $("#bthm").click(() => {
+        window.location.replace("https://kiriqua.com");
     });
 });
 
 // 輸入答案
 input = q => {
     $("#a1").css("color","black");
-    a = 10 * a + q;
-    $("#a1").text(a);
+    output = 10 * output + q;
+    $("#a1").text(output);
 }
 
 // 其他功能
-other = as => {
-    a = as;
+other = decide => {
+    output = decide;
     $("#a1").css("color","black");
-    $("#a1").text(a);
+    $("#a1").text(output);
 }
