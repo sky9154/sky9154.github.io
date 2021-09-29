@@ -18,28 +18,28 @@
         },
         {
             title: "漫畫搜尋工具",
-            image: "FindComic.webp",
+            image: "findComic.webp",
             link: "FindComic",
             introduce: "藉由輸入或鼠標選取的文字來搜尋N網上的漫畫<br>並且含有各種實用的快捷鍵!!!",
             github: "FindComic"
         },
         {
             title: "猜數字遊戲",
-            image: "GuessNumber.webp",
+            image: "guessNumber.webp",
             link: "GuessNumber",
             introduce: "一款真正的猜數字遊戲<br>讓你想起童年的回憶",
             github: "GuessNumber"
         },
         {
             title: "第三方登入系統",
-            image: "SocialLogin.webp",
+            image: "socialLogin.webp",
             link: "SocialLogin",
             introduce: "普通的 Gmail 登入系統<br>利用 Firebase 來儲存登入的資料",
             github: "SocialLogin"
         },
         {
             title: "待辦清單",
-            image: "TodoList.webp",
+            image: "todoList.webp",
             link: "TodoList",
             introduce: "待辦清單",
             github: "TodoList"
