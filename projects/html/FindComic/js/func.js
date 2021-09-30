@@ -29,6 +29,11 @@
             title: "隨機",
             image: "882672448938606662/random.png",
             introduce: "隨機推薦漫畫"
+        },
+        {
+            title: "快速關鍵字查詢",
+            image: "",
+            introduce: "利用網頁本身的文字進行關鍵字查詢，看到想查詢的關鍵字，即可立即查詢，無須輸入"
         }
     ];
     const demo = document.getElementById("demo");
