@@ -41,7 +41,7 @@
             title: "待辦清單",
             image: "todoList.webp",
             link: "TodoList",
-            introduce: "待辦清單",
+            introduce: "利用純 JavaScrip 進行製作的待辦清單",
             github: "TodoList"
         }
     ];

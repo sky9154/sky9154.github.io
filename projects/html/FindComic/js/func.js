@@ -32,8 +32,13 @@
         },
         {
             title: "快速關鍵字查詢",
-            image: "",
-            introduce: "利用網頁本身的文字進行關鍵字查詢，看到想查詢的關鍵字，即可立即查詢，無須輸入"
+            image: "893417998902259732/text.png",
+            introduce: "利用網頁本身的文字進行關鍵字查詢，看到想查詢的關鍵字，無須另外開啟插件頁面，即可立即查詢"
+        },
+        {
+            title: "快速號碼查詢",
+            image: "893418008565907466/number.png",
+            introduce: "在各式網站、彈幕、留言中看到相關的數字即可立即查詢相關的漫畫"
         }
     ];
     const demo = document.getElementById("demo");
