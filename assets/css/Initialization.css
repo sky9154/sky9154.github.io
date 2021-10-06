@@ -150,7 +150,7 @@ body::-webkit-scrollbar {display: none}
     .sidebars .nav-links li.showMenu .sub-menu {display: block}
     .sidebars .nav-links li .sub-menu a {
         color: #fff;
-        font-size: 20px;
+        font-size: 18px;
         padding: 5px 0;
         white-space: nowrap;
         opacity: 0.6;
@@ -179,7 +179,7 @@ body::-webkit-scrollbar {display: none}
         display: none;
         cursor: default;
     }
-    .sidebars.close .nav-links li .sub-menu .link_name{
+    .sidebars.close .nav-links li .sub-menu .link_name {
         font-size: 23px;
         opacity: 1;
         display: block;
