@@ -54,7 +54,7 @@
                 <div class="introduce">
                     <p class="card-title">
                         ${post.title}
-                        <a href="https://github.com/sky0966548546/${post.github}" class="purple-text text-accent-1" target="_blank"><i class="ai-github-fill right"></i></a>
+                        <a href="https://github.com/sky9154/${post.github}" class="purple-text text-accent-1" target="_blank"><i class="ai-github-fill right"></i></a>
                         <a href="../projects/html/${post.link}" target="_blank"><i class="ai-globe right"></i></a>
                     </p>
                     <p>${post.introduce}</p>

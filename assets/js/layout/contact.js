@@ -15,17 +15,17 @@
         {
             name: "Twitter",
             icon: "ai-twitter-fill",
-            link: "www.twitter.com/Magus_0504",
+            link: "twitter.com/sky9154/",
         },
         {
             name: "Bahamut",
             icon: "ai-game-controller",
-            link: "home.gamer.com.tw/homeindex.php?owner=evan9154",
+            link: "home.gamer.com.tw/evan9154",
         },
         {
             name: "Github",
             icon: "ai-github-fill",
-            link: "github.com/sky0966548546",
+            link: "github.com/sky9154",
         },
         {
             name: "Discord",
