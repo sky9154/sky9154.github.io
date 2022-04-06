@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <title>oF|Home</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Logo -->
+    <link rel="icon" type="image/x-icon" href="https://kiriqua.com/assets/images/logo/logo.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="https://kiriqua.com/assets/images/logo/logo.png"/>
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="./assets/css/Initialization.css">
+    <link rel="stylesheet" href="./assets/css/home.css">
+    <!-- ICON LINK -->
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="./assets/css/src/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/src/animate.min.css">
+    <!-- Font Family -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Noto+Sans+TC&display=swap">
+</head>
+<body>
+<div class="sidebars close">
+    <!-- Navbar -->
+    <div class="logo-details">
+        <i class="fa fa-wheelchair-alt pointer" aria-hidden="true" id="open_close"></i>
+        <span class="logo_name">SuperKirito</span>
+    </div>
+    <ul class="nav-links">
+        <!-- Home -->
+        <li>
+            <a href="./index.html">
+                <i class="ai-home"></i>
+                <span class="link_name">Home</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="./index.html">Home</a></li>
+            </ul>
+        </li>
+        <!-- About -->
+        <li>
+            <a href="./layout/about.html" id="about">
+                <i class="ai-person"></i>
+                <span class="link_name">About</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="./layout/about.html">About</a></li>
+            </ul>
+        </li>
+        <!-- Skills -->
+        <li>
+            <a href="./layout/skills.html">
+                <i class="ai-coffee"></i>
+                <span class="link_name">Skills</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="./layout/skills.html">Skills</a></li>
+            </ul>
+        </li>
+        <!-- Contact -->
+        <li>
+            <a href="./layout/contact.html">
+                <i class="ai-link-chain"></i>
+                <span class="link_name">Contact</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="./layout/links.html">Contact</a></li>
+            </ul>
+        </li>
+        <!-- Projects -->
+        <li>
+        <div class="iocn-link">
+            <a>
+                <i class="ai-grid"></i>
+                <span class="link_name" id="showMenu">Projects</span>
+            </a>
+            <i class="ai-chevron-down arrow"></i>
+        </div>
+        <ul class="sub-menu">
+            <li><a class="link_name default">Projects</a></li>
+            <li><a href="./layout/html.html">HTML & CSS & JS</a></li>
+            <li><a href="./layout/python.html">Python</a></li>
+            <li><a href="./layout/php.html">PHP</a></li>
+        </ul>
+        </li>
+        <li>
+        <div class="profile-details">
+            <div class="profile-content">
+                <img src="./assets/images/cool.webp">
+            </div>
+            <div class="name-job">
+                <div class="profile_name">oF</div>
+                <div class="job">吃素異類反抗軍</div>
+            </div>
+            <a href="https://www.google.com/">
+                <i class="ai-location"></i>
+            </a>
+        </div>
+        </li>
+    </ul>
+</div>
+
+<section class="home-section">
+    <header id="home" class="navbar-fixed">
+        <nav class="backdrop-blur">
+            <div class="container">
+                <a href="./index.html" class="sidenav-trigger brand-logo left teal-text text-accent-3">
+                    <span><i class="fa fa-wheelchair-alt" aria-hidden="true"></i>SuperKirito</span>
+                </a>
+                <a href="" class="right sidenav-trigger show-on-medium-and-up" data-target="slide-out">
+                    <span><i class="ai-text-align-justified"></i></span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <ul id="slide-out" class="sidenav collapsible white">
+        <li class="center-align side-logo"><i class="fa fa-wheelchair-alt"></i>&nbsp;SuperKirito</li>
+        <li><a class="collapsible-header sidenav-close" href="./index.html">Home</a></li>
+        <li><a class="collapsible-header sidenav-close" href="./layout/about.html">About Me</a></li>
+        <li><a class="collapsible-header sidenav-close" href="./layout/skills.html">Skills</a></li>
+        <li><a class="collapsible-header sidenav-close" href="./layout/contact.html">Contact</a></li>
+        <li>
+            <a class="collapsible-header">Projects</a>
+            <div class="collapsible-body">
+                <a href="./layout/html.html">&nbsp;&emsp;HTML & CSS & JS</a><br>
+                <a href="./layout/python.html">&nbsp;&emsp;Python</a><br>
+                <a href="./layout/php.html">&nbsp;&emsp;PHP</a><br>
+            </div>
+        </li>
+        <li><div class="divider"></div></li>
+    </ul>
+    
+    <div class="container center-align">
+        <!-- 內容 -->
+        <div class="home center-align">
+            <span class="text-wrapper">
+                <span class="letters">Welcome To My Web</span>
+            </span>
+        </div>
+        <div class="row" id="home-card">
+            <!-- Home Card -->
+        </div>
+        <!-- 底端 -->
+    </div>
+</section>
+
+<!-- Compiled and minified JavaScript -->
+<script src="./assets/js/src/jquery-3.6.0.min.js"></script>
+<script src="./assets/js/src/materialize.min.js"></script>
+<script src="./assets/js/src/anime.min.js"></script>
+<!-- JavaScript LINK -->
+<script type="text/javascript" src="./assets/js/home.js"></script>
+<script type="text/javascript" src="./assets/js/Initialization.js"></script>
+
+</body>
+</html>

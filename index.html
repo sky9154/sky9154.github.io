@@ -1,156 +1,198 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <title>oF|Home</title>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Logo -->
-    <link rel="icon" type="image/x-icon" href="https://kiriqua.com/assets/images/logo/logo.png"/>
-    <link rel="shortcut icon" type="image/x-icon" href="https://kiriqua.com/assets/images/logo/logo.png"/>
-    <!-- CSS LINK -->
-    <link rel="stylesheet" href="./assets/css/Initialization.css">
-    <link rel="stylesheet" href="./assets/css/home.css">
-    <!-- ICON LINK -->
-    <script src="https://unpkg.com/akar-icons-fonts"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="./assets/css/src/materialize.min.css">
-    <link rel="stylesheet" href="./assets/css/src/animate.min.css">
-    <!-- Font Family -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Noto+Sans+TC&display=swap">
-</head>
-<body>
-<div class="sidebars close">
-    <!-- Navbar -->
-    <div class="logo-details">
-        <i class="fa fa-wheelchair-alt pointer" aria-hidden="true" id="open_close"></i>
-        <span class="logo_name">SuperKirito</span>
-    </div>
-    <ul class="nav-links">
-        <!-- Home -->
-        <li>
-            <a href="./index.html">
-                <i class="ai-home"></i>
-                <span class="link_name">Home</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="./index.html">Home</a></li>
-            </ul>
-        </li>
-        <!-- About -->
-        <li>
-            <a href="./layout/about.html" id="about">
-                <i class="ai-person"></i>
-                <span class="link_name">About</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="./layout/about.html">About</a></li>
-            </ul>
-        </li>
-        <!-- Skills -->
-        <li>
-            <a href="./layout/skills.html">
-                <i class="ai-coffee"></i>
-                <span class="link_name">Skills</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="./layout/skills.html">Skills</a></li>
-            </ul>
-        </li>
-        <!-- Contact -->
-        <li>
-            <a href="./layout/contact.html">
-                <i class="ai-link-chain"></i>
-                <span class="link_name">Contact</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="./layout/links.html">Contact</a></li>
-            </ul>
-        </li>
-        <!-- Projects -->
-        <li>
-        <div class="iocn-link">
-            <a>
-                <i class="ai-grid"></i>
-                <span class="link_name" id="showMenu">Projects</span>
-            </a>
-            <i class="ai-chevron-down arrow"></i>
-        </div>
-        <ul class="sub-menu">
-            <li><a class="link_name default">Projects</a></li>
-            <li><a href="./layout/html.html">HTML & CSS & JS</a></li>
-            <li><a href="./layout/python.html">Python</a></li>
-            <li><a href="./layout/php.html">PHP</a></li>
-        </ul>
-        </li>
-        <li>
-        <div class="profile-details">
-            <div class="profile-content">
-                <img src="./assets/images/cool.webp">
-            </div>
-            <div class="name-job">
-                <div class="profile_name">oF</div>
-                <div class="job">吃素異類反抗軍</div>
-            </div>
-            <a href="https://www.google.com/">
-                <i class="ai-location"></i>
-            </a>
-        </div>
-        </li>
-    </ul>
-</div>
-
-<section class="home-section">
-    <header id="home" class="navbar-fixed">
-        <nav class="backdrop-blur">
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="oF 的個人網頁">
+        <meta name="author" content="oF">
+        <title>oF's Personal Website</title>
+        <link rel="icon" href="assets/logo.png">
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/contact.css">
+    </head>
+    <body id="page-top">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a href="./index.html" class="sidenav-trigger brand-logo left teal-text text-accent-3">
-                    <span><i class="fa fa-wheelchair-alt" aria-hidden="true"></i>SuperKirito</span>
-                </a>
-                <a href="" class="right sidenav-trigger show-on-medium-and-up" data-target="slide-out">
-                    <span><i class="ai-text-align-justified"></i></span>
-                </a>
+                <a class="navbar-brand" href="#page-top">Sword Art Online</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-info text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#home">Home</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skill">skill</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
-    </header>
-
-    <ul id="slide-out" class="sidenav collapsible white">
-        <li class="center-align side-logo"><i class="fa fa-wheelchair-alt"></i>&nbsp;SuperKirito</li>
-        <li><a class="collapsible-header sidenav-close" href="./index.html">Home</a></li>
-        <li><a class="collapsible-header sidenav-close" href="./layout/about.html">About Me</a></li>
-        <li><a class="collapsible-header sidenav-close" href="./layout/skills.html">Skills</a></li>
-        <li><a class="collapsible-header sidenav-close" href="./layout/contact.html">Contact</a></li>
-        <li>
-            <a class="collapsible-header">Projects</a>
-            <div class="collapsible-body">
-                <a href="./layout/html.html">&nbsp;&emsp;HTML & CSS & JS</a><br>
-                <a href="./layout/python.html">&nbsp;&emsp;Python</a><br>
-                <a href="./layout/php.html">&nbsp;&emsp;PHP</a><br>
+        <!-- Masthead -->
+        <header class="masthead bg-info text-white text-center" id="home">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image -->
+                <img class="masthead-avatar mb-5" src="assets/img/avatar.png">
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0">oF</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-home"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading -->
+                <p class="masthead-subheading font-weight-light mb-0">Beater - Two-handed Sword - Student</p>
             </div>
-        </li>
-        <li><div class="divider"></div></li>
-    </ul>
-    
-    <div class="container center-align">
-        <!-- 內容 -->
-        <div class="home center-align">
-            <span class="text-wrapper">
-                <span class="letters">Welcome To My Web</span>
-            </span>
+        </header>
+        <!-- About Section -->
+        <section class="page-section" id="about">
+            <div class="container">
+                <!-- About Section Heading -->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">About</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fab fa-accessible-icon"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- About Section Content -->
+                <div class="row">
+                    <div class="col-lg-12 ms-auto text-center">
+                        <p class="lead">
+                            Born in 2002, lives in Chungli District, Taoyuan City, unmarried.<br>
+                            Aspires to become a good vegetarian alien resistance army.<br>
+                            Specializes in the twin swordsmanship of hot dog and chicken steak.<br>
+                            Rely on the attribute of restraint, I can able to blow up the fucking stupid vegetarians.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- skill Section-->
+        <section class="page-section  bg-info text-white skill" id="skill">
+            <div class="container">
+                <!-- skill Section Heading -->
+                <h2 class="page-section-heading text-white text-center text-uppercase text-secondary mb-0">skill</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- skill Grid Items -->
+                <div class="row justify-content-center">
+                    <!-- skill Item 1 -->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="skill-item mx-auto">
+                            <img class="img-fluid" src="./assets/img/skill/HTML.webp">
+                        </div>
+                    </div>
+                    <!-- skill Item 2 -->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="skill-item mx-auto">
+                            <img class="img-fluid" src="./assets/img/skill/CSS.webp">
+                        </div>
+                    </div>
+                    <!-- skill Item 3 -->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="skill-item mx-auto" data-bs-toggle="modal" data-bs-target="#skillModal3">
+                            <img class="img-fluid" src="./assets/img/skill/JavaScript.webp">
+                        </div>
+                    </div>
+                    <!-- skill Item 4-->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="skill-item mx-auto" data-bs-toggle="modal" data-bs-target="#skillModal6">
+                            <img class="img-fluid" src="./assets/img/skill/Java.webp">
+                        </div>
+                    </div>
+                    <!-- skill Item 5-->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+                        <div class="skill-item mx-auto" data-bs-toggle="modal" data-bs-target="#skillModal4">
+                            <img class="img-fluid" src="./assets/img/skill/Python.webp">
+                        </div>
+                    </div>
+                    <!-- skill Item 6-->
+                    <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
+                        <div class="skill-item mx-auto" data-bs-toggle="modal" data-bs-target="#skillModal5">
+                            <img class="img-fluid" src="./assets/img/skill/Golang.webp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading -->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-comment-dots"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                    <div class="row" id="link">
+                        <!-- Link Buttons -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="toast-body" data-bs-dismiss="toast" aria-label="Close">已複製 Discord ID</div>
+            </div>
         </div>
-        <div class="row" id="home-card">
-            <!-- Home Card -->
+        <!-- Footer -->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location -->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <p class="lead mb-0">
+                            22 nd Log Cabin
+                            <br>
+                            Sword Art Online
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons -->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Contact Me</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/weii.0504/"  target="_blank">
+                            <i class="fab fa-fw fa-facebook-f"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/weii_0504/" target="_blank">
+                            <i class="fab fa-fw fa-instagram"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/sky9154/" target="_blank">
+                            <i class="fab fa-fw fa-twitter"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://home.gamer.com.tw/evan9154" target="_blank">
+                            <i class="fas fa-fw fa-dragon"></i>
+                        </a>
+                    </div>
+                    <!-- Footer About Text -->
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">Related Links</h4>
+                        <p class="lead mb-0">
+                            <a href="#Web">Web - Portfolios</a><br>
+                            <a href="#Python">Python - Portfolios</a><br>
+                            <a href="#Golang">Golang - Portfolios</a><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright &copy; oF 2021</small></div>
         </div>
-        <!-- 底端 -->
-    </div>
-</section>
-
-<!-- Compiled and minified JavaScript -->
-<script src="./assets/js/src/jquery-3.6.0.min.js"></script>
-<script src="./assets/js/src/materialize.min.js"></script>
-<script src="./assets/js/src/anime.min.js"></script>
-<!-- JavaScript LINK -->
-<script type="text/javascript" src="./assets/js/home.js"></script>
-<script type="text/javascript" src="./assets/js/Initialization.js"></script>
-
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.rawgit.com/krebszattila/jquery-plate/master/src/jquery.plate.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="js/contact.js"></script>
+    </body>
 </html>
