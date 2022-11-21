@@ -6,8 +6,8 @@ import Tooltip from '@mui/material/Tooltip';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import * as si from 'react-icons/si';
 import { title } from '../App';
+import { languages, tools, dbms, others } from '../../Settings/Data';
 
 type ThemeMode = {
   themeMode: string;
@@ -18,17 +18,17 @@ type groupObj = {
   icon: JSX.Element;
   bgColor: string;
   color: string;
-}
+}[]
 
 type Groups = {
   name: string;
-  groupObj: groupObj[];
+  groupObj: groupObj;
 }
 
 const Group: React.FC<Groups> = ({ name, groupObj }) => {
   const group: JSX.Element[] = [];
 
-  let temp: groupObj[] = [];
+  let temp: groupObj = [];
 
   groupObj.map((item, index) => {
     temp.push(item);
@@ -64,132 +64,17 @@ const Group: React.FC<Groups> = ({ name, groupObj }) => {
   );
 };
 
-const TechStack: React.FC<ThemeMode> = ({ themeMode }) => {
-  const languages: groupObj[] = [{
-    name: 'JavaScript',
-    icon: <si.SiJavascript />,
-    bgColor: '#F7DF1E',
-    color: '#FFF'
-  }, {
-    name: 'TypeScript',
-    icon: <si.SiTypescript />,
-    bgColor: '#3178C6',
-    color: '#FFF'
-  }, {
-    name: 'React',
-    icon: <si.SiReact />,
-    bgColor: '#61DAFB',
-    color: '#FFF'
-  }, {
-    name: 'Node.JS',
-    icon: <si.SiNodedotjs />,
-    bgColor: '#339933',
-    color: '#FFF'
-  }, {
-    name: 'Python',
-    icon: <si.SiPython />,
-    bgColor: '#3776AB',
-    color: '#FFF'
-  }, {
-    name: 'Java',
-    icon: <si.SiJava />,
-    bgColor: '#5382A1',
-    color: '#FFF'
-  }, {
-    name: 'Golang',
-    icon: <si.SiGo />,
-    bgColor: '#00ADD8',
-    color: '#FFF'
-  }, {
-    name: 'PHP is the best programming language',
-    icon: <si.SiPhp />,
-    bgColor: '#777BB4',
-    color: '#FFF'
-  }];
-
-  const tools: groupObj[] = [{
-    name: 'Git',
-    icon: <si.SiGit />,
-    bgColor: '#F05032',
-    color: '#FFF'
-  }, {
-    name: 'Docker',
-    icon: <si.SiDocker />,
-    bgColor: '#2496ED',
-    color: '#FFF'
-  }, {
-    name: 'JetBrains',
-    icon: <si.SiJetbrains />,
-    bgColor: themeMode === 'dark' ? '#FFF' : '#000',
-    color: themeMode === 'dark' ? '#000' : '#FFF'
-  }, {
-    name: 'Visual Studio Code',
-    icon: <si.SiVisualstudiocode />,
-    bgColor: '#007ACC',
-    color: '#FFF'
-  }, {
-    name: 'Adobe PhotoShop',
-    icon: <si.SiAdobephotoshop />,
-    bgColor: '#31A8FF',
-    color: '#FFF'
-  }];
-
-  const dbms: groupObj[] = [{
-    name: 'MySQL',
-    icon: <si.SiMysql />,
-    bgColor: '#4479A1',
-    color: '#FFF'
-  }, {
-    name: 'Microsoft SQL Server',
-    icon: <si.SiMicrosoftsqlserver />,
-    bgColor: '#CC2927',
-    color: '#FFF'
-  }, {
-    name: 'MongoDB',
-    icon: <si.SiMongodb />,
-    bgColor: '#47A248',
-    color: '#FFF'
-  }];
-
-  const others: groupObj[] = [{
-    name: 'Heroku',
-    icon: <si.SiHeroku />,
-    bgColor: '#430098',
-    color: '#FFF'
-  }, {
-    name: 'CodePen',
-    icon: <si.SiCodepen />,
-    bgColor: themeMode === 'dark' ? '#FFF' : '#000',
-    color: themeMode === 'dark' ? '#000' : '#FFF'
-  }, {
-    name: 'Google Cloud',
-    icon: <si.SiGooglecloud />,
-    bgColor: '#4285F4',
-    color: '#FFF'
-  }, {
-    name: 'GoDaddy',
-    icon: <si.SiGodaddy />,
-    bgColor: '#1BDBDB',
-    color: '#FFF'
-  }, {
-    name: 'CloudFlare',
-    icon: <si.SiCloudflare />,
-    bgColor: '#F38020',
-    color: '#FFF'
-  }];
-
-  return (
-    <Container fixed sx={{ width: "100%", height: "30%" }}>
-      <Typography align="center" variant="h4" sx={title}>Tech Stack</Typography>
-      <Divider variant="middle" sx={{ fontSize: "26px" }}>&#128296;</Divider>
-      <Grid container spacing={2} sx={{ m: 2 }}>
-        <Group name="Languages" groupObj={languages} />
-        <Group name="Tools" groupObj={tools} />
-        <Group name="DBMS" groupObj={dbms} />
-        <Group name="Others" groupObj={others} />
-      </Grid>
-    </Container>
-  );
-}
+const TechStack: React.FC<ThemeMode> = ({ themeMode }) => (
+  <Container fixed sx={{ width: "100%", height: "30%" }}>
+    <Typography align="center" variant="h4" sx={title}>Tech Stack</Typography>
+    <Divider variant="middle" sx={{ fontSize: "26px" }}>&#128296;</Divider>
+    <Grid container spacing={2} sx={{ m: 2 }}>
+      <Group name="Languages" groupObj={languages()} />
+      <Group name="Tools" groupObj={tools(themeMode)} />
+      <Group name="DBMS" groupObj={dbms()} />
+      <Group name="Others" groupObj={others(themeMode)} />
+    </Grid>
+  </Container>
+);
 
 export default TechStack;

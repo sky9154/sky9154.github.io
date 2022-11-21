@@ -6,54 +6,18 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
-import * as fa from "react-icons/fa";
 import { title } from '../App';
+import { contact } from '../../Settings/Data';
 
 type ThemeMode = {
   themeMode: string;
 }
 
 const ContactButton: React.FC<ThemeMode> = ({ themeMode }) => {
-  const contactObject: {
-    name: string,
-    icon: JSX.Element,
-    color?: string,
-    link: string
-  }[] = [{
-    name: 'Instagram',
-    icon: <fa.FaInstagram />,
-    link: 'https://www.instagram.com/sky91.54/'
-  }, {
-    name: 'Twitter',
-    icon: <fa.FaTwitter />,
-    color: '#1DA1F2',
-    link: 'https://twitter.com/sky9154/'
-  }, {
-    name: 'Github',
-    icon: <fa.FaGithub />,
-    color: '#211F1F',
-    link: 'https://github.com/sky9154/'
-  }, {
-    name: 'Bahamut',
-    icon: <fa.FaDragon />,
-    color: '#00A5B5',
-    link: 'https://home.gamer.com.tw/profile/index.php?owner=evan9154'
-  }, {
-    name: 'Discord',
-    icon: <fa.FaDiscord />,
-    color: '#5663F7',
-    link: '#'
-  }, {
-    name: 'Email',
-    icon: <fa.FaRegPaperPlane />,
-    color: '#FBBD06',
-    link: 'mailto:sky0932039612@gmail.com'
-  }];
-
   return (
     <>
       {
-        contactObject.map((item) => {
+        contact().map((item) => {
           const { name, icon, link } = item;
 
           const bgColor = name === 'Github' ? themeMode === 'dark' ? '#FFF' : item.color : item.color;

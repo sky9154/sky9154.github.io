@@ -13,6 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import ThemeBtn from './ThemeBtn';
+import { title, navItems } from '../Settings/Text';
 
 type Mobile = {
   mobileObj: {
@@ -34,9 +35,6 @@ const scrollToAnchor = (name: string) => {
     window.scrollTo(0, anchor.offsetTop - window.innerHeight / 2);
   }
 }
-
-const title = 'oF\'s Personal Website';
-const navItems = ['Home', 'About', 'Contact'];
 
 const NavDrawer: React.FC<Mobile> = ({ mobileObj }) => {
   const { mobileOpen, setMobileOpen } = mobileObj;
