@@ -27,6 +27,13 @@ type Theme = {
     setThemeMode: (mode: 'dark' | 'light') => void;
   }
 }
+const scrollToAnchor = (name: string) => {
+  const anchor = document.getElementById(name);
+
+  if (anchor) {
+    window.scrollTo(0, anchor.offsetTop - window.innerHeight / 2);
+  }
+}
 
 const title = 'oF\'s Personal Website';
 const navItems = ['Home', 'About', 'Contact'];
@@ -38,7 +45,7 @@ const NavDrawer: React.FC<Mobile> = ({ mobileObj }) => {
 
   const Item: JSX.Element[] = navItems.map((item) => (
     <ListItem key={item} disablePadding>
-      <ListItemButton href={`#${item}`} sx={{ textAlign: "center" }}>
+      <ListItemButton onClick={() => scrollToAnchor(item)} sx={{ textAlign: "center" }}>
         <ListItemText primary={item} />
       </ListItemButton>
     </ListItem>
@@ -78,7 +85,7 @@ const TopBar: React.FC<Theme & Mobile> = ({ themeObj, mobileObj }) => {
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
   const Item: JSX.Element[] = navItems.map((item) => (
-    <Button key={item} href={`#${item}`} sx={{ color: "#FFF", p: 2, fontWeight: 700 }}>
+    <Button key={item} onClick={() => scrollToAnchor(item)} sx={{ color: "#FFF", p: 2, fontWeight: 700 }}>
       {item}
     </Button>
   ));

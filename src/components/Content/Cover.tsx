@@ -13,7 +13,7 @@ const Cover: React.FC<ThemeMode> = ({ themeMode }) => {
   const bgImage = themeMode === 'dark' ? DarkBgImage : LightBgImage;
 
   return (
-    <Box height="45vh" className="center" sx={{ backgroundImage: `url(${bgImage})` }} id="Home">
+    <Box height="45vh" className="center" sx={{ backgroundImage: `url(${bgImage})` }}>
       <Image src={Author} height="30vh" width="30vh" duration={500} showLoading={true} className="center" />
     </Box>
   );

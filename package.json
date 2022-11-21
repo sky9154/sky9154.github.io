@@ -7,7 +7,9 @@
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "webpack serve",
     "clean": "rm -rf dist",
-    "prettier": "prettier -w ./src"
+    "prettier": "prettier -w ./src",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build" 
   },
   "author": "",
   "license": "ISC",
