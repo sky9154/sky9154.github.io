@@ -13,7 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import ThemeBtn from './ThemeBtn';
-import { title, navItems } from '../Settings/Text';
+import { title, navItems } from '../settings/Text';
 
 type Mobile = {
   mobileObj: {
@@ -32,7 +32,7 @@ const scrollToAnchor = (name: string) => {
   const anchor = document.getElementById(name);
 
   if (anchor) {
-    window.scrollTo(0, anchor.offsetTop - window.innerHeight / 2);
+    window.scrollTo(0, anchor.offsetTop - window.innerHeight / 3);
   }
 }
 

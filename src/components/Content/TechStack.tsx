@@ -6,8 +6,8 @@ import Tooltip from '@mui/material/Tooltip';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import { title } from '../App';
-import { languages, tools, dbms, others } from '../../Settings/Data';
+import { title, block } from '../App';
+import { languages, tools, dbms, others } from '../../settings/Data';
 
 type ThemeMode = {
   themeMode: string;
@@ -58,23 +58,27 @@ const Group: React.FC<Groups> = ({ name, groupObj }) => {
 
   return (
     <Grid xs={12} sm={6} md={3}>
-      <Typography align="center" variant="h5" sx={title}>{name}</Typography>
+      <Typography align="center" variant="h4" sx={title}>{name}</Typography>
       {group}
     </Grid>
   );
 };
 
-const TechStack: React.FC<ThemeMode> = ({ themeMode }) => (
-  <Container fixed sx={{ width: "100%", height: "30%" }}>
-    <Typography align="center" variant="h4" sx={title}>Tech Stack</Typography>
-    <Divider variant="middle" sx={{ fontSize: "26px" }}>&#128296;</Divider>
-    <Grid container spacing={2} sx={{ m: 2 }}>
-      <Group name="Languages" groupObj={languages()} />
-      <Group name="Tools" groupObj={tools(themeMode)} />
-      <Group name="DBMS" groupObj={dbms()} />
-      <Group name="Others" groupObj={others(themeMode)} />
-    </Grid>
-  </Container>
-);
+const TechStack: React.FC<ThemeMode> = ({ themeMode }) => {
+  return (
+    <Box display="flex" justifyContent="center" alignItems="center" sx={block}>
+      <Container fixed>
+        <Typography align="center" variant="h3" sx={title}>Tech Stack</Typography>
+        <Divider variant="middle" sx={{ fontSize: "26px" }}>&#128296;</Divider>
+        <Grid container spacing={2} sx={{ m: 2 }}>
+          <Group name="Languages" groupObj={languages()} />
+          <Group name="Tools" groupObj={tools(themeMode)} />
+          <Group name="DBMS" groupObj={dbms()} />
+          <Group name="Others" groupObj={others(themeMode)} />
+        </Grid>
+      </Container>
+    </Box>
+  );
+}
 
 export default TechStack;

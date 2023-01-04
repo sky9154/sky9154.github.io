@@ -166,6 +166,6 @@ export const contact: () => Contact[] = () => [
     name: 'Email',
     icon: <fa.FaRegPaperPlane />,
     color: '#FBBD06',
-    link: '#Email'
+    link: 'mailto:sky0932039612@gmail.com'
   }
 ];

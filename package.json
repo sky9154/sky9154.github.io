@@ -9,9 +9,9 @@
     "clean": "rm -rf dist",
     "prettier": "prettier -w ./src",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build" 
+    "deploy": "gh-pages -d build"
   },
-  "author": "",
+  "author": "oF",
   "license": "ISC",
   "dependencies": {
     "@emotion/react": "^11.10.5",

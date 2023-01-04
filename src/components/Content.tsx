@@ -5,17 +5,18 @@ import About from './Content/About';
 import TechStack from './Content/TechStack';
 import Contact from './Content/Contact';
 
-type ThemeMode = {
+type App = {
   themeMode: string;
+  setOpen: (state: boolean) => void;
 }
 
-const Content: React.FC<ThemeMode> = ({ themeMode }) => {
+const Content: React.FC<App> = ({ themeMode, setOpen }) => {
   return (
     <Box component="main">
       <Cover themeMode={themeMode} />
       <About />
       <TechStack themeMode={themeMode} />
-      <Contact themeMode={themeMode} />
+      <Contact themeMode={themeMode} setOpen={setOpen} />
     </Box>
   );
 };

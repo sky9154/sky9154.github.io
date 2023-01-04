@@ -5,15 +5,26 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
-import { title } from '../App';
-import { contact } from '../../Settings/Data';
+import { title, block } from '../App';
+import { contact } from '../../settings/Data';
+import { Box } from '@mui/material';
 
-type ThemeMode = {
+type App = {
   themeMode: string;
+  setOpen: (state: boolean) => void;
 }
 
-const ContactButton: React.FC<ThemeMode> = ({ themeMode }) => {
+const ContactButton: React.FC<App> = ({ themeMode, setOpen }) => {
+  const handleClick = (link: string) => {
+    if (link === '#Discord') {
+      navigator.clipboard.writeText('oF#9998');
+
+      setOpen(true);
+    } else {
+      window.open(link);
+    }
+  }
+
   return (
     <>
       {
@@ -39,8 +50,8 @@ const ContactButton: React.FC<ThemeMode> = ({ themeMode }) => {
 
           return (
             <Grid key={name} xs={12} sm={6} md={4}>
-              <ContactButton startIcon={icon} id={name}>
-                <Link href={link} underline="none" rel="noopener" target="_blank" sx={{ color: color }}>{name}</Link>
+              <ContactButton startIcon={icon} id={name} onClick={() => handleClick(link)}>
+                {name}
               </ContactButton>
             </Grid>
           );
@@ -50,15 +61,17 @@ const ContactButton: React.FC<ThemeMode> = ({ themeMode }) => {
   );
 }
 
-const Contact: React.FC<ThemeMode> = ({ themeMode }) => {
+const Contact: React.FC<App> = ({ themeMode, setOpen }) => {
   return (
-    <Container fixed sx={{ width: "100%", height: "30%" }} id="Contact">
-      <Typography align="center" variant="h3" sx={title}>Contact</Typography>
-      <Divider variant="middle" sx={{ fontSize: "26px" }}>&#128236;</Divider>
-      <Grid container spacing={2} sx={{ m: 2 }}>
-        <ContactButton themeMode={themeMode} />
-      </Grid>
-    </Container>
+    <Box display="flex" justifyContent="center" alignItems="center" sx={block} id="Contact">
+      <Container fixed>
+        <Typography align="center" variant="h2" sx={title}>Contact</Typography>
+        <Divider variant="middle" sx={{ fontSize: "26px" }}>&#128236;</Divider>
+        <Grid container spacing={2} sx={{ m: 2 }}>
+          <ContactButton themeMode={themeMode} setOpen={setOpen} />
+        </Grid>
+      </Container>
+    </Box>
   );
 };
 

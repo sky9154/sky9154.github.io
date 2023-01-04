@@ -16,6 +16,6 @@ export const about: ReactNode = (
 
 export const copyright: ReactNode = (
   <>
-    Copyright &copy; oF 2022
+    Copyright &copy; oF. All Rights Reserved.
   </>
 );
