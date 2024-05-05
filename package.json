@@ -1,61 +1,39 @@
 {
   "name": "website",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
+  "private": true,
+  "version": "2.1.0",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack",
-    "dev": "webpack serve",
-    "clean": "rm -rf dist",
-    "prettier": "prettier -w ./src",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
-  "author": "oF",
-  "license": "ISC",
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@mui/icons-material": "^5.10.14",
-    "@mui/lab": "^5.0.0-alpha.108",
-    "@mui/material": "^5.10.14",
-    "@mui/styled-engine": "^5.10.14",
-    "@types/mui-image": "^1.0.1",
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "autoprefixer": "^10.2.6",
-    "clean-webpack-plugin": "^4.0.0-alpha.0",
-    "cross-env": "^7.0.3",
-    "css-loader": "^5.2.6",
-    "file-loader": "^6.2.0",
-    "gh-pages": "^4.0.0",
-    "html-webpack-plugin": "^5.5.0",
-    "image-webpack-loader": "^8.1.0",
-    "mini-css-extract-plugin": "^2.6.1",
-    "mui-image": "^1.0.7",
-    "postcss": "^8.3.5",
-    "postcss-loader": "^6.1.0",
-    "prettier": "^2.5.1",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.12",
+    "@mui/material": "^5.15.12",
+    "@types/nprogress": "^0.2.3",
+    "framer-motion": "^11.0.8",
+    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.6.0",
-    "style-loader": "^2.0.0",
-    "ts-loader": "^9.3.1",
-    "typescript": "^4.7.4",
-    "webpack": "^5.39.1",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^4.7.1"
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^5.0.1",
+    "vite-plugin-alias": "^0.1.1"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4"
   }
 }
