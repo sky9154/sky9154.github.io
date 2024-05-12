@@ -2,11 +2,6 @@
 	"Version": 3,
 	"Parameters": [
 		{
-			"Id": "Param141",
-			"GroupId": "ParamGroup2",
-			"Name": "须知隐藏"
-		},
-		{
 			"Id": "Param140",
 			"GroupId": "ParamGroup2",
 			"Name": "高光隐藏"
