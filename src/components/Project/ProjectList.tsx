@@ -1,11 +1,9 @@
 import { FC, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaShareNodes } from 'react-icons/fa6';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
 import { H1, H2 } from '@components/Typography';
 import { useThemeModeContext } from '@context/ThemeModeContext';
 import { DarkTheme, LightTheme } from '@assets/theme';
@@ -30,6 +28,12 @@ const ProjectList: FC<Props> = ({ page, type }) => {
     color: '',
     solidColor: ''
   });
+
+  const openProject = (link: string) => {
+    if (link) {
+      window.open(link, '_blank');
+    }
+  }
 
   useEffect(() => {
     const newPage = (matches) ? page : 0;
@@ -77,10 +81,11 @@ const ProjectList: FC<Props> = ({ page, type }) => {
                 transition={{ duration: 0.2, delay: 0.3 }}
                 whileInView="visible"
                 initial="hidden"
+                whileHover={{ scale: 0.8 }}
                 viewport={{ once: true }}
                 style={{ height: '100%' }}
               >
-                <Box sx={{
+                <Box onClick={() => openProject(item.link || '')} sx={{
                   display: 'flex',
                   alignItems: 'flex-end',
                   height: '100%',
@@ -93,7 +98,8 @@ const ProjectList: FC<Props> = ({ page, type }) => {
                   backdropFilter: 'blur(8px)',
                   borderImage: `fill 0 linear-gradient(${projectCardColor.color}, ${projectCardColor.solidColor})`,
                   borderRadius: 5,
-                  clipPath: 'inset(0 round 20px)'
+                  clipPath: 'inset(0 round 20px)',
+                  cursor: 'pointer'
                 }}>
                   <H2>{item.name}</H2>
                   <H1 sx={{
@@ -105,11 +111,6 @@ const ProjectList: FC<Props> = ({ page, type }) => {
                     position: 'absolute',
                     right: 0
                   }}>
-                    <IconButton target='_blank' href={item.link as string}>
-                      <FaShareNodes style={{
-                        color: (themeMode === 'dark') ? DarkTheme.FontColor : LightTheme.FontColor
-                      }} />
-                    </IconButton>
                   </H1>
                 </Box>
               </motion.div>
