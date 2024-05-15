@@ -124,7 +124,6 @@ const DashboardNavbar = ({ children }: Props) => {
         </Drawer>
       </nav>
       <Box component="main" sx={{ width: '100%' }}>
-        <Toolbar />
         {children}
       </Box>
     </Box >
