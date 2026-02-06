@@ -5,7 +5,7 @@ import { H1, H3 } from "@components/ui/Typography";
 import { FaLaptopCode, FaUserAstronaut, FaArrowRight } from "react-icons/fa";
 
 
-const Home = () => {
+const Projects = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -33,7 +33,7 @@ const Home = () => {
         <FaLaptopCode />
       </Box>
       <H1 sx={{ fontSize: "24px", fontWeight: "700", mb: 1 }}>
-        {t("home.underConstruction")}
+        {t("projects.underConstruction")}
       </H1>
       <H3 sx={{
         color: "var(--text-sub)",
@@ -42,7 +42,7 @@ const Home = () => {
         lineHeight: 1.6,
         mb: 4
       }}>
-        {t("home.description")}
+        {t("projects.description")}
       </H3>
       <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap", justifyContent: "center" }}>
         <Button
@@ -97,4 +97,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default Projects;

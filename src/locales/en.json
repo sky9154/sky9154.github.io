@@ -1,0 +1,95 @@
+{
+  "title": "< oF />",
+  "navbar": {
+    "home": "Home",
+    "about": "About Me",
+    "projects": "Projects",
+    "blog": "Blog"
+  },
+  "home": {
+    "underConstruction": "Home Page is under construction...",
+    "description": "Currently styling components and refactoring codebase. Please check back later!"
+  },
+  "about": {
+    "title": "Hi, I'm oF.",
+    "subtitle": "Full-Stack Engineer & Master's Student",
+    "content": "Specializing in RecSys, Knowledge Graphs, and GCNs, I am a Master's student in Information Management. With extensive full-stack experience, I value the engineering mindset that turns abstract theory into reliable implementations.<br />When building Deep Learning architectures, I care not only about model accuracy but also about stability in real-world production. By integrating Python workflows with Node.js backends, I independently build end-to-end systems from data analysis to deployment.",
+    "techStack": {
+      "title": "Tech Stack",
+      "categories": {
+        "programming": "Programming Languages",
+        "frameworks": "Web Frameworks & Libraries",
+        "dbms": "Databases (DBMS)",
+        "ml": "Machine / Deep Learning",
+        "services": "DevOps & Cloud"
+      }
+    },
+    "location": "Taoyuan, Taiwan",
+    "interests": {
+      "coffee": "Hand-drip<br/>& Espresso"
+    },
+    "experience": {
+      "title": "Experience & Awards",
+      "items": [
+        {
+          "year": "2024 - Present",
+          "content": "NSTC Project | Research Assistant (KG & RecSys)"
+        },
+        {
+          "year": "2025",
+          "content": "Google for Education | Gemini Certified Educator"
+        },
+        {
+          "year": "2025",
+          "content": "GenAI for Educators | Google AI Certificate"
+        },
+        {
+          "year": "2023 - 2024",
+          "content": "Getvision Information Ltd. | Full-stack Engineer"
+        },
+        {
+          "year": "2023",
+          "content": "CYUT Practical Project Comp. | Honorable Mention"
+        },
+        {
+          "year": "2023",
+          "content": "Providence Univ. & NCUE | E-Paper Workshop Instructor"
+        },
+        {
+          "year": "2021 - 2022",
+          "content": "Andor Ltd. | Full-stack Engineer"
+        },
+        {
+          "year": "2019",
+          "content": "YMHS mBot Robot Racing Comp. | Gold Medal Award"
+        }
+      ]
+    }
+  },
+  "projects": {
+    "underConstruction": "Projects Page is under construction...",
+    "description": "Currently styling components and refactoring codebase. Please check back later!"
+  },
+  "blog": {
+    "title": "Scratchpad",
+    "subtitle": "Tech Study Notes",
+    "untitled": "Untitled",
+    "searchPlaceholder": "Search posts...",
+    "searchHint": "Please enter at least 2 characters",
+    "noResultsTitle": "No posts found",
+    "noResultsDesc": "Try different keywords or clear the search query.",
+    "post": {
+      "back": "Back to List",
+      "error": {
+        "title": "Post Not Found",
+        "description": "The post you are looking for may have been deleted, or the URL is incorrect."
+      }
+    }
+  },
+  "copyDiscordInfo": "Discord ID copied !",
+  "notFound": {
+    "title": "Ooops... 404 !",
+    "description": "The page you are looking for does not exist.",
+    "backHome": "Back to Home"
+  }
+}

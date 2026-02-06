@@ -1,0 +1,95 @@
+{
+  "title": "< oF />",
+  "navbar": {
+    "home": "首頁",
+    "about": "關於",
+    "projects": "專案作品",
+    "blog": "文章"
+  },
+  "home": {
+    "underConstruction": "首頁建置中...",
+    "description": "目前正在重構組件與調整樣式，請稍後再回來查看，或先參觀其他頁面！"
+  },
+  "about": {
+    "title": "你好，我是 oF",
+    "subtitle": "全端工程師 & 研究生",
+    "content": "專攻推薦系統、知識圖譜與圖卷積網路（GCN）的資訊管理碩士研究生。比起純理論研究，我更看重累積的全端經歷所帶來的工程思維與實作能力。<br />在構建深度學習架構時，我不只關注模型準確度，也很重視實際上線後的系統穩定性。透過整合 Python 的訓練流程與 Node.js 後端技術，我能獨立打造從資料分析到實際部署的端到端系統。",
+    "techStack": {
+      "title": "專業技能",
+      "categories": {
+        "programming": "程式語言",
+        "frameworks": "網頁框架與函式庫",
+        "dbms": "資料庫系統",
+        "ml": "機器學習與深度學習",
+        "services": "DevOps 與雲端服務"
+      }
+    },
+    "location": "臺灣 桃園",
+    "interests": {
+      "coffee": "手沖 & 義式"
+    },
+    "experience": {
+      "title": "職涯與成就",
+      "items": [
+        {
+          "year": "2024 - 至今",
+          "content": "國科會計畫 | 研究助理（知識圖譜與推薦系統）"
+        },
+        {
+          "year": "2025",
+          "content": "Google for Education | Gemini 認證教育家"
+        },
+        {
+          "year": "2025",
+          "content": "GenAI for Educators | Google AI 專業證書"
+        },
+        {
+          "year": "2023 - 2024",
+          "content": "嘉德資訊​有限公司 | 全端工程師"
+        },
+        {
+          "year": "2023",
+          "content": "朝陽科大實務專題競賽 | 佳作"
+        },
+        {
+          "year": "2023",
+          "content": "靜宜大學 & 彰化師大 | 電子紙技術 講師"
+        },
+        {
+          "year": "2021 - 2022",
+          "content": "安鐸資訊有限公司 | 全端工程師"
+        },
+        {
+          "year": "2019",
+          "content": "楊梅高中 mBot 機器人競速賽 | 金牌"
+        }
+      ]
+    }
+  },
+  "projects": {
+    "underConstruction": "專案作品頁面建置中...",
+    "description": "目前正在重構組件與調整樣式，請稍後再回來查看，或先參觀其他頁面！"
+  },
+  "blog": {
+    "title": "技術隨筆",
+    "subtitle": "技術學習筆記",
+    "untitled": "無標題",
+    "searchPlaceholder": "搜尋文章關鍵字...",
+    "searchHint": "請至少輸入兩個字元",
+    "noResultsTitle": "沒有找到相關文章",
+    "noResultsDesc": "試試看不同的關鍵字，或是清除搜尋條件？",
+    "post": {
+      "back": "返回文章列表",
+      "error": {
+        "title": "找不到該文章",
+        "description": "你正在尋找的文章可能已被刪除，或是 URL 輸入錯誤。"
+      }
+    }
+  },
+  "copyDiscordInfo": "已複製 Discord ID！",
+  "notFound": {
+    "title": "哎呀... 404！",
+    "description": "你所尋找的頁面不存在。",
+    "backHome": "返回首頁"
+  }
+}

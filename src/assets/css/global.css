@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=M+PLUS+Rounded+1c&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --blue-100: #A5D7E8;
+  --blue-150: #2563EB;
+  --blue-200: #576CBC;
+  --blue-250: #354F7A;
+  --blue-300: #19376D;
+  --blue-350: #243B61;
+  --blue-400: #0B2447;
+  --green-050: #F8FAF8;
+  --green-100: #EBF3E8;
+  --green-150: #E2E8E2;
+  --green-200: #D2E3C8;
+  --green-300: #B2C8BA;
+  --green-400: #86A789;
+  --green-500: #27C93F;
+  --white: #FFFFFF;
+  --black: #000000;
+  --gray-100: #CCCCCC;
+  --gray-500: #737373;
+  --gray-600: #666666;
+  --gray-900: #3A3A3A;
+  --gray-950: #1e1e1e;
+  --red-050: #FFECEC;
+  --red-100: #FF5F56;
+  --red-150: #EB5757;
+  --red-200: #F13A3A;
+  --red-300: #C53030;
+  --yellow-100: #FFBD2E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+html,
+body {
+  font-family: "Chiron GoRound TC", "M PLUS Rounded 1c", "Roboto", sans-serif;
+  /* user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none; */
+}
+
+html,
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: var(--main-bg);
+  min-height: 100dvh;
+}
+
+html {
+  overflow: -moz-hidden-unscrollable;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--text-main), transparent 80%);
+  border-radius: 10px;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+  background-color: color-mix(in srgb, var(--text-main), transparent 60%);
+}

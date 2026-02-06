@@ -1,0 +1,55 @@
+.base {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.h5 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.h6 {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.paragraph {
+  font-size: 14px;
+}
+
+.small {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.tiny {
+  font-size: 11px;
+}
+
+.ellipsis {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

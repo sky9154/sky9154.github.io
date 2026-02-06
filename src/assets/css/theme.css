@@ -1,0 +1,29 @@
+:root {
+  --text-main: var(--white);
+  --text-sub: var(--gray-100);
+  --main-bg: var(--blue-300);
+  --card-bg: var(--blue-100);
+  --nav-bg: var(--blue-400);
+  --lang-menu-bg: var(--blue-350);
+  --footer-bg: var(--blue-400);
+  --search-bg: var(--blue-100);
+  --search-border: var(--white);
+  --inline-code-bg: var(--gray-100);
+  --inline-code-text: var(--red-100);
+  --table-header-bg: var(--blue-350);
+}
+
+[data-theme="light"] {
+  --text-main: var(--gray-900);
+  --text-sub: var(--gray-500);
+  --main-bg: var(--green-300);
+  --card-bg: var(--green-100);
+  --nav-bg: var(--green-400);
+  --lang-menu-bg: var(--green-050);
+  --footer-bg: var(--green-400);
+  --search-bg: var(--green-100);
+  --search-border: var(--gray-900);
+  --inline-code-bg: var(--gray-500);
+  --inline-code-text: var(--red-300);
+  --table-header-bg: var(--green-400);
+}

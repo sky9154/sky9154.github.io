@@ -1,0 +1,95 @@
+{
+  "title": "< oF />",
+  "navbar": {
+    "home": "ホーム",
+    "about": "自己紹介",
+    "projects": "開発実績",
+    "blog": "ブログ"
+  },
+  "home": {
+    "underConstruction": "ホームは現在構築中です...",
+    "description": "現在コンポーネントのスタイル調整とリファクタリングを行っています。自己紹介やブログページをぜひご覧ください！"
+  },
+  "about": {
+    "title": "こんにちは、oF です～",
+    "subtitle": "フルスタックエンジニア & 大学院生",
+    "content": "推薦システム、ナレッジグラフ、GCN を専門とする情報管理学の大学院生（修士課程）です。これまでのフルスタック経験を活かし、理論だけでなく確かなエンジニアリング思考と実装力を大切にしています。<br />ディープラーニングのアーキテクチャを構築する際は、モデルの精度だけでなく、実運用での安定性も重視しています。Python と Node.js を組み合わせ、データ分析からデプロイまで、エンドツーエンドの実装を自力で完遂します。",
+    "techStack": {
+      "title": "技術スタック",
+      "categories": {
+        "programming": "プログラミング言語",
+        "frameworks": "Web フレームワーク & ライブラリ",
+        "dbms": "データベース",
+        "ml": "機械学習 & ディープラーニング",
+        "services": "DevOps & クラウド"
+      }
+    },
+    "location": "台湾・桃園",
+    "interests": {
+      "coffee": "ハンドドリップ<br/>& エスプレッソ"
+    },
+    "experience": {
+      "title": "職歴・受賞歴",
+      "items": [
+        {
+          "year": "2024 - 現在",
+          "content": "国家科学技術委員会 | 研究アシスタント (KG & 推薦システム)"
+        },
+        {
+          "year": "2025",
+          "content": "Google for Education | Gemini 認定教育者"
+        },
+        {
+          "year": "2025",
+          "content": "GenAI for Educators | Google AI 認定証"
+        },
+        {
+          "year": "2023 - 2024",
+          "content": "Getvision Information Ltd. | フルスタックエンジニア"
+        },
+        {
+          "year": "2023",
+          "content": "朝陽科技大学 実務プロジェクトコンテスト | 佳作"
+        },
+        {
+          "year": "2023",
+          "content": "静宜大学 & 彰化師範大学 | 電子ペーパーワークショップ 講師"
+        },
+        {
+          "year": "2021 - 2022",
+          "content": "Andor Ltd. | フルスタックエンジニア"
+        },
+        {
+          "year": "2019",
+          "content": "楊梅高校 mBot ロボットレース大会 | 金賞"
+        }
+      ]
+    }
+  },
+  "projects": {
+    "underConstruction": "開発実績ページは現在構築中です...",
+    "description": "現在コンポーネントのスタイル調整とリファクタリングを行っています。自己紹介やブログページをぜひご覧ください！"
+  },
+  "blog": {
+    "title": "チラ裏",
+    "subtitle": "技術の勉強メモ",
+    "untitled": "無題",
+    "searchPlaceholder": "記事を検索...",
+    "searchHint": "2文字以上入力してください",
+    "noResultsTitle": "記事が見つかりません",
+    "noResultsDesc": "別のキーワードを試すか、検索条件をクリアしてください。",
+    "post": {
+      "back": "一覧ページへ戻る",
+      "error": {
+        "title": "記事が見つかりません",
+        "description": "お探しの記事は削除されたか、URL が間違っている可能性があります。"
+      }
+    }
+  },
+  "copyDiscordInfo": "Discord ID をコピーしました！",
+  "notFound": {
+    "title": "おっと... 404！",
+    "description": "お探しのページは存在しません。",
+    "backHome": "ホームに戻る"
+  }
+}
