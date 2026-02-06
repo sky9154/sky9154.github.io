@@ -42,15 +42,15 @@ const ProfileCard = () => {
             </H1>
             <Paragraph sx={{
               opacity: 0.7,
-              fontSize: "18px",
+              fontSize: "16px",
               lineHeight: 1.6
             }}>
               {t("about.subtitle")}
             </Paragraph>
           </Box>
           <Avatar src={Profile} alt="Profile" sx={{
-            width: { xs: "72px", md: "96px" },
-            height: { xs: "72px", md: "96px" },
+            width: "84px",
+            height: "84px",
             border: "2px solid var(--text-main)"
           }}
           />
