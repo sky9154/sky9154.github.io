@@ -13,7 +13,7 @@
   "about": {
     "title": "Hi, I'm oF.",
     "subtitle": "Full-Stack Engineer & Master's Student",
-    "content": "Specializing in RecSys, Knowledge Graphs, and GCNs, I am a Master's student in Information Management. With extensive full-stack experience, I value the engineering mindset that turns abstract theory into reliable implementations.<br />When building Deep Learning architectures, I care not only about model accuracy but also about stability in real-world production. By integrating Python workflows with Node.js backends, I independently build end-to-end systems from data analysis to deployment.",
+    "content": "Specializing in RecSys, Knowledge Graphs, and GCNs, I am a Master's student in Information Management. Rather than pure theory, I focus on practical implementation and the stability of production systems.<br />By integrating Python training pipelines with Node.js backends, I can independently build end-to-end systems from model development to deployment.<br />In my free time, I like to brew pour-over or espresso coffee, listen to vinyl records, watch movies, and play PC games to unwind.",
     "techStack": {
       "title": "Tech Stack",
       "categories": {
