@@ -12,58 +12,108 @@
   },
   "about": {
     "title": "Hi, I'm oF.",
-    "subtitle": "Full-Stack Engineer & Master's Student",
-    "content": "Specializing in RecSys, Knowledge Graphs, and GCNs, I am a Master's student in Information Management. Rather than pure theory, I focus on practical implementation and the stability of production systems.<br />By integrating Python training pipelines with Node.js backends, I can independently build end-to-end systems from model development to deployment.<br />In my free time, I like to brew pour-over or espresso coffee, listen to vinyl records, watch movies, and play PC games to unwind.",
-    "techStack": {
-      "title": "Tech Stack",
-      "categories": {
-        "programming": "Programming Languages",
-        "frameworks": "Web Frameworks & Libraries",
-        "dbms": "Databases (DBMS)",
-        "ml": "Machine / Deep Learning",
-        "services": "DevOps & Cloud"
-      }
-    },
-    "location": "Taoyuan, Taiwan",
-    "interests": {
-      "coffee": "Hand-drip<br/>& Espresso"
-    },
-    "experience": {
-      "title": "Experience & Awards",
+    "subtitle": "Full-Stack Engineer | Recommender Systems & Knowledge Graph Research",
+    "content": "Master’s graduate in Information Management with over one year of full-stack development experience, including manufacturing information display systems, e-paper and IoT applications, and fall detection systems.<br />Research interests include recommender systems, knowledge graphs, graph neural networks, and natural language processing, with hands-on experience in data processing, model training, experimental validation, full-stack development, database integration, and hardware–software integration.",
+    "research": {
+      "title": "Research & Projects",
       "items": [
         {
-          "year": "2024 - Present",
-          "content": "NSTC Project | Research Assistant (KG & RecSys)"
+          "title": "Knowledge Graph Recommendation",
+          "description": "Research focused on integrating users’ evolving preferences, sentiment-related semantic features from reviews, and product attribute relationships. An attention mechanism was used to combine these features into a personalized recommendation approach.",
+          "tags": [
+            "Recommender Systems",
+            "Knowledge Graphs",
+            "Multi-Head Attention",
+            "Temporal Knowledge Graphs"
+          ]
         },
         {
-          "year": "2025",
-          "content": "Google for Education | Gemini Certified Educator"
+          "title": "Point-of-Interest Recommendation",
+          "description": "Contributed to research combining graph neural networks and sentiment analysis, with responsibilities including experiment replication, refinement of evaluation methods, data validation, and ablation studies.",
+          "tags": [
+            "POI Recommendation",
+            "Sentiment Analysis",
+            "Experiment Replication",
+            "Model Evaluation"
+          ]
         },
         {
-          "year": "2025",
-          "content": "GenAI for Educators | Google AI Certificate"
-        },
-        {
-          "year": "2023 - 2024",
-          "content": "Getvision Information Ltd. | Full-stack Engineer"
-        },
-        {
-          "year": "2023",
-          "content": "CYUT Practical Project Comp. | Honorable Mention"
-        },
-        {
-          "year": "2023",
-          "content": "Providence Univ. & NCUE | E-Paper Workshop Instructor"
-        },
-        {
-          "year": "2021 - 2022",
-          "content": "Andor Ltd. | Full-stack Engineer"
-        },
-        {
-          "year": "2019",
-          "content": "YMHS mBot Robot Racing Comp. | Gold Medal Award"
+          "title": "Fall Detection System",
+          "description": "Developed a system that uses human pose estimation and temporal models to distinguish normal activity, loss of balance, and falls, while integrating real-time video, event notifications, and environmental sensing.",
+          "tags": [
+            "Pose Estimation",
+            "LSTM",
+            "Real-Time Systems",
+            "Internet of Things"
+          ]
         }
       ]
+    },
+    "workExperience": {
+      "title": "Work Experience",
+      "items": [
+        {
+          "period": "Jul 2023 – Feb 2024",
+          "company": "Getvision Information Co., Ltd.",
+          "role": "Full-Stack Engineer",
+          "highlights": [
+            "Contributed to the development of e-paper device management and IoT systems.",
+            "Worked on front-end and back-end features, database integration, and device communication."
+          ]
+        },
+        {
+          "period": "Nov 2021 – Jun 2022",
+          "company": "Andor Information Co., Ltd.",
+          "role": "Full-Stack Engineer",
+          "highlights": [
+            "Contributed to manufacturing information displays and management systems.",
+            "Developed system features, back-end APIs, database integrations, and analytical reports."
+          ]
+        }
+      ]
+    },
+    "education": {
+      "title": "Education",
+      "items": [
+        {
+          "period": "Jun 2026",
+          "school": "Chung Yuan Christian University",
+          "degree": "Department of Information Management | M.B.A.",
+          "topicLabel": "MASTER’S THESIS",
+          "topic": "A Recommendation Method Based on a Knowledge Graph Integrating Users’ Dynamic Preferences and Sentiment Semantic Features",
+          "description": "Explored personalized recommendation methods by combining users’ evolving preferences, sentiment semantics from reviews, and product knowledge graphs.",
+          "tags": [
+            "Recommender Systems",
+            "Knowledge Graphs",
+            "Graph Neural Networks",
+            "Natural Language Processing"
+          ]
+        },
+        {
+          "period": "Jun 2024",
+          "school": "Chaoyang University of Technology",
+          "degree": "Department of Information and Communication Engineering | B.S.",
+          "topicLabel": "CAPSTONE PROJECT",
+          "topic": "Fall Detection Using Image Recognition",
+          "description": "Built a fall detection system integrating human pose estimation, temporal analysis, real-time monitoring, and IoT devices. The project received an Honorable Mention in the department’s 2023 capstone competition.",
+          "tags": [
+            "Computer Vision",
+            "Temporal Analysis",
+            "Real-Time Systems",
+            "Internet of Things"
+          ]
+        }
+      ]
+    },
+    "techStack": {
+      "title": "Technologies & Tools",
+      "categories": {
+        "programming": "Programming Languages",
+        "web": "Full-Stack Development",
+        "data": "Databases",
+        "ai": "Machine Learning & Deep Learning",
+        "integration": "System Integration & Tools"
+      }
     }
   },
   "projects": {
@@ -86,9 +136,9 @@
       }
     }
   },
-  "copyDiscordInfo": "Discord ID copied !",
+  "copyDiscordInfo": "Discord ID copied!",
   "notFound": {
-    "title": "Ooops... 404 !",
+    "title": "Oops... 404!",
     "description": "The page you are looking for does not exist.",
     "backHome": "Back to Home"
   }

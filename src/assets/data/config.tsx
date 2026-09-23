@@ -17,10 +17,10 @@ type ContactType = {
 
 type techListType = {
   programming: string[];
-  frameworks: string[];
-  dbms: string[];
-  ml: string[];
-  services: string[];
+  web: string[];
+  data: string[];
+  ai: string[];
+  integration: string[];
 }
 
 export const MENU_LIST: MenuType[] = [
@@ -73,11 +73,43 @@ export const CONTACT: ContactType[] = [
 ];
 
 export const TECH_LIST: techListType = {
-  programming: ["Python", "TypeScript", "JavaScript", "Java", "Go", "PHP"],
-  frameworks: ["React", "Material UI", "Node.js", "FastAPI", "Django", "Spring Boot"],
-  dbms: ["MySQL", "MSSQL", "MongoDB", "Neo4j"],
-  ml: ["PyTorch", "PyG", "Transformers", "Scikit-learn", "OpenCV"],
-  services: ["Git", "Docker", "Nginx", "Google Cloud", "Cloudflare", "Firebase", "Heroku"]
+  programming: [
+    "Python",
+    "TypeScript",
+    "JavaScript",
+    "Java"
+  ],
+  web: [
+    "React",
+    "Material UI",
+    "FastAPI",
+    "Node.js",
+    "Java Servlet"
+  ],
+  data: [
+    "MongoDB",
+    "MySQL",
+    "Microsoft SQL Server",
+    "Neo4j"
+  ],
+  ai: [
+    "PyTorch",
+    "PyTorch Geometric",
+    "TensorFlow",
+    "Transformers",
+    "llama.cpp",
+    "MediaPipe",
+    "OpenCV"
+  ],
+  integration: [
+    "REST API",
+    "WebSocket",
+    "MQTT",
+    "ESP32",
+    "Docker",
+    "Nginx",
+    "Git"
+  ]
 };
 
 export const COPYRIGHT = "Copyright © oF. All Rights Reserved.";

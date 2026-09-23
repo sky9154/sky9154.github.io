@@ -48,7 +48,7 @@ const ProfileCard = () => {
               {t("about.subtitle")}
             </Paragraph>
           </Box>
-          <Avatar src={Profile} alt="Profile" sx={{
+          <Avatar src={Profile} alt="oF" sx={{
             width: "84px",
             height: "84px",
             border: "2px solid var(--text-main)"
