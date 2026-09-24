@@ -57,7 +57,7 @@ const PaginationControl = ({ page, hasMore, loading, onPrev, onNext }: Paginatio
           border: "2px solid",
           borderColor: "var(--text-main)",
           color: "var(--text-main)",
-          opacity: !hasMore ? 0.3 : 1,
+          opacity: (!hasMore) ? 0.3 : 1,
           fontSize: "16px",
           width: "42px",
           height: "42px",

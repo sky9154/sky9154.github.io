@@ -1,100 +1,137 @@
-import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
-import { Container, Box, Button } from "@mui/material";
-import { H1, H3 } from "@components/ui/Typography";
-import { FaLaptopCode, FaUserAstronaut, FaArrowRight } from "react-icons/fa";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { Container } from "@mui/material";
+import BlogHero from "@components/blog/BlogHero";
+import PostList, { BlogPost } from "@components/blog/PostList";
+import PaginationControl from "@components/blog/PaginationControl";
 
 
-const Projects = () => {
-  const { t } = useTranslation();
-  const navigate = useNavigate();
+type NotionText = { plain_text: string };
+
+interface NotionQueryResponse {
+  results: {
+    id: string;
+    properties: {
+      Title: { title: NotionText[] };
+      Summary: { rich_text: NotionText[] };
+      Tags: { multi_select: { name: string; color: string }[] };
+      Updated: { last_edited_time: string };
+    };
+  }[];
+
+  next_cursor: string | null;
+  has_more: boolean;
+}
+
+const Blog = () => {
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const cursorsRef = useRef<(string | null)[]>([null]);
+
+  const handleSearch = useCallback((query: string) => {
+    setSearchQuery((prev) => {
+      if (prev === query) {
+        return prev;
+      }
+
+      setPage(1);
+      cursorsRef.current = [null];
+
+      return query;
+    });
+  }, []);
+
+  const fetchPosts = useCallback(async () => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 0);
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const baseUrl = "https://notion.sky9154.com/projects";
+      const url = new URL(baseUrl);
+
+      const currentCursor = cursorsRef.current[page - 1] || null;
+
+      if (currentCursor) {
+        url.searchParams.append("cursor", currentCursor);
+      }
+
+      if (searchQuery) {
+        url.searchParams.append("q", searchQuery);
+      }
+
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error("Fetch failed");
+      }
+
+      const data: NotionQueryResponse = await response.json();
+      const formattedData: BlogPost[] = data.results.map((page) => ({
+        id: page.id,
+        title: page.properties.Title.title.map((t) => t.plain_text).join(""),
+        summary: page.properties.Summary.rich_text.map((t) => t.plain_text).join(""),
+        tags: page.properties.Tags.multi_select.map((tag) => ({
+          name: tag.name,
+          color: tag.color
+        })),
+        updatedAt: new Date(page.properties.Updated.last_edited_time).toLocaleDateString()
+      }));
+
+      setPosts(formattedData);
+      setHasMore(data.has_more);
+
+      if (data.has_more && data.next_cursor) {
+        cursorsRef.current[page] = data.next_cursor;
+      }
+    } catch (err) {
+      if (err instanceof Error) {
+        setError(err.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  }, [page, searchQuery]);
+
+  const handlePrev = () => {
+    if (page > 1) {
+      setPage((p) => p - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (hasMore) {
+      setPage((p) => p + 1);
+    }
+  };
+
+  useEffect(() => {
+    fetchPosts();
+  }, [fetchPosts]);
 
   return (
     <Container maxWidth="lg" sx={{
       flexGrow: 1,
       pt: "84px",
-      my: 4,
-      minHeight: "100dvh",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
-      color: "var(--text-main)",
+      my: 4
     }}>
-      <Box sx={{
-        fontSize: "80px",
-        mb: 3,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        opacity: 0.9
-      }}>
-        <FaLaptopCode />
-      </Box>
-      <H1 sx={{ fontSize: "24px", fontWeight: "700", mb: 1 }}>
-        {t("projects.underConstruction")}
-      </H1>
-      <H3 sx={{
-        color: "var(--text-sub)",
-        fontSize: "16px",
-        maxWidth: "400px",
-        lineHeight: 1.6,
-        mb: 4
-      }}>
-        {t("projects.description")}
-      </H3>
-      <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap", justifyContent: "center" }}>
-        <Button
-          variant="contained"
-          startIcon={<FaUserAstronaut />}
-          onClick={() => navigate("/about")}
-          sx={{
-            px: 4,
-            py: 1.2,
-            borderRadius: "8px",
-            textTransform: "none",
-            fontSize: "16px",
-            fontWeight: 600,
-            boxShadow: "none",
-            color: "var(--text-main)",
-            bgcolor: "color-mix(in srgb, var(--text-sub), transparent 80%)",
-            "&:hover": {
-              bgcolor: "color-mix(in srgb, var(--text-sub), transparent 60%)",
-              boxShadow: "none",
-              transform: "translateY(-4px)"
-            }
-          }}
-        >
-          {t("navbar.about")}
-        </Button>
-        <Button
-          variant="outlined"
-          endIcon={<FaArrowRight />}
-          onClick={() => navigate("/blog")}
-          sx={{
-            px: 4,
-            py: 1.2,
-            borderRadius: "8px",
-            textTransform: "none",
-            fontSize: "16px",
-            fontWeight: 600,
-            boxShadow: "none",
-            border: "2px solid var(--text-sub)",
-            color: "var(--text-main)",
-            "&:hover": {
-              bgcolor: "color-mix(in srgb, var(--text-sub), transparent 60%)",
-              border: "2px solid var(--text-sub)",
-              boxShadow: "none",
-              transform: "translateY(-4px)"
-            }
-          }}
-        >
-          {t("navbar.blog")}
-        </Button>
-      </Box>
+      <BlogHero onSearch={handleSearch} />
+      <PostList posts={posts} loading={loading} error={error} />
+      <PaginationControl
+        page={page}
+        hasMore={hasMore}
+        loading={loading}
+        onPrev={handlePrev}
+        onNext={handleNext}
+      />
     </Container>
   );
-}
+};
 
-export default Projects;
+export default Blog;
