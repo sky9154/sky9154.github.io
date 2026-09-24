@@ -61,8 +61,7 @@ const BlogPost = () => {
     <Container maxWidth="lg" sx={{
       flexGrow: 1,
       pt: "84px",
-      my: 4,
-      minHeight: "100dvh"
+      my: 4
     }}>
       {(loading) ? (
         <PostSkeleton />

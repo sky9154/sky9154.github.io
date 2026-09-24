@@ -25,15 +25,12 @@ const ResearchHighlightsCard = () => {
           {t("about.research.title")}
         </SectionTitle>
         {items.map((item, index) => (
-          <Box
-            key={item.title}
-            sx={{
-              pb: (index < items.length - 1) ? 2 : 0,
-              borderBottom: (index < items.length - 1)
-                ? "1px solid color-mix(in srgb, var(--text-main), transparent 88%)"
-                : "none"
-            }}
-          >
+          <Box key={item.title} sx={{
+            pb: (index < items.length - 1) ? 2 : 0,
+            borderBottom: (index < items.length - 1)
+              ? "1px solid color-mix(in srgb, var(--text-main), transparent 88%)"
+              : "none"
+          }}>
             <H3 sx={{
               fontSize: "18px",
               fontWeight: 700,
@@ -72,8 +69,7 @@ const ResearchHighlightsCard = () => {
                       bgcolor: "color-mix(in srgb, var(--text-main), transparent 85%)",
                       borderColor: "color-mix(in srgb, var(--text-main), transparent 70%)"
                     }
-                  }}
-                />
+                  }} />
               ))}
             </Box>
           </Box>

@@ -32,11 +32,9 @@ const LanguageButton = () => {
           order: { xs: 1, sm: 2 },
           fontSize: "18px",
           display: { xm: "none", md: "flex" }
-        }}
-      >
+        }}>
         <PublicIcon />
       </Button>
-
       <Menu
         anchorEl={langMenuAnchorEl}
         open={isLangMenuOpen}
@@ -65,13 +63,11 @@ const LanguageButton = () => {
               }
             }
           }
-        }}
-      >
+        }}>
         <MenuItem onClick={() => handleLangMenuClose("zh_Hant")}>繁體中文</MenuItem>
         <MenuItem onClick={() => handleLangMenuClose("en")}>English</MenuItem>
         <MenuItem onClick={() => handleLangMenuClose("ja")}>日本語</MenuItem>
       </Menu>
-
     </Box>
   );
 }

@@ -19,15 +19,12 @@ const ThemeModeButton = () => {
   }
 
   return (
-    <Button
-      onClick={handleThemeModeToggle}
-      sx={{
-        color: "inherit",
-        order: { xs: 1, sm: 2 },
-        fontSize: "18px",
-        display: { xm: "none", md: "flex" }
-      }}
-    >
+    <Button onClick={handleThemeModeToggle} sx={{
+      color: "inherit",
+      order: { xs: 1, sm: 2 },
+      fontSize: "18px",
+      display: { xm: "none", md: "flex" }
+    }}>
       {themeModeButton}
     </Button>
   );

@@ -37,8 +37,7 @@ const EducationCard = () => {
                 borderRadius: 3,
                 bgcolor: "color-mix(in srgb, var(--text-main), transparent 95%)",
                 border: "1px solid color-mix(in srgb, var(--text-main), transparent 85%)"
-              }}
-            >
+              }}>
               <Paragraph sx={{
                 fontSize: "13px",
                 color: "var(--text-sub)",
@@ -115,8 +114,7 @@ const EducationCard = () => {
                         bgcolor: "color-mix(in srgb, var(--text-main), transparent 85%)",
                         borderColor: "color-mix(in srgb, var(--text-main), transparent 70%)"
                       }
-                    }}
-                  />
+                    }} />
                 ))}
               </Box>
             </Box>

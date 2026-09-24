@@ -13,14 +13,17 @@ const TechStackCard = () => {
   const { t } = useTranslation();
 
   const { themeMode } = useThemeModeContext();
-  const watermark = themeMode === "dark" ? NiraB : NiraG;
+  const watermark = (themeMode === "dark") ? NiraB : NiraG;
 
   return (
     <BentoCard colSpan={2} rowSpan={2}>
       <Stack
         spacing={3}
-        sx={{ height: "100%", position: "relative", isolation: "isolate" }}
-      >
+        sx={{
+          height: "100%",
+          position: "relative",
+          isolation: "isolate"
+        }}>
         <SectionTitle>
           {t("about.techStack.title")}
         </SectionTitle>
@@ -30,31 +33,25 @@ const TechStackCard = () => {
               display: "grid",
               gridTemplateColumns: { xs: "1fr", sm: "repeat(2, minmax(0, 1fr))" },
               gap: 2
-            }}
-          >
+            }}>
             {Object.entries(TECH_LIST).map(([category, techs], index, entries) => (
-              <Box
-                key={category}
-                sx={{
-                  gridColumn: {
-                    xs: "auto",
-                    sm: index === entries.length - 1 ? "1 / -1" : "auto"
-                  },
-                  minWidth: 0,
-                  p: 2,
-                  borderRadius: 3,
-                  bgcolor: "color-mix(in srgb, var(--text-main), transparent 95%)",
-                  border: "1px solid color-mix(in srgb, var(--text-main), transparent 85%)"
-                }}
-              >
-                <Paragraph
-                  sx={{
-                    fontSize: "14px",
-                    fontWeight: 700,
-                    color: "var(--text-sub)",
-                    mb: 1.5
-                  }}
-                >
+              <Box key={category} sx={{
+                gridColumn: {
+                  xs: "auto",
+                  sm: (index === entries.length - 1) ? "1 / -1" : "auto"
+                },
+                minWidth: 0,
+                p: 2,
+                borderRadius: 3,
+                bgcolor: "color-mix(in srgb, var(--text-main), transparent 95%)",
+                border: "1px solid color-mix(in srgb, var(--text-main), transparent 85%)"
+              }}>
+                <Paragraph sx={{
+                  fontSize: "14px",
+                  fontWeight: 700,
+                  color: "var(--text-sub)",
+                  mb: 1.5
+                }}>
                   {t(`about.techStack.categories.${category}`)}
                 </Paragraph>
 
@@ -76,8 +73,7 @@ const TechStackCard = () => {
                           bgcolor: "color-mix(in srgb, var(--text-main), transparent 85%)",
                           borderColor: "color-mix(in srgb, var(--text-main), transparent 70%)"
                         }
-                      }}
-                    />
+                      }} />
                   ))}
                 </Box>
               </Box>
@@ -101,8 +97,7 @@ const TechStackCard = () => {
             zIndex: 0,
             pointerEvents: "none",
             userSelect: "none"
-          }}
-        />
+          }} />
       </Stack>
     </BentoCard>
   );

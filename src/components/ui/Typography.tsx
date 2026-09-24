@@ -33,8 +33,7 @@ const TypographyFactory = (ComponentTag: ElementType, defaultClass: string) => {
         { [styles["ellipsis"]]: ellipsis },
         className
       )}
-      {...props}
-    >
+      {...props}>
       {children}
     </StyledBox>
   );

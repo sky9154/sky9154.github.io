@@ -31,7 +31,11 @@ const ProfileCard = () => {
         <Stack
           direction={{ xs: "column-reverse", sm: "row" }}
           spacing={2}
-          sx={{ justifyContent: "space-between", alignItems: { xs: "center", sm: "start" }, pb: 2 }}>
+          sx={{
+            justifyContent: "space-between",
+            alignItems: { xs: "center", sm: "start" },
+            pb: 2
+          }}>
           <Box sx={{ textAlign: { xs: "center", sm: "left" } }}>
             <H1 sx={{
               fontSize: "32px",
@@ -66,7 +70,8 @@ const ProfileCard = () => {
             </Paragraph>
           ))}
         </Box>
-        <Stack direction="row" spacing={2} sx={{
+        <Stack
+        direction="row" spacing={2} sx={{
           mt: 4,
           pt: 2,
           borderTop: "1px solid color-mix(in srgb, var(--text-main), transparent 90%)",

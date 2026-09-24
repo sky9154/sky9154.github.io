@@ -119,8 +119,7 @@ const Blog = () => {
     <Container maxWidth="lg" sx={{
       flexGrow: 1,
       pt: "84px",
-      my: 4,
-      minHeight: "100dvh"
+      my: 4
     }}>
       <BlogHero onSearch={handleSearch} />
       <PostList posts={posts} loading={loading} error={error} />
