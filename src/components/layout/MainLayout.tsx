@@ -8,9 +8,9 @@ const MainLayout = () => {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }}>
       <Navbar />
-      <main>
+      <Box component="main" sx={{ flex: 1, display: "flex", minHeight: 0 }}>
         <Outlet />
-      </main>
+      </Box>
       <Footer />
     </Box>
   );

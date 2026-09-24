@@ -1,97 +1,114 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
-import { Container, Box, Button } from "@mui/material";
-import { H1, H3 } from "@components/ui/Typography";
-import { FaLaptopCode, FaUserAstronaut, FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { Box, Button, Container, Stack } from "@mui/material";
+import { FaArrowRightLong } from "react-icons/fa6";
+import SignalPortrait from "@components/home/SignalPortrait";
+import BentoCard from "@components/ui/BentoCard";
+import { H1, Paragraph } from "@components/ui/Typography";
 
 
 const Home = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+
+  const pageLinks = [
+    { key: "about", to: "/about" },
+    { key: "projects", to: "/projects" },
+    { key: "blog", to: "/blog" }
+  ];
 
   return (
-    <Container maxWidth="lg" sx={{
-      flexGrow: 1,
-      pt: "84px",
-      my: 4,
-      minHeight: "100dvh",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
-      color: "var(--text-main)",
-    }}>
-      <Box sx={{
-        fontSize: "80px",
-        mb: 3,
+    <Container
+      maxWidth="lg"
+      sx={{
+        flexGrow: 1,
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        opacity: 0.9
+        flexDirection: "column",
+        justifyContent: {
+          xs: "flex-start",
+          md: "center"
+        },
+        pt: {
+          xs: "calc(84px + 20px)",
+          md: "84px"
+        },
+        pb: {
+          xs: 1.5,
+          md: 0
+        }
       }}>
-        <FaLaptopCode />
-      </Box>
-      <H1 sx={{ fontSize: "24px", fontWeight: "700", mb: 1 }}>
-        {t("home.underConstruction")}
-      </H1>
-      <H3 sx={{
-        color: "var(--text-sub)",
-        fontSize: "16px",
-        maxWidth: "400px",
-        lineHeight: 1.6,
-        mb: 4
+      <Box sx={{
+        display: "grid",
+        width: "100%",
+        gridTemplateColumns: {
+          xs: "1fr",
+          md: "repeat(6, minmax(0, 1fr))"
+        },
+        gridAutoRows: "minmax(180px, auto)",
+        gap: 3
       }}>
-        {t("home.description")}
-      </H3>
-      <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap", justifyContent: "center" }}>
-        <Button
-          variant="contained"
-          startIcon={<FaUserAstronaut />}
-          onClick={() => navigate("/about")}
-          sx={{
-            px: 4,
-            py: 1.2,
-            borderRadius: "8px",
-            textTransform: "none",
-            fontSize: "16px",
-            fontWeight: 600,
-            boxShadow: "none",
-            color: "var(--text-main)",
-            bgcolor: "color-mix(in srgb, var(--text-sub), transparent 80%)",
-            "&:hover": {
-              bgcolor: "color-mix(in srgb, var(--text-sub), transparent 60%)",
-              boxShadow: "none",
-              transform: "translateY(-4px)"
-            }
-          }}
-        >
-          {t("navbar.about")}
-        </Button>
-        <Button
-          variant="outlined"
-          endIcon={<FaArrowRight />}
-          onClick={() => navigate("/blog")}
-          sx={{
-            px: 4,
-            py: 1.2,
-            borderRadius: "8px",
-            textTransform: "none",
-            fontSize: "16px",
-            fontWeight: 600,
-            boxShadow: "none",
-            border: "2px solid var(--text-sub)",
-            color: "var(--text-main)",
-            "&:hover": {
-              bgcolor: "color-mix(in srgb, var(--text-sub), transparent 60%)",
-              border: "2px solid var(--text-sub)",
-              boxShadow: "none",
-              transform: "translateY(-4px)"
-            }
-          }}
-        >
-          {t("navbar.blog")}
-        </Button>
+        <SignalPortrait label={t("home.artworkLabel")} />
+        <BentoCard colSpan={2} rowSpan={3}>
+          <Stack spacing={3} sx={{ height: "100%" }}>
+            <Box>
+              <H1 sx={{
+                fontSize: { xs: "64px", sm: "80px", md: "88px" },
+                lineHeight: 1,
+                fontWeight: 700,
+                letterSpacing: "-0.06em"
+              }}>
+                {t("home.name")}
+              </H1>
+              <Paragraph sx={{
+                mt: 2,
+                color: "var(--text-sub)",
+                fontSize: "16px",
+                lineHeight: 1.65
+              }}>
+                {t("home.intro")}
+              </Paragraph>
+            </Box>
+
+            <Stack component="nav" spacing={1} aria-label={t("home.navigation")}>
+              {pageLinks.map((item) => (
+                <Button
+                  component={Link}
+                  key={item.key}
+                  to={item.to}
+                  endIcon={<FaArrowRightLong />}
+                  sx={{
+                    minHeight: "44px",
+                    px: 0,
+                    justifyContent: "space-between",
+                    borderRadius: 0,
+                    borderBottom: "1px solid color-mix(in srgb, var(--text-main), transparent 82%)",
+                    color: "var(--text-main)",
+                    textTransform: "none",
+                    fontSize: "16px",
+                    "& .MuiButton-endIcon": {
+                      transition: "transform 180ms cubic-bezier(0.22, 1, 0.36, 1)"
+                    },
+                    "@media (hover: hover) and (pointer: fine)": {
+                      "&:hover": {
+                        bgcolor: "transparent",
+                        borderColor: "var(--text-main)"
+                      },
+                      "&:hover .MuiButton-endIcon": {
+                        transform: "translateX(4px)"
+                      }
+                    },
+                    "&:active": {
+                      transform: "scale(0.99)"
+                    }
+                  }}
+                >
+                  {t(`navbar.${item.key}`)}
+                </Button>
+              ))}
+            </Stack>
+            <Box sx={{ flexGrow: 1 }} />
+
+          </Stack>
+        </BentoCard>
       </Box>
     </Container>
   );

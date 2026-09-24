@@ -7,8 +7,11 @@
     "blog": "Blog"
   },
   "home": {
-    "underConstruction": "Home Page is under construction...",
-    "description": "Currently styling components and refactoring codebase. Please check back later!"
+    "name": "oF",
+    "intro": "Ciallo～(∠・ω< )⌒☆",
+    "navigation": "Explore the site",
+    "enter": "Enter",
+    "artworkLabel": "Character artwork for oF"
   },
   "about": {
     "title": "Hi, I'm oF.",
@@ -23,18 +26,18 @@
           "tags": [
             "Recommender Systems",
             "Knowledge Graphs",
-            "Multi-Head Attention",
-            "Temporal Knowledge Graphs"
+            "Graph Convolutional Networks",
+            "Sentiment and Semantic Analysis"
           ]
         },
         {
           "title": "Point-of-Interest Recommendation",
           "description": "Contributed to research combining graph neural networks and sentiment analysis, with responsibilities including experiment replication, refinement of evaluation methods, data validation, and ablation studies.",
           "tags": [
-            "POI Recommendation",
-            "Sentiment Analysis",
-            "Experiment Replication",
-            "Model Evaluation"
+            "Recommender Systems",
+            "Review Mining",
+            "Sentiment and Semantic Analysis",
+            "Graph Neural Networks"
           ]
         },
         {
@@ -85,8 +88,8 @@
           "tags": [
             "Recommender Systems",
             "Knowledge Graphs",
-            "Graph Neural Networks",
-            "Natural Language Processing"
+            "Graph Convolutional Networks",
+            "Sentiment and Semantic Analysis"
           ]
         },
         {
