@@ -4,14 +4,30 @@
     "home": "首頁",
     "about": "關於",
     "projects": "專案作品",
-    "blog": "文章"
+    "blog": "技術文章"
   },
   "home": {
     "name": "oF",
     "intro": "Ciallo～(∠・ω< )⌒☆",
+    "statement": "專注於前後端開發，也持續研究 AI 應用、知識圖譜與圖神經網路。",
+    "profileLabel": "個人檔案 / ZTMY-8828-9857-9995",
     "navigation": "網站內容",
     "enter": "進入",
-    "artworkLabel": "oF 的角色插圖"
+    "artworkLabel": "可透過游標互動的 oF 角色插圖",
+    "focusLabel": "研究方向",
+    "focus": "AI 應用 / 知識圖譜 / 圖神經網路 / 全端開發",
+    "links": {
+      "about": "經歷、研究與技術",
+      "projects": "專案與研究成果",
+      "blog": "技術筆記與學習紀錄"
+    },
+    "signal": {
+      "live": "可互動區域",
+      "mode": "主題",
+      "dark": "深色",
+      "light": "淺色",
+      "hint": "移動游標查看效果"
+    }
   },
   "about": {
     "title": "你好，我是 oF",
@@ -124,13 +140,13 @@
     "description": "目前正在重構元件與調整樣式，請稍後再回來查看，或先參觀其他頁面！"
   },
   "blog": {
-    "title": "技術隨筆",
-    "subtitle": "學習筆記",
+    "title": "技術文章",
+    "subtitle": "整理開發實作、研究內容與學習心得",
     "untitled": "無標題",
     "searchPlaceholder": "搜尋文章關鍵字...",
     "searchHint": "請至少輸入兩個字元",
     "noResultsTitle": "沒有找到相關文章",
-    "noResultsDesc": "試試看不同的關鍵字，或是清除搜尋條件？",
+    "noResultsDesc": "試試其他關鍵字，或清除搜尋條件。",
     "post": {
       "back": "返回文章列表",
       "error": {

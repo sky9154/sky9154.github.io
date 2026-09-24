@@ -1,6 +1,6 @@
 import { PointerEvent, useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { Box, useMediaQuery } from "@mui/material";
-import BentoCard from "@components/ui/BentoCard";
 import { useThemeModeContext } from "@context/ThemeModeContext";
 import ProfileB from "@assets/images/illustration/profile-b.png";
 import ProfileG from "@assets/images/illustration/profile-g.png";
@@ -12,6 +12,7 @@ type Point = {
 };
 
 const SignalPortrait = ({ label }: { label: string }) => {
+  const { t } = useTranslation();
   const { themeMode } = useThemeModeContext();
   const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
   const stageRef = useRef<HTMLDivElement>(null);
@@ -85,7 +86,12 @@ const SignalPortrait = ({ label }: { label: string }) => {
   };
 
   return (
-    <BentoCard colSpan={4} rowSpan={3}>
+    <Box sx={{
+      minWidth: 0,
+      minHeight: { xs: "360px", sm: "440px", md: 0 },
+      p: { xs: 2, sm: 3 },
+      display: "flex"
+    }}>
       <Box
         ref={stageRef}
         role="img"
@@ -106,23 +112,55 @@ const SignalPortrait = ({ label }: { label: string }) => {
           display: "grid",
           placeItems: "center",
           width: "100%",
-          minHeight: { xs: "320px", sm: "440px", md: "560px" },
+          minHeight: { xs: "328px", sm: "392px", md: 0 },
+          height: "100%",
           overflow: "hidden",
-          borderRadius: 3,
+          borderRadius: 2.5,
           cursor: "crosshair",
           touchAction: "pan-y",
           isolation: "isolate",
           "&::before": {
             position: "absolute",
-            width: { xs: "260px", sm: "380px", md: "450px" },
+            zIndex: 0,
+            width: { xs: "260px", sm: "380px", md: "min(74%, 500px)" },
             maxWidth: "76%",
             aspectRatio: "1",
             border: "1px solid color-mix(in srgb, var(--text-main), transparent 82%)",
             borderRadius: "50%",
             content: "''",
             transform: "rotate(-8deg) scale(0.98, 1.04)"
+          },
+          "&::after": {
+            position: "absolute",
+            zIndex: 0,
+            inset: 0,
+            backgroundImage: `
+              linear-gradient(
+                90deg,
+                transparent calc(50% - 0.5px),
+                color-mix(in srgb, var(--text-main), transparent 91%) 50%,
+                transparent calc(50% + 0.5px)
+              ),
+              linear-gradient(
+                transparent calc(50% - 0.5px),
+                color-mix(in srgb, var(--text-main), transparent 91%) 50%,
+                transparent calc(50% + 0.5px)
+              )
+            `,
+            content: "''",
+            pointerEvents: "none"
           }
         }}>
+        <Box aria-hidden="true" sx={{
+          position: "absolute",
+          zIndex: 0,
+          width: { xs: "310px", sm: "470px", md: "min(88%, 580px)" },
+          maxWidth: "88%",
+          aspectRatio: "1.3",
+          border: "1px solid color-mix(in srgb, var(--text-main), transparent 90%)",
+          borderRadius: "50%",
+          transform: "rotate(13deg)"
+        }} />
         <Box
           component="img"
           src={baseImage}
@@ -130,8 +168,10 @@ const SignalPortrait = ({ label }: { label: string }) => {
           aria-hidden="true"
           sx={{
             display: "block",
-            width: { xs: "280px", sm: "420px", md: "480px" },
-            maxWidth: "88%",
+            position: "relative",
+            zIndex: 1,
+            width: { xs: "292px", sm: "424px", md: "min(82%, 560px)" },
+            maxWidth: "90%",
             aspectRatio: "1",
             objectFit: "contain",
             pointerEvents: "none",
@@ -143,6 +183,7 @@ const SignalPortrait = ({ label }: { label: string }) => {
           }} />
         <Box sx={{
           position: "absolute",
+          zIndex: 2,
           inset: 0,
           display: "grid",
           placeItems: "center",
@@ -159,8 +200,8 @@ const SignalPortrait = ({ label }: { label: string }) => {
             alt=""
             sx={{
               display: "block",
-              width: { xs: "280px", sm: "420px", md: "480px" },
-              maxWidth: "88%",
+              width: { xs: "292px", sm: "424px", md: "min(82%, 560px)" },
+              maxWidth: "90%",
               aspectRatio: "1",
               objectFit: "contain",
               pointerEvents: "none",
@@ -172,6 +213,7 @@ const SignalPortrait = ({ label }: { label: string }) => {
         </Box>
         <Box aria-hidden="true" sx={{
           position: "absolute",
+          zIndex: 3,
           top: "var(--lens-y)",
           left: "var(--lens-x)",
           width: "var(--lens-size)",
@@ -203,7 +245,7 @@ const SignalPortrait = ({ label }: { label: string }) => {
             position: "absolute",
             left: { xs: 2, sm: 3, md: 3.5 },
             bottom: { xs: 2, sm: 3, md: 3.5 },
-            zIndex: 2,
+            zIndex: 4,
             display: "flex",
             alignItems: "center",
             gap: 1.25,
@@ -220,7 +262,7 @@ const SignalPortrait = ({ label }: { label: string }) => {
             component="span"
             ref={coordinateRef}
             sx={{
-              fontSize: { xs: "10px", sm: "11px" },
+              fontSize: { xs: "10px", sm: "12px" },
               lineHeight: 1,
               letterSpacing: "0.12em",
               fontVariantNumeric: "tabular-nums"
@@ -228,8 +270,74 @@ const SignalPortrait = ({ label }: { label: string }) => {
             X 056 / Y 042
           </Box>
         </Box>
+        <Box aria-hidden="true" sx={{
+          position: "absolute",
+          zIndex: 4,
+          top: { xs: 2, sm: 3, md: 3.5 },
+          left: { xs: 2, sm: 3, md: 3.5 },
+          display: "flex",
+          alignItems: "center",
+          gap: 1,
+          color: "color-mix(in srgb, var(--text-main), transparent 20%)",
+          pointerEvents: "none"
+        }}>
+          <Box sx={{
+            position: "relative",
+            width: "6px",
+            height: "6px",
+            borderRadius: "50%",
+            bgcolor: "currentColor",
+            animation: "signalPulse 2.4s ease-in-out infinite",
+            "@keyframes signalPulse": {
+              "0%, 100%": { opacity: 0.35, transform: "scale(0.75)" },
+              "50%": { opacity: 1, transform: "scale(1)" }
+            },
+            "@media (prefers-reduced-motion: reduce)": {
+              animation: "none",
+              opacity: 1
+            }
+          }} />
+          <Box component="span" sx={{
+            fontSize: { xs: "10px", sm: "12px" },
+            fontWeight: 700,
+            lineHeight: 1,
+            letterSpacing: "0.12em"
+          }}>
+            {t("home.signal.live")}
+          </Box>
+        </Box>
+        <Box aria-hidden="true" sx={{
+          position: "absolute",
+          zIndex: 4,
+          top: { xs: 2, sm: 3, md: 3.5 },
+          right: { xs: 2, sm: 3, md: 3.5 },
+          color: "color-mix(in srgb, var(--text-main), transparent 28%)",
+          fontSize: { xs: "10px", sm: "12px" },
+          fontWeight: 700,
+          lineHeight: 1,
+          letterSpacing: "0.12em",
+          pointerEvents: "none"
+        }}>
+          {t("home.signal.mode")} / {t(`home.signal.${themeMode}`)}
+        </Box>
+        <Box aria-hidden="true" sx={{
+          position: "absolute",
+          zIndex: 4,
+          right: { xs: 2, sm: 3, md: 3.5 },
+          bottom: { xs: 2, sm: 3, md: 3.5 },
+          display: { xs: "none", sm: "block" },
+          color: "color-mix(in srgb, var(--text-main), transparent 38%)",
+          fontSize: "10px",
+          fontWeight: 700,
+          lineHeight: 1,
+          letterSpacing: "0.12em",
+          textTransform: "uppercase",
+          pointerEvents: "none"
+        }}>
+          {t("home.signal.hint")}
+        </Box>
       </Box>
-    </BentoCard>
+    </Box>
   );
 };
 

@@ -4,14 +4,30 @@
     "home": "Home",
     "about": "About Me",
     "projects": "Projects",
-    "blog": "Blog"
+    "blog": "Articles"
   },
   "home": {
     "name": "oF",
     "intro": "Ciallo～(∠・ω< )⌒☆",
+    "statement": "I focus on front-end and back-end development while continuing my research in AI applications, knowledge graphs, and graph neural networks.",
+    "profileLabel": "Profile / ZTMY-8828-9857-9995",
     "navigation": "Explore the site",
     "enter": "Enter",
-    "artworkLabel": "Character artwork for oF"
+    "artworkLabel": "Interactive oF character illustration controlled with the pointer",
+    "focusLabel": "Research areas",
+    "focus": "AI applications / Knowledge graphs / Graph neural networks / Full-stack development",
+    "links": {
+      "about": "Experience, research, and skills",
+      "projects": "Projects and research outcomes",
+      "blog": "Technical notes and learning journal"
+    },
+    "signal": {
+      "live": "Interactive area",
+      "mode": "Theme",
+      "dark": "Dark",
+      "light": "Light",
+      "hint": "Move the pointer to explore"
+    }
   },
   "about": {
     "title": "Hi, I'm oF.",
@@ -32,7 +48,7 @@
         },
         {
           "title": "Point-of-Interest Recommendation",
-          "description": "Contributed to research combining graph neural networks and sentiment analysis, with responsibilities including experiment replication, refinement of evaluation methods, data validation, and ablation studies.",
+          "description": "Contributed to research combining graph neural networks with sentiment and semantic analysis, including experiment replication, evaluation refinement, data validation, and ablation studies.",
           "tags": [
             "Recommender Systems",
             "Review Mining",
@@ -121,18 +137,18 @@
   },
   "projects": {
     "underConstruction": "Projects Page is under construction...",
-    "description": "Currently styling components and refactoring codebase. Please check back later!"
+    "description": "Currently refactoring components and refining the styles. Please check back later, or explore the other pages in the meantime!"
   },
   "blog": {
-    "title": "Scratchpad",
-    "subtitle": "Tech Study Notes",
+    "title": "Articles",
+    "subtitle": "Notes on development practice, research, and lessons learned",
     "untitled": "Untitled",
     "searchPlaceholder": "Search posts...",
     "searchHint": "Please enter at least 2 characters",
     "noResultsTitle": "No posts found",
     "noResultsDesc": "Try different keywords or clear the search query.",
     "post": {
-      "back": "Back to List",
+      "back": "Back to Articles",
       "error": {
         "title": "Post Not Found",
         "description": "The post you are looking for may have been deleted, or the URL is incorrect."
