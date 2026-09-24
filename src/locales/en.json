@@ -9,13 +9,13 @@
   "home": {
     "name": "oF",
     "intro": "Ciallo～(∠・ω< )⌒☆",
-    "statement": "I focus on front-end and back-end development while continuing my research in AI applications, knowledge graphs, and graph neural networks.",
+    "statement": "I focus on full-stack development while continuing to work on knowledge graphs, graph neural networks, and language model applications.",
     "profileLabel": "Profile / ZTMY-8828-9857-9995",
     "navigation": "Explore the site",
     "enter": "Enter",
     "artworkLabel": "Interactive oF character illustration controlled with the pointer",
-    "focusLabel": "Research areas",
-    "focus": "AI applications / Knowledge graphs / Graph neural networks / Full-stack development",
+    "focusLabel": "Core Areas",
+    "focus": "Full-stack Development / Knowledge Graphs / Graph Neural Networks / Language Model Applications",
     "links": {
       "about": "Experience, research, and skills",
       "projects": "Projects and research outcomes",
@@ -31,8 +31,8 @@
   },
   "about": {
     "title": "Hi, I'm oF.",
-    "subtitle": "Full-Stack Engineer | Recommender Systems & Knowledge Graph Research",
-    "content": "Master’s graduate in Information Management with over one year of full-stack development experience, including manufacturing information display systems, e-paper and IoT applications, and fall detection systems.<br />Research interests include recommender systems, knowledge graphs, graph neural networks, and natural language processing, with hands-on experience in data processing, model training, experimental validation, full-stack development, database integration, and hardware–software integration.",
+    "subtitle": "Full-Stack Engineer | Knowledge Graphs & Language Model Applications",
+    "content": "I hold a master’s degree in Information Management and have over one year of experience in full-stack development. I have worked on manufacturing information display systems, e-paper and IoT applications, and fall detection systems.<br />Beyond system development, I have conducted research and practical work involving knowledge graphs, graph neural networks, and language models, with applications in recommender systems and sentiment and semantic analysis. My experience includes data processing, model training, experimental validation, full-stack development, database integration, and hardware–software integration.",
     "research": {
       "title": "Research & Projects",
       "items": [
