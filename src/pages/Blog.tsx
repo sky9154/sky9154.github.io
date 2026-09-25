@@ -1,34 +1,19 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Container } from "@mui/material";
 import BlogHero from "@components/blog/BlogHero";
-import PostList, { BlogPost } from "@components/blog/PostList";
+import PostList from "@components/blog/PostList";
 import PaginationControl from "@components/blog/PaginationControl";
+import { fetchPostCollection, type PostSummary } from "@/services/notionApi";
 
-
-type NotionText = { plain_text: string };
-
-interface NotionQueryResponse {
-  results: {
-    id: string;
-    properties: {
-      Title: { title: NotionText[] };
-      Summary: { rich_text: NotionText[] };
-      Tags: { multi_select: { name: string; color: string }[] };
-      Updated: { last_edited_time: string };
-    };
-  }[];
-
-  next_cursor: string | null;
-  has_more: boolean;
-}
 
 const Blog = () => {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [posts, setPosts] = useState<PostSummary[]>([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [retryKey, setRetryKey] = useState(0);
 
   const cursorsRef = useRef<(string | null)[]>([null]);
 
@@ -45,58 +30,46 @@ const Blog = () => {
     });
   }, []);
 
-  const fetchPosts = useCallback(async () => {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 0);
-
+  useEffect(() => {
+    const controller = new AbortController();
+    const currentCursor = cursorsRef.current[page - 1] || null;
     setLoading(true);
     setError(null);
 
-    try {
-      const baseUrl = "https://notion.sky9154.com/blog";
-      const url = new URL(baseUrl);
+    const loadPosts = async () => {
+      try {
+        const data = await fetchPostCollection("blog", {
+          query: searchQuery,
+          cursor: currentCursor,
+          signal: controller.signal
+        });
 
-      const currentCursor = cursorsRef.current[page - 1] || null;
+        setPosts(data.results);
+        setHasMore(data.hasMore);
 
-      if (currentCursor) {
-        url.searchParams.append("cursor", currentCursor);
+        if (data.hasMore && data.nextCursor) {
+          cursorsRef.current[page] = data.nextCursor;
+        }
+      } catch (fetchError) {
+        if (fetchError instanceof DOMException && fetchError.name === "AbortError") {
+          return;
+        }
+
+        setError(fetchError instanceof Error ? fetchError.message : "Unable to load posts");
+      } finally {
+        if (!controller.signal.aborted) {
+          setLoading(false);
+        }
       }
+    };
 
-      if (searchQuery) {
-        url.searchParams.append("q", searchQuery);
-      }
+    void loadPosts();
 
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error("Fetch failed");
-      }
+    return () => controller.abort();
+  }, [page, retryKey, searchQuery]);
 
-      const data: NotionQueryResponse = await response.json();
-      const formattedData: BlogPost[] = data.results.map((page) => ({
-        id: page.id,
-        title: page.properties.Title.title.map((t) => t.plain_text).join(""),
-        summary: page.properties.Summary.rich_text.map((t) => t.plain_text).join(""),
-        tags: page.properties.Tags.multi_select.map((tag) => ({
-          name: tag.name,
-          color: tag.color
-        })),
-        updatedAt: new Date(page.properties.Updated.last_edited_time).toLocaleDateString()
-      }));
-
-      setPosts(formattedData);
-      setHasMore(data.has_more);
-
-      if (data.has_more && data.next_cursor) {
-        cursorsRef.current[page] = data.next_cursor;
-      }
-    } catch (err) {
-      if (err instanceof Error) {
-        setError(err.message);
-      }
-    } finally {
-      setLoading(false);
-    }
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
   }, [page, searchQuery]);
 
   const handlePrev = () => {
@@ -111,25 +84,25 @@ const Blog = () => {
     }
   };
 
-  useEffect(() => {
-    fetchPosts();
-  }, [fetchPosts]);
-
   return (
     <Container maxWidth="lg" sx={{
       flexGrow: 1,
       pt: "84px",
-      my: 4
+      mt: { xs: 4, md: 4 },
+      mb: { xs: 8, md: 12 }
     }}>
       <BlogHero onSearch={handleSearch} />
-      <PostList posts={posts} loading={loading} error={error} />
+      <PostList
+        posts={posts}
+        loading={loading}
+        error={error}
+        onRetry={() => setRetryKey((key) => key + 1)} />
       <PaginationControl
         page={page}
         hasMore={hasMore}
         loading={loading}
         onPrev={handlePrev}
-        onNext={handleNext}
-      />
+        onNext={handleNext} />
     </Container>
   );
 };

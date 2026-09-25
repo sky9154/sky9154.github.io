@@ -2,41 +2,38 @@ import { useTranslation } from "react-i18next";
 import { FaRegCalendar } from "react-icons/fa6";
 import { Box, Chip, Divider, Stack } from "@mui/material";
 import { H1, Paragraph } from "@components/ui/Typography";
+import { formatPostDate, type PostMetadata } from "@/services/notionApi";
+import { getNotionColor } from "@/utils/notionColors";
 
 
 interface PostHeaderProps {
-  metadata: {
-    properties: {
-      Title: { title: Array<{ plain_text: string }> };
-      Tags: { multi_select: Array<{ id: string; name: string; color: string }> };
-      Updated: { last_edited_time: string };
-    };
-  };
+  metadata: PostMetadata;
 }
 
 const PostHeader = ({ metadata }: PostHeaderProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
-  const title = metadata.properties.Title.title
-    .map((t) => t.plain_text)
-    .join("") || t("blog.untitled");
-
-  const date = new Date(metadata.properties.Updated.last_edited_time).toLocaleDateString();
-  const tags = metadata.properties.Tags.multi_select;
+  const title = metadata.title || t("blog.untitled");
+  const date = formatPostDate(
+    metadata.updatedAt,
+    i18n.resolvedLanguage || i18n.language
+  );
 
   return (
     <>
       <Box sx={{ mb: 3 }}>
         <H1 sx={{
-          fontSize: "32px",
+          fontSize: "clamp(32px, 4vw, 52px)",
           fontWeight: 700,
           mb: 3,
           color: "var(--text-main)",
-          lineHeight: 1.3
+          lineHeight: 1.15,
+          letterSpacing: "-0.025em",
+          maxWidth: "none",
+          width: "100%"
         }}>
           {title}
         </H1>
-
         <Box sx={{
           display: "flex",
           alignItems: "center",
@@ -47,8 +44,7 @@ const PostHeader = ({ metadata }: PostHeaderProps) => {
             direction="row"
             spacing={1}
             alignItems="center"
-            sx={{ color: "var(--text-sub)" }}
-          >
+            sx={{ color: "var(--text-sub)" }}>
             <Box sx={{ display: "flex", alignItems: "center", fontSize: "14px" }}>
               <FaRegCalendar />
             </Box>
@@ -56,25 +52,23 @@ const PostHeader = ({ metadata }: PostHeaderProps) => {
               {date}
             </Paragraph>
           </Stack>
-
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: "auto" }}>
-            {tags.map((tag) => (
-              <Chip
-                key={tag.name}
-                label={tag.name}
-                size="small"
-                sx={{
-                  fontWeight: 500,
-                  bgcolor: `color-mix(in srgb, ${tag.color}, transparent 70%)`,
-                  color: "var(--text-main)",
-                  border: `1px solid color-mix(in srgb, ${tag.color}, transparent 80%)`,
-                  cursor: "pointer",
-                  "&:hover": {
-                    bgcolor: `color-mix(in srgb, ${tag.color}, transparent 50%)`
-                  }
-                }}
-              />
-            ))}
+            {metadata.tags.map((tag) => {
+              const color = getNotionColor(tag.color);
+
+              return (
+                <Chip
+                  key={tag.id || tag.name}
+                  label={tag.name}
+                  size="small"
+                  sx={{
+                    fontWeight: 600,
+                    bgcolor: `color-mix(in srgb, ${color}, transparent 82%)`,
+                    color: "var(--text-main)",
+                    border: `1px solid color-mix(in srgb, ${color}, transparent 55%)`
+                  }} />
+              );
+            })}
           </Box>
         </Box>
       </Box>

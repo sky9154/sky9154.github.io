@@ -135,16 +135,21 @@
       }
     }
   },
-  "projects": {
-    "underConstruction": "專案作品頁面建置中...",
-    "description": "目前正在重構元件與調整樣式，請稍後再回來查看，或先參觀其他頁面！"
-  },
   "blog": {
     "title": "技術文章",
     "subtitle": "整理開發實作、研究內容與學習心得",
     "untitled": "無標題",
     "searchPlaceholder": "搜尋文章關鍵字...",
     "searchHint": "請至少輸入兩個字元",
+    "loading": "正在載入文章",
+    "loadErrorTitle": "文章暫時無法載入",
+    "loadErrorDesc": "連線可能暫時中斷，請稍後再試。",
+    "retry": "重新載入",
+    "readArticle": "閱讀文章",
+    "previousPage": "上一頁",
+    "nextPage": "下一頁",
+    "copyCode": "複製程式碼",
+    "codeCopied": "已複製",
     "noResultsTitle": "沒有找到相關文章",
     "noResultsDesc": "試試其他關鍵字，或清除搜尋條件。",
     "post": {

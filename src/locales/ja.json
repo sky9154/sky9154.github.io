@@ -135,16 +135,21 @@
       }
     }
   },
-  "projects": {
-    "underConstruction": "開発実績ページは現在構築中です...",
-    "description": "現在、コンポーネントのリファクタリングとスタイル調整を進めています。しばらくしてから再度ご確認いただくか、ほかのページもご覧ください。"
-  },
   "blog": {
     "title": "技術記事",
     "subtitle": "開発の実践、研究内容、学びを整理しています",
     "untitled": "無題",
     "searchPlaceholder": "記事を検索...",
     "searchHint": "2文字以上入力してください",
+    "loading": "記事を読み込んでいます",
+    "loadErrorTitle": "記事を一時的に読み込めません",
+    "loadErrorDesc": "接続が中断された可能性があります。もう一度お試しください。",
+    "retry": "再読み込み",
+    "readArticle": "記事を読む",
+    "previousPage": "前のページ",
+    "nextPage": "次のページ",
+    "copyCode": "コードをコピー",
+    "codeCopied": "コピーしました",
     "noResultsTitle": "記事が見つかりません",
     "noResultsDesc": "別のキーワードを試すか、検索条件をクリアしてください。",
     "post": {

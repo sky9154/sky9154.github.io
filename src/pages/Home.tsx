@@ -18,7 +18,7 @@ const Home = () => {
         display: "flex",
         flexDirection: "column",
         justifyContent: { xs: "flex-start", md: "center" },
-        pt: { xs: "calc(84px + 20px)", md: "calc(84px + 20px)" },
+        pt: { xs: "calc(84px + 32px)", md: "calc(84px + 20px)" },
         pb: { xs: 3, md: 2.5 }
       }}>
       <Box sx={{

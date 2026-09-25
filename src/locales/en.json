@@ -135,23 +135,28 @@
       }
     }
   },
-  "projects": {
-    "underConstruction": "Projects Page is under construction...",
-    "description": "Currently refactoring components and refining the styles. Please check back later, or explore the other pages in the meantime!"
-  },
   "blog": {
     "title": "Articles",
     "subtitle": "Notes on development practice, research, and lessons learned",
     "untitled": "Untitled",
-    "searchPlaceholder": "Search posts...",
+    "searchPlaceholder": "Search articles...",
     "searchHint": "Please enter at least 2 characters",
-    "noResultsTitle": "No posts found",
+    "loading": "Loading articles",
+    "loadErrorTitle": "Articles are temporarily unavailable",
+    "loadErrorDesc": "The connection may have been interrupted. Please try again.",
+    "retry": "Try again",
+    "readArticle": "Read article",
+    "previousPage": "Previous page",
+    "nextPage": "Next page",
+    "copyCode": "Copy code",
+    "codeCopied": "Copied",
+    "noResultsTitle": "No articles found",
     "noResultsDesc": "Try different keywords or clear the search query.",
     "post": {
       "back": "Back to Articles",
       "error": {
-        "title": "Post Not Found",
-        "description": "The post you are looking for may have been deleted, or the URL is incorrect."
+        "title": "Article Not Found",
+        "description": "The article you are looking for may have been deleted, or the URL is incorrect."
       }
     }
   },

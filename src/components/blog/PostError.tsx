@@ -1,11 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import { FaExclamationTriangle, FaArrowLeft } from "react-icons/fa";
+import { FaExclamationTriangle, FaArrowLeft, FaRedo } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { Box, Button } from "@mui/material";
 import { H1, H3 } from "@components/ui/Typography";
 
 
-const PostError = () => {
+interface PostErrorProps {
+  onRetry?: () => void;
+  backPath?: string;
+}
+
+const PostError = ({ onRetry, backPath = "/blog" }: PostErrorProps) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -47,29 +52,48 @@ const PostError = () => {
       }}>
         {t("blog.post.error.description")}
       </H3>
-      <Button
-        variant="outlined"
-        startIcon={<FaArrowLeft />}
-        onClick={() => navigate("/blog")}
-        sx={{
-          px: 4,
-          py: 1,
-          borderRadius: "8px",
-          textTransform: "none",
-          fontSize: "16px",
-          fontWeight: 600,
-          border: "2px solid var(--text-main)",
-          color: "var(--text-main)",
-          transition: "0.3s",
-          "&:hover": {
-            borderColor: "var(--blue-200)",
-            border: "2px solid",
-            bgcolor: " color-mix(in srgb, var(--card-bg), transparent 60%)"
-          }
-        }}
-      >
-        {t("blog.post.back")}
-      </Button>
+      <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 2 }}>
+        {onRetry && (
+          <Button
+            variant="contained"
+            startIcon={<FaRedo />}
+            onClick={onRetry}
+            sx={{
+              px: 3,
+              minHeight: "44px",
+              borderRadius: "10px",
+              textTransform: "none",
+              fontWeight: 700,
+              bgcolor: "var(--text-main)",
+              color: "var(--main-bg)",
+              "&:hover": { bgcolor: "color-mix(in srgb, var(--text-main), transparent 12%)" }
+            }}>
+            {t("blog.retry")}
+          </Button>
+        )}
+        <Button
+          variant="outlined"
+          startIcon={<FaArrowLeft />}
+          onClick={() => navigate(backPath)}
+          sx={{
+            px: 3,
+            minHeight: "44px",
+            borderRadius: "10px",
+            textTransform: "none",
+            fontSize: "16px",
+            fontWeight: 600,
+            border: "2px solid var(--text-main)",
+            color: "var(--text-main)",
+            transition: "background-color 180ms cubic-bezier(0.16, 1, 0.3, 1)",
+            "&:hover": {
+              borderColor: "var(--text-main)",
+              border: "2px solid",
+              bgcolor: "color-mix(in srgb, var(--card-bg), transparent 60%)"
+            }
+          }}>
+          {t("blog.post.back")}
+        </Button>
+      </Box>
     </Box>
   );
 };

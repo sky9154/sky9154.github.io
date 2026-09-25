@@ -8,7 +8,7 @@ import NotFound from "@pages/NotFound";
 import routes from "@/routes";
 
 
-const App = () => {
+const AppContent = () => {
   const element = useRoutes(routes) || <NotFound />;
   const { themeMode } = useThemeModeContext();
 
@@ -27,15 +27,19 @@ const App = () => {
   });
 
   return (
-    <LanguageProvider>
-      <ThemeModeProvider>
-        <ThemeProvider theme={theme}>
-          <Toaster />
-          {element}
-        </ThemeProvider>
-      </ThemeModeProvider>
-    </LanguageProvider>
+    <ThemeProvider theme={theme}>
+      <Toaster />
+      {element}
+    </ThemeProvider>
   );
-}
+};
+
+const App = () => (
+  <LanguageProvider>
+    <ThemeModeProvider>
+      <AppContent />
+    </ThemeModeProvider>
+  </LanguageProvider>
+);
 
 export default App;

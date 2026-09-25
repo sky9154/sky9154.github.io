@@ -26,19 +26,35 @@ const BlogHero = ({ onSearch }: BlogHeroProps) => {
   }, [inputValue, onSearch]);
 
   return (
-    <Box sx={{
+    <Box component="section" aria-labelledby="blog-title" sx={{
       display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      textAlign: "center",
-      mb: 6,
-      gap: 6
+      flexDirection: { xs: "column", md: "row" },
+      alignItems: { xs: "stretch", md: "flex-end" },
+      justifyContent: "space-between",
+      textAlign: "left",
+      mb: { xs: 5, md: 8 },
+      gap: { xs: 4, md: 8 },
+      borderBottom: "1px solid color-mix(in srgb, var(--text-main), transparent 70%)",
+      pb: { xs: 4, md: 6 }
     }}>
-      <Box>
-        <H1 sx={{ fontSize: "56px", fontWeight: 700, color: "var(--text-main)" }}>
+      <Box sx={{ maxWidth: "680px" }}>
+        <H1 id="blog-title" sx={{
+          fontSize: "clamp(36px, 5vw, 56px)",
+          fontWeight: 700,
+          color: "var(--text-main)",
+          lineHeight: 1,
+          letterSpacing: "-0.035em",
+          mb: 2
+        }}>
           {t("blog.title")}
         </H1>
-        <H3 sx={{ color: "var(--text-sub)" }}>
+        <H3 sx={{
+          color: "var(--text-sub)",
+          fontSize: { xs: "16px", md: "18px" },
+          fontWeight: 500,
+          lineHeight: 1.65,
+          maxWidth: "42ch"
+        }}>
           {t("blog.subtitle")}
         </H3>
       </Box>
@@ -49,25 +65,35 @@ const BlogHero = ({ onSearch }: BlogHeroProps) => {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         helperText={(inputValue.length === 1) ? t("blog.searchHint") : " "}
+        inputProps={{ "aria-label": t("blog.searchPlaceholder") }}
         sx={{
-          maxWidth: "500px",
+          maxWidth: { xs: "none", md: "460px" },
           "& .MuiOutlinedInput-root": {
             fontSize: "16px",
-            borderRadius: 10,
-            bgcolor: "color-mix(in srgb, var(--search-bg), transparent 80%)",
-            backdropFilter: "blur(10px)",
+            minHeight: "52px",
+            borderRadius: "16px",
+            bgcolor: "color-mix(in srgb, var(--search-bg), transparent 86%)",
             color: "var(--text-main)",
-            transition: "all 0.3s ease",
+            transition: "background-color 180ms cubic-bezier(0.16, 1, 0.3, 1)",
             "& fieldset": {
-              borderColor: "color-mix(in srgb, var(--search-border), transparent 60%)",
-              borderWidth: "2px"
+              borderColor: "color-mix(in srgb, var(--search-border), transparent 58%)",
+              borderWidth: "1px",
+              transition: "border-color 180ms cubic-bezier(0.16, 1, 0.3, 1)"
             },
             "&:hover": {
-              "& fieldset": { borderColor: "color-mix(in srgb, var(--search-border), transparent 40%)" },
+              "& fieldset": { borderColor: "color-mix(in srgb, var(--search-border), transparent 30%)" },
             },
             "&.Mui-focused": {
-              "& fieldset": { borderColor: "color-mix(in srgb, var(--search-border), transparent 20%)" }
+              bgcolor: "color-mix(in srgb, var(--search-bg), transparent 78%)",
+              "& fieldset": {
+                borderColor: "var(--search-border)",
+                borderWidth: "2px"
+              }
             }
+          },
+          "& .MuiFormHelperText-root": {
+            color: "var(--text-sub)",
+            mx: 1.5
           }
         }}
         InputProps={{
@@ -76,8 +102,7 @@ const BlogHero = ({ onSearch }: BlogHeroProps) => {
               <FaMagnifyingGlass />
             </InputAdornment>
           ),
-        }}
-      />
+        }} />
     </Box>
   );
 };
