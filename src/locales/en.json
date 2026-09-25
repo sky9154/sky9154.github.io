@@ -9,11 +9,11 @@
   "home": {
     "name": "oF",
     "intro": "Ciallo～(∠・ω< )⌒☆",
-    "statement": "I focus on full-stack development while continuing to work on knowledge graphs, graph neural networks, and language model applications.",
+    "statement": "I focus on full-stack development and continue to research knowledge graphs, graph neural networks, and language model applications.",
     "profileLabel": "Profile / ZTMY-8828-9857-9995",
     "navigation": "Explore the site",
     "enter": "Enter",
-    "artworkLabel": "Interactive oF character illustration controlled with the pointer",
+    "artworkLabel": "Character illustration that responds to pointer movement",
     "focusLabel": "Core Areas",
     "focus": "Full-stack Development / Knowledge Graphs / Graph Neural Networks / Language Model Applications",
     "links": {
@@ -30,15 +30,15 @@
     }
   },
   "about": {
-    "title": "Hi, I'm oF.",
+    "title": "Hi, I'm oF",
     "subtitle": "Full-Stack Engineer | Knowledge Graphs & Language Model Applications",
-    "content": "I hold a master’s degree in Information Management and have over one year of experience in full-stack development. I have worked on manufacturing information display systems, e-paper and IoT applications, and fall detection systems.<br />Beyond system development, I have conducted research and practical work involving knowledge graphs, graph neural networks, and language models, with applications in recommender systems and sentiment and semantic analysis. My experience includes data processing, model training, experimental validation, full-stack development, database integration, and hardware–software integration.",
+    "content": "I hold a master’s degree in Information Management and have over one year of full-stack development experience. I have worked on manufacturing dashboards, e-paper and IoT applications, and fall detection systems.<br />Alongside system development, I also work on research and implementation involving knowledge graphs, graph neural networks, and language models, with applications in recommender systems and sentiment and semantic analysis. My experience includes data processing, model training, experimental validation, front-end and back-end development, databases, and hardware–software integration.",
     "research": {
       "title": "Research & Projects",
       "items": [
         {
-          "title": "Knowledge Graph Recommendation",
-          "description": "Research focused on integrating users’ evolving preferences, sentiment-related semantic features from reviews, and product attribute relationships. An attention mechanism was used to combine these features into a personalized recommendation approach.",
+          "title": "Knowledge Graph–Based Recommendation Research",
+          "description": "This research integrates users’ dynamic preferences, sentiment and semantic information from reviews, and relationships among product attributes. It uses multi-head attention to fuse the features and build a personalized recommendation method.",
           "tags": [
             "Recommender Systems",
             "Knowledge Graphs",
@@ -48,7 +48,7 @@
         },
         {
           "title": "Point-of-Interest Recommendation",
-          "description": "Contributed to research combining graph neural networks with sentiment and semantic analysis, including experiment replication, evaluation refinement, data validation, and ablation studies.",
+          "description": "Contributed to research on graph neural networks and sentiment and semantic analysis, with responsibility for reproducing experiments, adjusting model evaluation methods, checking data, and running ablation studies.",
           "tags": [
             "Recommender Systems",
             "Review Mining",
@@ -58,7 +58,7 @@
         },
         {
           "title": "Fall Detection System",
-          "description": "Developed a system that uses human pose estimation and temporal models to distinguish normal activity, loss of balance, and falls, while integrating real-time video, event notifications, and environmental sensing.",
+          "description": "The system uses human pose estimation and temporal models to distinguish normal, loss-of-balance, and fall states, with real-time video, event notifications, and environmental sensing integrated.",
           "tags": [
             "Pose Estimation",
             "LSTM",
@@ -73,20 +73,20 @@
       "items": [
         {
           "period": "Jul 2023 – Feb 2024",
-          "company": "Getvision Information Co., Ltd.",
+          "company": "嘉德資訊有限公司",
           "role": "Full-Stack Engineer",
           "highlights": [
             "Contributed to the development of e-paper device management and IoT systems.",
-            "Worked on front-end and back-end features, database integration, and device communication."
+            "Worked on front-end and back-end features, plus database and device communication integration."
           ]
         },
         {
           "period": "Nov 2021 – Jun 2022",
-          "company": "Andor Information Co., Ltd.",
+          "company": "安鐸資訊有限公司",
           "role": "Full-Stack Engineer",
           "highlights": [
-            "Contributed to manufacturing information displays and management systems.",
-            "Developed system features, back-end APIs, database integrations, and analytical reports."
+            "Contributed to electronic dashboards and management systems for manufacturing.",
+            "Developed system features, back-end APIs, and analytical reports, and integrated databases."
           ]
         }
       ]
@@ -97,9 +97,9 @@
         {
           "period": "Jun 2026",
           "school": "Chung Yuan Christian University",
-          "degree": "Department of Information Management | M.B.A.",
+          "degree": "Department of Information Management | Master of Business Administration",
           "topicLabel": "MASTER’S THESIS",
-          "topic": "A Recommendation Method Based on a Knowledge Graph Integrating Users’ Dynamic Preferences and Sentiment Semantic Features",
+          "topic": "A Knowledge Graph–Based Recommendation Method Integrating Users’ Dynamic Preferences and Sentiment-Semantic Features",
           "description": "Explored personalized recommendation methods by combining users’ evolving preferences, sentiment semantics from reviews, and product knowledge graphs.",
           "tags": [
             "Recommender Systems",
@@ -111,10 +111,10 @@
         {
           "period": "Jun 2024",
           "school": "Chaoyang University of Technology",
-          "degree": "Department of Information and Communication Engineering | B.S.",
+          "degree": "Department of Information and Communication Engineering | Bachelor of Engineering",
           "topicLabel": "CAPSTONE PROJECT",
           "topic": "Fall Detection Using Image Recognition",
-          "description": "Built a fall detection system integrating human pose estimation, temporal analysis, real-time monitoring, and IoT devices. The project received an Honorable Mention in the department’s 2023 capstone competition.",
+          "description": "Built a fall detection system using human posture, temporal analysis, real-time monitoring, and IoT devices. The project received an Honorable Mention in the Department of Information and Communication Engineering’s 2023 practical project competition.",
           "tags": [
             "Computer Vision",
             "Temporal Analysis",
@@ -137,21 +137,21 @@
   },
   "blog": {
     "title": "Articles",
-    "subtitle": "Notes on development practice, research, and lessons learned",
+    "subtitle": "Notes on development, research, and learning",
     "untitled": "Untitled",
-    "searchPlaceholder": "Search articles...",
-    "searchHint": "Please enter at least 2 characters",
+    "searchPlaceholder": "Search by keyword...",
+    "searchHint": "Enter at least 2 characters",
     "loading": "Loading articles",
     "loadErrorTitle": "Articles are temporarily unavailable",
-    "loadErrorDesc": "The connection may have been interrupted. Please try again.",
-    "retry": "Try again",
+    "loadErrorDesc": "There may be a connection problem. Please try again later.",
+    "retry": "Reload",
     "readArticle": "Read article",
     "previousPage": "Previous page",
     "nextPage": "Next page",
     "copyCode": "Copy code",
     "codeCopied": "Copied",
     "noResultsTitle": "No articles found",
-    "noResultsDesc": "Try different keywords or clear the search query.",
+    "noResultsDesc": "Try another keyword or clear the search.",
     "post": {
       "back": "Back to Articles",
       "error": {
