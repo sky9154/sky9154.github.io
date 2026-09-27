@@ -229,18 +229,18 @@ const SignalPortrait = ({ label }: { label: string }) => {
           <span
             className="celestial-vertical-svg celestial-vertical-left"
             style={{
-              maskImage: `url(${CelestialLeft})`,
-              WebkitMaskImage: `url(${CelestialLeft})`,
-              aspectRatio: "1040 / 8000",
+              maskImage: `url("${CelestialLeft}")`,
+              WebkitMaskImage: `url("${CelestialLeft}")`,
+              aspectRatio: "1040 / 8000"
             }}
             aria-hidden="true"
           />
           <span
             className="celestial-vertical-svg celestial-vertical-right"
             style={{
-              maskImage: `url(${CelestialRight})`,
-              WebkitMaskImage: `url(${CelestialRight})`,
-              aspectRatio: "1040 / 9160",
+              maskImage: `url("${CelestialRight}")`,
+              WebkitMaskImage: `url("${CelestialRight}")`,
+              aspectRatio: "1040 / 9160"
             }}
             aria-hidden="true"
           />
