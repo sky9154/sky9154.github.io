@@ -41,7 +41,7 @@ const ResearchHighlightsCard = () => {
             </H3>
             <Paragraph sx={{
               color: "var(--text-sub)",
-              fontSize: "15px",
+              fontSize: "16px",
               lineHeight: 1.7
             }}>
               {item.description}
@@ -62,7 +62,7 @@ const ResearchHighlightsCard = () => {
                     fontWeight: 500,
                     color: "var(--text-main)",
                     bgcolor: "color-mix(in srgb, var(--text-main), transparent 92%)",
-                    border: "1px solid color-mix(in srgb, var(--text-main), transparent 85%)",
+                    border: "1px solid var(--color-border-subtle)",
                     cursor: "pointer",
                     transition: "background-color 0.15s ease, border-color 0.15s ease",
                     "&:hover": {

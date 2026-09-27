@@ -26,16 +26,30 @@ const LanguageButton = () => {
     <Box sx={{ order: { xs: 1, sm: 2 } }}>
       <Button
         id="language-button"
+        aria-label="Choose language"
+        aria-haspopup="menu"
+        aria-controls={(isLangMenuOpen) ? "language-menu" : undefined}
+        aria-expanded={isLangMenuOpen}
         onClick={handleLangMenuOpen}
         sx={{
           color: "inherit",
           order: { xs: 1, sm: 2 },
           fontSize: "18px",
-          display: { xm: "none", md: "flex" }
+          display: "flex",
+          minWidth: "44px",
+          width: "44px",
+          height: "44px",
+          p: 0,
+          border: "1px solid var(--color-border-subtle)",
+          borderRadius: "50%",
+          "&:hover": { bgcolor: "var(--color-surface-subtle)", borderColor: "var(--color-accent)" }
         }}>
         <PublicIcon />
       </Button>
       <Menu
+        disableScrollLock
+        id="language-menu"
+        MenuListProps={{ "aria-labelledby": "language-button" }}
         anchorEl={langMenuAnchorEl}
         open={isLangMenuOpen}
         onClose={() => handleLangMenuClose()}
@@ -50,9 +64,9 @@ const LanguageButton = () => {
               bgcolor: "var(--lang-menu-bg)",
               backdropFilter: "blur(10px)",
               color: "var(--text-main)",
-              borderRadius: 2,
-              boxShadow: "none",
-              transition: "all 0.2s ease",
+              borderRadius: "var(--radius-md)",
+              border: "1px solid var(--color-border)",
+              boxShadow: "var(--shadow-floating)",
               "& .MuiMenuItem-root": {
                 fontSize: 16,
                 fontFamily: "inherit",

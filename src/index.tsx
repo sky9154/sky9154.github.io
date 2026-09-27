@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "@/i18n";
 import "@assets/css/global.css";
 import "@assets/css/theme.css";
+import "@assets/css/celestial.css";
 import App from "@/App";
 
 

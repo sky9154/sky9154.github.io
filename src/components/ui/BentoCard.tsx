@@ -12,7 +12,8 @@ const BentoCard = ({
   rowSpan?: number;
 }) => {
   return (
-    <Paper elevation={0} sx={{
+    <Paper className="bento-card" elevation={0} sx={{
+      minWidth: 0,
       gridColumn: {
         xs: "span 1",
         md: `span ${colSpan}`
@@ -21,10 +22,11 @@ const BentoCard = ({
         xs: "auto",
         md: `span ${rowSpan}`
       },
-      borderRadius: 4,
-      border: "2px solid",
-      borderColor: "color-mix(in srgb, var(--text-main), transparent 45%)",
-      bgcolor: "color-mix(in srgb, var(--card-bg) 15%, var(--main-bg))",
+      borderRadius: "var(--radius-lg)",
+      border: "var(--stroke-thin) solid",
+      borderColor: "var(--color-border)",
+      bgcolor: "var(--color-surface)",
+      boxShadow: "none",
       color: "var(--text-main)",
       p: {
         xs: 2.5,
@@ -34,12 +36,13 @@ const BentoCard = ({
       flexDirection: "column",
       justifyContent: "space-between",
 
-      transition: "border-color 0.15s ease, background-color 0.15s ease",
+      transition: "border-color var(--motion-normal) var(--ease-standard), background-color var(--motion-normal) var(--ease-standard)",
 
       "&:hover": {
-        borderColor: "color-mix(in srgb, var(--text-main), transparent 20%)"
+        borderColor: "var(--color-accent-muted)"
       }
     }}>
+      <span className="card-mark" aria-hidden="true" />
       {children}
     </Paper>
   );

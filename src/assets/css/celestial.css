@@ -1,0 +1,504 @@
+.site-layout {
+  position: relative;
+  isolation: isolate;
+}
+
+.decorative-label {
+  font-family: var(--font-decorative);
+  font-weight: 400;
+  pointer-events: none;
+  user-select: none;
+}
+
+.site-navbar {
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.site-navbar .nav-link {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: nowrap;
+  letter-spacing: 0.035em;
+}
+
+.site-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 4px;
+  background: var(--color-accent);
+  transform: rotate(45deg) scale(0);
+  transition: transform var(--motion-fast) var(--ease-standard);
+}
+
+.site-navbar .nav-link[aria-current="page"]::after,
+.site-navbar .nav-link:hover::after {
+  transform: rotate(45deg) scale(1);
+}
+
+.site-footer {
+  position: relative;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.footer-mark {
+  position: absolute;
+  top: -5px;
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-accent-muted);
+  transform: rotate(45deg);
+  pointer-events: none;
+  user-select: none;
+}
+
+.bento-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.card-mark {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid var(--color-accent-muted);
+  border-right: 1px solid var(--color-accent-muted);
+  pointer-events: none;
+  user-select: none;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.section-title::after {
+  content: "";
+  width: 32px;
+  height: 1px;
+  flex-shrink: 0;
+  background: var(--color-accent-muted);
+}
+
+.section-index {
+  color: var(--color-accent);
+  font-size: 16px;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+.home-shell {
+  position: relative;
+}
+
+.home-composition {
+  position: relative;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.home-composition::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.home-profile {
+  position: relative;
+}
+
+.home-profile h1 {
+  color: var(--color-text);
+}
+
+.home-profile .home-link-number {
+  color: var(--color-accent);
+}
+
+.celestial-stage {
+  --pointer-x: 0px;
+  --pointer-y: 0px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.05;
+  max-width: 720px;
+  margin: auto;
+  isolation: isolate;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.celestial-stage .parallax-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.celestial-stage [aria-hidden="true"] {
+  pointer-events: none;
+  user-select: none;
+}
+
+.celestial-stage svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
+
+.layer-stars {
+  transform: translate3d(calc(var(--pointer-x) * 0.24), calc(var(--pointer-y) * 0.24), 0);
+}
+
+.layer-geometry {
+  transform: translate3d(calc(var(--pointer-x) * 0.52), calc(var(--pointer-y) * 0.52), 0);
+}
+
+.layer-moon {
+  transform: translate3d(calc(var(--pointer-x) * 0.78), calc(var(--pointer-y) * 0.78), 0);
+}
+
+.layer-foreground {
+  transform: translate3d(var(--pointer-x), var(--pointer-y), 0);
+}
+
+.celestial-stroke {
+  fill: none;
+  stroke: var(--color-decoration);
+  stroke-width: 0.7;
+  opacity: var(--decoration-opacity);
+}
+
+.celestial-gold {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 0.8;
+}
+
+.celestial-faint {
+  fill: none;
+  stroke: var(--color-decoration-faint);
+  stroke-width: 0.7;
+}
+
+.star {
+  fill: var(--color-text);
+}
+
+.star-secondary {
+  opacity: var(--decoration-secondary-opacity);
+}
+
+[data-theme="light"] .star-secondary:nth-of-type(2n + 1) {
+  display: none;
+}
+
+.star-twinkle {
+  animation: star-twinkle 7s ease-in-out infinite alternate;
+}
+
+.orbit-turn {
+  transform-origin: 320px 300px;
+  animation: orbit-turn var(--motion-ambient) linear infinite;
+}
+
+.clock-hand {
+  transform-origin: 320px 300px;
+  animation: orbit-turn 60s steps(60) infinite;
+}
+
+.moon-drift {
+  animation: moon-drift 12s ease-in-out infinite alternate;
+}
+
+.celestial-character {
+  position: absolute;
+  width: 40%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  left: 50%;
+  top: 36%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.celestial-vertical-svg {
+  position: absolute;
+  width: clamp(16px, 1.65vw, 22px);
+  background-color: var(--color-accent);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.celestial-vertical-left {
+  bottom: 16%;
+  left: 6%;
+}
+
+.celestial-vertical-right {
+  top: 16%;
+  right: 6%;
+}
+
+.celestial-coordinate {
+  position: absolute;
+  left: 7%;
+  bottom: 9%;
+  color: var(--color-text-secondary);
+  font: 10px var(--font-code);
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+
+.celestial-status {
+  position: absolute;
+  left: 7%;
+  top: 7%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-secondary);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  pointer-events: none;
+}
+
+.celestial-status::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: var(--color-accent);
+  border-radius: 50%;
+}
+
+.celestial-hint {
+  position: absolute;
+  right: 6%;
+  bottom: 9%;
+  color: var(--color-text-secondary);
+  font-size: 10px;
+  pointer-events: none;
+}
+
+.celestial-stage[data-active="false"] *,
+.celestial-stage[data-visible="false"] * {
+  animation-play-state: paused;
+}
+
+
+.page-heading {
+  position: relative;
+}
+
+.page-heading::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+.article-reading {
+  background: var(--color-bg);
+  position: relative;
+}
+
+.article-reading img {
+  border: 1px solid var(--color-border-subtle);
+}
+
+.not-found {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 32px 20px;
+  text-align: center;
+}
+
+.lost-orbit-chart {
+  width: min(100%, 520px);
+  pointer-events: none;
+  user-select: none;
+}
+
+.lost-orbit-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.lost-orbit-background {
+  opacity: var(--decoration-secondary-opacity);
+  stroke-width: 0.8;
+}
+
+@media (max-width: 899.95px) {
+  .lost-orbit-extra {
+    display: none;
+  }
+}
+
+.lost-orbit-number {
+  font-size: 128px;
+  font-weight: 500;
+  letter-spacing: 12px;
+  fill: var(--color-text);
+}
+
+.lost-orbit-coordinate {
+  font-family: var(--font-code);
+  font-size: 12px;
+  letter-spacing: 6px;
+  fill: var(--color-text-secondary);
+}
+
+@keyframes orbit-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moon-drift {
+  from {
+    transform: translateY(var(--moon-drift-start, -3px));
+  }
+
+  to {
+    transform: translateY(var(--moon-drift-end, 5px));
+  }
+}
+
+@keyframes star-twinkle {
+  from {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 0.85;
+  }
+}
+
+.empty-state-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 1199.95px) {
+  .celestial-vertical-svg {
+    width: 18px;
+  }
+
+  .star-secondary:nth-of-type(2n) {
+    display: none;
+  }
+}
+
+@media (max-width: 899.95px) {
+  .celestial-stage {
+    max-width: 560px;
+  }
+
+  .celestial-hint {
+    display: none;
+  }
+
+  .site-navbar .nav-link {
+    font-size: 14px;
+    padding-inline: 9px;
+  }
+}
+
+@media (max-width: 599.95px) {
+  .celestial-stage {
+    aspect-ratio: 1.18;
+  }
+
+  .star-secondary,
+  .geometry-secondary {
+    display: none;
+  }
+
+  .celestial-coordinate {
+    bottom: 4%;
+    font-size: 10px;
+  }
+
+  .celestial-status {
+    top: 4%;
+    font-size: 10px;
+  }
+
+  .celestial-vertical-svg {
+    width: 16px;
+    opacity: 0.8;
+  }
+
+  .section-title {
+    gap: 10px;
+  }
+}
+
+@media (hover: none),
+(pointer: coarse) {
+  .celestial-stage {
+    --moon-drift-start: -1px;
+    --moon-drift-end: 2px;
+  }
+
+  .moon-drift {
+    animation-duration: 18s;
+  }
+
+  .orbit-turn {
+    animation-duration: calc(var(--motion-ambient) * 2);
+  }
+
+  .star-twinkle {
+    animation-duration: 12s;
+  }
+
+  .celestial-hint {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .celestial-stage .parallax-layer {
+    transform: none;
+  }
+
+  .orbit-turn,
+  .clock-hand,
+  .moon-drift,
+  .star-twinkle {
+    animation: none;
+  }
+}

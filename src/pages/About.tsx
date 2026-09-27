@@ -12,7 +12,7 @@ const About = () => {
       maxWidth="lg"
       sx={{
         flexGrow: 1,
-        pt: "84px",
+        pt: "var(--navbar-height)",
         my: 4
       }}>
       <Box sx={{

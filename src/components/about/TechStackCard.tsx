@@ -5,15 +5,15 @@ import SectionTitle from "@components/ui/SectionTitle";
 import BentoCard from "@components/ui/BentoCard";
 import { TECH_LIST } from "@assets/data/config";
 import { useThemeModeContext } from "@context/ThemeModeContext";
-import NiraB from "@assets/images/illustration/nira-b.png";
-import NiraG from "@assets/images/illustration/nira-g.png";
+import NiraDark from "@assets/images/illustration/nira-dark.webp";
+import NiraLight from "@assets/images/illustration/nira-light.webp";
 
 
 const TechStackCard = () => {
   const { t } = useTranslation();
 
   const { themeMode } = useThemeModeContext();
-  const watermark = (themeMode === "dark") ? NiraB : NiraG;
+  const watermark = (themeMode === "dark") ? NiraDark : NiraLight;
 
   return (
     <BentoCard colSpan={2} rowSpan={2}>
@@ -42,9 +42,9 @@ const TechStackCard = () => {
                 },
                 minWidth: 0,
                 p: 2,
-                borderRadius: 3,
-                bgcolor: "color-mix(in srgb, var(--text-main), transparent 95%)",
-                border: "1px solid color-mix(in srgb, var(--text-main), transparent 85%)"
+                borderRadius: "var(--radius-md)",
+                bgcolor: "var(--color-surface-subtle)",
+                border: "1px solid var(--color-border-subtle)"
               }}>
                 <Paragraph sx={{
                   fontSize: "14px",
@@ -66,14 +66,15 @@ const TechStackCard = () => {
                         fontWeight: 500,
                         color: "var(--text-main)",
                         bgcolor: "color-mix(in srgb, var(--text-main), transparent 92%)",
-                        border: "1px solid color-mix(in srgb, var(--text-main), transparent 85%)",
+                        border: "1px solid var(--color-border-subtle)",
                         cursor: "pointer",
                         transition: "background-color 0.15s ease, border-color 0.15s ease",
                         "&:hover": {
                           bgcolor: "color-mix(in srgb, var(--text-main), transparent 85%)",
                           borderColor: "color-mix(in srgb, var(--text-main), transparent 70%)"
                         }
-                      }} />
+                      }}
+                    />
                   ))}
                 </Box>
               </Box>
@@ -90,14 +91,15 @@ const TechStackCard = () => {
             position: "absolute",
             right: 0,
             bottom: 0,
-            width: { xs: 200, md: 220, lg: 240 },
+            width: { xs: 180, md: 200, lg: 220 },
             maxWidth: "50%",
             height: "auto",
             opacity: 0.2,
             zIndex: 0,
             pointerEvents: "none",
             userSelect: "none"
-          }} />
+          }}
+        />
       </Stack>
     </BentoCard>
   );

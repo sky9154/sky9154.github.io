@@ -9,13 +9,14 @@ import PostHeader from "@components/blog/PostHeader";
 import PostContent from "@components/blog/PostContent";
 import { fetchPostDetail, type PostDetail } from "@/services/notionApi";
 
+
 const BlogPost = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useTranslation();
-  const collection = location.pathname.startsWith("/projects/") ? "projects" : "blog";
-  const backPath = collection === "projects" ? "/projects" : "/blog";
+  const collection = (location.pathname.startsWith("/projects/")) ? "projects" : "blog";
+  const backPath = (collection === "projects") ? "/projects" : "/blog";
 
   const [postData, setPostData] = useState<PostDetail | null>(null);
   const [loading, setLoading] = useState(true);
@@ -38,12 +39,12 @@ const BlogPost = () => {
         const data = await fetchPostDetail(id, controller.signal, collection);
         setPostData(data);
       } catch (fetchError) {
-        if (fetchError instanceof DOMException && fetchError.name === "AbortError") {
+        if ((fetchError instanceof DOMException) && (fetchError.name === "AbortError")) {
           return;
         }
 
         setPostData(null);
-        setError(fetchError instanceof Error ? fetchError.message : "Unable to load post");
+        setError((fetchError instanceof Error) ? fetchError.message : "Unable to load post");
       } finally {
         if (!controller.signal.aborted) {
           setLoading(false);
@@ -60,7 +61,7 @@ const BlogPost = () => {
   return (
     <Container maxWidth="lg" sx={{
       flexGrow: 1,
-      pt: "84px",
+      pt: "var(--navbar-height)",
       my: 4
     }}>
       {(loading) ? (

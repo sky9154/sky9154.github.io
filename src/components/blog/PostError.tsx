@@ -22,8 +22,10 @@ const PostError = ({ onRetry, backPath = "/blog" }: PostErrorProps) => {
       justifyContent: "center",
       textAlign: "center",
       px: 2,
-      py: 12,
-      opacity: 0.8
+      py: 10,
+      border: "1px solid var(--color-border-subtle)",
+      borderRadius: "var(--radius-lg)",
+      bgcolor: "var(--color-surface-subtle)"
     }}>
       <Box sx={{
         fontSize: "60px",
@@ -64,9 +66,9 @@ const PostError = ({ onRetry, backPath = "/blog" }: PostErrorProps) => {
               borderRadius: "10px",
               textTransform: "none",
               fontWeight: 700,
-              bgcolor: "var(--text-main)",
+              bgcolor: "var(--color-accent)",
               color: "var(--main-bg)",
-              "&:hover": { bgcolor: "color-mix(in srgb, var(--text-main), transparent 12%)" }
+              "&:hover": { bgcolor: "color-mix(in srgb, var(--color-accent), var(--color-bg) 12%)" }
             }}>
             {t("blog.retry")}
           </Button>

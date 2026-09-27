@@ -34,12 +34,12 @@ const EducationCard = () => {
               key={`${item.school}-${item.period}`}
               sx={{
                 p: 2.5,
-                borderRadius: 3,
-                bgcolor: "color-mix(in srgb, var(--text-main), transparent 95%)",
-                border: "1px solid color-mix(in srgb, var(--text-main), transparent 85%)"
+                borderRadius: "var(--radius-md)",
+                bgcolor: "var(--color-surface-subtle)",
+                border: "1px solid var(--color-border-subtle)"
               }}>
               <Paragraph sx={{
-                fontSize: "13px",
+                fontSize: "14px",
                 color: "var(--text-sub)",
                 mb: 1
               }}>
@@ -54,7 +54,7 @@ const EducationCard = () => {
                 {item.school}
               </H3>
               <Paragraph sx={{
-                fontSize: "15px",
+                fontSize: "16px",
                 lineHeight: 1.5,
                 fontWeight: 600,
                 color: "var(--text-sub)"
@@ -76,7 +76,7 @@ const EducationCard = () => {
                   {item.topicLabel}
                 </Paragraph>
                 <Paragraph sx={{
-                  fontSize: "15px",
+                  fontSize: "16px",
                   lineHeight: 1.6,
                   fontWeight: 700,
                   mb: 1
@@ -107,14 +107,15 @@ const EducationCard = () => {
                       fontWeight: 500,
                       color: "var(--text-main)",
                       bgcolor: "color-mix(in srgb, var(--text-main), transparent 92%)",
-                      border: "1px solid color-mix(in srgb, var(--text-main), transparent 85%)",
+                      border: "1px solid var(--color-border-subtle)",
                       cursor: "pointer",
                       transition: "background-color 0.15s ease, border-color 0.15s ease",
                       "&:hover": {
                         bgcolor: "color-mix(in srgb, var(--text-main), transparent 85%)",
                         borderColor: "color-mix(in srgb, var(--text-main), transparent 70%)"
                       }
-                    }} />
+                    }}
+                  />
                 ))}
               </Box>
             </Box>

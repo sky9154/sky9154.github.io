@@ -46,10 +46,5 @@ const TypographyFactory = (ComponentTag: ElementType, defaultClass: string) => {
 export const H1 = TypographyFactory("h1", styles["h1"]);
 export const H2 = TypographyFactory("h2", styles["h2"]);
 export const H3 = TypographyFactory("h3", styles["h3"]);
-export const H4 = TypographyFactory("h4", styles["h4"]);
 export const H5 = TypographyFactory("h5", styles["h5"]);
-export const H6 = TypographyFactory("h6", styles["h6"]);
 export const Paragraph = TypographyFactory("p", styles["paragraph"]);
-export const Small = TypographyFactory("small", styles["small"]);
-export const Span = TypographyFactory("span", "");
-export const Tiny = TypographyFactory("small", styles["tiny"]);

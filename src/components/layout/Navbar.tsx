@@ -1,11 +1,11 @@
-import { useState, cloneElement, ReactElement } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect, cloneElement, ReactElement } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { FaBars } from "react-icons/fa6";
 import {
   AppBar, Box, Button, Divider, Drawer,
   List, ListItem, ListItemButton, ListItemText, Toolbar,
-  IconButton, useScrollTrigger
+  IconButton, useScrollTrigger, useMediaQuery, type Theme
 } from "@mui/material";
 import ThemeModeButton from "@components/ui/ThemeModeButton";
 import LanguageButton from "@components/ui/LanguageButton";
@@ -17,7 +17,7 @@ interface ElevationScrollProps {
   children: ReactElement;
 }
 
-const NAV_HEIGHT = "84px";
+const NAV_HEIGHT = "var(--navbar-height)";
 
 const ElevationScroll = ({ children }: ElevationScrollProps) => {
   const trigger = useScrollTrigger({
@@ -30,8 +30,7 @@ const ElevationScroll = ({ children }: ElevationScrollProps) => {
     elevation: (trigger) ? 4 : 0,
     style: {
       backdropFilter: (trigger) ? "blur(10px)" : "none",
-      transition: "all 0.3s ease",
-      bgcolor: (trigger) ? undefined : "transparent"
+      transition: "background-color var(--motion-normal) var(--ease-standard), box-shadow var(--motion-normal) var(--ease-standard)"
     },
   });
 };
@@ -39,6 +38,11 @@ const ElevationScroll = ({ children }: ElevationScrollProps) => {
 const DashboardNavbar = () => {
   const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const desktopMenu = useMediaQuery((theme: Theme) => theme.breakpoints.up("sm"));
+
+  useEffect(() => {
+    if (desktopMenu) setMobileOpen(false);
+  }, [desktopMenu]);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -56,11 +60,12 @@ const DashboardNavbar = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: NAV_HEIGHT
+        height: NAV_HEIGHT,
+        color: "var(--color-accent)"
       }}>
         <H2>{t("title")}</H2>
       </Box>
-      <Divider sx={{ borderColor: "#FFFFFF1A" }} />
+      <Divider sx={{ borderColor: "var(--color-border-subtle)" }} />
       <List>
         {MENU_LIST.map((item) => (
           <ListItem key={item.key} disablePadding>
@@ -83,16 +88,28 @@ const DashboardNavbar = () => {
   return (
     <>
       <ElevationScroll>
-        <AppBar component="nav" position="fixed" sx={{
+        <AppBar component="nav" className="site-navbar" position="fixed" sx={{
           bgcolor: "var(--nav-bg)",
           color: "var(--text-main)"
         }}>
-          <Toolbar sx={{ height: NAV_HEIGHT, justifyContent: "space-between" }}>
-            <H2 sx={{ display: { xs: "none", sm: "block" }, flexGrow: 1, flexShrink: 0 }}>{t("title")}</H2>
+          <Toolbar sx={{ height: NAV_HEIGHT, justifyContent: "space-between", maxWidth: "1440px", width: "100%", mx: "auto", px: { xs: 2, sm: 3, lg: 6 } }}>
+            <H2 sx={{
+              display: { xs: "none", sm: "block" },
+              flexGrow: 1,
+              flexShrink: 0,
+              fontSize: { sm: "20px", md: "24px" },
+              color: "var(--color-accent)"
+            }}>
+              <Link to="/" style={{ color: "inherit", textDecoration: "none" }}>
+                {t("title")}
+              </Link>
+            </H2>
             <Button
               component={IconButton}
               color="inherit"
               aria-label="open drawer"
+              aria-expanded={mobileOpen}
+              aria-controls={(mobileOpen) ? "mobile-navigation" : undefined}
               edge="start"
               onClick={handleDrawerToggle}
               sx={{ display: { sm: "none" }, px: 2 }}
@@ -107,14 +124,17 @@ const DashboardNavbar = () => {
               </H3>
             </Button>
             <Box sx={{
-              display: { xs: "none", sm: "flex" },
-              gap: 2,
+              display: { xs: "none", sm: "grid" },
+              gridTemplateColumns: { sm: "64px 84px 104px 84px", md: "88px 112px 124px 112px" },
+              gap: { sm: 0, md: 1.5 },
               alignItems: "center"
             }}>
               {MENU_LIST.map((item) => (
                 <Button
                   key={item.key}
-                  component={Link}
+                  component={NavLink}
+                  end={item.link === "/"}
+                  className="nav-link"
                   to={item.link}
                   sx={{
                     textAlign: "center",
@@ -122,7 +142,7 @@ const DashboardNavbar = () => {
                     textDecoration: "none",
                     flexShrink: 0
                   }}>
-                  <H3>{t(`navbar.${item.key}`)}</H3>
+                  {t(`navbar.${item.key}`)}
                 </Button>
               ))}
             </Box>
@@ -140,12 +160,13 @@ const DashboardNavbar = () => {
       </ElevationScroll>
       <nav>
         <Drawer
+          id="mobile-navigation"
           variant="temporary"
           open={mobileOpen}
           anchor="top"
           onClose={handleDrawerToggle}
-          ModalProps={{ keepMounted: true }}
-          sx={{ display: { md: "none" } }}
+          ModalProps={{ keepMounted: true, disableScrollLock: true }}
+          sx={{ display: { sm: "none" } }}
         >
           {drawerContent}
         </Drawer>

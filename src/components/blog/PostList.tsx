@@ -8,8 +8,6 @@ import { formatPostDate, type PostSummary } from "@/services/notionApi";
 import { getNotionColor } from "@/utils/notionColors";
 
 
-export type BlogPost = PostSummary;
-
 interface PostListProps {
   posts: PostSummary[];
   loading: boolean;
@@ -59,13 +57,13 @@ const PostList = ({
         px: { xs: 3, md: 4 },
         py: { xs: 5, md: 6 },
         border: "1px solid color-mix(in srgb, var(--red-100), transparent 35%)",
-        borderRadius: "20px",
+        borderRadius: "var(--radius-lg)",
         bgcolor: "color-mix(in srgb, var(--red-100), transparent 94%)"
       }}>
         <H3 sx={{ color: "var(--text-main)", fontSize: "20px" }}>
           {t("blog.loadErrorTitle")}
         </H3>
-        <Paragraph sx={{ color: "var(--text-sub)", fontSize: "15px" }}>
+        <Paragraph sx={{ color: "var(--text-sub)", fontSize: "16px" }}>
           {t("blog.loadErrorDesc")}
         </Paragraph>
         <Button
@@ -88,15 +86,17 @@ const PostList = ({
 
   if (posts.length === 0) {
     return (
-      <Box sx={{
+      <Box className="empty-state-panel" sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center",
         px: 2,
-        py: 12,
-        opacity: 0.72
+        py: 10,
+        border: "1px solid var(--color-border-subtle)",
+        borderRadius: "var(--radius-lg)",
+        bgcolor: "var(--color-surface-subtle)"
       }}>
         <Box aria-hidden="true" sx={{ fontSize: "60px", color: "var(--text-sub)", mb: 2 }}>
           <FaRegFolderOpen />
@@ -124,7 +124,7 @@ const PostList = ({
       )}
       <Box sx={{
         ...gridStyles,
-        opacity: loading ? 0.62 : 1,
+        opacity: (loading) ? 0.62 : 1,
         transition: "opacity 180ms cubic-bezier(0.16, 1, 0.3, 1)"
       }}>
         {posts.map((post) => (
@@ -142,15 +142,15 @@ const PostList = ({
                 borderRadius: "12px",
                 outline: "none",
                 "&:focus-visible": {
-                  boxShadow: "0 0 0 3px color-mix(in srgb, var(--text-main), transparent 45%)"
+                  outline: "2px solid var(--color-accent)",
+                  outlineOffset: "3px"
                 },
                 "&:hover h2": {
                   textDecoration: "underline",
                   textDecorationThickness: "1px",
                   textUnderlineOffset: "0.2em"
                 }
-              }}
-            >
+              }}>
               <Stack
                 direction="row"
                 spacing={1}
@@ -172,7 +172,7 @@ const PostList = ({
                 {post.title || t("blog.untitled")}
               </H5>
               <Paragraph sx={{
-                fontSize: "15px",
+                fontSize: "16px",
                 lineHeight: 1.7,
                 color: "var(--text-sub)",
                 display: "-webkit-box",

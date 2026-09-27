@@ -33,8 +33,8 @@ const PaginationControl = ({ page, hasMore, loading, onPrev, onNext }: Paginatio
         aria-label={t("blog.previousPage")}
         sx={{
           p: 1,
-          border: "2px solid",
-          borderColor: "var(--text-main)",
+          border: "1px solid",
+          borderColor: "var(--color-border)",
           color: "var(--text-main)",
           opacity: (page === 1) ? 0.3 : 1,
           fontSize: "16px",
@@ -42,7 +42,7 @@ const PaginationControl = ({ page, hasMore, loading, onPrev, onNext }: Paginatio
           height: "44px",
           transition: "background-color 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms cubic-bezier(0.16, 1, 0.3, 1)",
           "&:hover": {
-            border: "2px solid",
+            border: "1px solid var(--color-accent)",
             bgcolor: "color-mix(in srgb, var(--text-main), transparent 88%)"
           },
           "&:focus-visible": {
@@ -66,8 +66,8 @@ const PaginationControl = ({ page, hasMore, loading, onPrev, onNext }: Paginatio
         aria-label={t("blog.nextPage")}
         sx={{
           p: 1,
-          border: "2px solid",
-          borderColor: "var(--text-main)",
+          border: "1px solid",
+          borderColor: "var(--color-border)",
           color: "var(--text-main)",
           opacity: (!hasMore) ? 0.3 : 1,
           fontSize: "16px",
@@ -75,7 +75,7 @@ const PaginationControl = ({ page, hasMore, loading, onPrev, onNext }: Paginatio
           height: "44px",
           transition: "background-color 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms cubic-bezier(0.16, 1, 0.3, 1)",
           "&:hover": {
-            border: "2px solid",
+            border: "1px solid var(--color-accent)",
             bgcolor: "color-mix(in srgb, var(--text-main), transparent 88%)"
           },
           "&:focus-visible": {

@@ -16,12 +16,12 @@ interface PostContentProps {
 
 const PostContent = ({ markdown }: PostContentProps) => {
   return (
-    <Box sx={{
+    <Box className="article-reading" sx={{
       color: "var(--text-main)",
       width: "100%",
       maxWidth: "78ch",
       mx: "auto",
-      fontSize: "17px",
+      fontSize: "18px",
       lineHeight: 1.8,
       "& img": {
         display: "block",
@@ -30,8 +30,8 @@ const PostContent = ({ markdown }: PostContentProps) => {
         borderRadius: "16px",
         my: 3
       },
-      "& ul, & ol": { pl: 3, mb: 3, fontSize: "17px" },
-      "& li": { mb: 1, fontSize: "17px", pl: 0.5 },
+      "& ul, & ol": { pl: 3, mb: 3, fontSize: "18px" },
+      "& li": { mb: 1, fontSize: "18px", pl: 0.5 },
       "& blockquote": {
         borderLeft: "4px solid var(--text-main)",
         pl: 2,
@@ -40,7 +40,7 @@ const PostContent = ({ markdown }: PostContentProps) => {
         bgcolor: "color-mix(in srgb, var(--text-main), transparent 95%)",
         borderRadius: "0 8px 8px 0",
         color: "var(--text-sub)",
-        fontSize: "17px",
+        fontSize: "18px",
         "& p": {
           margin: 0,
           padding: 0
@@ -68,7 +68,7 @@ const PostContent = ({ markdown }: PostContentProps) => {
               mt: 6,
               mb: 2,
               lineHeight: 1.25,
-              scrollMarginTop: "96px"
+              scrollMarginTop: "calc(var(--navbar-height) + 12px)"
             }} />;
           },
           h2: ({ node, ...props }: MarkdownElementProps<"h2">) => {
@@ -79,24 +79,24 @@ const PostContent = ({ markdown }: PostContentProps) => {
               mt: 5,
               mb: 2,
               lineHeight: 1.3,
-              scrollMarginTop: "96px"
+              scrollMarginTop: "calc(var(--navbar-height) + 12px)"
             }} />;
           },
           h3: ({ node, ...props }: MarkdownElementProps<"h3">) => {
             void node;
             return <H3 {...props} sx={{
-              fontSize: "21px",
+              fontSize: "22px",
               fontWeight: 600,
               mt: 4,
               mb: 1.5,
               lineHeight: 1.4,
-              scrollMarginTop: "96px"
+              scrollMarginTop: "calc(var(--navbar-height) + 12px)"
             }} />;
           },
           p: ({ node, ...props }: MarkdownElementProps<"p">) => {
             void node;
             return <Paragraph {...props} sx={{
-              fontSize: "17px",
+              fontSize: "18px",
               lineHeight: 1.9,
               mb: 2,
               letterSpacing: "0.035em"
@@ -113,15 +113,15 @@ const PostContent = ({ markdown }: PostContentProps) => {
             return (
               <Link
                 href={href}
-                target={isExternal ? "_blank" : undefined}
-                rel={isExternal ? "noopener noreferrer" : undefined}
+                target={(isExternal) ? "_blank" : undefined}
+                rel={(isExternal) ? "noopener noreferrer" : undefined}
                 sx={{
-                  color: "var(--blue-150)",
+                  color: "var(--color-accent)",
                   textDecorationThickness: "1px",
                   textUnderlineOffset: "0.18em",
                   "&:hover": { textDecorationThickness: "2px" },
                   "&:focus-visible": {
-                    outline: "3px solid color-mix(in srgb, var(--blue-150), transparent 55%)",
+                    outline: "2px solid var(--color-accent)",
                     outlineOffset: "3px",
                     borderRadius: "2px"
                   }

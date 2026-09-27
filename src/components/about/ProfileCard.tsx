@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { Avatar, Box, Stack, IconButton } from "@mui/material";
 import { H1, Paragraph } from "@components/ui/Typography";
 import BentoCard from "@components/ui/BentoCard";
-import Profile from "@assets/images/Profile.png";
+import Profile from "@assets/images/Profile.webp";
 import { CONTACT } from "@assets/data/config";
 
 
@@ -36,7 +36,7 @@ const ProfileCard = () => {
             alignItems: { xs: "center", sm: "start" },
             pb: 2
           }}>
-          <Box sx={{ textAlign: { xs: "center", sm: "left" } }}>
+          <Box sx={{ textAlign: { xs: "center", sm: "left" }, minWidth: 0 }}>
             <H1 sx={{
               fontSize: "32px",
               lineHeight: 1.6,
@@ -45,7 +45,7 @@ const ProfileCard = () => {
               {parse(t("about.title"))}
             </H1>
             <Paragraph sx={{
-              opacity: 0.7,
+              color: "var(--text-sub)",
               fontSize: "16px",
               lineHeight: 1.6
             }}>
@@ -56,8 +56,7 @@ const ProfileCard = () => {
             width: "84px",
             height: "84px",
             border: "2px solid var(--text-main)"
-          }}
-          />
+          }} />
         </Stack>
         <Box sx={{ flexGrow: 1 }}>
           {t("about.content").split("<br />").map((text, index, array) => (
@@ -71,12 +70,12 @@ const ProfileCard = () => {
           ))}
         </Box>
         <Stack
-        direction="row" spacing={2} sx={{
-          mt: 4,
-          pt: 2,
-          borderTop: "1px solid color-mix(in srgb, var(--text-main), transparent 90%)",
-          justifyContent: { xs: "center", sm: "flex-start" }
-        }}>
+          direction="row" spacing={2} sx={{
+            mt: 4,
+            pt: 2,
+            borderTop: "1px solid color-mix(in srgb, var(--text-main), transparent 90%)",
+            justifyContent: { xs: "center", sm: "flex-start" }
+          }}>
           {CONTACT.map((item) => (
             <IconButton
               key={item.name}
@@ -84,14 +83,13 @@ const ProfileCard = () => {
               onClick={() => handleContactClick(item)}
               sx={{
                 color: "var(--text-main)",
-                transition: "all 0.2s",
+                transition: "transform var(--motion-fast) var(--ease-standard), background-color var(--motion-fast) var(--ease-standard)",
                 "&:hover": {
                   color: "var(--text-main)",
                   transform: "translateY(-3px)",
                   bgcolor: "color-mix(in srgb, var(--text-main), transparent 90%)"
                 }
-              }}
-            >
+              }}>
               {item.icon}
             </IconButton>
           ))}

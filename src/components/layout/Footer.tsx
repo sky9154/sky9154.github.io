@@ -23,12 +23,13 @@ const Footer = () => {
   };
 
   return (
-    <Box component="footer" sx={{ bgcolor: "var(--footer-bg)", py: 3 }}>
+    <Box component="footer" className="site-footer" sx={{ bgcolor: "var(--footer-bg)", py: 4 }}>
+      <span className="footer-mark" aria-hidden="true" />
       <Container fixed>
         <Stack
           spacing={2}
           direction={{ xs: "column", sm: "row" }}
-          justifyContent="space-evenly"
+          justifyContent="space-between"
           alignItems="center"
         >
           <Paragraph sx={{ color: "var(--text-main)", textAlign: "center" }}>

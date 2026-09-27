@@ -1,4 +1,4 @@
-import { useState, type ComponentPropsWithoutRef } from "react";
+import { useEffect, useRef, useState, type ComponentPropsWithoutRef } from "react";
 import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import bash from "react-syntax-highlighter/dist/esm/languages/prism/bash";
 import css from "react-syntax-highlighter/dist/esm/languages/prism/css";
@@ -46,6 +46,16 @@ export interface PostCodeBlockProps extends ComponentPropsWithoutRef<"code"> {
 const PostCodeBlock = ({ inline, className, children, ...props }: PostCodeBlockProps) => {
   const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
+  const copyTimerRef = useRef<number>();
+  const mountedRef = useRef(false);
+
+  useEffect(() => {
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+      window.clearTimeout(copyTimerRef.current);
+    };
+  }, []);
   const match = /language-([\w-]+)/.exec(className || "");
   const code = String(children).replace(/\n$/, "");
 
@@ -68,21 +78,23 @@ const PostCodeBlock = ({ inline, className, children, ...props }: PostCodeBlockP
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(code);
+      if (!mountedRef.current) return;
 
       setCopied(true);
 
-      window.setTimeout(() => setCopied(false), 1800);
+      window.clearTimeout(copyTimerRef.current);
+      copyTimerRef.current = window.setTimeout(() => setCopied(false), 1800);
     } catch {
-      setCopied(false);
+      if (mountedRef.current) setCopied(false);
     }
   };
 
   return (
     <Box sx={{
       my: 3,
-      borderRadius: "14px",
+      borderRadius: "var(--radius-md)",
       overflow: "hidden",
-      border: "1px solid color-mix(in srgb, var(--white), transparent 86%)",
+      border: "1px solid var(--color-border)",
       bgcolor: "var(--gray-950)"
     }}>
       <Box sx={{
@@ -105,7 +117,7 @@ const PostCodeBlock = ({ inline, className, children, ...props }: PostCodeBlockP
         </Paragraph>
         <Button
           size="small"
-          startIcon={copied ? <FaCheck /> : <FaCopy />}
+          startIcon={(copied) ? <FaCheck /> : <FaCopy />}
           onClick={() => void handleCopy()}
           aria-live="polite"
           sx={{
@@ -115,7 +127,7 @@ const PostCodeBlock = ({ inline, className, children, ...props }: PostCodeBlockP
             borderRadius: "8px",
             "&:hover": { bgcolor: "color-mix(in srgb, var(--white), transparent 90%)" }
           }}>
-          {copied ? t("blog.codeCopied") : t("blog.copyCode")}
+          {(copied) ? t("blog.codeCopied") : t("blog.copyCode")}
         </Button>
       </Box>
       <SyntaxHighlighter

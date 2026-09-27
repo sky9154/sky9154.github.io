@@ -1,341 +1,258 @@
-import { PointerEvent, useEffect, useRef } from "react";
+import { useEffect, useRef, type PointerEvent } from "react";
 import { useTranslation } from "react-i18next";
-import { Box, useMediaQuery } from "@mui/material";
+import { Box } from "@mui/material";
 import { useThemeModeContext } from "@context/ThemeModeContext";
-import ProfileB from "@assets/images/illustration/profile-b.png";
-import ProfileG from "@assets/images/illustration/profile-g.png";
+import ProfileDark from "@assets/images/illustration/profile-dark.webp";
+import ProfileLight from "@assets/images/illustration/profile-light.webp";
+import CelestialLeft from "@assets/images/celestial/celestial-left.svg";
+import CelestialRight from "@assets/images/celestial/celestial-right.svg";
 
 
-type Point = {
-  x: number;
-  y: number;
-};
+const stars = [
+  [126, 58], [246, 76], [392, 46], [510, 80], [180, 144],
+  [458, 111], [105, 258], [544, 222], [83, 350], [563, 340],
+  [130, 437], [207, 474], [432, 469], [548, 489], [152, 548],
+  [280, 562], [401, 545], [510, 570], [346, 106], [568, 152]
+].map(([x, y], index) => ({ x, y, r: (index % 5 === 0) ? 1.4 : 0.8 }));
 
 const SignalPortrait = ({ label }: { label: string }) => {
   const { t } = useTranslation();
   const { themeMode } = useThemeModeContext();
-  const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
+
   const stageRef = useRef<HTMLDivElement>(null);
   const coordinateRef = useRef<HTMLSpanElement>(null);
-  const targetRef = useRef<Point>({ x: 0.56, y: 0.42 });
-  const currentRef = useRef<Point>({ x: 0.56, y: 0.42 });
-  const interactingRef = useRef(false);
-  const lastCoordinateRef = useRef("X 056 / Y 042");
-
-  const baseImage = (themeMode === "dark") ? ProfileB : ProfileG;
-  const revealImage = (themeMode === "dark") ? ProfileG : ProfileB;
+  const targetRef = useRef({ x: 0, y: 0 });
+  const currentRef = useRef({ x: 0, y: 0 });
+  const boundsRef = useRef<DOMRect | null>(null);
+  const wakeRef = useRef<() => void>(() => { });
+  const enabledRef = useRef(false);
 
   useEffect(() => {
-    const stage = stageRef.current;
-
-    if (!stage || prefersReducedMotion) {
-      return;
-    }
-
-    let frameId = 0;
-    let previousTime = performance.now();
-    const startedAt = previousTime;
-
-    const update = (time: number) => {
-      const deltaTime = Math.min((time - previousTime) / 1000, 0.05);
-      const elapsed = (time - startedAt) / 1000;
-      previousTime = time;
-
-      if (!interactingRef.current) {
-        targetRef.current = {
-          x: 0.52 + Math.cos(elapsed * 0.52) * 0.16,
-          y: 0.46 + Math.sin(elapsed * 0.68) * 0.12
-        };
-      }
-
-      const follow = 1 - Math.exp(-9 * deltaTime);
-      currentRef.current.x += (targetRef.current.x - currentRef.current.x) * follow;
-      currentRef.current.y += (targetRef.current.y - currentRef.current.y) * follow;
-
-      stage.style.setProperty("--lens-x", `${currentRef.current.x * 100}%`);
-      stage.style.setProperty("--lens-y", `${currentRef.current.y * 100}%`);
-
-      const coordinate = `X ${String(Math.round(currentRef.current.x * 100)).padStart(3, "0")} / Y ${String(Math.round(currentRef.current.y * 100)).padStart(3, "0")}`;
-
-      if (coordinate !== lastCoordinateRef.current && coordinateRef.current) {
-        coordinateRef.current.textContent = coordinate;
-        lastCoordinateRef.current = coordinate;
-      }
-
-      frameId = requestAnimationFrame(update);
-    };
-
-    frameId = requestAnimationFrame(update);
-
-    return () => cancelAnimationFrame(frameId);
-  }, [prefersReducedMotion]);
-
-  const updateTarget = (event: PointerEvent<HTMLDivElement>) => {
     const stage = stageRef.current;
 
     if (!stage) {
       return;
     }
 
-    const bounds = stage.getBoundingClientRect();
-    targetRef.current = {
-      x: Math.min(1, Math.max(0, (event.clientX - bounds.left) / bounds.width)),
-      y: Math.min(1, Math.max(0, (event.clientY - bounds.top) / bounds.height))
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+    let frameId = 0;
+    let previousTime = 0;
+    let visible = false;
+    let lastCoordinate = "";
+
+    const stop = () => {
+      cancelAnimationFrame(frameId); frameId = 0;
     };
-    interactingRef.current = true;
+
+    const update = (time: number) => {
+      frameId = 0;
+
+      if (!enabledRef.current) {
+        return;
+      }
+
+      const delta = Math.min((time - previousTime) / 1000, 0.05);
+
+      previousTime = time;
+
+      const follow = 1 - Math.exp(-8 * delta);
+      const point = currentRef.current;
+
+      point.x += (targetRef.current.x - point.x) * follow;
+      point.y += (targetRef.current.y - point.y) * follow;
+
+      const settled = Math.abs(targetRef.current.x - point.x) + Math.abs(targetRef.current.y - point.y) < 0.025;
+
+      if (settled) {
+        Object.assign(point, targetRef.current);
+      }
+
+      stage.style.setProperty("--pointer-x", `${point.x.toFixed(3)}px`);
+      stage.style.setProperty("--pointer-y", `${point.y.toFixed(3)}px`);
+
+      const coordinate = `X ${Math.round(point.x + 50).toString().padStart(3, "0")} / Y ${Math.round(point.y + 50).toString().padStart(3, "0")}`;
+
+      if (coordinate !== lastCoordinate && coordinateRef.current) {
+        coordinateRef.current.textContent = coordinate;
+        lastCoordinate = coordinate;
+      }
+
+      if (!settled) {
+        frameId = requestAnimationFrame(update);
+      }
+    };
+    const wake = () => {
+      if (enabledRef.current && !frameId) {
+        previousTime = performance.now();
+        frameId = requestAnimationFrame(update);
+      }
+    };
+    wakeRef.current = wake;
+    const reset = () => {
+      stop();
+
+      targetRef.current = { x: 0, y: 0 };
+      currentRef.current = { x: 0, y: 0 };
+      stage.style.setProperty("--pointer-x", "0px");
+      stage.style.setProperty("--pointer-y", "0px");
+
+      if (coordinateRef.current) {
+        coordinateRef.current.textContent = "X 050 / Y 050";
+      }
+
+      lastCoordinate = "";
+    };
+    const sync = () => {
+      const active = visible && !document.hidden;
+
+      stage.dataset.active = String(active);
+      stage.dataset.visible = String(visible);
+      enabledRef.current = active && !reduced.matches && finePointer.matches;
+
+      if (!enabledRef.current) {
+        reset();
+      }
+
+      boundsRef.current = null;
+    };
+
+    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); }, { threshold: 0 });
+
+    observer.observe(stage);
+
+    const invalidateBounds = () => { boundsRef.current = null; };
+    const resizeObserver = new ResizeObserver(invalidateBounds);
+
+    resizeObserver.observe(stage);
+    reduced.addEventListener("change", sync);
+    finePointer.addEventListener("change", sync);
+    document.addEventListener("visibilitychange", sync);
+    window.addEventListener("scroll", invalidateBounds, { passive: true });
+
+    sync();
+
+    return () => {
+      stop();
+
+      enabledRef.current = false;
+      wakeRef.current = () => { };
+      observer.disconnect();
+      resizeObserver.disconnect();
+      reduced.removeEventListener("change", sync);
+      finePointer.removeEventListener("change", sync);
+      document.removeEventListener("visibilitychange", sync);
+      window.removeEventListener("scroll", invalidateBounds);
+    };
+  }, []);
+
+  const updateTarget = (event: PointerEvent<HTMLDivElement>) => {
+    if (!enabledRef.current || event.pointerType === "touch" || !stageRef.current) {
+      return;
+    }
+
+    const bounds = boundsRef.current ?? (boundsRef.current = stageRef.current.getBoundingClientRect());
+
+    targetRef.current = {
+      x: (Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width)) - 0.5) * 28,
+      y: (Math.max(0, Math.min(1, (event.clientY - bounds.top) / bounds.height)) - 0.5) * 24
+    };
+
+    wakeRef.current();
   };
 
   return (
-    <Box sx={{
-      minWidth: 0,
-      minHeight: { xs: "360px", sm: "440px", md: 0 },
-      p: { xs: 2, sm: 3 },
-      display: "flex"
-    }}>
-      <Box
-        ref={stageRef}
-        role="img"
-        aria-label={label}
+    <Box sx={{ minWidth: 0, display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <Box ref={stageRef} className="celestial-stage" role="img" aria-label={label}
+        data-active="false" data-visible="false"
         onPointerMove={updateTarget}
-        onPointerDown={updateTarget}
         onPointerLeave={() => {
-          interactingRef.current = false;
-        }}
-        onPointerUp={() => {
-          interactingRef.current = false;
-        }}
-        sx={{
-          "--lens-x": "56%",
-          "--lens-y": "42%",
-          "--lens-size": { xs: "108px", sm: "148px", md: "176px" },
-          position: "relative",
-          display: "grid",
-          placeItems: "center",
-          width: "100%",
-          minHeight: { xs: "328px", sm: "392px", md: 0 },
-          height: "100%",
-          overflow: "hidden",
-          borderRadius: 2.5,
-          cursor: "crosshair",
-          touchAction: "pan-y",
-          isolation: "isolate",
-          "&::before": {
-            position: "absolute",
-            zIndex: 0,
-            width: { xs: "260px", sm: "380px", md: "min(74%, 500px)" },
-            maxWidth: "76%",
-            aspectRatio: "1",
-            border: "1px solid color-mix(in srgb, var(--text-main), transparent 82%)",
-            borderRadius: "50%",
-            content: "''",
-            transform: "rotate(-8deg) scale(0.98, 1.04)"
-          },
-          "&::after": {
-            position: "absolute",
-            zIndex: 0,
-            inset: 0,
-            backgroundImage: `
-              linear-gradient(
-                90deg,
-                transparent calc(50% - 0.5px),
-                color-mix(in srgb, var(--text-main), transparent 91%) 50%,
-                transparent calc(50% + 0.5px)
-              ),
-              linear-gradient(
-                transparent calc(50% - 0.5px),
-                color-mix(in srgb, var(--text-main), transparent 91%) 50%,
-                transparent calc(50% + 0.5px)
-              )
-            `,
-            content: "''",
-            pointerEvents: "none"
+          if (!enabledRef.current) {
+            return;
           }
+
+          targetRef.current = { x: 0, y: 0 };
+          boundsRef.current = null;
+          wakeRef.current();
         }}>
-        <Box aria-hidden="true" sx={{
-          position: "absolute",
-          zIndex: 0,
-          width: { xs: "310px", sm: "470px", md: "min(88%, 580px)" },
-          maxWidth: "88%",
-          aspectRatio: "1.3",
-          border: "1px solid color-mix(in srgb, var(--text-main), transparent 90%)",
-          borderRadius: "50%",
-          transform: "rotate(13deg)"
-        }} />
-        <Box
-          component="img"
-          src={baseImage}
-          alt=""
-          aria-hidden="true"
-          sx={{
-            display: "block",
-            position: "relative",
-            zIndex: 1,
-            width: { xs: "292px", sm: "424px", md: "min(82%, 560px)" },
-            maxWidth: "90%",
-            aspectRatio: "1",
-            objectFit: "contain",
-            pointerEvents: "none",
-            userSelect: "none",
-            filter: "drop-shadow(0 24px 28px color-mix(in srgb, var(--black), transparent 78%))",
-            "@media (prefers-reduced-motion: reduce)": {
-              animation: "none"
-            }
-          }} />
-        <Box sx={{
-          position: "absolute",
-          zIndex: 2,
-          inset: 0,
-          display: "grid",
-          placeItems: "center",
-          bgcolor: (themeMode === "dark") ? "var(--blue-100)" : "var(--green-400)",
-          maskImage: `radial-gradient(
-            circle calc(var(--lens-size) * 0.5) at var(--lens-x) var(--lens-y),
-            #000 0 68%,
-            transparent 76%
-          )`
-        }} aria-hidden="true">
-          <Box
-            component="img"
-            src={revealImage}
-            alt=""
-            sx={{
-              display: "block",
-              width: { xs: "292px", sm: "424px", md: "min(82%, 560px)" },
-              maxWidth: "90%",
-              aspectRatio: "1",
-              objectFit: "contain",
-              pointerEvents: "none",
-              userSelect: "none",
-              "@media (prefers-reduced-motion: reduce)": {
-                animation: "none"
-              }
-            }} />
-        </Box>
-        <Box aria-hidden="true" sx={{
-          position: "absolute",
-          zIndex: 3,
-          top: "var(--lens-y)",
-          left: "var(--lens-x)",
-          width: "var(--lens-size)",
-          aspectRatio: "1",
-          border: "1px solid color-mix(in srgb, var(--text-main), transparent 28%)",
-          borderRadius: "50%",
-          pointerEvents: "none",
-          transform: "translate(-50%, -50%)",
-          "&::before, &::after": {
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            bgcolor: "color-mix(in srgb, var(--text-main), transparent 52%)",
-            content: "''",
-            transform: "translate(-50%, -50%)"
-          },
-          "&::before": {
-            width: "calc(100% + 16px)",
-            height: "1px"
-          },
-          "&::after": {
-            width: "1px",
-            height: "calc(100% + 16px)"
-          }
-        }} />
-        <Box
-          aria-hidden="true"
-          sx={{
-            position: "absolute",
-            left: { xs: 2, sm: 3, md: 3.5 },
-            bottom: { xs: 2, sm: 3, md: 3.5 },
-            zIndex: 4,
-            display: "flex",
-            alignItems: "center",
-            gap: 1.25,
-            color: "color-mix(in srgb, var(--text-main), transparent 28%)",
-            pointerEvents: "none",
-            "&::before": {
-              width: { xs: "18px", sm: "26px" },
-              height: "1px",
-              bgcolor: "currentColor",
-              content: "''"
-            }
-          }}>
-          <Box
-            component="span"
-            ref={coordinateRef}
-            sx={{
-              fontSize: { xs: "10px", sm: "12px" },
-              lineHeight: 1,
-              letterSpacing: "0.12em",
-              fontVariantNumeric: "tabular-nums"
-            }}>
-            X 056 / Y 042
-          </Box>
-        </Box>
-        <Box aria-hidden="true" sx={{
-          position: "absolute",
-          zIndex: 4,
-          top: { xs: 2, sm: 3, md: 3.5 },
-          left: { xs: 2, sm: 3, md: 3.5 },
-          display: "flex",
-          alignItems: "center",
-          gap: 1,
-          color: "color-mix(in srgb, var(--text-main), transparent 20%)",
-          pointerEvents: "none"
-        }}>
-          <Box sx={{
-            position: "relative",
-            width: "6px",
-            height: "6px",
-            borderRadius: "50%",
-            bgcolor: "currentColor",
-            animation: "signalPulse 2.4s ease-in-out infinite",
-            "@keyframes signalPulse": {
-              "0%, 100%": { opacity: 0.35, transform: "scale(0.75)" },
-              "50%": { opacity: 1, transform: "scale(1)" }
-            },
-            "@media (prefers-reduced-motion: reduce)": {
-              animation: "none",
-              opacity: 1
-            }
-          }} />
-          <Box component="span" sx={{
-            fontSize: { xs: "10px", sm: "12px" },
-            fontWeight: 700,
-            lineHeight: 1,
-            letterSpacing: "0.12em"
-          }}>
-            {t("home.signal.live")}
-          </Box>
-        </Box>
-        <Box aria-hidden="true" sx={{
-          position: "absolute",
-          zIndex: 4,
-          top: { xs: 2, sm: 3, md: 3.5 },
-          right: { xs: 2, sm: 3, md: 3.5 },
-          color: "color-mix(in srgb, var(--text-main), transparent 28%)",
-          fontSize: { xs: "10px", sm: "12px" },
-          fontWeight: 700,
-          lineHeight: 1,
-          letterSpacing: "0.12em",
-          pointerEvents: "none"
-        }}>
-          {t("home.signal.mode")} / {t(`home.signal.${themeMode}`)}
-        </Box>
-        <Box aria-hidden="true" sx={{
-          position: "absolute",
-          zIndex: 4,
-          right: { xs: 2, sm: 3, md: 3.5 },
-          bottom: { xs: 2, sm: 3, md: 3.5 },
-          display: { xs: "none", sm: "block" },
-          color: "color-mix(in srgb, var(--text-main), transparent 38%)",
-          fontSize: "10px",
-          fontWeight: 700,
-          lineHeight: 1,
-          letterSpacing: "0.12em",
-          textTransform: "uppercase",
-          pointerEvents: "none"
-        }}>
-          {t("home.signal.hint")}
-        </Box>
+        <div className="parallax-layer layer-stars" aria-hidden="true">
+          <svg viewBox="0 0 640 600" focusable="false">
+            {stars.map((star, index) => (
+              <circle key={index} cx={star.x} cy={star.y} r={star.r}
+                className={(index % 3 === 0) ? "star star-twinkle" : "star star-secondary"}
+                style={{ animationDelay: `${index * -0.7}s` }} />
+            ))}
+            <path d="M120 180v16m-8-8h16M532 406v20m-10-10h20M174 444v12m-6-6h12" className="celestial-gold" />
+          </svg>
+        </div>
+        <div className="parallax-layer layer-geometry" aria-hidden="true">
+          <svg viewBox="0 0 640 600" focusable="false">
+            <circle cx="320" cy="300" r="218" className="celestial-faint" />
+            <circle cx="320" cy="300" r="197" className="celestial-stroke" />
+            <circle cx="320" cy="300" r="156" className="celestial-faint" />
+            <g className="orbit-turn">
+              {Array.from({ length: 60 }, (_, i) => (
+                <line key={i} x1="320" x2="320" y1="82" y2={(i % 5 === 0) ? "96" : "87"}
+                  transform={`rotate(${i * 6} 320 300)`} className={(i % 5 === 0) ? "celestial-gold" : "celestial-stroke"} />
+              ))}
+              <circle cx="320" cy="82" r="4" fill="var(--color-accent)" />
+            </g>
+            <path d="M91 300h458M320 66v468M165 145l310 310M165 455l310-310" className="celestial-faint geometry-secondary" />
+            <ellipse cx="320" cy="300" rx="250" ry="91" transform="rotate(-28 320 300)" className="celestial-gold" />
+            <ellipse cx="320" cy="300" rx="245" ry="108" transform="rotate(48 320 300)" className="celestial-stroke geometry-secondary" />
+            <g className="clock-hand"><path d="M320 300V106" className="celestial-gold" /><circle cx="320" cy="111" r="3" fill="var(--color-accent)" /></g>
+          </svg>
+        </div>
+        <div className="parallax-layer layer-moon" aria-hidden="true">
+          <svg viewBox="0 0 640 600" focusable="false">
+            <g className="moon-drift">
+              <circle cx="288" cy="254" r="94" fill="var(--color-moon)" />
+              <path d="M290 160a94 94 0 0 0 0 188c-47-48-47-140 0-188Z" fill="var(--color-accent-muted)" opacity="0.28" />
+              <circle cx="270" cy="224" r="21" fill="none" stroke="var(--color-accent-muted)" opacity="0.34" />
+              <circle cx="315" cy="274" r="32" fill="none" stroke="var(--color-accent-muted)" opacity="0.23" />
+              <circle cx="245" cy="281" r="9" fill="var(--color-accent-muted)" opacity="0.15" />
+              <path d="M217 240q70-42 145 5M216 260q72-30 143 12" fill="none" stroke="var(--color-accent-muted)" opacity="0.2" />
+            </g>
+            <path d="M166 520h308" className="celestial-faint" />
+            {[0, 1, 2, 3, 4].map((phase) => (
+              <g key={phase} transform={`translate(${208 + phase * 56} 520)`}>
+                <circle r="12" fill="var(--color-bg)" stroke="var(--color-accent-muted)" />
+                {(phase === 2) ? <circle r="10" fill="var(--color-moon)" /> :
+                  <path d={(phase < 2) ? "M0-10a10 10 0 0 1 0 20Q12 0 0-10" : "M0-10a10 10 0 0 0 0 20Q-12 0 0-10"}
+                    fill="var(--color-moon)" transform={(phase % 2 === 0) ? "scale(.65 1)" : undefined} />}
+              </g>
+            ))}
+          </svg>
+          <img className="celestial-character" src={(themeMode === "dark") ? ProfileDark : ProfileLight} alt="" draggable={false} width="400" height="400" />
+        </div>
+        <div className="parallax-layer layer-foreground" aria-hidden="true">
+          <span
+            className="celestial-vertical-svg celestial-vertical-left"
+            style={{
+              maskImage: `url(${CelestialLeft})`,
+              WebkitMaskImage: `url(${CelestialLeft})`,
+              aspectRatio: "1040 / 8000",
+            }}
+            aria-hidden="true"
+          />
+          <span
+            className="celestial-vertical-svg celestial-vertical-right"
+            style={{
+              maskImage: `url(${CelestialRight})`,
+              WebkitMaskImage: `url(${CelestialRight})`,
+              aspectRatio: "1040 / 9160",
+            }}
+            aria-hidden="true"
+          />
+          <svg viewBox="0 0 640 600" focusable="false">
+            <path d="M84 140v-20h20M536 450h20v-20M93 394l6-6 6 6-6 6Z" className="celestial-gold" />
+            <circle cx="484" cy="166" r="8" className="celestial-gold" />
+            <path d="M472 166h24M484 154v24" className="celestial-gold" />
+          </svg>
+        </div>
+        <span className="celestial-status" aria-hidden="true">{t("home.signal.mode")} / {t(`home.signal.${themeMode}`)}</span>
+        <span ref={coordinateRef} className="celestial-coordinate" aria-hidden="true">X 050 / Y 050</span>
+        <span className="celestial-hint" aria-hidden="true">{t("home.signal.hint")}</span>
       </Box>
     </Box>
   );

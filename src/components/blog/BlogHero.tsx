@@ -26,7 +26,7 @@ const BlogHero = ({ onSearch }: BlogHeroProps) => {
   }, [inputValue, onSearch]);
 
   return (
-    <Box component="section" aria-labelledby="blog-title" sx={{
+    <Box component="section" className="page-heading" aria-labelledby="blog-title" sx={{
       display: "flex",
       flexDirection: { xs: "column", md: "row" },
       alignItems: { xs: "stretch", md: "flex-end" },
@@ -34,7 +34,7 @@ const BlogHero = ({ onSearch }: BlogHeroProps) => {
       textAlign: "left",
       mb: { xs: 5, md: 8 },
       gap: { xs: 4, md: 8 },
-      borderBottom: "1px solid color-mix(in srgb, var(--text-main), transparent 70%)",
+      borderBottom: "1px solid var(--color-border)",
       pb: { xs: 4, md: 6 }
     }}>
       <Box sx={{ maxWidth: "680px" }}>
@@ -71,8 +71,8 @@ const BlogHero = ({ onSearch }: BlogHeroProps) => {
           "& .MuiOutlinedInput-root": {
             fontSize: "16px",
             minHeight: "52px",
-            borderRadius: "16px",
-            bgcolor: "color-mix(in srgb, var(--search-bg), transparent 86%)",
+            borderRadius: "var(--radius-md)",
+            bgcolor: "var(--color-surface-subtle)",
             color: "var(--text-main)",
             transition: "background-color 180ms cubic-bezier(0.16, 1, 0.3, 1)",
             "& fieldset": {
@@ -101,7 +101,7 @@ const BlogHero = ({ onSearch }: BlogHeroProps) => {
             <InputAdornment position="start" sx={{ fontSize: "16px", px: 1, color: "var(--text-main)" }}>
               <FaMagnifyingGlass />
             </InputAdornment>
-          ),
+          )
         }} />
     </Box>
   );

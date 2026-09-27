@@ -16,36 +16,28 @@ const HomeProfile = () => {
   ];
 
   return (
-    <Box sx={{
+    <Box className="home-profile" sx={{
       minWidth: 0,
       p: {
-        xs: 2.5,
-        sm: 3.5,
-        md: 3.5
+        xs: 1,
+        sm: 3,
+        md: 1
       },
       position: "relative",
       display: "flex",
       flexDirection: "column",
-      color: "var(--text-main)",
-      background: {
-        xs: "transparent",
-        md: `linear-gradient(
-          90deg,
-          color-mix(in srgb, var(--text-main), transparent 96%) 0,
-          transparent 28%
-        )`
-      }
+      color: "var(--text-main)"
     }}>
       <Stack sx={{
         width: "100%",
         height: "100%",
         minHeight: 0,
-        gap: { xs: 2.5, md: 2 }
+        gap: { xs: 3, md: 3.5 }
       }}>
         <Box>
           <Paragraph sx={{
             mb: 1.5,
-            color: "var(--text-sub)",
+            color: "var(--color-accent)",
             fontSize: { xs: "10px", sm: "12px" },
             fontWeight: 700,
             letterSpacing: "0.14em",
@@ -65,9 +57,9 @@ const HomeProfile = () => {
           </Paragraph>
           <H1 sx={{
             fontSize: {
-              xs: "64px",
-              sm: "80px",
-              md: "clamp(64px, 5.2vw, 80px)"
+              xs: "80px",
+              sm: "100px",
+              md: "clamp(96px, 8vw, 120px)"
             },
             lineHeight: 0.9,
             fontWeight: 700,
@@ -88,7 +80,7 @@ const HomeProfile = () => {
             maxWidth: { xs: "34ch", md: "none" },
             fontSize: "16px",
             fontWeight: 600,
-            lineHeight: 1.55,
+            lineHeight: 1.8,
             overflowWrap: "anywhere"
           }}>
             {t("home.statement")}
@@ -140,8 +132,8 @@ const HomeProfile = () => {
                 },
                 "&:active": { transform: "scale(0.99)" }
               }}>
-              <Box component="span" sx={{
-                color: "var(--text-sub)",
+              <Box component="span" className="home-link-number" sx={{
+                color: "var(--color-accent)",
                 fontSize: "10px",
                 fontWeight: 700,
                 letterSpacing: "0.12em",
@@ -173,7 +165,8 @@ const HomeProfile = () => {
                 component={FaArrowRightLong}
                 className="home-link-arrow"
                 aria-hidden="true"
-                sx={{ fontSize: "16px" }} />
+                sx={{ fontSize: "16px" }}
+              />
             </Button>
           ))}
         </Stack>

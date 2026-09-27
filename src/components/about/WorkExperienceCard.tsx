@@ -36,12 +36,12 @@ const WorkExperienceCard = () => {
           {items.map((item) => (
             <Box key={`${item.company}-${item.period}`} sx={{
               p: 2.5,
-              borderRadius: 3,
-              bgcolor: "color-mix(in srgb, var(--text-main), transparent 95%)",
-              border: "1px solid color-mix(in srgb, var(--text-main), transparent 85%)"
+              borderRadius: "var(--radius-md)",
+              bgcolor: "var(--color-surface-subtle)",
+              border: "1px solid var(--color-border-subtle)"
             }}>
               <Paragraph sx={{
-                fontSize: "13px",
+                fontSize: "14px",
                 color: "var(--text-sub)",
                 mb: 1
               }}>
@@ -55,7 +55,7 @@ const WorkExperienceCard = () => {
                 {item.company}
               </H3>
               <Paragraph sx={{
-                fontSize: "15px",
+                fontSize: "16px",
                 color: "var(--text-sub)",
                 fontWeight: 600,
                 mb: 2
@@ -75,7 +75,7 @@ const WorkExperienceCard = () => {
                     key={highlight}
                     sx={{
                       mb: 1,
-                      fontSize: "15px",
+                      fontSize: "16px",
                       lineHeight: 1.6,
                       "&:last-child": { mb: 0 }
                     }}>

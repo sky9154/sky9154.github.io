@@ -7,7 +7,7 @@ import Footer from "@components/layout/Footer";
 
 const MainLayout = () => {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }}>
+    <Box className="site-layout" sx={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }}>
       <Navbar />
       <Box component="main" sx={{ flex: 1, display: "flex", minHeight: 0 }}>
         <Suspense fallback={(

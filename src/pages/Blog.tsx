@@ -51,11 +51,11 @@ const Blog = () => {
           cursorsRef.current[page] = data.nextCursor;
         }
       } catch (fetchError) {
-        if (fetchError instanceof DOMException && fetchError.name === "AbortError") {
+        if ((fetchError instanceof DOMException) && (fetchError.name === "AbortError")) {
           return;
         }
 
-        setError(fetchError instanceof Error ? fetchError.message : "Unable to load posts");
+        setError((fetchError instanceof Error) ? fetchError.message : "Unable to load posts");
       } finally {
         if (!controller.signal.aborted) {
           setLoading(false);
@@ -87,7 +87,7 @@ const Blog = () => {
   return (
     <Container maxWidth="lg" sx={{
       flexGrow: 1,
-      pt: "84px",
+      pt: "var(--navbar-height)",
       mt: { xs: 4, md: 4 },
       mb: { xs: 8, md: 12 }
     }}>
@@ -96,13 +96,15 @@ const Blog = () => {
         posts={posts}
         loading={loading}
         error={error}
-        onRetry={() => setRetryKey((key) => key + 1)} />
+        onRetry={() => setRetryKey((key) => key + 1)}
+      />
       <PaginationControl
         page={page}
         hasMore={hasMore}
         loading={loading}
         onPrev={handlePrev}
-        onNext={handleNext} />
+        onNext={handleNext}
+      />
     </Container>
   );
 };

@@ -21,7 +21,7 @@ const PostHeader = ({ metadata }: PostHeaderProps) => {
 
   return (
     <>
-      <Box sx={{ mb: 3 }}>
+      <Box className="page-heading" sx={{ mb: 4 }}>
         <H1 sx={{
           fontSize: "clamp(32px, 4vw, 52px)",
           fontWeight: 700,
@@ -66,13 +66,14 @@ const PostHeader = ({ metadata }: PostHeaderProps) => {
                     bgcolor: `color-mix(in srgb, ${color}, transparent 82%)`,
                     color: "var(--text-main)",
                     border: `1px solid color-mix(in srgb, ${color}, transparent 55%)`
-                  }} />
+                  }}
+                />
               );
             })}
           </Box>
         </Box>
       </Box>
-      <Divider sx={{ mb: 3, borderColor: "var(--text-main)" }} />
+      <Divider sx={{ mb: 4, borderColor: "var(--color-border)" }} />
     </>
   );
 };

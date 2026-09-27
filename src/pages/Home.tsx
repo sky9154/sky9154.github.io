@@ -6,39 +6,23 @@ import HomeProfile from "@components/home/HomeProfile";
 
 const Home = () => {
   const { t } = useTranslation();
-
   return (
-    <Container
-      maxWidth={false}
-      sx={{
-        width: "100%",
-        maxWidth: "clamp(1320px, 78vw, 1600px)",
-        mx: "auto",
-        flexGrow: 1,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: { xs: "flex-start", md: "center" },
-        pt: { xs: "calc(84px + 32px)", md: "calc(84px + 20px)" },
-        pb: { xs: 3, md: 2.5 }
-      }}>
-      <Box sx={{
-        display: "grid",
-        width: "100%",
-        gridTemplateColumns: { xs: "1fr", md: "minmax(0, 1.55fr) minmax(300px, 0.85fr)" },
-        height: { md: "clamp(520px, calc(100dvh - 200px), 680px)" },
-        minHeight: { xs: "auto", md: "520px" },
-        boxSizing: "border-box",
-        overflow: "hidden",
-        border: "1px solid color-mix(in srgb, var(--text-main), transparent 62%)",
-        borderRadius: 3.5,
-        bgcolor: "color-mix(in srgb, var(--card-bg) 10%, var(--main-bg))",
-        color: "var(--text-main)"
+    <Container maxWidth={false} className="home-shell" sx={{
+      width: "100%", maxWidth: "1440px", mx: "auto", flexGrow: 1,
+      display: "flex", flexDirection: "column", justifyContent: "center",
+      pt: { xs: "calc(var(--navbar-height) + 24px)", md: "calc(var(--navbar-height) + 36px)" },
+      pb: { xs: 5, md: 7 }, px: { xs: 2, sm: 4, lg: 6 }
+    }}>
+      <Box className="home-composition" sx={{
+        display: "grid", width: "100%", alignItems: "center",
+        gridTemplateColumns: { xs: "1fr", md: "minmax(0, 1.2fr) minmax(0, 1fr)" },
+        minHeight: { md: "620px" }, pb: { xs: 3, md: 4 },
+        gap: { xs: 1, md: 3, lg: 6 }, color: "var(--text-main)"
       }}>
         <SignalPortrait label={t("home.artworkLabel")} />
         <HomeProfile />
       </Box>
     </Container>
   );
-}
-
+};
 export default Home;

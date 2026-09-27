@@ -49,11 +49,11 @@ const Projects = () => {
           cursorsRef.current[page] = data.nextCursor;
         }
       } catch (fetchError) {
-        if (fetchError instanceof DOMException && fetchError.name === "AbortError") {
+        if ((fetchError instanceof DOMException) && (fetchError.name === "AbortError")) {
           return;
         }
 
-        setError(fetchError instanceof Error ? fetchError.message : "Unable to load projects");
+        setError((fetchError instanceof Error) ? fetchError.message : "Unable to load projects");
       } finally {
         if (!controller.signal.aborted) {
           setLoading(false);
@@ -72,7 +72,7 @@ const Projects = () => {
   return (
     <Container maxWidth="lg" sx={{
       flexGrow: 1,
-      pt: "84px",
+      pt: "var(--navbar-height)",
       mt: { xs: 4, md: 4 },
       mb: { xs: 8, md: 12 }
     }}>
