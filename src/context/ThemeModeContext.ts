@@ -1,5 +1,5 @@
 import { createContext, useContext } from "react";
-import { PaletteMode } from "@mui/material";
+import type { PaletteMode } from "@mui/material";
 
 
 interface ThemeModeContextProps {
@@ -12,4 +12,6 @@ export const ThemeModeContext = createContext<ThemeModeContextProps>({
   setThemeMode: () => { }
 });
 
-export const useThemeModeContext = () => useContext(ThemeModeContext);
+export function useThemeModeContext(): ThemeModeContextProps {
+  return useContext(ThemeModeContext);
+}

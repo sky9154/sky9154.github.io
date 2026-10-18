@@ -1,21 +1,21 @@
-import { ReactElement } from "react";
+import type { ReactElement } from "react";
 import { FaInstagram, FaXTwitter, FaGithub, FaDiscord, FaRegEnvelope } from "react-icons/fa6";
 
 
-type MenuType = {
+interface MenuType {
   name: string;
   key: string;
   link: string;
 }
 
-type ContactType = {
+interface ContactType {
   name: string;
   icon: ReactElement;
   link: string;
   action: "copy" | "open";
 }
 
-type techListType = {
+interface TechListType {
   programming: string[];
   web: string[];
   data: string[];
@@ -37,11 +37,11 @@ export const MENU_LIST: MenuType[] = [
     key: "projects",
     link: "/projects"
   }, {
-    name: "Blog",
-    key: "blog",
-    link: "/blog"
+    name: "Articles",
+    key: "articles",
+    link: "/articles"
   }
-]
+];
 
 export const CONTACT: ContactType[] = [
   {
@@ -50,12 +50,12 @@ export const CONTACT: ContactType[] = [
     link: "https://www.instagram.com/sky91.54/",
     action: "open"
   }, {
-    name: "Twitter",
+    name: "X (Twitter)",
     icon: <FaXTwitter />,
     link: "https://x.com/sky9154/",
     action: "open"
   }, {
-    name: "Github",
+    name: "GitHub",
     icon: <FaGithub />,
     link: "https://github.com/sky9154/",
     action: "open"
@@ -72,7 +72,7 @@ export const CONTACT: ContactType[] = [
   }
 ];
 
-export const TECH_LIST: techListType = {
+export const TECH_LIST: TechListType = {
   programming: [
     "Python",
     "TypeScript",

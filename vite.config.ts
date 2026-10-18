@@ -43,8 +43,9 @@ export default defineConfig({
       "@components": path.resolve(__dirname, "./src/components"),
       "@context": path.resolve(__dirname, "./src/context"),
       "@provider": path.resolve(__dirname, "./src/provider"),
+      "@services": path.resolve(__dirname, "./src/services"),
       "@locales": path.resolve(__dirname, "./src/locales"),
       "@assets": path.resolve(__dirname, "./src/assets")
-    },
-  },
+    }
+  }
 })

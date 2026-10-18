@@ -4,65 +4,97 @@
     "home": "Home",
     "about": "About Me",
     "projects": "Projects",
-    "blog": "Articles"
+    "articles": "Articles"
   },
   "home": {
     "name": "oF",
     "intro": "Ciallo～(∠・ω< )⌒☆",
-    "statement": "I focus on full-stack development and continue to research knowledge graphs, graph neural networks, and language model applications.",
-    "profileLabel": "Profile / ZTMY-8828-9857-9995",
-    "navigation": "Explore the site",
-    "enter": "Enter",
+    "statement": "My research covers recommender systems, knowledge graphs, graph neural networks, and language model applications.",
+    "navigation": "Site sections",
     "artworkLabel": "Character illustration that responds to pointer movement",
-    "focusLabel": "Core Areas",
-    "focus": "Full-stack Development / Knowledge Graphs / Graph Neural Networks / Language Model Applications",
     "links": {
       "about": "Experience, research, and skills",
-      "projects": "Projects and research outcomes",
-      "blog": "Technical notes and learning journal"
+      "projects": "System development and research projects",
+      "articles": "Implementation notes, research summaries, and study notes"
     },
     "signal": {
-      "live": "Interactive area",
       "mode": "Theme",
       "dark": "Dark",
       "light": "Light",
-      "hint": "Move the pointer to explore"
+      "hint": "Move the pointer to see the effect"
+    },
+    "role": "Full-stack Development / Machine Learning Research",
+    "scrollToWork": "Scroll down to view projects",
+    "featured": {
+      "title": "Projects and Research Work",
+      "description": "Projects in full-stack development, recommender systems, and system integration, sorted by latest update.",
+      "allProjects": "View all projects",
+      "loading": "Loading projects...",
+      "empty": "There are no projects to display right now.",
+      "error": "Projects can't be loaded right now. Please visit the full project list.",
+      "coverUnavailable": "No project cover available"
+    },
+    "capabilities": {
+      "title": "Development, Research, and System Integration",
+      "description": "My work covers front-end and back-end development, data processing, machine learning research, and system integration.",
+      "about": "Read more about my background",
+      "fullStack": {
+        "title": "Full-stack development",
+        "description": "Developed front-end and back-end features, back-end APIs, analytics reports, and database integrations for manufacturing dashboards and management systems."
+      },
+      "research": {
+        "title": "Recommender systems research",
+        "description": "My research covers knowledge graphs, graph neural networks, and sentiment and semantic analysis. It includes recommendation methods, model training, experiment replication, and validation."
+      },
+      "integration": {
+        "title": "System integration",
+        "description": "Integrated device communication, live video, event notifications, and environmental sensing for e-paper device management, IoT, and fall detection systems."
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "To discuss full-stack development, machine learning, or recommender systems research, contact me by email. Public code is available on GitHub.",
+      "copyAccount": "Copy account",
+      "opensInNewTab": "Opens in a new tab"
     }
   },
   "about": {
     "title": "Hi, I'm oF",
-    "subtitle": "Full-Stack Engineer | Knowledge Graphs & Language Model Applications",
-    "content": "I hold a master’s degree in Information Management and have over one year of full-stack development experience. I have worked on manufacturing dashboards, e-paper and IoT applications, and fall detection systems.<br />Alongside system development, I also work on research and implementation involving knowledge graphs, graph neural networks, and language models, with applications in recommender systems and sentiment and semantic analysis. My experience includes data processing, model training, experimental validation, front-end and back-end development, databases, and hardware–software integration.",
+    "subtitle": "Full-Stack Development | Machine Learning Research",
+    "content": "I hold a master’s degree in Information Management and have over one year of professional full-stack development experience. I have worked on manufacturing dashboards, e-paper device management, IoT, and fall detection systems, covering front-end and back-end development, databases, and hardware–software integration.<br />My research focuses on recommender systems, including knowledge graphs, graph neural networks, sentiment and semantic analysis, and language model applications. My hands-on experience includes data processing, model training, experiment replication, and validation.",
     "research": {
-      "title": "Research & Projects",
+      "title": "Research & Implementation",
       "items": [
         {
-          "title": "Knowledge Graph–Based Recommendation Research",
-          "description": "This research integrates users’ dynamic preferences, sentiment and semantic information from reviews, and relationships among product attributes. It uses multi-head attention to fuse the features and build a personalized recommendation method.",
+          "title": "Knowledge Graph–Based Recommendation Method",
+          "description": "A temporal knowledge graph models users’ changing preferences, which are combined with sentiment and semantic information from reviews and product knowledge graph features. Multi-head attention and a rating model then produce Top-K product recommendations.",
           "tags": [
             "Recommender Systems",
             "Knowledge Graphs",
             "Graph Convolutional Networks",
+            "Recurrent Graph Networks",
             "Sentiment and Semantic Analysis"
           ]
         },
         {
-          "title": "Point-of-Interest Recommendation",
-          "description": "Contributed to research on graph neural networks and sentiment and semantic analysis, with responsibility for reproducing experiments, adjusting model evaluation methods, checking data, and running ablation studies.",
+          "title": "Point-of-Interest Recommendation Research",
+          "description": "Contributed to research on graph neural networks and sentiment and semantic analysis. Responsibilities included reproducing experiments, adjusting model evaluation methods, checking data, and running ablation studies.",
           "tags": [
-            "Recommender Systems",
-            "Review Mining",
-            "Sentiment and Semantic Analysis",
-            "Graph Neural Networks"
+            "Point-of-Interest Recommendation",
+            "LSTM",
+            "Multi-Head Attention",
+            "Multilayer Perceptron",
+            "Sentiment and Semantic Analysis"
           ]
         },
         {
           "title": "Fall Detection System",
-          "description": "The system uses human pose estimation and temporal models to distinguish normal, loss-of-balance, and fall states, with real-time video, event notifications, and environmental sensing integrated.",
+          "description": "The system uses human pose estimation and temporal models to distinguish among normal, loss-of-balance, and fall states. It also integrates live video, event notifications, and environmental sensing.",
           "tags": [
-            "Pose Estimation",
+            "Computer Vision",
+            "Human Pose Estimation",
             "LSTM",
-            "Real-Time Systems",
+            "Real-Time Monitoring",
             "Internet of Things"
           ]
         }
@@ -73,20 +105,20 @@
       "items": [
         {
           "period": "Jul 2023 – Feb 2024",
-          "company": "嘉德資訊有限公司",
+          "company": "Getvision Information Co., Ltd.",
           "role": "Full-Stack Engineer",
           "highlights": [
-            "Contributed to the development of e-paper device management and IoT systems.",
-            "Worked on front-end and back-end features, plus database and device communication integration."
+            "Contributed to e-paper device management and IoT system development.",
+            "Developed front-end and back-end features and integrated databases with device communication."
           ]
         },
         {
           "period": "Nov 2021 – Jun 2022",
-          "company": "安鐸資訊有限公司",
+          "company": "Andor Information Co., Ltd.",
           "role": "Full-Stack Engineer",
           "highlights": [
-            "Contributed to electronic dashboards and management systems for manufacturing.",
-            "Developed system features, back-end APIs, and analytical reports, and integrated databases."
+            "Contributed to manufacturing dashboards and management system development.",
+            "Developed system features, back-end APIs, and analytics reports, and handled database integration."
           ]
         }
       ]
@@ -97,28 +129,30 @@
         {
           "period": "Jun 2026",
           "school": "Chung Yuan Christian University",
-          "degree": "Department of Information Management | Master of Business Administration",
-          "topicLabel": "MASTER’S THESIS",
-          "topic": "A Knowledge Graph–Based Recommendation Method Integrating Users’ Dynamic Preferences and Sentiment-Semantic Features",
-          "description": "Explored personalized recommendation methods by combining users’ evolving preferences, sentiment semantics from reviews, and product knowledge graphs.",
+          "degree": "Department of Information Management | M.B.A.",
+          "topicLabel": "Master’s Thesis",
+          "topic": "A Knowledge Graph–Based Recommendation Method Integrating Users’ Dynamic Preferences and Sentiment and Semantic Features",
+          "description": "Studied a personalized product recommendation method that integrates users’ changing preferences, sentiment and semantic information from reviews, and product knowledge graph features.",
           "tags": [
             "Recommender Systems",
             "Knowledge Graphs",
             "Graph Convolutional Networks",
+            "Recurrent Graph Networks",
             "Sentiment and Semantic Analysis"
           ]
         },
         {
           "period": "Jun 2024",
           "school": "Chaoyang University of Technology",
-          "degree": "Department of Information and Communication Engineering | Bachelor of Engineering",
-          "topicLabel": "CAPSTONE PROJECT",
+          "degree": "Department of Information and Communication Engineering | B.S.",
+          "topicLabel": "Capstone Project",
           "topic": "Fall Detection Using Image Recognition",
-          "description": "Built a fall detection system using human posture, temporal analysis, real-time monitoring, and IoT devices. The project received an Honorable Mention in the Department of Information and Communication Engineering’s 2023 practical project competition.",
+          "description": "Combined human pose estimation, temporal analysis, real-time monitoring, and IoT technology to build a fall detection system. The project received an Honorable Mention in the Department of Information and Communication Engineering’s 2023 Practical Project Competition.",
           "tags": [
             "Computer Vision",
-            "Temporal Analysis",
-            "Real-Time Systems",
+            "Human Pose Estimation",
+            "LSTM",
+            "Real-Time Monitoring",
             "Internet of Things"
           ]
         }
@@ -128,35 +162,121 @@
       "title": "Technologies & Tools",
       "categories": {
         "programming": "Programming Languages",
-        "web": "Full-Stack Development",
+        "web": "Front-End & Back-End Development",
         "data": "Databases",
-        "ai": "Machine Learning & Deep Learning",
+        "ai": "Machine Learning",
         "integration": "System Integration & Tools"
+      },
+      "selectHint": "Select a category to view the technologies and tools.",
+      "relatedBackground": "Related experience and research"
+    },
+    "diagram": {
+      "caption": "A simplified overview of the research method. User and product data go through separate feature learning and fusion stages, followed by feature concatenation, rating prediction, and recommendation. Select or focus a node for details.",
+      "label": "Knowledge graph–based recommendation method: user and product features are learned and fused separately, then concatenated to predict ratings and generate Top-K recommendations.",
+      "branches": {
+        "user": "User features",
+        "product": "Product features"
+      },
+      "pipelineLabel": "Feature concatenation, rating prediction and recommendation",
+      "reviewNote": "The same set of reviews is grouped separately by user and product. Connecting lines show the two features entering the fusion stage together.",
+      "nodes": {
+        "userGraph": {
+          "title": "Temporal graph feature learning",
+          "subtitle": "Purchase history → Dynamic user preferences",
+          "description": "A temporal knowledge graph is built from purchase history, and a temporal graph neural network learns how user preferences change over time."
+        },
+        "userReviews": {
+          "title": "User review semantics",
+          "subtitle": "Semantic extraction · Multi-head attention aggregation",
+          "description": "Reviews are grouped by user. A pretrained language model extracts sentiment and semantic information, which multi-head attention aggregates into user sentiment and semantic features."
+        },
+        "userFusion": {
+          "title": "User feature fusion",
+          "subtitle": "Multi-head attention → User features",
+          "description": "Multi-head attention fuses dynamic preferences with sentiment and semantic features from user reviews to produce a user feature vector."
+        },
+        "productGraph": {
+          "title": "Product graph feature learning",
+          "subtitle": "Product knowledge graph → Product structural features",
+          "description": "A product knowledge graph is built from product attributes and interaction data. A graph convolutional network then aggregates neighboring nodes into structural product features."
+        },
+        "productReviews": {
+          "title": "Product review semantics",
+          "subtitle": "Semantic extraction · Multi-head attention aggregation",
+          "description": "Reviews are grouped by product. A pretrained language model extracts sentiment and semantic information, which multi-head attention aggregates into product sentiment and semantic features."
+        },
+        "productFusion": {
+          "title": "Product feature fusion",
+          "subtitle": "Multi-head attention → Product features",
+          "description": "Multi-head attention fuses product structural features with sentiment and semantic features from product reviews to produce a product feature vector."
+        },
+        "concatenate": {
+          "title": "User and product feature concatenation",
+          "subtitle": "User features · Product features",
+          "description": "The fused user and product feature vectors are concatenated as input to the rating model."
+        },
+        "score": {
+          "title": "Rating prediction (MLP)",
+          "subtitle": "Predict ratings from concatenated features",
+          "description": "An MLP takes the concatenated user and product features, predicts the user’s rating for each candidate product, and provides the score used for ranking."
+        },
+        "ranking": {
+          "title": "Top-K recommendations",
+          "subtitle": "Rank by predicted scores",
+          "description": "Candidate products are ranked by predicted rating, and the K highest-scoring products form the recommendation list."
+        }
       }
     }
   },
-  "blog": {
-    "title": "Articles",
-    "subtitle": "Notes on development, research, and learning",
+  "projects": {
+    "githubAction": "GitHub repository",
+    "githubSource": "Open GitHub repository",
+    "opensInNewTab": "Opens in a new tab",
+    "title": "Projects",
+    "subtitle": "Full-stack development, recommender systems research, and system integration",
     "untitled": "Untitled",
-    "searchPlaceholder": "Search by keyword...",
-    "searchHint": "Enter at least 2 characters",
+    "searchPlaceholder": "Search projects",
+    "searchHint": "Enter at least two characters",
+    "loading": "Loading projects",
+    "loadErrorTitle": "Unable to load projects",
+    "loadErrorDesc": "Reload or try again later.",
+    "retry": "Reload",
+    "viewProject": "View project details",
+    "previousPage": "Previous page",
+    "nextPage": "Next page",
+    "noResultsTitle": "No matching projects",
+    "noResultsDesc": "Try a different keyword or clear the search.",
+    "coverUnavailable": "No project cover available",
+    "post": {
+      "back": "Back to projects",
+      "error": {
+        "title": "Unable to load this project",
+        "description": "This project may not exist or may be temporarily unavailable. Reload or return to the project list."
+      }
+    }
+  },
+  "articles": {
+    "title": "Articles",
+    "subtitle": "Notes on software development, research, and learning",
+    "untitled": "Untitled",
+    "searchPlaceholder": "Search articles",
+    "searchHint": "Enter at least two characters",
     "loading": "Loading articles",
-    "loadErrorTitle": "Articles are temporarily unavailable",
-    "loadErrorDesc": "There may be a connection problem. Please try again later.",
+    "loadErrorTitle": "Unable to load articles",
+    "loadErrorDesc": "Reload or try again later.",
     "retry": "Reload",
     "readArticle": "Read article",
     "previousPage": "Previous page",
     "nextPage": "Next page",
     "copyCode": "Copy code",
     "codeCopied": "Copied",
-    "noResultsTitle": "No articles found",
-    "noResultsDesc": "Try another keyword or clear the search.",
+    "noResultsTitle": "No matching articles",
+    "noResultsDesc": "Try a different keyword or clear the search.",
     "post": {
-      "back": "Back to Articles",
+      "back": "Back to articles",
       "error": {
-        "title": "Article Not Found",
-        "description": "The article you are looking for may have been deleted, or the URL is incorrect."
+        "title": "Unable to load this article",
+        "description": "This article may not exist or may be temporarily unavailable. Reload or return to the article list."
       }
     }
   },

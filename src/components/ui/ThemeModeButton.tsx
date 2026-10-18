@@ -1,17 +1,18 @@
 import { Button } from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
+
 import { useThemeModeContext } from "@context/ThemeModeContext";
 
 
-const ThemeModeButton = () => {
+function ThemeModeButton() {
   const { themeMode, setThemeMode } = useThemeModeContext();
 
   const handleThemeModeToggle = () => {
     const newThemeMode = (themeMode === "dark") ? "light" : "dark";
 
     setThemeMode(newThemeMode);
-  }
+  };
 
   return (
     <Button aria-label="Toggle color theme" onClick={handleThemeModeToggle} sx={{

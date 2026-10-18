@@ -2,212 +2,47 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Box, Button, Stack } from "@mui/material";
 import { FaArrowRightLong } from "react-icons/fa6";
+
 import { H1, Paragraph } from "@components/ui/Typography";
+import { keepInlineSeparators } from "@/utils/typography";
 
 
-const HomeProfile = () => {
+function HomeProfile() {
   const { t } = useTranslation();
-  const [profileLabel, profileCode] = t("home.profileLabel").split(" / ");
-
   const pageLinks = [
     { key: "about", to: "/about" },
     { key: "projects", to: "/projects" },
-    { key: "blog", to: "/blog" }
+    { key: "articles", to: "/articles" }
   ];
 
   return (
-    <Box className="home-profile" sx={{
-      minWidth: 0,
-      p: {
-        xs: 1,
-        sm: 3,
-        md: 1
-      },
-      position: "relative",
-      display: "flex",
-      flexDirection: "column",
-      color: "var(--text-main)"
-    }}>
-      <Stack sx={{
-        width: "100%",
-        height: "100%",
-        minHeight: 0,
-        gap: { xs: 3, md: 3.5 }
-      }}>
-        <Box>
-          <Paragraph sx={{
-            mb: 1.5,
-            color: "var(--color-accent)",
-            fontSize: { xs: "10px", sm: "12px" },
-            fontWeight: 700,
-            letterSpacing: "0.14em",
-            textTransform: "uppercase",
-            overflowWrap: "normal",
-            wordBreak: "keep-all"
+    <Box className="home-profile" sx={{ minWidth: 0, px: { xs: 1, md: 0 }, color: "var(--text-main)" }}>
+      <Box className="home-title-group" sx={{ textAlign: { xs: "center", md: "left" } }}>
+        <H1 sx={{ fontSize: { xs: "88px", md: "clamp(96px, 8vw, 120px)" }, lineHeight: 1, fontWeight: 700, letterSpacing: "-0.04em" }}>{t("home.name")}</H1>
+        <Paragraph sx={{ mt: 1.5, color: "var(--text-sub)", fontSize: "14px" }}>{t("home.intro")}</Paragraph>
+        <Paragraph sx={{ mt: 3, fontSize: { xs: "24px", md: "28px" }, fontWeight: 600, lineHeight: 1.5, textWrap: "balance" }}>{keepInlineSeparators(t("home.role"))}</Paragraph>
+      </Box>
+      <Paragraph className="home-statement" sx={{ mt: 2, mb: 3.5, color: "var(--text-sub)", fontSize: "16px", lineHeight: 1.8, textWrap: "pretty" }}>{t("home.statement")}</Paragraph>
+      <Stack component="nav" aria-label={t("home.navigation")}>
+        {pageLinks.map((item) => (
+          <Button component={Link} key={item.key} to={item.to} sx={{
+            display: "grid", gridTemplateColumns: "minmax(0, 1fr) auto", gap: 2,
+            minHeight: "58px", py: 1.25, pl: 0, pr: 2, borderRadius: 0,
+            borderTop: "1px solid var(--color-border-subtle)", color: "var(--text-main)", textAlign: "left",
+            "& .home-link-arrow": { width: "1em", height: "1em", transition: "transform var(--motion-fast) var(--ease-standard)" },
+            "&:hover": { bgcolor: "transparent", color: "var(--color-accent)" },
+            "&:hover .home-link-arrow": { transform: "translateX(4px)" }
           }}>
-            {profileLabel}
-            {profileCode && (
-              <>
-                {" / "}
-                <Box component="span" sx={{ whiteSpace: "nowrap" }}>
-                  {profileCode}
-                </Box>
-              </>
-            )}
-          </Paragraph>
-          <H1 sx={{
-            fontSize: {
-              xs: "80px",
-              sm: "100px",
-              md: "clamp(96px, 8vw, 120px)"
-            },
-            lineHeight: 0.9,
-            fontWeight: 700,
-            letterSpacing: "-0.065em"
-          }}>
-            {t("home.name")}
-          </H1>
-          <Paragraph sx={{
-            mt: { xs: 2, md: 1.5 },
-            color: "var(--text-sub)",
-            fontSize: "14px",
-            lineHeight: 1.5
-          }}>
-            {t("home.intro")}
-          </Paragraph>
-          <Paragraph sx={{
-            mt: 1.25,
-            maxWidth: { xs: "34ch", md: "none" },
-            fontSize: "16px",
-            fontWeight: 600,
-            lineHeight: 1.8,
-            overflowWrap: "anywhere"
-          }}>
-            {t("home.statement")}
-          </Paragraph>
-        </Box>
-        <Stack
-          component="nav"
-          aria-label={t("home.navigation")}
-          sx={{ minWidth: 0 }}>
-          {pageLinks.map((item, index) => (
-            <Button
-              component={Link}
-              key={item.key}
-              to={item.to}
-              sx={{
-                position: "relative",
-                display: "grid",
-                gridTemplateColumns: "36px minmax(0, 1fr) auto",
-                alignItems: "center",
-                columnGap: { xs: 1.25, sm: 1.5 },
-                minHeight: { xs: "62px", md: "58px" },
-                pl: 1.25,
-                pr: 2,
-                py: 1,
-                borderRadius: 0,
-                borderTop: "1px solid color-mix(in srgb, var(--text-main), transparent 88%)",
-                color: "var(--text-main)",
-                textAlign: "left",
-                textTransform: "none",
-                "&::before": {
-                  position: "absolute",
-                  top: "18%",
-                  bottom: "18%",
-                  left: 0,
-                  width: "2px",
-                  bgcolor: "currentColor",
-                  content: "''",
-                  opacity: 0,
-                  transform: "scaleY(0.4)",
-                  transition: "opacity 180ms ease, transform 180ms cubic-bezier(0.22, 1, 0.36, 1)"
-                },
-                "& .home-link-copy, & .home-link-arrow": { transition: "transform 180ms cubic-bezier(0.22, 1, 0.36, 1)" },
-                "&:focus-visible": { outline: "2px solid var(--text-main)", outlineOffset: "3px" },
-                "@media (hover: hover) and (pointer: fine)": {
-                  "&:hover": { bgcolor: "color-mix(in srgb, var(--text-main), transparent 96%)" },
-                  "&:hover::before": { opacity: 1, transform: "scaleY(1)" },
-                  "&:hover .home-link-copy": { transform: "translateX(5px)" },
-                  "&:hover .home-link-arrow": { transform: "translateX(4px)" }
-                },
-                "&:active": { transform: "scale(0.99)" }
-              }}>
-              <Box component="span" className="home-link-number" sx={{
-                color: "var(--color-accent)",
-                fontSize: "10px",
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                fontVariantNumeric: "tabular-nums",
-                whiteSpace: "nowrap"
-              }}>
-                {String(index + 1).padStart(2, "0")}
-              </Box>
-              <Box className="home-link-copy" sx={{ minWidth: 0 }}>
-                <Paragraph sx={{
-                  fontSize: "16px",
-                  fontWeight: 700,
-                  lineHeight: 1.3,
-                  overflowWrap: "anywhere"
-                }}>
-                  {t(`navbar.${item.key}`)}
-                </Paragraph>
-                <Paragraph sx={{
-                  mt: 0.25,
-                  color: "var(--text-sub)",
-                  fontSize: "12px",
-                  lineHeight: 1.35,
-                  overflowWrap: "anywhere"
-                }}>
-                  {t(`home.links.${item.key}`)}
-                </Paragraph>
-              </Box>
-              <Box
-                component={FaArrowRightLong}
-                className="home-link-arrow"
-                aria-hidden="true"
-                sx={{ fontSize: "16px" }}
-              />
-            </Button>
-          ))}
-        </Stack>
-        <Box sx={{
-          mt: "auto",
-          pt: 0.5,
-          display: "grid",
-          gridTemplateColumns: "auto minmax(0, 1fr)",
-          alignItems: "center",
-          gap: 1.5
-        }}>
-          <Box aria-hidden="true" sx={{
-            width: "6px",
-            height: "6px",
-            borderRadius: "50%",
-            bgcolor: "var(--text-main)"
-          }} />
-          <Box>
-            <Paragraph sx={{
-              color: "var(--text-sub)",
-              fontSize: "10px",
-              fontWeight: 700,
-              letterSpacing: "0.12em",
-              textTransform: "uppercase"
-            }}>
-              {t("home.focusLabel")}
-            </Paragraph>
-            <Paragraph sx={{
-              mt: 0.5,
-              fontSize: "12px",
-              fontWeight: 600,
-              lineHeight: 1.45,
-              overflowWrap: "anywhere"
-            }}>
-              {t("home.focus")}
-            </Paragraph>
-          </Box>
-        </Box>
+            <Box>
+              <Paragraph sx={{ fontWeight: 600, fontSize: "16px" }}>{t(`navbar.${item.key}`)}</Paragraph>
+              <Paragraph sx={{ color: "var(--text-sub)", fontSize: "12px", mt: 0.25 }}>{t(`home.links.${item.key}`)}</Paragraph>
+            </Box>
+            <FaArrowRightLong className="home-link-arrow" aria-hidden="true" />
+          </Button>
+        ))}
       </Stack>
     </Box>
   );
-};
+}
 
 export default HomeProfile;

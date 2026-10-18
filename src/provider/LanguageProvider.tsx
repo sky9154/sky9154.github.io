@@ -1,15 +1,20 @@
-import { useEffect, ReactElement } from "react";
+import { useEffect, type ReactElement } from "react";
 import { useTranslation } from "react-i18next";
+
 import { LanguageContext } from "@context/LanguageContext";
 
 
-const htmlLangMap: Record<string, string> = {
+interface LanguageProviderProps {
+  children: ReactElement;
+}
+
+const HTML_LANG_MAP: Record<string, string> = {
   zh_Hant: "zh-Hant",
   en: "en",
   ja: "ja"
 };
 
-export const LanguageProvider = ({ children }: { children: ReactElement }) => {
+export function LanguageProvider({ children }: LanguageProviderProps) {
   const { i18n } = useTranslation();
 
   const changeLanguage = (lang: string) => {
@@ -20,7 +25,7 @@ export const LanguageProvider = ({ children }: { children: ReactElement }) => {
     const currentLang = i18n.language;
 
     document.documentElement.lang =
-      htmlLangMap[currentLang] ?? currentLang;
+      HTML_LANG_MAP[currentLang] ?? currentLang;
 
     localStorage.setItem("i18nextLng", currentLang);
   }, [i18n.language]);
@@ -30,4 +35,4 @@ export const LanguageProvider = ({ children }: { children: ReactElement }) => {
       {children}
     </LanguageContext.Provider>
   );
-};
+}

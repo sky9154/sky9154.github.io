@@ -25,6 +25,7 @@
       "@components/*": ["./src/components/*"],
       "@context/*": ["./src/context/*"],
       "@provider/*": ["./src/provider/*"],
+      "@services/*": ["./src/services/*"],
       "@locales/*": ["./src/locales/*"],
       "@assets/*": ["./src/assets/*"]
     }

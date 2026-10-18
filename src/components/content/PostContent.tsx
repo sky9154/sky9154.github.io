@@ -2,8 +2,9 @@ import type { ComponentPropsWithoutRef, ElementType } from "react";
 import { Box, Link } from "@mui/material";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+
 import { H2, H3, Paragraph } from "@components/ui/Typography";
-import PostCodeBlock from "@components/blog/PostCodeBlock";
+import PostCodeBlock from "@components/content/PostCodeBlock";
 
 
 type MarkdownElementProps<T extends ElementType> = ComponentPropsWithoutRef<T> & {
@@ -14,15 +15,10 @@ interface PostContentProps {
   markdown: string;
 }
 
-const PostContent = ({ markdown }: PostContentProps) => {
+function PostContent({ markdown }: PostContentProps) {
   return (
     <Box className="article-reading" sx={{
       color: "var(--text-main)",
-      width: "100%",
-      maxWidth: "78ch",
-      mx: "auto",
-      fontSize: "18px",
-      lineHeight: 1.8,
       "& img": {
         display: "block",
         height: "auto",
@@ -201,6 +197,6 @@ const PostContent = ({ markdown }: PostContentProps) => {
       </ReactMarkdown>
     </Box>
   );
-};
+}
 
 export default PostContent;

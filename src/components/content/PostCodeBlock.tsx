@@ -15,6 +15,7 @@ import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { Box, Button } from "@mui/material";
 import { FaCheck, FaCopy } from "react-icons/fa6";
 import { useTranslation } from "react-i18next";
+
 import { Paragraph } from "@components/ui/Typography";
 
 
@@ -43,7 +44,7 @@ export interface PostCodeBlockProps extends ComponentPropsWithoutRef<"code"> {
   inline?: boolean;
 }
 
-const PostCodeBlock = ({ inline, className, children, ...props }: PostCodeBlockProps) => {
+function PostCodeBlock({ inline, className, children, ...props }: PostCodeBlockProps) {
   const { t } = useTranslation();
   const [copied, setCopied] = useState(false);
   const copyTimerRef = useRef<number>();
@@ -127,7 +128,7 @@ const PostCodeBlock = ({ inline, className, children, ...props }: PostCodeBlockP
             borderRadius: "8px",
             "&:hover": { bgcolor: "color-mix(in srgb, var(--white), transparent 90%)" }
           }}>
-          {(copied) ? t("blog.codeCopied") : t("blog.copyCode")}
+          {(copied) ? t("articles.codeCopied") : t("articles.copyCode")}
         </Button>
       </Box>
       <SyntaxHighlighter
@@ -150,6 +151,6 @@ const PostCodeBlock = ({ inline, className, children, ...props }: PostCodeBlockP
       </SyntaxHighlighter>
     </Box>
   );
-};
+}
 
 export default PostCodeBlock;

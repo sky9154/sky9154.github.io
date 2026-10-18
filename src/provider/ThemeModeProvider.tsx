@@ -1,9 +1,14 @@
-import { useState, useEffect, ReactElement } from "react";
-import { PaletteMode } from "@mui/material";
+import { useState, useEffect, type ReactElement } from "react";
+import type { PaletteMode } from "@mui/material";
+
 import { ThemeModeContext } from "@context/ThemeModeContext";
 
 
-export const ThemeModeProvider = ({ children }: { children: ReactElement }) => {
+interface ThemeModeProviderProps {
+  children: ReactElement;
+}
+
+export function ThemeModeProvider({ children }: ThemeModeProviderProps) {
   const [themeMode, setThemeMode] = useState<PaletteMode>(
     (localStorage.getItem("themeMode") as PaletteMode) || "dark"
   );
@@ -18,4 +23,4 @@ export const ThemeModeProvider = ({ children }: { children: ReactElement }) => {
       {children}
     </ThemeModeContext.Provider>
   );
-};
+}

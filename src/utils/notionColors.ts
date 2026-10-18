@@ -1,4 +1,4 @@
-const notionColorMap: Record<string, string> = {
+const NOTION_COLOR_MAP: Record<string, string> = {
   default: "var(--text-sub)",
   gray: "#9b9a97",
   brown: "#9f6b53",
@@ -11,6 +11,6 @@ const notionColorMap: Record<string, string> = {
   red: "#d44c47"
 };
 
-export const getNotionColor = (color: string) => (
-  notionColorMap[color] || notionColorMap.default
-);
+export function getNotionColor(color: string): string {
+  return NOTION_COLOR_MAP[color] || NOTION_COLOR_MAP.default;
+}

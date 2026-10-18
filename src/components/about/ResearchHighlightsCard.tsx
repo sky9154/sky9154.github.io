@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { Box, Chip, Stack } from "@mui/material";
-import { H3, Paragraph } from "@components/ui/Typography";
-import SectionTitle from "@components/ui/SectionTitle";
-import BentoCard from "@components/ui/BentoCard";
+import { Box, Chip } from "@mui/material";
+
+import { H2, H3, Paragraph } from "@components/ui/Typography";
+import ResearchDiagram from "@components/about/ResearchDiagram";
 
 
 interface ResearchItem {
@@ -11,72 +11,34 @@ interface ResearchItem {
   tags: string[];
 }
 
-const ResearchHighlightsCard = () => {
+function ResearchHighlightsCard() {
   const { t } = useTranslation();
-
-  const items = t("about.research.items", {
-    returnObjects: true
-  }) as ResearchItem[];
+  const items = t("about.research.items", { returnObjects: true }) as ResearchItem[];
 
   return (
-    <BentoCard colSpan={2} rowSpan={2}>
-      <Stack spacing={2}>
-        <SectionTitle>
-          {t("about.research.title")}
-        </SectionTitle>
-        {items.map((item, index) => (
-          <Box key={item.title} sx={{
-            pb: (index < items.length - 1) ? 2 : 0,
-            borderBottom: (index < items.length - 1)
-              ? "1px solid color-mix(in srgb, var(--text-main), transparent 88%)"
-              : "none"
-          }}>
-            <H3 sx={{
-              fontSize: "18px",
-              fontWeight: 700,
-              lineHeight: 1.4,
-              mb: 1
-            }}>
-              {item.title}
-            </H3>
-            <Paragraph sx={{
-              color: "var(--text-sub)",
-              fontSize: "16px",
-              lineHeight: 1.7
-            }}>
-              {item.description}
-            </Paragraph>
-            <Box sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 1,
-              mt: 2
-            }}>
-              {item.tags.map((tag) => (
-                <Chip
-                  key={tag}
-                  label={tag}
-                  size="small"
-                  sx={{
-                    fontSize: "12px",
-                    fontWeight: 500,
-                    color: "var(--text-main)",
-                    bgcolor: "color-mix(in srgb, var(--text-main), transparent 92%)",
-                    border: "1px solid var(--color-border-subtle)",
-                    cursor: "pointer",
-                    transition: "background-color 0.15s ease, border-color 0.15s ease",
-                    "&:hover": {
-                      bgcolor: "color-mix(in srgb, var(--text-main), transparent 85%)",
-                      borderColor: "color-mix(in srgb, var(--text-main), transparent 70%)"
-                    }
-                  }} />
-              ))}
+    <Box component="section" className="portfolio-section" aria-labelledby="research-title">
+      <H2 id="research-title" className="portfolio-heading" sx={{ mb: "var(--about-heading-gap)" }}>{t("about.research.title")}</H2>
+      <Box component="article">
+        <H3 sx={{ fontSize: { xs: "24px", md: "30px" }, fontWeight: 600, mb: "var(--about-copy-gap)" }}>{items[0].title}</H3>
+        <Paragraph sx={{ color: "var(--text-sub)", lineHeight: 1.8 }}>{items[0].description}</Paragraph>
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: "var(--about-copy-gap)" }}>
+          {items[0].tags.map((tag) => <Chip key={tag} label={tag} size="small" variant="outlined" sx={{ color: "var(--text-sub)", borderColor: "var(--color-border)" }} />)}
+        </Box>
+        <ResearchDiagram />
+      </Box>
+      <Box sx={{ display: "grid", gridTemplateColumns: { xs: "1fr", md: "repeat(2, minmax(0, 1fr))" }, columnGap: { xs: 4, md: 7 }, rowGap: "var(--about-item-gap)", mt: "var(--about-item-gap)" }}>
+        {items.slice(1).map((item) => (
+          <Box component="article" key={item.title} sx={{ borderTop: "1px solid var(--color-accent-muted)", pt: "var(--about-copy-gap)" }}>
+            <H3 sx={{ fontSize: "22px", fontWeight: 600, lineHeight: 1.4, mb: "var(--about-copy-gap)" }}>{item.title}</H3>
+            <Paragraph sx={{ color: "var(--text-sub)", lineHeight: 1.8 }}>{item.description}</Paragraph>
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: "var(--about-copy-gap)" }}>
+              {item.tags.map((tag) => <Chip key={tag} label={tag} size="small" variant="outlined" sx={{ color: "var(--text-sub)", borderColor: "var(--color-border)" }} />)}
             </Box>
           </Box>
         ))}
-      </Stack>
-    </BentoCard>
+      </Box>
+    </Box>
   );
-};
+}
 
 export default ResearchHighlightsCard;

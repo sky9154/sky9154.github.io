@@ -1,21 +1,22 @@
-import { useState, MouseEvent } from "react";
+import { useRef, useState } from "react";
 import PublicIcon from "@mui/icons-material/Public";
 import { Box, Button, Menu, MenuItem } from "@mui/material";
+
 import { useLanguageContext } from "@context/LanguageContext";
 
 
-const LanguageButton = () => {
+function LanguageButton() {
   const { changeLanguage } = useLanguageContext();
 
-  const [langMenuAnchorEl, setLangMenuAnchorEl] = useState<null | HTMLElement>(null);
-  const isLangMenuOpen = Boolean(langMenuAnchorEl);
+  const languageButtonRef = useRef<HTMLButtonElement>(null);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
 
-  const handleLangMenuOpen = (event: MouseEvent<HTMLElement>) => {
-    setLangMenuAnchorEl(event.currentTarget);
+  const handleLangMenuOpen = () => {
+    setIsLangMenuOpen(true);
   };
 
   const handleLangMenuClose = (lang?: string) => {
-    setLangMenuAnchorEl(null);
+    setIsLangMenuOpen(false);
 
     if (lang) {
       changeLanguage(lang);
@@ -25,6 +26,7 @@ const LanguageButton = () => {
   return (
     <Box sx={{ order: { xs: 1, sm: 2 } }}>
       <Button
+        ref={languageButtonRef}
         id="language-button"
         aria-label="Choose language"
         aria-haspopup="menu"
@@ -50,7 +52,7 @@ const LanguageButton = () => {
         disableScrollLock
         id="language-menu"
         MenuListProps={{ "aria-labelledby": "language-button" }}
-        anchorEl={langMenuAnchorEl}
+        anchorEl={languageButtonRef.current}
         open={isLangMenuOpen}
         onClose={() => handleLangMenuClose()}
         anchorOrigin={{ vertical: "bottom", horizontal: "right" }}

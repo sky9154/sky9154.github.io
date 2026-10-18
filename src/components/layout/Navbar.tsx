@@ -1,4 +1,4 @@
-import { useState, useEffect, cloneElement, ReactElement } from "react";
+import { useState, useEffect, cloneElement, type ReactElement } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { FaBars } from "react-icons/fa6";
@@ -7,6 +7,7 @@ import {
   List, ListItem, ListItemButton, ListItemText, Toolbar,
   IconButton, useScrollTrigger, useMediaQuery, type Theme
 } from "@mui/material";
+
 import ThemeModeButton from "@components/ui/ThemeModeButton";
 import LanguageButton from "@components/ui/LanguageButton";
 import { H2, H3 } from "@components/ui/Typography";
@@ -19,7 +20,7 @@ interface ElevationScrollProps {
 
 const NAV_HEIGHT = "var(--navbar-height)";
 
-const ElevationScroll = ({ children }: ElevationScrollProps) => {
+function ElevationScroll({ children }: ElevationScrollProps) {
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
@@ -33,9 +34,9 @@ const ElevationScroll = ({ children }: ElevationScrollProps) => {
       transition: "background-color var(--motion-normal) var(--ease-standard), box-shadow var(--motion-normal) var(--ease-standard)"
     },
   });
-};
+}
 
-const DashboardNavbar = () => {
+function DashboardNavbar() {
   const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const desktopMenu = useMediaQuery((theme: Theme) => theme.breakpoints.up("sm"));
@@ -70,9 +71,20 @@ const DashboardNavbar = () => {
         {MENU_LIST.map((item) => (
           <ListItem key={item.key} disablePadding>
             <ListItemButton
+              disableRipple
               component={Link}
               to={item.link}
-              sx={{ textAlign: "center", color: "inherit", textDecoration: "none" }}>
+              sx={{
+                textAlign: "center",
+                color: "inherit",
+                textDecoration: "none",
+                WebkitTapHighlightColor: "transparent",
+                "&:hover, &:active, &.Mui-focusVisible": { bgcolor: "transparent" },
+                "&:focus-visible": {
+                  outline: "2px solid var(--color-accent)",
+                  outlineOffset: "-4px"
+                }
+              }}>
               <ListItemText
                 primary={t(`navbar.${item.key}`)}
                 primaryTypographyProps={{
@@ -132,6 +144,7 @@ const DashboardNavbar = () => {
               {MENU_LIST.map((item) => (
                 <Button
                   key={item.key}
+                  disableRipple
                   component={NavLink}
                   end={item.link === "/"}
                   className="nav-link"
@@ -140,7 +153,13 @@ const DashboardNavbar = () => {
                     textAlign: "center",
                     color: "inherit",
                     textDecoration: "none",
-                    flexShrink: 0
+                    flexShrink: 0,
+                    WebkitTapHighlightColor: "transparent",
+                    "&:hover, &:active, &.Mui-focusVisible": { bgcolor: "transparent" },
+                    "&:focus-visible": {
+                      outline: "2px solid var(--color-accent)",
+                      outlineOffset: "2px"
+                    }
                   }}>
                   {t(`navbar.${item.key}`)}
                 </Button>
@@ -173,6 +192,6 @@ const DashboardNavbar = () => {
       </nav>
     </>
   );
-};
+}
 
 export default DashboardNavbar;

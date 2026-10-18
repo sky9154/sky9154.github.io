@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { Box, Stack } from "@mui/material";
-import { H3, Paragraph } from "@components/ui/Typography";
-import SectionTitle from "@components/ui/SectionTitle";
-import BentoCard from "@components/ui/BentoCard";
+import { Box } from "@mui/material";
+
+import ObservationTimeline from "@components/about/ObservationTimeline";
 
 
 interface WorkExperienceItem {
@@ -12,83 +11,22 @@ interface WorkExperienceItem {
   highlights: string[];
 }
 
-const WorkExperienceCard = () => {
+function WorkExperienceCard() {
   const { t } = useTranslation();
-
-  const items = t("about.workExperience.items", {
-    returnObjects: true
-  }) as WorkExperienceItem[];
+  const items = t("about.workExperience.items", { returnObjects: true }) as WorkExperienceItem[];
 
   return (
-    <BentoCard colSpan={4} rowSpan={1}>
-      <Stack spacing={3}>
-        <SectionTitle>
-          {t("about.workExperience.title")}
-        </SectionTitle>
-        <Box sx={{
-          display: "grid",
-          gridTemplateColumns: {
-            xs: "1fr",
-            md: "repeat(2, minmax(0, 1fr))"
-          },
-          gap: 3
-        }}>
-          {items.map((item) => (
-            <Box key={`${item.company}-${item.period}`} sx={{
-              p: 2.5,
-              borderRadius: "var(--radius-md)",
-              bgcolor: "var(--color-surface-subtle)",
-              border: "1px solid var(--color-border-subtle)"
-            }}>
-              <Paragraph sx={{
-                fontSize: "14px",
-                color: "var(--text-sub)",
-                mb: 1
-              }}>
-                {item.period}
-              </Paragraph>
-              <H3 sx={{
-                fontSize: "20px",
-                fontWeight: 700,
-                mb: 0.5
-              }}>
-                {item.company}
-              </H3>
-              <Paragraph sx={{
-                fontSize: "16px",
-                color: "var(--text-sub)",
-                fontWeight: 600,
-                mb: 2
-              }}>
-                {item.role}
-              </Paragraph>
-              <Box
-                component="ul"
-                sx={{
-                  pl: 2.5,
-                  m: 0,
-                  color: "var(--text-main)"
-                }}>
-                {item.highlights.map((highlight) => (
-                  <Box
-                    component="li"
-                    key={highlight}
-                    sx={{
-                      mb: 1,
-                      fontSize: "16px",
-                      lineHeight: 1.6,
-                      "&:last-child": { mb: 0 }
-                    }}>
-                    {highlight}
-                  </Box>
-                ))}
-              </Box>
-            </Box>
-          ))}
+    <ObservationTimeline id="work-experience" title={t("about.workExperience.title")} entries={items.map((item) => ({
+      period: item.period,
+      heading: item.company,
+      subheading: item.role,
+      content: (
+        <Box component="ul" sx={{ pl: 2.5, color: "var(--text-main)", maxWidth: "65ch" }}>
+          {item.highlights.map((highlight) => <Box component="li" key={highlight} sx={{ fontSize: "16px", lineHeight: 1.8, mb: 1, "&:last-child": { mb: 0 } }}>{highlight}</Box>)}
         </Box>
-      </Stack>
-    </BentoCard>
+      )
+    }))} />
   );
-};
+}
 
 export default WorkExperienceCard;

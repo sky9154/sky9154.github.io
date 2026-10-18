@@ -2,15 +2,18 @@ import { useNavigate } from "react-router-dom";
 import { FaExclamationTriangle, FaArrowLeft, FaRedo } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { Box, Button } from "@mui/material";
+
 import { H1, H3 } from "@components/ui/Typography";
+import type { PostCollection } from "@/services/notionApi";
 
 
 interface PostErrorProps {
+  collection?: PostCollection;
   onRetry?: () => void;
   backPath?: string;
 }
 
-const PostError = ({ onRetry, backPath = "/blog" }: PostErrorProps) => {
+function PostError({ onRetry, backPath = "/articles", collection = "articles" }: PostErrorProps) {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -43,16 +46,16 @@ const PostError = ({ onRetry, backPath = "/blog" }: PostErrorProps) => {
         fontWeight: 700,
         mb: 1
       }}>
-        {t("blog.post.error.title")}
+        {t(`${collection}.post.error.title`)}
       </H1>
       <H3 sx={{
         color: "var(--text-sub)",
         fontSize: "16px",
-        maxWidth: "400px",
+        width: "100%",
         lineHeight: 1.6,
         mb: 4
       }}>
-        {t("blog.post.error.description")}
+        {t(`${collection}.post.error.description`)}
       </H3>
       <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 2 }}>
         {onRetry && (
@@ -70,7 +73,7 @@ const PostError = ({ onRetry, backPath = "/blog" }: PostErrorProps) => {
               color: "var(--main-bg)",
               "&:hover": { bgcolor: "color-mix(in srgb, var(--color-accent), var(--color-bg) 12%)" }
             }}>
-            {t("blog.retry")}
+            {t(`${collection}.retry`)}
           </Button>
         )}
         <Button
@@ -93,11 +96,11 @@ const PostError = ({ onRetry, backPath = "/blog" }: PostErrorProps) => {
               bgcolor: "color-mix(in srgb, var(--card-bg), transparent 60%)"
             }
           }}>
-          {t("blog.post.back")}
+          {t(`${collection}.post.back`)}
         </Button>
       </Box>
     </Box>
   );
-};
+}
 
 export default PostError;

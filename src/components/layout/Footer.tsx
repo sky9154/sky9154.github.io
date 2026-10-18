@@ -1,11 +1,12 @@
 import { Box, Container, Grid, IconButton, Stack } from "@mui/material";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
+
 import { Paragraph } from "@components/ui/Typography";
 import { CONTACT, COPYRIGHT } from "@assets/data/config";
 
 
-const Footer = () => {
+function Footer() {
   const { t } = useTranslation();
 
   const handleContactClick = (item: typeof CONTACT[0]) => {

@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { Toaster } from "react-hot-toast";
 import { useRoutes } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+
 import { LanguageProvider } from "@provider/LanguageProvider";
 import { ThemeModeProvider } from "@provider/ThemeModeProvider";
 import { useThemeModeContext } from "@context/ThemeModeContext";
@@ -9,7 +10,7 @@ import NotFound from "@pages/NotFound";
 import routes from "@/routes";
 
 
-const AppContent = () => {
+function AppContent() {
   const element = useRoutes(routes) || <NotFound />;
   const { themeMode } = useThemeModeContext();
 
@@ -58,14 +59,16 @@ const AppContent = () => {
       {element}
     </ThemeProvider>
   );
-};
+}
 
-const App = () => (
-  <LanguageProvider>
-    <ThemeModeProvider>
-      <AppContent />
-    </ThemeModeProvider>
-  </LanguageProvider>
-);
+function App() {
+  return (
+    <LanguageProvider>
+      <ThemeModeProvider>
+        <AppContent />
+      </ThemeModeProvider>
+    </LanguageProvider>
+  );
+}
 
 export default App;

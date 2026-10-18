@@ -1,46 +1,61 @@
 import { Link as RouterLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { FaArrowRotateRight, FaRegCalendar, FaRegFolderOpen } from "react-icons/fa6";
-import { Box, Button, Chip, LinearProgress, Skeleton, Stack } from "@mui/material";
+import { Box, Button, Skeleton, Stack } from "@mui/material";
+
 import { H1, H3, H5, Paragraph } from "@components/ui/Typography";
+import CollectionTag from "@components/content/CollectionTag";
+import ProjectCards from "@components/projects/ProjectCards";
 import BentoCard from "@components/ui/BentoCard";
-import { formatPostDate, type PostSummary } from "@/services/notionApi";
-import { getNotionColor } from "@/utils/notionColors";
+import { formatPostDate, type PostCollection, type PostSummary } from "@/services/notionApi";
+import { selectSummary } from "@/utils/postSummaries";
 
 
 interface PostListProps {
   posts: PostSummary[];
   loading: boolean;
+  initialLoading: boolean;
   error: string | null;
   onRetry: () => void;
-  hrefPrefix?: string;
+  collection?: PostCollection;
 }
 
-const gridStyles = {
+const GRID_STYLES = {
   display: "grid",
   gridTemplateColumns: { xs: "1fr", md: "repeat(4, 1fr)" },
-  gridAutoRows: "minmax(190px, auto)",
   gap: 3
 };
 
-const PostList = ({
+function PostList({
   posts,
   loading,
+  initialLoading,
   error,
   onRetry,
-  hrefPrefix = "/blog"
-}: PostListProps) => {
+  collection = "articles"
+}: PostListProps) {
   const { t, i18n } = useTranslation();
+  const isProjectList = collection === "projects";
+  const hrefPrefix = `/${collection}`;
+  const summaryLanguage = isProjectList ? i18n.resolvedLanguage || i18n.language : "zh_Hant";
 
-  if (loading && posts.length === 0) {
+  if (initialLoading) {
+    if (isProjectList) return <ProjectCards posts={[]} loading />;
+
     return (
-      <Box sx={gridStyles} aria-label={t("blog.loading")} aria-busy="true">
+      <Box sx={GRID_STYLES} aria-label={t(`${collection}.loading`)} aria-busy="true">
         {[...Array(6)].map((_, index) => (
-          <BentoCard key={index} colSpan={2} rowSpan={1}>
-            <Skeleton variant="text" width="35%" height={22} />
-            <Skeleton variant="text" width="72%" height={36} sx={{ mt: 1 }} />
-            <Skeleton variant="text" width="100%" height={24} />
-            <Skeleton variant="text" width="62%" height={24} />
+          <BentoCard key={index} className="article-list-card article-list-skeleton" colSpan={2} rowSpan={1}>
+            <Box sx={{ display: "flex", flexDirection: "column", pb: 2.5 }}>
+              <Skeleton variant="text" width="35%" height={18} sx={{ mb: 2 }} />
+              <Skeleton variant="text" width="82%" sx={{ fontSize: "clamp(20px, 2vw, 24px)", height: "1.5em", mb: 2 }} />
+              <Box sx={{ mb: 3 }}>
+                {["100%", "94%", "62%"].map((width) => <Skeleton key={width} variant="text" width={width} sx={{ height: "1.8em" }} />)}
+              </Box>
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
+                {[72, 88, 64].map((width) => <Skeleton key={width} variant="rounded" width={width} height={24} />)}
+              </Box>
+            </Box>
           </BentoCard>
         ))}
       </Box>
@@ -61,15 +76,16 @@ const PostList = ({
         bgcolor: "color-mix(in srgb, var(--red-100), transparent 94%)"
       }}>
         <H3 sx={{ color: "var(--text-main)", fontSize: "20px" }}>
-          {t("blog.loadErrorTitle")}
+          {t(`${collection}.loadErrorTitle`)}
         </H3>
         <Paragraph sx={{ color: "var(--text-sub)", fontSize: "16px" }}>
-          {t("blog.loadErrorDesc")}
+          {t(`${collection}.loadErrorDesc`)}
         </Paragraph>
         <Button
           variant="outlined"
           startIcon={<FaArrowRotateRight />}
           onClick={onRetry}
+          disabled={loading}
           sx={{
             minHeight: "44px",
             mt: 1,
@@ -78,7 +94,7 @@ const PostList = ({
             textTransform: "none",
             borderRadius: "12px"
           }}>
-          {t("blog.retry")}
+          {t(`${collection}.retry`)}
         </Button>
       </Box>
     );
@@ -102,10 +118,10 @@ const PostList = ({
           <FaRegFolderOpen />
         </Box>
         <H1 sx={{ color: "var(--text-main)", fontSize: "24px", fontWeight: 700, mb: 1 }}>
-          {t("blog.noResultsTitle")}
+          {t(`${collection}.noResultsTitle`)}
         </H1>
         <H3 sx={{ color: "var(--text-sub)", fontSize: "16px" }}>
-          {t("blog.noResultsDesc")}
+          {t(`${collection}.noResultsDesc`)}
         </H3>
       </Box>
     );
@@ -113,30 +129,18 @@ const PostList = ({
 
   return (
     <Box sx={{ position: "relative" }} aria-busy={loading}>
-      {loading && (
-        <LinearProgress aria-label={t("blog.loading")} sx={{
-          position: "absolute",
-          inset: "-12px 0 auto",
-          borderRadius: 999,
-          bgcolor: "color-mix(in srgb, var(--text-main), transparent 88%)",
-          "& .MuiLinearProgress-bar": { bgcolor: "var(--text-main)" }
-        }} />
-      )}
-      <Box sx={{
-        ...gridStyles,
-        opacity: (loading) ? 0.62 : 1,
-        transition: "opacity 180ms cubic-bezier(0.16, 1, 0.3, 1)"
-      }}>
+      {isProjectList ? <ProjectCards posts={posts} /> : <Box sx={GRID_STYLES}>
         {posts.map((post) => (
-          <BentoCard key={post.id} colSpan={2} rowSpan={1}>
+          <BentoCard key={post.id} className="article-list-card" colSpan={2} rowSpan={1}>
             <Box
               component={RouterLink}
               to={`${hrefPrefix}/${post.id}`}
-              aria-label={`${post.title} — ${t("blog.readArticle")}`}
+              aria-label={`${post.title} — ${t("articles.readArticle")}`}
               sx={{
                 color: "inherit",
                 textDecoration: "none",
                 height: "100%",
+                pb: 2.5,
                 display: "flex",
                 flexDirection: "column",
                 borderRadius: "12px",
@@ -144,18 +148,13 @@ const PostList = ({
                 "&:focus-visible": {
                   outline: "2px solid var(--color-accent)",
                   outlineOffset: "3px"
-                },
-                "&:hover h2": {
-                  textDecoration: "underline",
-                  textDecorationThickness: "1px",
-                  textUnderlineOffset: "0.2em"
                 }
               }}>
               <Stack
                 direction="row"
                 spacing={1}
                 alignItems="center"
-                sx={{ mb: 1.5, color: "var(--text-sub)" }}>
+                sx={{ mb: 2, color: "var(--text-sub)" }}>
                 <Box aria-hidden="true" sx={{ display: "flex", alignItems: "center", fontSize: "14px" }}>
                   <FaRegCalendar />
                 </Box>
@@ -166,48 +165,35 @@ const PostList = ({
               <H5 component="h2" sx={{
                 fontSize: "clamp(20px, 2vw, 24px)",
                 fontWeight: 700,
-                lineHeight: 1.35,
-                mb: 1.25
+                lineHeight: 1.5,
+                textWrap: "pretty",
+                overflowWrap: "anywhere",
+                mb: 2
               }}>
-                {post.title || t("blog.untitled")}
+                {post.title || t(`${collection}.untitled`)}
               </H5>
               <Paragraph sx={{
                 fontSize: "16px",
-                lineHeight: 1.7,
+                lineHeight: 1.8,
                 color: "var(--text-sub)",
                 display: "-webkit-box",
                 WebkitLineClamp: 3,
                 WebkitBoxOrient: "vertical",
                 overflow: "hidden",
-                mb: 2.5,
+                mb: 3,
                 flexGrow: 1
               }}>
-                {post.summary}
+                {selectSummary(post.summaries, summaryLanguage, isProjectList)}
               </Paragraph>
               <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: "auto" }}>
-                {post.tags.map((tag) => {
-                  const color = getNotionColor(tag.color);
-
-                  return (
-                    <Chip
-                      key={tag.name}
-                      label={tag.name}
-                      size="small"
-                      sx={{
-                        fontWeight: 600,
-                        bgcolor: `color-mix(in srgb, ${color}, transparent 82%)`,
-                        color: "var(--text-main)",
-                        border: `1px solid color-mix(in srgb, ${color}, transparent 55%)`
-                      }} />
-                  );
-                })}
+                {post.tags.map((tag) => <CollectionTag key={tag.id || tag.name} tag={tag} />)}
               </Box>
             </Box>
           </BentoCard>
         ))}
-      </Box>
+      </Box>}
     </Box>
   );
-};
+}
 
 export default PostList;

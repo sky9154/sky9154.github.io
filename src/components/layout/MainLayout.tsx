@@ -1,11 +1,26 @@
-import { Suspense } from "react";
-import { Outlet } from "react-router-dom";
+import { Suspense, useEffect } from "react";
+import { Outlet, useLocation } from "react-router-dom";
 import { Box, CircularProgress } from "@mui/material";
+
 import Navbar from "@components/layout/Navbar";
 import Footer from "@components/layout/Footer";
 
 
-const MainLayout = () => {
+function PageScroll() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if ((pathname !== "/" && pathname !== "/about") || window.location.hash) {
+      return;
+    }
+
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [pathname]);
+
+  return null;
+}
+
+function MainLayout() {
   return (
     <Box className="site-layout" sx={{ display: "flex", flexDirection: "column", minHeight: "100dvh" }}>
       <Navbar />
@@ -25,11 +40,12 @@ const MainLayout = () => {
           </Box>
         )}>
           <Outlet />
+          <PageScroll />
         </Suspense>
       </Box>
       <Footer />
     </Box>
   );
-};
+}
 
 export default MainLayout;

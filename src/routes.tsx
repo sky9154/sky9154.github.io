@@ -1,14 +1,16 @@
 import { lazy } from "react";
-import { RouteObject, Navigate } from "react-router-dom";
+import { type RouteObject, Navigate } from "react-router-dom";
+
 import MainLayout from "@components/layout/MainLayout";
-import BlogPostRoute from "@components/blog/BlogPostRoute";
+import PostDetailRoute from "@components/content/PostDetailRoute";
+import LegacyArticleRedirect from "@components/articles/LegacyArticleRedirect";
 import NotFound from "@pages/NotFound";
 
 
 const Home = lazy(() => import("@pages/Home"));
 const About = lazy(() => import("@pages/About"));
 const Projects = lazy(() => import("@pages/Projects"));
-const Blog = lazy(() => import("@pages/Blog"));
+const Articles = lazy(() => import("@pages/Articles"));
 
 const routes: RouteObject[] = [{
   path: "/",
@@ -27,17 +29,23 @@ const routes: RouteObject[] = [{
     element: <Projects />
   }, {
     path: "projects/:id",
-    element: <BlogPostRoute />
+    element: <PostDetailRoute />
+  }, {
+    path: "articles",
+    element: <Articles />
+  }, {
+    path: "articles/:id",
+    element: <PostDetailRoute />
   }, {
     path: "blog",
-    element: <Blog />
+    element: <LegacyArticleRedirect />
   }, {
     path: "blog/:id",
-    element: <BlogPostRoute />
-  }],
+    element: <LegacyArticleRedirect />
+  }]
 }, {
   path: "*",
-  element: <NotFound />,
+  element: <NotFound />
 }];
 
 export default routes;

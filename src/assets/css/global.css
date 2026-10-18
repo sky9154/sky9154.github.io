@@ -59,6 +59,17 @@ body {
   width: 6px;
 }
 
+body:has(.site-navbar)::-webkit-scrollbar {
+  background: linear-gradient(to bottom,
+      var(--nav-bg) 0 var(--navbar-height),
+      var(--color-border-subtle) var(--navbar-height) calc(var(--navbar-height) + 1px),
+      transparent calc(var(--navbar-height) + 1px));
+}
+
+body:has(.site-navbar)::-webkit-scrollbar-track {
+  margin-top: calc(var(--navbar-height) + 1px);
+}
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }

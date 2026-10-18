@@ -1,14 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Container } from "@mui/material";
-import BlogHero from "@components/blog/BlogHero";
-import PostList from "@components/blog/PostList";
-import PaginationControl from "@components/blog/PaginationControl";
-import { fetchPostCollection, type PostSummary } from "@/services/notionApi";
+
+import CollectionHero from "@components/content/CollectionHero";
+import PostList from "@components/content/PostList";
+import PaginationControl from "@components/content/PaginationControl";
+import { fetchPostCollection, type PostSummary } from "@services/notionApi";
 
 
-const Projects = () => {
+function Projects() {
   const [posts, setPosts] = useState<PostSummary[]>([]);
   const [loading, setLoading] = useState(true);
+  const [hasLoaded, setHasLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
@@ -23,7 +25,9 @@ const Projects = () => {
       }
 
       setPage(1);
+
       cursorsRef.current = [null];
+
       return query;
     });
   }, []);
@@ -32,7 +36,6 @@ const Projects = () => {
     const controller = new AbortController();
     const currentCursor = cursorsRef.current[page - 1] || null;
     setLoading(true);
-    setError(null);
 
     const loadProjects = async () => {
       try {
@@ -43,6 +46,7 @@ const Projects = () => {
         });
 
         setPosts(data.results);
+        setError(null);
         setHasMore(data.hasMore);
 
         if (data.hasMore && data.nextCursor) {
@@ -57,6 +61,7 @@ const Projects = () => {
       } finally {
         if (!controller.signal.aborted) {
           setLoading(false);
+          setHasLoaded(true);
         }
       }
     };
@@ -70,21 +75,21 @@ const Projects = () => {
   }, [page, searchQuery]);
 
   return (
-    <Container maxWidth="lg" sx={{
+    <Container maxWidth="lg" className="collection-page" sx={{
       flexGrow: 1,
-      pt: "var(--navbar-height)",
-      mt: { xs: 4, md: 4 },
       mb: { xs: 8, md: 12 }
     }}>
-      <BlogHero onSearch={handleSearch} />
+      <CollectionHero loading={loading} collection="projects" onSearch={handleSearch} />
       <PostList
         posts={posts}
         loading={loading}
+        initialLoading={loading && !hasLoaded}
         error={error}
-        hrefPrefix="/projects"
+        collection="projects"
         onRetry={() => setRetryKey((key) => key + 1)}
       />
       <PaginationControl
+        collection="projects"
         page={page}
         hasMore={hasMore}
         loading={loading}
@@ -93,6 +98,6 @@ const Projects = () => {
       />
     </Container>
   );
-};
+}
 
 export default Projects;

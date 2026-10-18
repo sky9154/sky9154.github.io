@@ -1,10 +1,13 @@
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 import { Box, IconButton } from "@mui/material";
 import { useTranslation } from "react-i18next";
+
 import { Paragraph } from "@components/ui/Typography";
+import type { PostCollection } from "@/services/notionApi";
 
 
 interface PaginationControlProps {
+  collection?: PostCollection;
   page: number;
   hasMore: boolean;
   loading: boolean;
@@ -12,7 +15,7 @@ interface PaginationControlProps {
   onNext: () => void;
 }
 
-const PaginationControl = ({ page, hasMore, loading, onPrev, onNext }: PaginationControlProps) => {
+function PaginationControl({ page, hasMore, loading, onPrev, onNext, collection = "articles" }: PaginationControlProps) {
   const { t } = useTranslation();
 
   if (page === 1 && !hasMore) {
@@ -30,7 +33,7 @@ const PaginationControl = ({ page, hasMore, loading, onPrev, onNext }: Paginatio
       <IconButton
         onClick={onPrev}
         disabled={page === 1 || loading}
-        aria-label={t("blog.previousPage")}
+        aria-label={t(`${collection}.previousPage`)}
         sx={{
           p: 1,
           border: "1px solid",
@@ -63,7 +66,7 @@ const PaginationControl = ({ page, hasMore, loading, onPrev, onNext }: Paginatio
       <IconButton
         onClick={onNext}
         disabled={!hasMore || loading}
-        aria-label={t("blog.nextPage")}
+        aria-label={t(`${collection}.nextPage`)}
         sx={{
           p: 1,
           border: "1px solid",
@@ -87,6 +90,6 @@ const PaginationControl = ({ page, hasMore, loading, onPrev, onNext }: Paginatio
       </IconButton>
     </Box>
   );
-};
+}
 
 export default PaginationControl;

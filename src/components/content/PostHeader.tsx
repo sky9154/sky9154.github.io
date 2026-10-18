@@ -1,23 +1,25 @@
 import { useTranslation } from "react-i18next";
 import { FaRegCalendar } from "react-icons/fa6";
-import { Box, Chip, Divider, Stack } from "@mui/material";
+import { Box, Chip, Divider, Skeleton, Stack } from "@mui/material";
+
 import { H1, Paragraph } from "@components/ui/Typography";
-import { formatPostDate, type PostMetadata } from "@/services/notionApi";
+import { formatPostDate, type PostMetadata, type PostCollection } from "@/services/notionApi";
 import { getNotionColor } from "@/utils/notionColors";
 
 
 interface PostHeaderProps {
-  metadata: PostMetadata;
+  collection?: PostCollection;
+  metadata?: PostMetadata;
 }
 
-const PostHeader = ({ metadata }: PostHeaderProps) => {
+function PostHeader({ metadata, collection = "articles" }: PostHeaderProps) {
   const { t, i18n } = useTranslation();
 
-  const title = metadata.title || t("blog.untitled");
-  const date = formatPostDate(
+  const title = metadata?.title || t(`${collection}.untitled`);
+  const date = metadata ? formatPostDate(
     metadata.updatedAt,
     i18n.resolvedLanguage || i18n.language
-  );
+  ) : "";
 
   return (
     <>
@@ -32,7 +34,12 @@ const PostHeader = ({ metadata }: PostHeaderProps) => {
           maxWidth: "none",
           width: "100%"
         }}>
-          {title}
+          {metadata ? title : (
+            <>
+              <Skeleton variant="text" width="84%" sx={{ height: "1lh" }} />
+              <Skeleton variant="text" width="56%" sx={{ height: "1lh", display: { xs: "block", md: "none" } }} />
+            </>
+          )}
         </H1>
         <Box sx={{
           display: "flex",
@@ -49,11 +56,11 @@ const PostHeader = ({ metadata }: PostHeaderProps) => {
               <FaRegCalendar />
             </Box>
             <Paragraph sx={{ lineHeight: 1, pt: "1px" }}>
-              {date}
+              {metadata ? date : <Skeleton variant="text" width={120} sx={{ height: "1em" }} />}
             </Paragraph>
           </Stack>
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: "auto" }}>
-            {metadata.tags.map((tag) => {
+            {metadata ? metadata.tags.map((tag) => {
               const color = getNotionColor(tag.color);
 
               return (
@@ -69,13 +76,18 @@ const PostHeader = ({ metadata }: PostHeaderProps) => {
                   }}
                 />
               );
-            })}
+            }) : (
+              <>
+                <Skeleton variant="rounded" width={72} height={24} />
+                <Skeleton variant="rounded" width={88} height={24} />
+              </>
+            )}
           </Box>
         </Box>
       </Box>
       <Divider sx={{ mb: 4, borderColor: "var(--color-border)" }} />
     </>
   );
-};
+}
 
 export default PostHeader;
