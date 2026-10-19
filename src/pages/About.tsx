@@ -26,10 +26,10 @@ function About() {
       px: { xs: 3, sm: 4 }
     })}>
       <ProfileCard />
+      <TechStackCard />
       <WorkExperienceCard />
       <EducationCard />
       <ResearchHighlightsCard />
-      <TechStackCard />
     </Container>
   );
 }

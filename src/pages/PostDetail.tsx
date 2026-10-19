@@ -59,7 +59,7 @@ function PostDetail() {
   }, [collection, id, retryKey]);
 
   return (
-    <PostLayout collection={collection} backPath={backPath} showBack={loading || !!postData && !error}>
+    <PostLayout>
       {(loading) ? (
         <PostSkeleton collection={collection} />
       ) : (!postData || error) ? (

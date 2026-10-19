@@ -7,6 +7,53 @@
   border-bottom: 1px solid var(--color-border-subtle);
 }
 
+.site-navbar .nav-icon-button.MuiButton-root {
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.site-navbar .nav-icon-button.MuiButton-root:is(:hover, :active, :focus, :focus-visible) {
+  background-color: transparent;
+}
+
+.site-navbar .nav-icon-button.MuiButton-root:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.site-navbar .nav-icon-button:active .MuiSvgIcon-root {
+  animation: nav-icon-shake 280ms ease-in-out infinite;
+}
+
+.site-navbar .nav-icon-button .MuiSvgIcon-root {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+
+@keyframes nav-icon-shake {
+
+  0%,
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+
+  20%,
+  60% {
+    transform: translateX(-1px) rotate(-6deg);
+  }
+
+  40%,
+  80% {
+    transform: translateX(1px) rotate(6deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-navbar .nav-icon-button:active .MuiSvgIcon-root {
+    animation: none;
+  }
+}
+
 .site-navbar .nav-link {
   position: relative;
   width: 100%;
@@ -397,13 +444,6 @@
   fill: var(--color-text);
 }
 
-.lost-orbit-coordinate {
-  font-family: var(--font-code);
-  font-size: 12px;
-  letter-spacing: 6px;
-  fill: var(--color-text-secondary);
-}
-
 @keyframes orbit-turn {
   to {
     transform: rotate(360deg);
@@ -578,12 +618,18 @@
   padding-top: calc(var(--navbar-height) + 1px + var(--page-content-gap));
 }
 
-.collection-page .page-heading {
+.collection-page .page-heading,
+.post-page .page-heading {
   padding-top: 20px;
 }
 
-.collection-page .page-heading::before {
+.collection-page .page-heading::before,
+.post-page .page-heading::before {
   top: 0;
+}
+
+html:has(.home-sequence) {
+  position: relative;
 }
 
 .home-sequence {
@@ -765,13 +811,6 @@
   .home-profile .MuiButton-root:hover .home-link-arrow {
     transform: none;
   }
-}
-
-.project-pending {
-  display: inline-block;
-  padding-block: 12px;
-  border-top: 1px solid var(--color-border-subtle);
-  color: var(--text-sub);
 }
 
 .capability-list {

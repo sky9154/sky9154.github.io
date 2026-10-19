@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 import { H2, H3, Paragraph } from "@components/ui/Typography";
 
 
-export interface TimelineEntry {
+interface TimelineEntry {
   period: string;
   heading: string;
   subheading: string;

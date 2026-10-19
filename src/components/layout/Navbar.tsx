@@ -116,15 +116,37 @@ function DashboardNavbar() {
                 {t("title")}
               </Link>
             </H2>
-            <Button
-              component={IconButton}
+            <IconButton
+              disableRipple
               color="inherit"
               aria-label="open drawer"
               aria-expanded={mobileOpen}
               aria-controls={(mobileOpen) ? "mobile-navigation" : undefined}
               edge="start"
               onClick={handleDrawerToggle}
-              sx={{ display: { sm: "none" }, px: 2 }}
+              sx={{
+                display: { sm: "none" },
+                minWidth: "64px",
+                minHeight: "44px",
+                ml: 0,
+                px: 2,
+                bgcolor: "transparent",
+                WebkitTapHighlightColor: "transparent",
+                "&:is(:hover, :active, :focus, :focus-visible)": { bgcolor: "transparent" },
+                "&:focus-visible": {
+                  outline: "2px solid var(--color-accent)",
+                  outlineOffset: "2px"
+                },
+                "& .mobile-menu-icon": {
+                  transition: "color 150ms ease"
+                },
+                "@media (hover: hover) and (pointer: fine)": {
+                  "&:hover .mobile-menu-icon": { color: "var(--color-accent)" }
+                },
+                "@media (prefers-reduced-motion: reduce)": {
+                  "& .mobile-menu-icon": { transition: "color 150ms ease" }
+                }
+              }}
             >
               <H3 sx={{
                 display: "flex",
@@ -132,9 +154,9 @@ function DashboardNavbar() {
                 justifyContent: "center",
                 fontSize: "20px"
               }}>
-                <FaBars />
+                <FaBars className="mobile-menu-icon" />
               </H3>
-            </Button>
+            </IconButton>
             <Box sx={{
               display: { xs: "none", sm: "grid" },
               gridTemplateColumns: { sm: "64px 84px 104px 84px", md: "88px 112px 124px 112px" },

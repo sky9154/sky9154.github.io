@@ -2,7 +2,6 @@ import { createContext, useContext } from "react";
 
 
 interface LanguageContextType {
-  currentLang: string;
   changeLanguage: (lang: string) => void;
 }
 

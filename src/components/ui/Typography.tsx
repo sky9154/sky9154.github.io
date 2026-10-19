@@ -13,7 +13,6 @@ const StyledBox = styled(Box)<{
 }));
 
 interface TypographyProps {
-  ellipsis?: boolean;
   textTransform?: "none" | "capitalize" | "uppercase" | "lowercase" | "initial" | "inherit";
 }
 
@@ -21,7 +20,6 @@ function createTypography(componentTag: ElementType, defaultClass: string): FC<B
   function TypographyComponent({
     children,
     className,
-    ellipsis,
     textTransform,
     ...props
   }: BoxProps & TypographyProps) {
@@ -32,7 +30,6 @@ function createTypography(componentTag: ElementType, defaultClass: string): FC<B
         className={clsx(
           styles["base"],
           defaultClass,
-          { [styles["ellipsis"]]: ellipsis },
           className
         )}
         {...props}>
@@ -49,6 +46,5 @@ function createTypography(componentTag: ElementType, defaultClass: string): FC<B
 export const H1 = createTypography("h1", styles["h1"]);
 export const H2 = createTypography("h2", styles["h2"]);
 export const H3 = createTypography("h3", styles["h3"]);
-export const H4 = createTypography("h4", styles["h4"]);
 export const H5 = createTypography("h5", styles["h5"]);
 export const Paragraph = createTypography("p", styles["paragraph"]);

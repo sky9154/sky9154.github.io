@@ -31,7 +31,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   }, [i18n.language]);
 
   return (
-    <LanguageContext.Provider value={{ currentLang: i18n.language, changeLanguage }}>
+    <LanguageContext.Provider value={{ changeLanguage }}>
       {children}
     </LanguageContext.Provider>
   );

@@ -3,7 +3,6 @@ import { FaInstagram, FaXTwitter, FaGithub, FaDiscord, FaRegEnvelope } from "rea
 
 
 interface MenuType {
-  name: string;
   key: string;
   link: string;
 }
@@ -25,19 +24,15 @@ interface TechListType {
 
 export const MENU_LIST: MenuType[] = [
   {
-    name: "Home",
     key: "home",
     link: "/"
   }, {
-    name: "About",
     key: "about",
     link: "/about"
   }, {
-    name: "Projects",
     key: "projects",
     link: "/projects"
   }, {
-    name: "Articles",
     key: "articles",
     link: "/articles"
   }

@@ -37,7 +37,6 @@ function PostList({
   const { t, i18n } = useTranslation();
   const isProjectList = collection === "projects";
   const hrefPrefix = `/${collection}`;
-  const summaryLanguage = isProjectList ? i18n.resolvedLanguage || i18n.language : "zh_Hant";
 
   if (initialLoading) {
     if (isProjectList) return <ProjectCards posts={[]} loading />;
@@ -183,7 +182,7 @@ function PostList({
                 mb: 3,
                 flexGrow: 1
               }}>
-                {selectSummary(post.summaries, summaryLanguage, isProjectList)}
+                {selectSummary(post.summaries, "zh_Hant", false)}
               </Paragraph>
               <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: "auto" }}>
                 {post.tags.map((tag) => <CollectionTag key={tag.id || tag.name} tag={tag} />)}

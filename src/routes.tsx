@@ -3,7 +3,6 @@ import { type RouteObject, Navigate } from "react-router-dom";
 
 import MainLayout from "@components/layout/MainLayout";
 import PostDetailRoute from "@components/content/PostDetailRoute";
-import LegacyArticleRedirect from "@components/articles/LegacyArticleRedirect";
 import NotFound from "@pages/NotFound";
 
 
@@ -36,12 +35,6 @@ const routes: RouteObject[] = [{
   }, {
     path: "articles/:id",
     element: <PostDetailRoute />
-  }, {
-    path: "blog",
-    element: <LegacyArticleRedirect />
-  }, {
-    path: "blog/:id",
-    element: <LegacyArticleRedirect />
   }]
 }, {
   path: "*",

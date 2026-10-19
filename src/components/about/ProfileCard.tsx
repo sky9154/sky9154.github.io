@@ -49,7 +49,7 @@ function ProfileCard() {
           <Paragraph sx={{ color: "var(--color-accent)", fontSize: "16px", lineHeight: 1.6, textWrap: "balance" }}>{keepInlineSeparators(t("about.subtitle"))}</Paragraph>
         </Box>
         {t("about.content").split("<br />").map((text, index) => (
-          <Paragraph key={index} sx={{ fontSize: "17px", lineHeight: 1.9, color: index === 0 ? "var(--text-main)" : "var(--text-sub)", mb: "var(--about-copy-gap)", "&:last-child": { mb: 0 }, maxWidth: "65ch" }}>{text}</Paragraph>
+          <Paragraph key={index} sx={{ fontSize: "17px", lineHeight: 1.9, color: index === 0 ? "var(--text-main)" : "var(--text-sub)", mb: "var(--about-copy-gap)", "&:last-child": { mb: 0 }, width: "100%", maxWidth: "none" }}>{text}</Paragraph>
         ))}
       </Box>
     </Box>

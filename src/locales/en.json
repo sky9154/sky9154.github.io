@@ -166,9 +166,7 @@
         "data": "Databases",
         "ai": "Machine Learning",
         "integration": "System Integration & Tools"
-      },
-      "selectHint": "Select a category to view the technologies and tools.",
-      "relatedBackground": "Related experience and research"
+      }
     },
     "diagram": {
       "caption": "A simplified overview of the research method. User and product data go through separate feature learning and fusion stages, followed by feature concatenation, rating prediction, and recommendation. Select or focus a node for details.",

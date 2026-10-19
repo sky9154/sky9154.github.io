@@ -26,6 +26,8 @@ function LanguageButton() {
   return (
     <Box sx={{ order: { xs: 1, sm: 2 } }}>
       <Button
+        disableRipple
+        className="nav-icon-button"
         ref={languageButtonRef}
         id="language-button"
         aria-label="Choose language"
@@ -44,7 +46,7 @@ function LanguageButton() {
           p: 0,
           border: "1px solid var(--color-border-subtle)",
           borderRadius: "50%",
-          "&:hover": { bgcolor: "var(--color-surface-subtle)", borderColor: "var(--color-accent)" }
+          "&:hover": { borderColor: "var(--color-accent)" }
         }}>
         <PublicIcon />
       </Button>

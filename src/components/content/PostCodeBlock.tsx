@@ -39,7 +39,7 @@ SyntaxHighlighter.registerLanguage("ts", typescript);
 SyntaxHighlighter.registerLanguage("yaml", yaml);
 SyntaxHighlighter.registerLanguage("yml", yaml);
 
-export interface PostCodeBlockProps extends ComponentPropsWithoutRef<"code"> {
+interface PostCodeBlockProps extends ComponentPropsWithoutRef<"code"> {
   node?: unknown;
   inline?: boolean;
 }

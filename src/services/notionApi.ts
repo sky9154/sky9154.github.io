@@ -17,7 +17,7 @@ export interface PostSummary {
 
 export type PostCollection = "articles" | "projects";
 
-export type PostCategory = "Project" | "Article";
+type PostCategory = "Project" | "Article";
 
 export interface PostSummaries {
   zh_Hant: string;
